@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Jekyll - Mr Li</title>
+    <meta name="author"  content="zhonger">
+    <meta name="description" content="Hello Jekyll">
+    <meta name="keywords"  content="jekyll">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hello Jekyll - Mr Li">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/hello-jekyll.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Mr Li">
+    <meta property="og:gray" content="false">
+    
+    <link rel="Shortcut Icon" href="">
+    <link rel="bookmark" href="" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/plugins.min.css">
+    <link rel="preload" href="/assets/fonts/Merriweather-Regular.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
+    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+  <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+  <![endif]-->
+  
+  <div id="all">
+  
+    <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
+    <div id="mode-toggle">
+        <svg class="icon icon-day" aria-hidden="true">
+            <use xlink:href="#icon-day"></use>
+        </svg>
+        <svg class="icon icon-night" aria-hidden="true">
+            <use xlink:href="#icon-night"></use>
+        </svg>
+    </div>
+    <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+        <use xlink:href="#icon-menu"></use>
+    </svg>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/blog/index.html">blog</a></li>
+            
+            <li><a href="/archives.html">archives</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+            
+            <li><a href="/logs.html">logs</a></li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+    <header
+      class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+      data-theme="default"
+    >
+      <div class="post-wrapper">
+        <div class="post-tags">
+          
+            
+              <a href="/tags.html#jekyll" class="post-tag">jekyll</a>
+            
+          
+        </div>
+        <h1>Hello Jekyll</h1>
+        <div class="post-meta">
+          <span class="post-meta-item">
+            <i class="iconfont icon-author"></i>Jekyll
+          </span>
+          <time class="post-meta-item" datetime="17-04-18">
+            <i class="iconfont icon-date"></i>
+            
+              2017-04-18 00:00:00 +0000 
+            
+          </time>
+        </div>
+        <div class="post-meta">
+          
+          <span>本文总共 941 字 <b>·</b> 阅读全文大约需要 3 分钟</span>
+          
+        </div>
+      </div>
+      
+      <div class="filter"></div>
+        <div class="post-cover" style="background: url('https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900') center no-repeat; background-size: cover;"></div>
+      
+    </header>
+    <div class="post-content visible">
+      
+
+      
+      <div class="container">  
+        <div class="contents">
+          <article class="markdown-body">
+            <blockquote>
+  <p>Transform your plain text into static websites and blogs.</p>
+</blockquote>
+
+<h3 id="welcome">Welcome</h3>
+
+<p>This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing your content, customizing the way your site works and looks, deploying to various environments, and give you some advice on participating in the future development of Jekyll itself.</p>
+
+<h3 id="so-what-is-jekyll-exactlypermalink">So what is Jekyll, exactly?Permalink</h3>
+
+<p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like <a href="https://daringfireball.net/projects/markdown/">Markdown</a>) and our <a href="https://github.com/Shopify/liquid/wiki">Liquid</a> renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.</p>
+
+<h3 id="helpful-hintspermalink">Helpful HintsPermalink</h3>
+
+<p>Throughout this guide there are a number of small-but-handy pieces of information that can make using Jekyll easier, more interesting, and less hazardous. Here’s what to look out for.</p>
+
+<h3 id="video-test">Video Test</h3>
+
+<iframe type="text/html" width="100%" height="385" src="http://www.youtube.com/embed/gfmjMWjn-Xg" frameborder="0"></iframe>
+
+          </article>
+        </div>   
+        <div class="table-of-contents">
+          <h2>Contents</h2>
+          <ul><li><a href="#welcome">Welcome</a></li><li><a href="#so-what-is-jekyll-exactlypermalink">So what is Jekyll, exactly?Permalink</a></li><li><a href="#helpful-hintspermalink">Helpful HintsPermalink</a></li><li><a href="#video-test">Video Test</a></li></ul>
+        </div>
+      </div>
+      
+
+      
+      <div class="social-share-wrapper">
+        <div class="social-share"></div>
+      </div>
+      
+    </div>
+
+    <section class="author-detail">
+      <section class="post-footer-item author-card">
+        <div class="avatar">
+          <img src="/assets/img/profile.webp" alt="">
+        </div>
+        <div class="author-name" rel="author">zhonger</div>
+        <div class="bio">
+          <p>全栈开发者，热爱前端、运维和架构设计</p>
+        </div>
+        
+        <ul class="sns-links">
+          
+          <li>
+            <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-google-scholar"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-researchgate"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://orcid.org/0000-0001-6973-3825" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-ORCID"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/zhonger" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://segmentfault.com/u/wuwozhonger" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-segmentfault"></use>
+              </svg>
+            </a>
+          </li>
+          
+        </ul>
+        
+      </section>
+      <section class="post-footer-item read-next">
+        
+        <div class="read-next-item">
+          <a href="/tech/new-theme-h2o.html" class="read-next-link"></a>
+          <section>
+            <span>H2O theme for Jekyll</span>
+            <p>正如我在微博上所说的，使用Jekyll半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模...</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900" alt="">
+          
+      </div>
+        
+
+        
+      </section>
+      
+    </section>
+
+    <footer class="g-footer">
+  <section>Mr Li ©
+  
+  
+    2015
+    -
+  
+  2022
+  
+    <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxxxxxxx号</a>
+  
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">Theme H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a>) 
+  
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+  
+  
+  </section>
+</footer>
+<script src="//at.alicdn.com/t/font_3046306_01vmvxg1mj23.js"></script>
+
+  </div>
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+  <script>
+      // 给图片添加链接
+      $(document).ready(function() {
+          $("p img").each(function() {
+              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + this.src + "' data-caption='" + this.alt + "'></a>";
+              $(this).wrapAll(strA);
+          });
+
+          Fancybox.bind('[data-fancybox]', {
+            on: {
+              load: (fancybox, slide) => {
+                var gray = $("meta[property='og:gray']").attr('content');
+                if(gray == "true"){
+                    $(".fancybox__content img").addClass("gray");
+                    $(".carousel__track .fancybox__thumb").addClass("gray");
+                }
+              }
+            }
+          });
+          
+      });
+  </script>
+  
+</body>
+
+</html>

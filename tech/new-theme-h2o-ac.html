@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2O-ac theme for Jekyll - Mr Li</title>
+    <meta name="author"  content="zhonger">
+    <meta name="description" content="H2O-ac theme for Jekyll">
+    <meta name="keywords"  content="jekyll, theme, blog, ac, develop, 主题, 前端开发, 学术, 运维">
+    <!-- Open Graph -->
+    <meta property="og:title" content="H2O-ac theme for Jekyll - Mr Li">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/tech/new-theme-h2o-ac.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Mr Li">
+    <meta property="og:gray" content="false">
+    
+    <link rel="Shortcut Icon" href="">
+    <link rel="bookmark" href="" type="image/x-icon" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/plugins.min.css">
+    <link rel="preload" href="/assets/fonts/Merriweather-Regular.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
+    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+  <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+  <![endif]-->
+  
+  <div id="all">
+  
+    <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
+    <div id="mode-toggle">
+        <svg class="icon icon-day" aria-hidden="true">
+            <use xlink:href="#icon-day"></use>
+        </svg>
+        <svg class="icon icon-night" aria-hidden="true">
+            <use xlink:href="#icon-night"></use>
+        </svg>
+    </div>
+    <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+        <use xlink:href="#icon-menu"></use>
+    </svg>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/blog/index.html">blog</a></li>
+            
+            <li><a href="/archives.html">archives</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+            
+            <li><a href="/logs.html">logs</a></li>
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+    <header
+      class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+      data-theme="default"
+    >
+      <div class="post-wrapper">
+        <div class="post-tags">
+          
+            
+              <a href="/tags.html#jekyll" class="post-tag">jekyll</a>
+            
+              <a href="/tags.html#theme" class="post-tag">theme</a>
+            
+              <a href="/tags.html#blog" class="post-tag">blog</a>
+            
+              <a href="/tags.html#ac" class="post-tag">ac</a>
+            
+              <a href="/tags.html#develop" class="post-tag">develop</a>
+            
+              <a href="/tags.html#%E4%B8%BB%E9%A2%98" class="post-tag">主题</a>
+            
+              <a href="/tags.html#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91" class="post-tag">前端开发</a>
+            
+              <a href="/tags.html#%E5%AD%A6%E6%9C%AF" class="post-tag">学术</a>
+            
+              <a href="/tags.html#%E8%BF%90%E7%BB%B4" class="post-tag">运维</a>
+            
+          
+        </div>
+        <h1>H2O-ac theme for Jekyll</h1>
+        <div class="post-meta">
+          <span class="post-meta-item">
+            <i class="iconfont icon-author"></i>zhonger
+          </span>
+          <time class="post-meta-item" datetime="21-12-22">
+            <i class="iconfont icon-date"></i>
+            
+              2021-12-22 11:50:00 +0000 
+            
+          </time>
+        </div>
+        <div class="post-meta">
+          
+          <span>本文总共 4751 字 <b>·</b> 阅读全文大约需要 14 分钟</span>
+          
+        </div>
+      </div>
+      
+      <div class="filter"></div>
+        <div class="post-cover" style="background: url('https://images.unsplash.com/photo-1614659754166-a2fd14dbc4d3?w=1600&q=900') center no-repeat; background-size: cover;"></div>
+      
+    </header>
+    <div class="post-content visible">
+      
+      <h2 class="post-subtitle">基于或许是最漂亮的 Jekyll 主题 H2O 的学术版</h2>
+      
+
+      
+      <div class="container">  
+        <div class="contents">
+          <article class="markdown-body">
+            <h2 id="前言">前言</h2>
+
+<p>  正如大家所知，Jekyll 是一款高可定制的、非常流行的静态博客生成工具。围绕着 Jekyll 也衍生出了很多优秀的 Jekyll 主题， 由 <a href="https://github.com/kaeyleo">廖柯宇</a> 开发的 <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a> 主题就是其中之一。极简主义、风格扁平化、卡片式布局、Medium 及知乎专栏的视觉风格等等特点，为我们带来了或许是迄今为止最漂亮的 Jekyll 主题。</p>
+
+<p>  诞生之初，H2O 主题就在 Github 平台上以 MIT 许可证协议开放了源代码。这吸引了很多小伙伴纷纷转投 Jekyll 和 H2O 主题的阵营，本人也是其中之一。随着使用者越来越多，不少的小伙伴在使用过程中发现了一些小问题并主动修复，最后贡献到了 H2O 的主项目，这让 H2O 主题变得更好。本人在使用过程中也的确是发现了一些与自己实际需求不大一致的地方，并且在原 H2O 主题的基础上做了一些改动。考虑到这些改动可能并不是大多数人的需求，直接向原 H2O 主题提交 pull 请求合并的必要性不大，因此决定将原项目 fork 并改名为 <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">zhonger/jekyll-theme-H2O-ac</a>。现正式将源代码以与 H2O 主题相同的 MIT 许可证协议在 Github 平台上公开。</p>
+
+<p>  在此，非常感谢廖柯宇及其他小伙伴对于 H2O-ac 主题的基础主题 H2O 的代码开发和开放共享。</p>
+
+<h2 id="新特性">新特性</h2>
+
+<h3 id="更适合学术人和运维程序员的页面结构">更适合学术人和运维程序员的页面结构</h3>
+
+<p>  H2O 主题其实在很大程度上已经满足了大部分人的需求，只是对于学术研究人员和运维程序员来说，个人觉得页面结构还是有点不够合适。学术研究人员比较重视在首页直接展示个人信息和研究情况，能够让人很快地了解到所需的信息，这其实是将 About me 这样一个平常的辅助页面当成了主页面来用。另外，运维程序员比较重视能一览所有文章的标题以迅速找到感兴趣的文章。虽然搜索功能、标签页、卡片展示页都能够列出所有的文章，但个人觉得还是不够简洁、方便。而像 Hexo 静态生成工具自带的 Archive 归档页面比较能满足这样的需求。除此之外，整个博客的系统日志变迁记录对于运维程序员来说也非常重要，毕竟如果通过发布一篇文章来描述变迁过程并不适合联系起来完整了解。如果有系统日志页，就可以按照年份、月份、事件的先后进行简要的描述，并且一览无遗。</p>
+
+<p>  因此，在 H2O-ac 主题中，从原来 H2O 的主页中抽出框架做成了页面模板。根据实际页面的内容需求，增加了<strong>学术首页</strong>、<strong>归档页</strong>和<strong>系统日志页</strong>。</p>
+
+<h4 id="学术首页">学术首页</h4>
+
+<p>  学术首页如下图所示，并将原来 H2O 中的卡片首页移动到 blog 子目录下了。如果读者想要看到文章卡片展示页，还是可以点击顶部的导航栏中的 BLOG 直接访问。</p>
+
+<p><img src="https://i.vgy.me/pICzcE.png" alt="首页 Home" /></p>
+
+<h4 id="归档页">归档页</h4>
+
+<p>  归档页设置为由 Jekyll 按照模板自动生成，以年份、日期、文章标题分级列表展示，简洁清晰。</p>
+
+<p><img src="https://i.vgy.me/25IZzc.png" alt="归档页 Archives" /></p>
+
+<h4 id="系统日志页">系统日志页</h4>
+
+<p>  系统日志页其实也不是经常更新的，只有在博客整体作出设置或改进的才加以说明。另外，也可以将一些固定的站点信息放置在系统日志页，比如站点的多点部署信息，读者可以根据此信息访问最快、最合适的节点。</p>
+
+<p><img src="https://i.vgy.me/tUCNEb.png" alt="系统日志 Log" /></p>
+
+<h3 id="使用体验提升">使用体验提升</h3>
+
+<p>  廖柯宇也在 H2O 主题的默认页面中写道，目前 H2O 主题还有一些可优化的内容，比如夜间模式、查看大图等。这里，根据个人的一些实际需求和了解，在 H2O-ac 主题中做了调整。</p>
+
+<h4 id="社交图标扩展">社交图标扩展</h4>
+
+<p>  H2O 原有的社交图标其实已经比较广泛，只是还有些领域局限性，比如学术研究人员可能更希望展示谷歌学术、ResearchGate、ORCID 等社交图标及链接，而运维开发人员可能更希望展示 SegmentFault、CSDN、博客园等社交图标及链接。这里在 H2O 提供的社交图标类型基础上做了这些平台图标的扩充，同时尝试了 Symbol 引用的方式来实现社交图标鼠标悬停的效果，从而简化代码（H2O 采用的是字体图标的方式，需要为每一个社交图标定义不同的主题色）。</p>
+
+<p><img src="https://i.vgy.me/ebCeqM.png" alt="社交图标 SNS" /></p>
+
+<h4 id="查看大图">查看大图</h4>
+
+<p>  查看大图功能的确对于读者的阅读体验来说有很大的提升。就像我们阅读文献一样，可能首先会只看文章附图来大致掌握文章的核心点。博文的查看大图功能也可能有这样的异曲同工之妙。这里是采用的 <a href="https://fancyapps.com/docs/ui/fancybox">Fancybox</a> 插件实现的。H2O-ac 主题中只使用了最简单的配置，用户可以根据需求查看文档做出更多的修改。</p>
+
+<p><img src="https://i.vgy.me/FNRDTv.png" alt="查看大图 Fancybox" /></p>
+
+<p>(2022年4月30日更新)</p>
+
+<p>  ，由于 fancybox 库作者对原使用的 v3.5.7 版本不再进行维护和更新，现将版本更新至新的 v4.0 版本，即 <a href="https://github.com/fancyapps/ui">fancyapps/ui</a>。另，新增将 alt 内容作为图片的描述显示在 fancybox 中。</p>
+
+<h4 id="深色模式切换按钮">深色模式切换按钮</h4>
+
+<p>(2022年4月30日更新)</p>
+
+<p>  原来 H2O 主题的深色模式切换需要在 _config.yml 文件中配置开启，并且只能在固定时间段使用。此次更新在页面右上角提供了深色/浅色模式一键切换按钮，如下图所示。由于更新了深色模式采用 cookie 的方式来确定，此深色模式切换按钮可以与原来的深色模式配置共存。</p>
+
+<p><img src="https://s2.loli.net/2022/04/30/2DqtSQkUG1CNWPO.png" alt="jekyll-h2o-ac-f01.png" /></p>
+
+<p><img src="https://s2.loli.net/2022/04/30/ormGJnRtDzPK9WV.png" alt="jekyll-h2o-ac-f02.png" /></p>
+
+<h4 id="提示框">提示框</h4>
+
+<p>(2022年4月30日更新)</p>
+
+<p>  通过引入 <a href="https://github.com/lazee/premonition">lazee/premonition</a> 库新增五种提示框：笔记、提示、警告、错误、引用，完全兼容原生 Markdown 语法，并对样式进行了主题适应。以下为五种提示框的实际效果。</p>
+
+<div class="premonition note"> <div class="header"> <svg class="icon note" aria-hidden="true"> <use xlink:href="#icon-note"></use> </svg> <div class="title"> Note </div> </div> <div class="content"> <p>The body of the note goes here. Premonition allows you to write any <code class="language-plaintext highlighter-rouge">Markdown</code> inside the block.</p>
+
+
+
+ </div> </div>
+<div class="premonition info"> <div class="header"> <svg class="icon info" aria-hidden="true"> <use xlink:href="#icon-info"></use> </svg> <div class="title"> 小提示 </div> </div> <div class="content"> <p>The body of the info goes here. Premonition allows you to write any <code class="language-plaintext highlighter-rouge">Markdown</code> inside the block.</p>
+
+
+
+ </div> </div>
+<div class="premonition warning"> <div class="header"> <svg class="icon warning" aria-hidden="true"> <use xlink:href="#icon-warning"></use> </svg> <div class="title"> Warning </div> </div> <div class="content"> <p>The body of the warning goes here. Premonition allows you to write any <code class="language-plaintext highlighter-rouge">Markdown</code> inside the block.</p>
+
+
+
+ </div> </div>
+<div class="premonition error"> <div class="header"> <svg class="icon error" aria-hidden="true"> <use xlink:href="#icon-error"></use> </svg> <div class="title"> Error </div> </div> <div class="content"> <p>The body of the error goes here. Premonition allows you to write any <code class="language-plaintext highlighter-rouge">Markdown</code> inside the block.</p>
+
+
+
+ </div> </div>
+<div class="premonition citation"> <div class="header"> <svg class="icon citation" aria-hidden="true"> <use xlink:href="#icon-citation"></use> </svg> </div> <div class="content"> <p>To be or not to be is a question.</p>
+
+
+
+ </div> <div class="ref"> ------ 莎士比亚 </div> </div>
+<h4 id="代码高亮优化">代码高亮优化</h4>
+
+<p>  本人使用 H2O 主题的时候代码高亮功能还是沿用的 Jekyll 自带的，后来 H2O 主题也开始采用了 <a href="https://prismjs.com/">Prism.js</a>。不过由于使用的是 <code class="language-plaintext highlighter-rouge">OKAIDIA</code> 高亮主题，所以有些段落中的格式化字段显示上有些问题。这里，仍然采用默认主题，并且扩增到 Prism.js 支持的所有编程语言类型。效果可以从前一句的 OKAIDIA 字段和下面即将出现的代码片段看出。</p>
+
+<h4 id="字数统计及阅读时间估计">字数统计及阅读时间估计</h4>
+
+<p>  字数统计及阅读时间估计这个小功能其实以前在用 WordPress 的时候比较常见。虽然说统计和估计的结果不一定完全准确，但是还是起到了一定的辅助阅读的作用。效果可以查看本页标题下的基本信息区域。</p>
+
+<h4 id="文章侧边索引导航">文章侧边索引导航</h4>
+
+<p>(2022年1月9日更新)</p>
+
+<p>  在一些基于 Bootstrap 前端框架的 Jekyll 主题中，这个功能比较常见。由于本主题未使用 Bootstrap 前端框架，所以添加起来稍微有些麻烦，现已增加此功能。在浏览器窗口超过 1050 px 的情况下，在文章页面可以正常看到右侧的文章侧边索引导航。当窗口滑动时，侧边索引导航也会跟着滑动。在浏览器窗口不足 1050 px 的情况下，侧边索引导航自动隐藏。在 _config.yml 配置文件中，可以通过设置 <code class="language-plaintext highlighter-rouge">toc: false</code> 来全局禁用此功能。</p>
+
+<p>(2022年4月30日更新)</p>
+
+<p>  在原来的基础上增加了跟随左侧内容滑动高亮。当左侧内容向上或向下滑动时，右侧索引导航将会使对应的对应一级标题高亮。</p>
+
+<h4 id="配置项">配置项</h4>
+
+<p>  配置项中新增了<strong>友情链接</strong>和<strong>备案号</strong>功能，可以直接在 _config.yml 文件的对应配置项下设置即可，如下所示。友情链接主要是方便跟其他博主交换友链，备案号主要是为了方便部署在国内需备案的 vps 或虚拟主机上。此处，二者都可以置空。</p>
+
+<p>(2022年4月30日更新)</p>
+
+<p>  新增全站一键灰度化功能、时间格式配置。在国家公祭日等需要灰度化以示哀悼的时候可以将灰度化配置设置为 true，平常使用默认配置 false。时间格式这里一共提供了 3 种：第一种中英文站点使用皆宜，第二种适用于英文站点，第三种适用于中文站点。默认时间格式为第一种。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Links 友情链接</span>
+<span class="na">links</span><span class="pi">:</span>
+  <span class="s1">'</span><span class="s">Mr</span><span class="nv"> </span><span class="s">Li'</span><span class="err">:</span> <span class="s1">'</span><span class="s">https://lisz.me'</span>
+
+<span class="c1"># Beian 备案号</span>
+<span class="na">beian</span><span class="pi">:</span> <span class="s1">'</span><span class="s">沪ICP备xxxxxxxx号'</span>
+
+<span class="c1"># Gray 灰度化</span>
+<span class="na">gray</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="c1"># Time format 时间格式 </span>
+<span class="c1"># 0 -- 2022-04-29    1 -- 29 Apr 2022   2 -- 2022年4月29日</span>
+<span class="na">formats</span><span class="pi">:</span>
+  <span class="na">time</span><span class="pi">:</span> <span class="s">0</span> 
+</code></pre></div></div>
+
+<h4 id="前端自动构建工作流优化">前端自动构建工作流优化</h4>
+
+<p>  H2O 主题中使用了 Gulp + Node-Sass 的方案来自动化前端构建工作流。不得不说，这个方案还是很不错的，只是随着 Gulp 和 Node-Sass 版本的更新，对 NodeJS 环境及其他依赖库都有一些要求。这里，H2O-ac 主题在 package.json 文件中将所有库都更新到目前最新，对应版本列表如下所示。另外，为了减少一些第三方 CSS 样式的请求数，利用自动构建工作流将固定的第三方 CSS 样式文件合并并压缩为 plugins.min.css 文件。app.min.css 仍为多个自编写 CSS 样式文件的合并压缩。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">运行环境或依赖库</th>
+      <th style="text-align: center">版本号</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">NodeJS</td>
+      <td style="text-align: center">v17.0.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">gulp</td>
+      <td style="text-align: center">v4.0.2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">gulp-clean-css</td>
+      <td style="text-align: center">v4.3.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">gulp-rename</td>
+      <td style="text-align: center">v20.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">gulp-sass</td>
+      <td style="text-align: center">v5.0.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">gulp-uglify</td>
+      <td style="text-align: center">v3.0.2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">gulp-concat</td>
+      <td style="text-align: center">v2.6.1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">node-sass</td>
+      <td style="text-align: center">v7.0.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="使用方法">使用方法</h2>
+
+<h3 id="初始化">初始化</h3>
+
+<h4 id="方式一从模板新建博客">方式一：从模板新建博客</h4>
+
+<p>  为了方便用户使用 H2O-ac 主题，特别提供了 Github 的模板功能。如下图所示，访问 <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> 可以看到如下的 Use this template 按钮，点击该按钮即可用 H2O-ac 主题创建自己的博客代码仓库。想要了解更多步骤，可以访问 Github 官方文档之 <a href="https://docs.github.com/cn/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">从模板创建仓库</a>。</p>
+
+<p><img src="https://i.vgy.me/y7lv2Q.png" alt="从模板新建 Start the blog from the template" /></p>
+
+<h4 id="方式二已有博客迁移">方式二：已有博客迁移</h4>
+
+<p>  <del>暂时无法支持 gem 直接切换主题，后续将更新此方式。目前只能使用方式一创建仓库后，将文章的 markdown 文件复制到 _posts 目录下应用 H2O-ac 主题。</del></p>
+
+<p>(2021年12月26日更新)</p>
+
+<p>  现已支持使用 gem 直接切换主题 <code class="language-plaintext highlighter-rouge">jekyll-theme-h2o-ac</code>。同时，也推出了一键式构建工具 <a href="https://github.com/zhonger/easy-to-h2o-ac">easy-to-h2o-ac</a>，详细可以见项目主页。</p>
+
+<h3 id="本地测试">本地测试</h3>
+
+<p>  在进行本地测试时，如果需要修改一些样式，则需要先执行 <code class="language-plaintext highlighter-rouge">npm install</code> 来完成前端自动构建工作流依赖库的安装。注意，这里设定的可用 NodeJS 版本为 v17.0.0，使用老版本会报错。其次，务必使用 <code class="language-plaintext highlighter-rouge">bundle install</code> 安装主题所需的所有 Ruby 依赖库。最后执行 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --livereload</code> 命令即可在本地实时同步预览。只要不修改 _config.yml 文件，不必中断后再启动。然后就是在 _posts 目录下写 markdown 文章即可。</p>
+
+<h3 id="发布部署">发布部署</h3>
+
+<p>  由于 Github 提供 Jekyll 静态生成器的静态页面托管，只要打开仓库的 Pages 功能，当推送更新到 Github 时即会自动部署。此处值得注意的是，如果代码仓库的名字不是 <code class="language-plaintext highlighter-rouge">username.github.io</code>，而也没有为该仓库的 Pages 提供自定义域名，那么这个仓库将会被部署到子目录，因此此时必须在 _config.yml 文件中设置 base_url，从而生成正常的静态页面。</p>
+
+<h2 id="结束语">结束语</h2>
+
+<p>  再次感谢廖柯宇及其他小伙伴们对 H2O 主题的付出，没有 H2O 主题就没有 H2O-ac 主题！H2O-ac 主题后续也将继续更新，欢迎小伙伴们使用和 <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">Star</a>，也欢迎大家一起来贡献代码。</p>
+
+<p>（Ps: <del>由于沿用了 H2O 的 Logo，可能会侵犯廖柯宇的版权。如果的确如此，后续将会设计一个新的 Logo。</del> 已采用新 Logo。）
+（2022年1月10日更新）</p>
+
+          </article>
+        </div>   
+        <div class="table-of-contents">
+          <h2>Contents</h2>
+          <ul><li><a href="#前言">前言</a></li><li><a href="#新特性">新特性</a><ul><li><a href="#更适合学术人和运维程序员的页面结构">更适合学术人和运维程序员的页面结构</a><ul><li><a href="#学术首页">学术首页</a></li><li><a href="#归档页">归档页</a></li><li><a href="#系统日志页">系统日志页</a></li></ul></li><li><a href="#使用体验提升">使用体验提升</a><ul><li><a href="#社交图标扩展">社交图标扩展</a></li><li><a href="#查看大图">查看大图</a></li><li><a href="#深色模式切换按钮">深色模式切换按钮</a></li><li><a href="#提示框">提示框</a></li><li><a href="#代码高亮优化">代码高亮优化</a></li><li><a href="#字数统计及阅读时间估计">字数统计及阅读时间估计</a></li><li><a href="#文章侧边索引导航">文章侧边索引导航</a></li><li><a href="#配置项">配置项</a></li><li><a href="#前端自动构建工作流优化">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a href="#使用方法">使用方法</a><ul><li><a href="#初始化">初始化</a><ul><li><a href="#方式一从模板新建博客">方式一：从模板新建博客</a></li><li><a href="#方式二已有博客迁移">方式二：已有博客迁移</a></li></ul></li><li><a href="#本地测试">本地测试</a></li><li><a href="#发布部署">发布部署</a></li></ul></li><li><a href="#结束语">结束语</a></li></ul>
+        </div>
+      </div>
+      
+
+      
+      <div class="social-share-wrapper">
+        <div class="social-share"></div>
+      </div>
+      
+    </div>
+
+    <section class="author-detail">
+      <section class="post-footer-item author-card">
+        <div class="avatar">
+          <img src="/assets/img/profile.webp" alt="">
+        </div>
+        <div class="author-name" rel="author">zhonger</div>
+        <div class="bio">
+          <p>全栈开发者，热爱前端、运维和架构设计</p>
+        </div>
+        
+        <ul class="sns-links">
+          
+          <li>
+            <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-google-scholar"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-researchgate"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://orcid.org/0000-0001-6973-3825" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-ORCID"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://github.com/zhonger" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-linkedin"></use>
+              </svg>
+            </a>
+          </li>
+          
+          <li>
+            <a href="https://segmentfault.com/u/wuwozhonger" target="_blank">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-segmentfault"></use>
+              </svg>
+            </a>
+          </li>
+          
+        </ul>
+        
+      </section>
+      <section class="post-footer-item read-next">
+        
+
+        
+        <div class="read-next-item">
+          <a href="/test/mathjax-test.html" class="read-next-link"></a>
+            <section>
+              <span>MathJax Test</span>
+              <p>mathjax in markdown :)</p>
+            </section>
+            
+            <div class="filter"></div>
+            <img src="https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900" alt="">
+            
+        </div>
+        
+      </section>
+      
+    </section>
+
+    <footer class="g-footer">
+  <section>Mr Li ©
+  
+  
+    2015
+    -
+  
+  2022
+  
+    <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxxxxxxx号</a>
+  
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">Theme H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a>) 
+  
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+  
+  
+  </section>
+</footer>
+<script src="//at.alicdn.com/t/font_3046306_01vmvxg1mj23.js"></script>
+
+  </div>
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+  <script>
+      // 给图片添加链接
+      $(document).ready(function() {
+          $("p img").each(function() {
+              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + this.src + "' data-caption='" + this.alt + "'></a>";
+              $(this).wrapAll(strA);
+          });
+
+          Fancybox.bind('[data-fancybox]', {
+            on: {
+              load: (fancybox, slide) => {
+                var gray = $("meta[property='og:gray']").attr('content');
+                if(gray == "true"){
+                    $(".fancybox__content img").addClass("gray");
+                    $(".carousel__track .fancybox__thumb").addClass("gray");
+                }
+              }
+            }
+          });
+          
+      });
+  </script>
+  
+</body>
+
+</html>
