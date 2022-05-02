@@ -23,6 +23,7 @@
     <link rel="preload" href="/assets/fonts/Merriweather-Regular.ttf" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css">
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 	
 	<!--
@@ -319,6 +320,10 @@ k &amp;= m\oplus c
         
       </section>
       
+
+      
+      <section class="post-footer-item comment" id="waline"></section>
+      
     </section>
 
     <footer class="g-footer">
@@ -384,11 +389,13 @@ k &amp;= m\oplus c
   <script src="/assets/js/index.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.cjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js.map"></script> -->
   <!-- <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
-  <!-- <script src="https://unpkg.com/tippy.js@6"></script> --> -->
+  <!-- <script src="https://unpkg.com/tippy.js@6"></script> --> 
+
   <script>
       // 给图片添加链接
       $(document).ready(function() {
@@ -407,13 +414,19 @@ k &amp;= m\oplus c
                 }
               }
             }
-          });
-
+          });   
           
+          
+            Waline.init({
+              el: '#waline',
+              serverURL: 'https://h2o-ac-waline.vercel.app',
+              comment: true,
+              pageview: true,
+            });
           
       });
   </script>
-  <script src="//at.alicdn.com/t/font_3046306_grazh6f1jxt.js"></script>
+  <script src="//at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
   
 </body>
 
