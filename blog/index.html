@@ -25,7 +25,7 @@
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
 
-<body>
+<body ontouchstart="">
     <!--[if lt IE 10]>
     <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
     <![endif]-->
@@ -130,7 +130,9 @@
                         
                     </div>
                     <time class="post-date" datetime="21-12-22">
-                        <!-- 22 Dec 2021 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-time2"></use>
+                        </svg>
                         
                           2021-12-22 
                         
@@ -162,7 +164,9 @@
                         
                     </div>
                     <time class="post-date" datetime="17-07-30">
-                        <!-- 30 Jul 2017 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-time2"></use>
+                        </svg>
                         
                           2017-07-30 
                         
@@ -198,7 +202,9 @@
                         
                     </div>
                     <time class="post-date" datetime="17-04-18">
-                        <!-- 18 Apr 2017 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-time2"></use>
+                        </svg>
                         
                           2017-04-18 
                         
@@ -230,7 +236,9 @@
                         
                     </div>
                     <time class="post-date" datetime="17-04-18">
-                        <!-- 18 Apr 2017 -->
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-time2"></use>
+                        </svg>
                         
                           2017-04-18 
                         
@@ -391,20 +399,25 @@
   
   </section>
 </footer>
-<button aria-label="Scroll back to top" class="bttb" type="button">
-  <svg class="icon up" aria-hidden="true">
-    <use xlink:href="#icon-up"></use>
+<button id="bttb" aria-label="Scroll back to top" class="bttb" type="button">
+  <svg class="icon up day" aria-hidden="true">
+    <use xlink:href="#icon-up-day"></use>
+  </svg>
+  <svg class="icon up night" aria-hidden="true">
+    <use xlink:href="#icon-up-night"></use>
   </svg>
 </button>
 
-<script src="//at.alicdn.com/t/font_3046306_1wfow6bxtae.js"></script>
 
 
       </div>
-      <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-      <script src="/assets/js/prism.js"></script>
-      <script src="/assets/js/index.min.js"></script>
-      
     </div>
+
+    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+    <script src="/assets/js/prism.js"></script>
+    <script src="/assets/js/index.min.js"></script>
+    <script src="//at.alicdn.com/t/font_3046306_grazh6f1jxt.js"></script>
+    
 </body>
 </html>

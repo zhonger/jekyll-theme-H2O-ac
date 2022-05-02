@@ -19,11 +19,9 @@
     <link rel="Shortcut Icon" href="/favicon.ico">
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
     <link rel="stylesheet" href="/assets/css/plugins.min.css">
     <link rel="preload" href="/assets/fonts/Merriweather-Regular.ttf" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/app.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 	
@@ -162,18 +160,25 @@ Author: Ray-Eldath
         <h1>H2O theme for Jekyll</h1>
         <div class="post-meta">
           <span class="post-meta-item">
-            <i class="iconfont icon-author"></i>kaeyleo
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-user"></use>
+            </svg>
+            kaeyleo
           </span>
           <time class="post-meta-item" datetime="17-04-18">
-            <i class="iconfont icon-date"></i>
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-time"></use>
+            </svg>
             
               2017-04-18 00:00:00 +0000 
             
           </time>
-        </div>
-        <div class="post-meta">
           
-          <span>本文总共 1425 字 <b>·</b> 阅读全文大约需要 5 分钟</span>
+          <span class="post-meta-item">
+            <svg class="icon info2" aria-hidden="true">
+              <use xlink:href="#icon-info2"></use>
+            </svg>
+          本文总共 1425 字 <b>·</b> 阅读全文大约需要 5 分钟</span>
           
         </div>
       </div>
@@ -439,13 +444,15 @@ Author: Ray-Eldath
   
   </section>
 </footer>
-<button aria-label="Scroll back to top" class="bttb" type="button">
-  <svg class="icon up" aria-hidden="true">
-    <use xlink:href="#icon-up"></use>
+<button id="bttb" aria-label="Scroll back to top" class="bttb" type="button">
+  <svg class="icon up day" aria-hidden="true">
+    <use xlink:href="#icon-up-day"></use>
+  </svg>
+  <svg class="icon up night" aria-hidden="true">
+    <use xlink:href="#icon-up-night"></use>
   </svg>
 </button>
 
-<script src="//at.alicdn.com/t/font_3046306_1wfow6bxtae.js"></script>
 
   </div>
 
@@ -480,6 +487,12 @@ Author: Ray-Eldath
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/index.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.cjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js.map"></script> -->
+  <!-- <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+  <!-- <script src="https://unpkg.com/tippy.js@6"></script> --> -->
   <script>
       // 给图片添加链接
       $(document).ready(function() {
@@ -499,9 +512,12 @@ Author: Ray-Eldath
               }
             }
           });
+
+          
           
       });
   </script>
+  <script src="//at.alicdn.com/t/font_3046306_grazh6f1jxt.js"></script>
   
 </body>
 

@@ -5,8 +5,8 @@
     <description>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</description>
     <link>//</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 01 May 2022 04:59:04 +0000</pubDate>
-    <lastBuildDate>Sun, 01 May 2022 04:59:04 +0000</lastBuildDate>
+    <pubDate>Mon, 02 May 2022 01:01:09 +0000</pubDate>
+    <lastBuildDate>Mon, 02 May 2022 01:01:09 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -71,9 +71,9 @@
 
 &lt;p&gt;  原来 H2O 主题的深色模式切换需要在 _config.yml 文件中配置开启，并且只能在固定时间段使用。此次更新在页面右上角提供了深色/浅色模式一键切换按钮，如下图所示。由于更新了深色模式采用 cookie 的方式来确定，此深色模式切换按钮可以与原来的深色模式配置共存。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2022/04/30/2DqtSQkUG1CNWPO.png&quot; alt=&quot;jekyll-h2o-ac-f01.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.vgy.me/x1CWVs.png&quot; alt=&quot;浅色模式 Day mode&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2022/04/30/ormGJnRtDzPK9WV.png&quot; alt=&quot;jekyll-h2o-ac-f02.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.vgy.me/8DGFx2.png&quot; alt=&quot;深色模式 Night mode&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;提示框&quot;&gt;提示框&lt;/h4&gt;
 
@@ -109,6 +109,21 @@
 &lt;h4 id=&quot;代码高亮优化&quot;&gt;代码高亮优化&lt;/h4&gt;
 
 &lt;p&gt;  本人使用 H2O 主题的时候代码高亮功能还是沿用的 Jekyll 自带的，后来 H2O 主题也开始采用了 &lt;a href=&quot;https://prismjs.com/&quot;&gt;Prism.js&lt;/a&gt;。不过由于使用的是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OKAIDIA&lt;/code&gt; 高亮主题，所以有些段落中的格式化字段显示上有些问题。这里，仍然采用默认主题，并且扩增到 Prism.js 支持的所有编程语言类型。效果可以从前一句的 OKAIDIA 字段和下面即将出现的代码片段看出。&lt;/p&gt;
+
+&lt;h4 id=&quot;代码复制&quot;&gt;代码复制&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月1日更新)&lt;/p&gt;
+
+&lt;p&gt;  由于主题设置有复制自动添加版权保护文字，导致复制代码或无法直接使用。但是如果直接去掉版权保护又不大合适，于是新增代码复制功能。当使用如下所示代码片段右上角的复制按钮时，代码会被复制到粘贴板，且不包含版权保护文字，可以放心直接使用。&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Target --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;foo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com/zenorocha/clipboard.js.git&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Trigger --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-clipboard-target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#foo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;assets/clippy.svg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Copy to clipboard&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;字数统计及阅读时间估计&quot;&gt;字数统计及阅读时间估计&lt;/h4&gt;
 

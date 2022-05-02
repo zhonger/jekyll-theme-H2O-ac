@@ -25,7 +25,7 @@
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
 
-<body>
+<body ontouchstart="">
     <!--[if lt IE 10]>
     <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
     <![endif]-->
@@ -100,8 +100,13 @@
 <ul>
   <li>2021年12月22日，发布 <a href="https://github.com/zhonger/jekyll-theme-H20-ac">H20-ac</a> Jekyll 主题的第一个公开版本。</li>
   <li>2021年12月24日，正式支持 gem 方式使用本主题。</li>
+</ul>
+
+<h3 id="2022">2022</h3>
+
+<ul>
   <li>2022年1月6~11日，修复若干错误及优化了某些小细节。</li>
-  <li>2022年4月29日~30日，新增若干功能，修复某些小细节
+  <li>2022年4月29日~30日，新增若干功能，修复某些小细节：
     <ul>
       <li>新增深色模式切换按钮</li>
       <li>新增全站一键灰度化</li>
@@ -110,6 +115,15 @@
       <li>新增五种提示框支持</li>
       <li>升级 fancybox 到 v4.0 版本</li>
       <li>修复了深色模式下一些有问题的样式。</li>
+    </ul>
+  </li>
+  <li>2022年5月1日，新增一些小工具及修复若干错误 ：
+    <ul>
+      <li>新增返回顶部按钮，当页面不在顶部且有向上滑动的动作时显示，当有向下滑动的动作或已经到顶部时自动隐藏。</li>
+      <li>修复返回顶部按钮在移动端不显示及无法还原触碰效果</li>
+      <li>新增代码片段一键复制按钮</li>
+      <li>移除遗留字体样式图标，全面 symbol 化。</li>
+      <li>修复网站 favicon 在子目录下无法正常显示的错误</li>
     </ul>
   </li>
 </ul>
@@ -317,19 +331,24 @@
   
   </section>
 </footer>
-<button aria-label="Scroll back to top" class="bttb" type="button">
-  <svg class="icon up" aria-hidden="true">
-    <use xlink:href="#icon-up"></use>
+<button id="bttb" aria-label="Scroll back to top" class="bttb" type="button">
+  <svg class="icon up day" aria-hidden="true">
+    <use xlink:href="#icon-up-day"></use>
+  </svg>
+  <svg class="icon up night" aria-hidden="true">
+    <use xlink:href="#icon-up-night"></use>
   </svg>
 </button>
 
-<script src="//at.alicdn.com/t/font_3046306_1wfow6bxtae.js"></script>
 
       </div>
-      <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-      <script src="/assets/js/prism.js"></script>
-      <script src="/assets/js/index.min.js"></script>
-      
     </div>
+
+    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+    <script src="/assets/js/prism.js"></script>
+    <script src="/assets/js/index.min.js"></script>
+    <script src="//at.alicdn.com/t/font_3046306_grazh6f1jxt.js"></script>
+    
 </body>
 </html>
