@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: https://h2o-ac.pages.dev/sitemap.xml

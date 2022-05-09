@@ -3,10 +3,10 @@
   <channel>
     <title>Mr Li</title>
     <description>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</description>
-    <link>//</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 09 May 2022 12:55:41 +0000</pubDate>
-    <lastBuildDate>Mon, 09 May 2022 12:55:41 +0000</lastBuildDate>
+    <link>https://h2o-ac.pages.dev//</link>
+    <atom:link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 09 May 2022 13:13:01 +0000</pubDate>
+    <lastBuildDate>Mon, 09 May 2022 13:13:01 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -256,8 +256,8 @@
 （2022年1月10日更新）&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 Dec 2021 11:50:00 +0000</pubDate>
-        <link>/tech/new-theme-h2o-ac.html</link>
-        <guid isPermaLink="true">/tech/new-theme-h2o-ac.html</guid>
+        <link>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html</guid>
         
         <category>jekyll</category>
         
@@ -303,8 +303,8 @@ k &amp;amp;= m\oplus c
 &lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;公式块要想有较好的显示效果，必须在公式块标记符&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;strong&gt;前后&lt;/strong&gt;留有空行，否则公式将不能正常居中。行内公式无此问题。&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 Jul 2017 00:00:00 +0000</pubDate>
-        <link>/test/mathjax-test.html</link>
-        <guid isPermaLink="true">/test/mathjax-test.html</guid>
+        <link>https://h2o-ac.pages.dev/test/mathjax-test.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/test/mathjax-test.html</guid>
         
         <category>mathjax</category>
         
@@ -434,8 +434,8 @@ k &amp;amp;= m\oplus c
 &lt;p&gt;这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Star&lt;/a&gt;。&lt;/p&gt;
 </description>
         <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
-        <link>/tech/new-theme-h2o.html</link>
-        <guid isPermaLink="true">/tech/new-theme-h2o.html</guid>
+        <link>https://h2o-ac.pages.dev/tech/new-theme-h2o.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/tech/new-theme-h2o.html</guid>
         
         <category>jekyll</category>
         
@@ -471,8 +471,8 @@ k &amp;amp;= m\oplus c
 &lt;iframe type=&quot;text/html&quot; width=&quot;100%&quot; height=&quot;385&quot; src=&quot;http://www.youtube.com/embed/gfmjMWjn-Xg&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
-        <link>/hello-jekyll.html</link>
-        <guid isPermaLink="true">/hello-jekyll.html</guid>
+        <link>https://h2o-ac.pages.dev/hello-jekyll.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/hello-jekyll.html</guid>
         
         <category>jekyll</category>
         
