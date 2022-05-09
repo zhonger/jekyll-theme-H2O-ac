@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,16 @@
     <meta property="og:site_name" content="Mr Li">
     <meta property="og:gray" content="false">
     
-    <link rel="Shortcut Icon" href="/favicon.ico">
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css">
     <link rel="stylesheet" href="/assets/css/plugins.min.css">
     <link rel="preload" href="/assets/fonts/Merriweather-Regular.ttf" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/app.min.css">
-    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body ontouchstart="">
@@ -36,7 +39,7 @@
       <div class="visible">
         <header class="g-header">
     <div class="g-logo">
-      <a href="/"></a>
+      <a href="/" aria-label="logo"></a>
     </div>
     <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
     <div id="mode-toggle">
@@ -53,17 +56,41 @@
     <nav class="g-nav">
         <ul>
             
-            <li><a href="/">home</a></li>
+            <li>
+                <a href="/" aria-label="home">
+                    home
+                </a>
+            </li>
             
-            <li><a href="/blog/index.html">blog</a></li>
+            <li>
+                <a href="/blog/index.html" aria-label="blog">
+                    blog
+                </a>
+            </li>
             
-            <li><a href="/archives.html">archives</a></li>
+            <li>
+                <a href="/archives.html" aria-label="archives">
+                    archives
+                </a>
+            </li>
             
-            <li><a href="/tags.html">tags</a></li>
+            <li>
+                <a href="/tags.html" aria-label="tags">
+                    tags
+                </a>
+            </li>
             
-            <li><a href="/feed.xml">RSS</a></li>
+            <li>
+                <a href="/feed.xml" aria-label="RSS">
+                    RSS
+                </a>
+            </li>
             
-            <li><a href="/logs.html">logs</a></li>
+            <li>
+                <a href="/logs.html" aria-label="logs">
+                    logs
+                </a>
+            </li>
             
             <li class="mode">
                 <svg class="icon day" aria-hidden="true">
@@ -265,7 +292,7 @@
                 <ul id="sns-links" class="sns-links">
                     
                     <li>
-                        <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank">
+                        <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank" aria-label="google-scholar">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-google-scholar"></use>
                             </svg>
@@ -273,7 +300,7 @@
                     </li>
                     
                     <li>
-                        <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank">
+                        <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank" aria-label="researchgate">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-researchgate"></use>
                             </svg>
@@ -281,7 +308,7 @@
                     </li>
                     
                     <li>
-                        <a href="https://orcid.org/0000-0001-6973-3825" target="_blank">
+                        <a href="https://orcid.org/0000-0001-6973-3825" target="_blank" aria-label="ORCID">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-ORCID"></use>
                             </svg>
@@ -289,7 +316,7 @@
                     </li>
                     
                     <li>
-                        <a href="https://github.com/zhonger" target="_blank">
+                        <a href="https://github.com/zhonger" target="_blank" aria-label="github">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-github"></use>
                             </svg>
@@ -297,7 +324,7 @@
                     </li>
                     
                     <li>
-                        <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank">
+                        <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank" aria-label="linkedin">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-linkedin"></use>
                             </svg>
@@ -305,7 +332,7 @@
                     </li>
                     
                     <li>
-                        <a href="https://segmentfault.com/u/wuwozhonger" target="_blank">
+                        <a href="https://segmentfault.com/u/wuwozhonger" target="_blank" aria-label="segmentfault">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-segmentfault"></use>
                             </svg>
@@ -394,7 +421,7 @@
   </section>
   <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">Theme H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a>) 
   
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" class="license" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
   
   
   </section>
@@ -413,11 +440,59 @@
       </div>
     </div>
 
-    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
     <script src="/assets/js/prism.js"></script>
     <script src="/assets/js/index.min.js"></script>
-    <script src="//at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
+    <script src="https://at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
+    
+    <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+    
+    <!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
     
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +18,11 @@
     <meta property="og:site_name" content="Mr Li">
     <meta property="og:gray" content="false">
     
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png"/>
     <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css">
     <link rel="stylesheet" href="/assets/css/plugins.min.css">
@@ -25,69 +31,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css">
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-	
-	<!--
-Author: Ray-Eldath
-refer to:
- - http://docs.mathjax.org/en/latest/options/index.html
--->
-
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-		jax: ["input/TeX", "output/HTML-CSS"],
-		tex2jax: {
-			inlineMath: [ ["$", "$"] ],
-			displayMath: [ ["$$", "$$"] ],
-			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-		},
-		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-      });
-    </script>
-
-	
-    <!--
-Author: Ray-Eldath
--->
-<style>
-    .markdown-body .anchor{
-        float: left;
-        margin-top: -8px;
-        margin-left: -20px;
-        padding-right: 4px;
-        line-height: 1;
-        opacity: 0;
-    }
-    
-    .markdown-body .anchor .anchor-icon{
-        font-size: 15px
-    }
-</style>
-<script>
-    $(document).ready(function() {
-        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
-        for(let node of nodes) {
-            var anchor = document.createElement("a")
-            var anchorIcon = document.createElement("i")
-            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
-            anchorIcon.setAttribute("aria-hidden", true)
-            anchor.setAttribute("class", "anchor")
-            anchor.setAttribute("href", "#" + node.getAttribute("id"))
-            
-            anchor.onmouseover = function() {
-                this.style.opacity = "0.4"
-            }
-            
-            anchor.onmouseout = function() {
-                this.style.opacity = "0"
-            }
-            
-            anchor.appendChild(anchorIcon)
-            node.appendChild(anchor)
-        }
-    })
-</script>
 </head>
 
 
@@ -100,7 +43,7 @@ Author: Ray-Eldath
   
     <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
     <div class="g-logo">
-      <a href="/"></a>
+      <a href="/" aria-label="logo"></a>
     </div>
     <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
     <div id="mode-toggle">
@@ -117,17 +60,41 @@ Author: Ray-Eldath
     <nav class="g-nav">
         <ul>
             
-            <li><a href="/">home</a></li>
+            <li>
+                <a href="/" aria-label="home">
+                    home
+                </a>
+            </li>
             
-            <li><a href="/blog/index.html">blog</a></li>
+            <li>
+                <a href="/blog/index.html" aria-label="blog">
+                    blog
+                </a>
+            </li>
             
-            <li><a href="/archives.html">archives</a></li>
+            <li>
+                <a href="/archives.html" aria-label="archives">
+                    archives
+                </a>
+            </li>
             
-            <li><a href="/tags.html">tags</a></li>
+            <li>
+                <a href="/tags.html" aria-label="tags">
+                    tags
+                </a>
+            </li>
             
-            <li><a href="/feed.xml">RSS</a></li>
+            <li>
+                <a href="/feed.xml" aria-label="RSS">
+                    RSS
+                </a>
+            </li>
             
-            <li><a href="/logs.html">logs</a></li>
+            <li>
+                <a href="/logs.html" aria-label="logs">
+                    logs
+                </a>
+            </li>
             
             <li class="mode">
                 <svg class="icon day" aria-hidden="true">
@@ -229,19 +196,19 @@ Author: Ray-Eldath
 
 <p>  学术首页如下图所示，并将原来 H2O 中的卡片首页移动到 blog 子目录下了。如果读者想要看到文章卡片展示页，还是可以点击顶部的导航栏中的 BLOG 直接访问。</p>
 
-<p><img src="https://i.vgy.me/pICzcE.png" alt="首页 Home" /></p>
+<p><img src="https://i.lisz.me/blog/XyT038.webp" alt="首页 Home" /></p>
 
 <h4 id="归档页">归档页</h4>
 
 <p>  归档页设置为由 Jekyll 按照模板自动生成，以年份、日期、文章标题分级列表展示，简洁清晰。</p>
 
-<p><img src="https://i.vgy.me/25IZzc.png" alt="归档页 Archives" /></p>
+<p><img src="https://i.lisz.me/blog/lj4vUP.webp" alt="归档页 Archives" /></p>
 
 <h4 id="系统日志页">系统日志页</h4>
 
 <p>  系统日志页其实也不是经常更新的，只有在博客整体作出设置或改进的才加以说明。另外，也可以将一些固定的站点信息放置在系统日志页，比如站点的多点部署信息，读者可以根据此信息访问最快、最合适的节点。</p>
 
-<p><img src="https://i.vgy.me/tUCNEb.png" alt="系统日志 Log" /></p>
+<p><img src="https://i.lisz.me/blog/7QLEc6.webp" alt="系统日志 Log" /></p>
 
 <h3 id="使用体验提升">使用体验提升</h3>
 
@@ -251,13 +218,13 @@ Author: Ray-Eldath
 
 <p>  H2O 原有的社交图标其实已经比较广泛，只是还有些领域局限性，比如学术研究人员可能更希望展示谷歌学术、ResearchGate、ORCID 等社交图标及链接，而运维开发人员可能更希望展示 SegmentFault、CSDN、博客园等社交图标及链接。这里在 H2O 提供的社交图标类型基础上做了这些平台图标的扩充，同时尝试了 Symbol 引用的方式来实现社交图标鼠标悬停的效果，从而简化代码（H2O 采用的是字体图标的方式，需要为每一个社交图标定义不同的主题色）。</p>
 
-<p><img src="https://i.vgy.me/ebCeqM.png" alt="社交图标 SNS" /></p>
+<p><img src="https://i.lisz.me/blog/UpnQdk.webp" alt="社交图标 SNS" /></p>
 
 <h4 id="查看大图">查看大图</h4>
 
 <p>  查看大图功能的确对于读者的阅读体验来说有很大的提升。就像我们阅读文献一样，可能首先会只看文章附图来大致掌握文章的核心点。博文的查看大图功能也可能有这样的异曲同工之妙。这里是采用的 <a href="https://fancyapps.com/docs/ui/fancybox">Fancybox</a> 插件实现的。H2O-ac 主题中只使用了最简单的配置，用户可以根据需求查看文档做出更多的修改。</p>
 
-<p><img src="https://i.vgy.me/FNRDTv.png" alt="查看大图 Fancybox" /></p>
+<p><img src="https://i.lisz.me/blog/BzfBoz.webp" alt="查看大图 Fancybox" /></p>
 
 <p>(2022年4月30日更新)</p>
 
@@ -269,9 +236,9 @@ Author: Ray-Eldath
 
 <p>  原来 H2O 主题的深色模式切换需要在 _config.yml 文件中配置开启，并且只能在固定时间段使用。此次更新在页面右上角提供了深色/浅色模式一键切换按钮，如下图所示。由于更新了深色模式采用 cookie 的方式来确定，此深色模式切换按钮可以与原来的深色模式配置共存。</p>
 
-<p><img src="https://i.vgy.me/x1CWVs.png" alt="浅色模式 Day mode" /></p>
+<p><img src="https://i.lisz.me/blog/EPhFN9.webp" alt="浅色模式 Day mode" /></p>
 
-<p><img src="https://i.vgy.me/8DGFx2.png" alt="深色模式 Night mode" /></p>
+<p><img src="https://i.lisz.me/blog/BD7BqC.webp" alt="深色模式 Night mode" /></p>
 
 <h4 id="提示框">提示框</h4>
 
@@ -428,7 +395,7 @@ Author: Ray-Eldath
 
 <p>  为了方便用户使用 H2O-ac 主题，特别提供了 Github 的模板功能。如下图所示，访问 <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> 可以看到如下的 Use this template 按钮，点击该按钮即可用 H2O-ac 主题创建自己的博客代码仓库。想要了解更多步骤，可以访问 Github 官方文档之 <a href="https://docs.github.com/cn/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template">从模板创建仓库</a>。</p>
 
-<p><img src="https://i.vgy.me/y7lv2Q.png" alt="从模板新建 Start the blog from the template" /></p>
+<p><img src="https://i.lisz.me/blog/oHHZZh.webp" alt="从模板新建 Start the blog from the template" /></p>
 
 <h4 id="方式二已有博客迁移">方式二：已有博客迁移</h4>
 
@@ -482,7 +449,7 @@ Author: Ray-Eldath
         <ul class="sns-links">
           
           <li>
-            <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank">
+            <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank" aria-label="google-scholar">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-google-scholar"></use>
               </svg>
@@ -490,7 +457,7 @@ Author: Ray-Eldath
           </li>
           
           <li>
-            <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank">
+            <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank" aria-label="researchgate">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-researchgate"></use>
               </svg>
@@ -498,7 +465,7 @@ Author: Ray-Eldath
           </li>
           
           <li>
-            <a href="https://orcid.org/0000-0001-6973-3825" target="_blank">
+            <a href="https://orcid.org/0000-0001-6973-3825" target="_blank" aria-label="ORCID">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-ORCID"></use>
               </svg>
@@ -506,7 +473,7 @@ Author: Ray-Eldath
           </li>
           
           <li>
-            <a href="https://github.com/zhonger" target="_blank">
+            <a href="https://github.com/zhonger" target="_blank" aria-label="github">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-github"></use>
               </svg>
@@ -514,7 +481,7 @@ Author: Ray-Eldath
           </li>
           
           <li>
-            <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank">
+            <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank" aria-label="linkedin">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-linkedin"></use>
               </svg>
@@ -522,7 +489,7 @@ Author: Ray-Eldath
           </li>
           
           <li>
-            <a href="https://segmentfault.com/u/wuwozhonger" target="_blank">
+            <a href="https://segmentfault.com/u/wuwozhonger" target="_blank" aria-label="segmentfault">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-segmentfault"></use>
               </svg>
@@ -537,7 +504,7 @@ Author: Ray-Eldath
 
         
         <div class="read-next-item">
-          <a href="/test/mathjax-test.html" class="read-next-link"></a>
+          <a href="/test/mathjax-test.html" class="read-next-link" aria-label="MathJax Test"></a>
             <section>
               <span>MathJax Test</span>
               <p>mathjax in markdown :)</p>
@@ -568,7 +535,7 @@ Author: Ray-Eldath
   </section>
   <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">Theme H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a>) 
   
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" class="license" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
   
   
   </section>
@@ -609,15 +576,19 @@ Author: Ray-Eldath
       wechatQrcodeTitle: "分享到微信朋友圈",
       wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
     });
+    $("a.social-share-icon").each(function() {
+      $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
   </script>
 
   
 
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/index.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.cjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js.map"></script> -->
@@ -628,7 +599,8 @@ Author: Ray-Eldath
       // 给图片添加链接
       $(document).ready(function() {
           $("p img").each(function() {
-              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + this.src + "' data-caption='" + this.alt + "'></a>";
+              $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload");
+              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
               $(this).wrapAll(strA);
           });
 
@@ -645,10 +617,59 @@ Author: Ray-Eldath
           });   
           
           
+
       });
   </script>
-  <script src="//at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
+  <script src="https://at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
   
+  <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+  
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
 </body>
 
 </html>

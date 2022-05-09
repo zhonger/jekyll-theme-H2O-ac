@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +18,11 @@
     <meta property="og:site_name" content="Mr Li">
     <meta property="og:gray" content="false">
     
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png"/>
     <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css">
     <link rel="stylesheet" href="/assets/css/plugins.min.css">
@@ -25,69 +31,6 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css">
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-	
-	<!--
-Author: Ray-Eldath
-refer to:
- - http://docs.mathjax.org/en/latest/options/index.html
--->
-
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-		jax: ["input/TeX", "output/HTML-CSS"],
-		tex2jax: {
-			inlineMath: [ ["$", "$"] ],
-			displayMath: [ ["$$", "$$"] ],
-			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-		},
-		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-      });
-    </script>
-
-	
-    <!--
-Author: Ray-Eldath
--->
-<style>
-    .markdown-body .anchor{
-        float: left;
-        margin-top: -8px;
-        margin-left: -20px;
-        padding-right: 4px;
-        line-height: 1;
-        opacity: 0;
-    }
-    
-    .markdown-body .anchor .anchor-icon{
-        font-size: 15px
-    }
-</style>
-<script>
-    $(document).ready(function() {
-        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
-        for(let node of nodes) {
-            var anchor = document.createElement("a")
-            var anchorIcon = document.createElement("i")
-            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
-            anchorIcon.setAttribute("aria-hidden", true)
-            anchor.setAttribute("class", "anchor")
-            anchor.setAttribute("href", "#" + node.getAttribute("id"))
-            
-            anchor.onmouseover = function() {
-                this.style.opacity = "0.4"
-            }
-            
-            anchor.onmouseout = function() {
-                this.style.opacity = "0"
-            }
-            
-            anchor.appendChild(anchorIcon)
-            node.appendChild(anchor)
-        }
-    })
-</script>
 </head>
 
 
@@ -100,7 +43,7 @@ Author: Ray-Eldath
   
     <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
     <div class="g-logo">
-      <a href="/"></a>
+      <a href="/" aria-label="logo"></a>
     </div>
     <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
     <div id="mode-toggle">
@@ -117,17 +60,41 @@ Author: Ray-Eldath
     <nav class="g-nav">
         <ul>
             
-            <li><a href="/">home</a></li>
+            <li>
+                <a href="/" aria-label="home">
+                    home
+                </a>
+            </li>
             
-            <li><a href="/blog/index.html">blog</a></li>
+            <li>
+                <a href="/blog/index.html" aria-label="blog">
+                    blog
+                </a>
+            </li>
             
-            <li><a href="/archives.html">archives</a></li>
+            <li>
+                <a href="/archives.html" aria-label="archives">
+                    archives
+                </a>
+            </li>
             
-            <li><a href="/tags.html">tags</a></li>
+            <li>
+                <a href="/tags.html" aria-label="tags">
+                    tags
+                </a>
+            </li>
             
-            <li><a href="/feed.xml">RSS</a></li>
+            <li>
+                <a href="/feed.xml" aria-label="RSS">
+                    RSS
+                </a>
+            </li>
             
-            <li><a href="/logs.html">logs</a></li>
+            <li>
+                <a href="/logs.html" aria-label="logs">
+                    logs
+                </a>
+            </li>
             
             <li class="mode">
                 <svg class="icon day" aria-hidden="true">
@@ -240,7 +207,7 @@ k &amp;= m\oplus c
         <ul class="sns-links">
           
           <li>
-            <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank">
+            <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank" aria-label="google-scholar">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-google-scholar"></use>
               </svg>
@@ -248,7 +215,7 @@ k &amp;= m\oplus c
           </li>
           
           <li>
-            <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank">
+            <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank" aria-label="researchgate">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-researchgate"></use>
               </svg>
@@ -256,7 +223,7 @@ k &amp;= m\oplus c
           </li>
           
           <li>
-            <a href="https://orcid.org/0000-0001-6973-3825" target="_blank">
+            <a href="https://orcid.org/0000-0001-6973-3825" target="_blank" aria-label="ORCID">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-ORCID"></use>
               </svg>
@@ -264,7 +231,7 @@ k &amp;= m\oplus c
           </li>
           
           <li>
-            <a href="https://github.com/zhonger" target="_blank">
+            <a href="https://github.com/zhonger" target="_blank" aria-label="github">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-github"></use>
               </svg>
@@ -272,7 +239,7 @@ k &amp;= m\oplus c
           </li>
           
           <li>
-            <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank">
+            <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank" aria-label="linkedin">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-linkedin"></use>
               </svg>
@@ -280,7 +247,7 @@ k &amp;= m\oplus c
           </li>
           
           <li>
-            <a href="https://segmentfault.com/u/wuwozhonger" target="_blank">
+            <a href="https://segmentfault.com/u/wuwozhonger" target="_blank" aria-label="segmentfault">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-segmentfault"></use>
               </svg>
@@ -293,7 +260,7 @@ k &amp;= m\oplus c
       <section class="post-footer-item read-next">
         
         <div class="read-next-item">
-          <a href="/tech/new-theme-h2o-ac.html" class="read-next-link"></a>
+          <a href="/tech/new-theme-h2o-ac.html" class="read-next-link" aria-label="H2O-ac theme for Jekyll"></a>
           <section>
             <span>H2O-ac theme for Jekyll</span>
             <p>前言</p>
@@ -307,7 +274,7 @@ k &amp;= m\oplus c
 
         
         <div class="read-next-item">
-          <a href="/tech/new-theme-h2o.html" class="read-next-link"></a>
+          <a href="/tech/new-theme-h2o.html" class="read-next-link" aria-label="H2O theme for Jekyll"></a>
             <section>
               <span>H2O theme for Jekyll</span>
               <p>正如我在微博上所说的，使用Jekyll半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模...</p>
@@ -338,7 +305,7 @@ k &amp;= m\oplus c
   </section>
   <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">Theme H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a>) 
   
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" class="license" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
   
   
   </section>
@@ -379,15 +346,19 @@ k &amp;= m\oplus c
       wechatQrcodeTitle: "分享到微信朋友圈",
       wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
     });
+    $("a.social-share-icon").each(function() {
+      $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
+    });
   </script>
 
   
 
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/index.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.cjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js.map"></script> -->
@@ -398,7 +369,8 @@ k &amp;= m\oplus c
       // 给图片添加链接
       $(document).ready(function() {
           $("p img").each(function() {
-              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + this.src + "' data-caption='" + this.alt + "'></a>";
+              $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload");
+              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
               $(this).wrapAll(strA);
           });
 
@@ -415,10 +387,59 @@ k &amp;= m\oplus c
           });   
           
           
+
       });
   </script>
-  <script src="//at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
+  <script src="https://at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
   
+  <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+  
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
 </body>
 
 </html>
