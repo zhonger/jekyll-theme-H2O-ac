@@ -356,8 +356,9 @@
   <script>
       // 给图片添加链接
       $(document).ready(function() {
+          var baseurl = $("meta[property='og:baseurl']").attr('content');
           $("p img").each(function() {
-              $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload");
+              $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
               var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
               $(this).wrapAll(strA);
           });
