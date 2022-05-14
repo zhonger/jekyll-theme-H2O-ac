@@ -24,22 +24,32 @@
     <link rel="Shortcut Icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css">
-    <link rel="stylesheet" href="/assets/css/plugins.min.css">
-    <link rel="preload" href="/assets/fonts/Merriweather-Regular.ttf" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/normalize.min.css" />
+    <link rel="stylesheet" href="/assets/css/plugins.min.css" />
+    <link rel="preload" href="/assets/fonts/Merriweather-Regular.ttf" as="font" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assets/fonts/Merriweather-Regular.ttf" media="print" onload="this.media='all'" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.css">
+    
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
 
 
-<body>
+
+<body class="line-numbers" ontouchstart="">
+
+
   <!--[if lt IE 10]>
   <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
   <![endif]-->
   
-  <div id="all">
+  <div id="all" class="post">
   
     <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
     <div class="g-logo">
@@ -147,7 +157,7 @@
           </span>
           <time class="post-meta-item" datetime="21-12-22">
             <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-time"></use>
+              <use xlink:href="#icon-calendar"></use>
             </svg>
             
               2021-12-22 11:50:00 +0000 
@@ -155,10 +165,25 @@
           </time>
           
           <span class="post-meta-item">
-            <svg class="icon info2" aria-hidden="true">
-              <use xlink:href="#icon-info2"></use>
+            <svg class="icon words" aria-hidden="true">
+              <use xlink:href="#icon-words"></use>
             </svg>
-          本文总共 5363 字 <b>·</b> 阅读全文大约需要 16 分钟</span>
+          本文总共 5984 字
+          </span>
+          <span class="post-meta-item">
+            <svg class="icon time" aria-hidden="true">
+              <use xlink:href="#icon-time"></use>
+            </svg>
+             阅读全文大约需要 18 分钟
+          </span>
+          
+          <span class="post-meta-item">
+            <svg class="icon pv" aria-hidden="true">
+              <use xlink:href="#icon-pv"></use>
+            </svg>
+            本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次
+          </span>
+          
           
         </div>
       </div>
@@ -275,11 +300,31 @@
 
 <p>  本人使用 H2O 主题的时候代码高亮功能还是沿用的 Jekyll 自带的，后来 H2O 主题也开始采用了 <a href="https://prismjs.com/">Prism.js</a>。不过由于使用的是 <code class="language-plaintext highlighter-rouge">OKAIDIA</code> 高亮主题，所以有些段落中的格式化字段显示上有些问题。这里，仍然采用默认主题，并且扩增到 Prism.js 支持的所有编程语言类型。效果可以从前一句的 OKAIDIA 字段和下面即将出现的代码片段看出。</p>
 
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@font-face</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Merriweather'</span><span class="p">;</span>
+  <span class="nl">src</span><span class="p">:</span> <span class="n">local</span><span class="p">(</span><span class="s2">'Merriweather'</span><span class="p">),</span> <span class="sx">url(https://fonts.gstatic.com/...)</span> <span class="n">format</span><span class="p">(</span><span class="s2">'woff2'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>(2022年5月14日更新)</p>
+
+<p>  更换 Prism 库加载方式，采用按需自动加载代码类型，尽可能减少因 Prism 造成的阻塞。修复了某些样式问题。增加显示行数支持、官方主题选择支持。如下所示可以进行设置，具体主题风格样式可以访问 <a href="https://prismjs.com/">Prism 官网</a> 了解更多。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Prism</span>
+<span class="na">prism</span><span class="pi">:</span>
+  <span class="na">theme</span><span class="pi">:</span> <span class="s">tomorrow</span>
+  <span class="na">line_numbers</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
 <h4 id="代码复制">代码复制</h4>
 
 <p>(2022年5月1日更新)</p>
 
 <p>  由于主题设置有复制自动添加版权保护文字，导致复制代码或无法直接使用。但是如果直接去掉版权保护又不大合适，于是新增代码复制功能。当使用如下所示代码片段右上角的复制按钮时，代码会被复制到粘贴板，且不包含版权保护文字，可以放心直接使用。</p>
+
+<p>(2022年5月14日更新)</p>
+
+<p>  调整复制按钮位置，自动识别代码块的代码类型并显示。</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Target --&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"foo"</span> <span class="na">value=</span><span class="s">"https://github.com/zenorocha/clipboard.js.git"</span><span class="nt">&gt;</span>
@@ -304,6 +349,10 @@
 
 <p>  在原来的基础上增加了跟随左侧内容滑动高亮。当左侧内容向上或向下滑动时，右侧索引导航将会使对应的对应一级标题高亮。</p>
 
+<p>(2022年5月14日更新)</p>
+
+<p>  为文章的移动端页面添加了索引导航按钮。鉴于单页面的内容有限及侧边位置空间有限，暂未对单页面进行支持。</p>
+
 <h4 id="支持-waline-评论系统">支持 Waline 评论系统</h4>
 
 <p>  目前已支持基于 Valine 衍生的简洁、安全的评论系统。可以根据官方提供的 <a href="https://waline.js.org/guide/get-started.html">快速上手</a> 进行配置，以下为 _config.yml 中需要配置的内容：</p>
@@ -316,6 +365,19 @@
 </code></pre></div></div>
 
 <p>  目前未对多评论系统同时支持进行优化，所以如果 Disqus 和 Waline 同时开启时，Disqus 在前 Waline 在后同时出现。如果用户环境无法访问 Disqus 即只能看到 Waline。</p>
+
+<h4 id="支持-pwa">支持 PWA</h4>
+
+<p>(2022年5月11日更新)</p>
+
+<p>  全面支持 PWA，访问速度得到较大提升。移动端访问可以像原生 APP 那样使用。如果访问过全站一遍之后，则可以完全离线使用。如下所示，可以配置 PWA 的主题色和短名称。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># PWA</span>
+<span class="na">pwa</span><span class="pi">:</span>
+  <span class="na">color</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#81BBFF'</span>
+  <span class="na">short_name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">lisz'</span>
+</code></pre></div></div>
+
 <h4 id="配置项">配置项</h4>
 
 <p>  配置项中新增了<strong>友情链接</strong>和<strong>备案号</strong>功能，可以直接在 _config.yml 文件的对应配置项下设置即可，如下所示。友情链接主要是方便跟其他博主交换友链，备案号主要是为了方便部署在国内需备案的 vps 或虚拟主机上。此处，二者都可以置空。</p>
@@ -323,6 +385,10 @@
 <p>(2022年4月30日更新)</p>
 
 <p>  新增全站一键灰度化功能、时间格式配置。在国家公祭日等需要灰度化以示哀悼的时候可以将灰度化配置设置为 true，平常使用默认配置 false。时间格式这里一共提供了 3 种：第一种中英文站点使用皆宜，第二种适用于英文站点，第三种适用于中文站点。默认时间格式为第一种。</p>
+
+<p>(2022年5月14日更新)</p>
+
+<p>  新增 <a href="https://busuanzi.ibruce.info/">不蒜子</a> 统计方式，可以显示全站访问次数、全站访问用户数、文章页面阅读量。如下设置可以开启。</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Links 友情链接</span>
 <span class="na">links</span><span class="pi">:</span>
@@ -338,6 +404,9 @@
 <span class="c1"># 0 -- 2022-04-29    1 -- 29 Apr 2022   2 -- 2022年4月29日</span>
 <span class="na">formats</span><span class="pi">:</span>
   <span class="na">time</span><span class="pi">:</span> <span class="s">0</span> 
+
+<span class="c1"># Busuanzi Analytics</span>
+<span class="na">busuanzi</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
 <h4 id="前端自动构建工作流优化">前端自动构建工作流优化</h4>
@@ -424,7 +493,7 @@
         </div>   
         <div class="table-of-contents">
           <h2>Contents</h2>
-          <ul><li><a href="#前言">前言</a></li><li><a href="#新特性">新特性</a><ul><li><a href="#更适合学术人和运维程序员的页面结构">更适合学术人和运维程序员的页面结构</a><ul><li><a href="#学术首页">学术首页</a></li><li><a href="#归档页">归档页</a></li><li><a href="#系统日志页">系统日志页</a></li></ul></li><li><a href="#使用体验提升">使用体验提升</a><ul><li><a href="#社交图标扩展">社交图标扩展</a></li><li><a href="#查看大图">查看大图</a></li><li><a href="#深色模式切换按钮">深色模式切换按钮</a></li><li><a href="#提示框">提示框</a></li><li><a href="#代码高亮优化">代码高亮优化</a></li><li><a href="#代码复制">代码复制</a></li><li><a href="#字数统计及阅读时间估计">字数统计及阅读时间估计</a></li><li><a href="#文章侧边索引导航">文章侧边索引导航</a></li><li><a href="#支持-waline-评论系统">支持 Waline 评论系统</a></li><li><a href="#配置项">配置项</a></li><li><a href="#前端自动构建工作流优化">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a href="#使用方法">使用方法</a><ul><li><a href="#初始化">初始化</a><ul><li><a href="#方式一从模板新建博客">方式一：从模板新建博客</a></li><li><a href="#方式二已有博客迁移">方式二：已有博客迁移</a></li></ul></li><li><a href="#本地测试">本地测试</a></li><li><a href="#发布部署">发布部署</a></li></ul></li><li><a href="#结束语">结束语</a></li></ul>
+          <ul><li><a href="#前言">前言</a></li><li><a href="#新特性">新特性</a><ul><li><a href="#更适合学术人和运维程序员的页面结构">更适合学术人和运维程序员的页面结构</a><ul><li><a href="#学术首页">学术首页</a></li><li><a href="#归档页">归档页</a></li><li><a href="#系统日志页">系统日志页</a></li></ul></li><li><a href="#使用体验提升">使用体验提升</a><ul><li><a href="#社交图标扩展">社交图标扩展</a></li><li><a href="#查看大图">查看大图</a></li><li><a href="#深色模式切换按钮">深色模式切换按钮</a></li><li><a href="#提示框">提示框</a></li><li><a href="#代码高亮优化">代码高亮优化</a></li><li><a href="#代码复制">代码复制</a></li><li><a href="#字数统计及阅读时间估计">字数统计及阅读时间估计</a></li><li><a href="#文章侧边索引导航">文章侧边索引导航</a></li><li><a href="#支持-waline-评论系统">支持 Waline 评论系统</a></li><li><a href="#支持-pwa">支持 PWA</a></li><li><a href="#配置项">配置项</a></li><li><a href="#前端自动构建工作流优化">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a href="#使用方法">使用方法</a><ul><li><a href="#初始化">初始化</a><ul><li><a href="#方式一从模板新建博客">方式一：从模板新建博客</a></li><li><a href="#方式二已有博客迁移">方式二：已有博客迁移</a></li></ul></li><li><a href="#本地测试">本地测试</a></li><li><a href="#发布部署">发布部署</a></li></ul></li><li><a href="#结束语">结束语</a></li></ul>
         </div>
       </div>
       
@@ -539,7 +608,31 @@
   
   
   </section>
+  
+  <section>
+    <span id="busuanzi_container_site_pv">
+      👁️ Total Views <span id="busuanzi_value_site_pv"></span> <b>·</b>
+    </span>
+    <span id="busuanzi_container_site_uv">
+      👤 Total Visitors <span id="busuanzi_value_site_uv"></span>
+    </span>
+  </section>
+  
 </footer>
+<button id="list" aria-label="Scroll back to top" class="mobile-list" type="button">
+  <svg class="icon list day" aria-hidden="true">
+    <use xlink:href="#icon-list-day"></use>
+  </svg>
+  <svg class="icon list night" aria-hidden="true">
+    <use xlink:href="#icon-list-night"></use>
+  </svg>
+  <svg class="icon exit day" aria-hidden="true">
+    <use xlink:href="#icon-exit-day"></use>
+  </svg>
+  <svg class="icon exit night" aria-hidden="true">
+    <use xlink:href="#icon-exit-night"></use>
+  </svg>
+</button>
 <button id="bttb" aria-label="Scroll back to top" class="bttb" type="button">
   <svg class="icon up day" aria-hidden="true">
     <use xlink:href="#icon-up-day"></use>
@@ -583,18 +676,14 @@
 
   
 
-  <script src="/assets/js/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
   <script src="/assets/js/index.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy.cjs.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js.map"></script> -->
-  <!-- <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
-  <!-- <script src="https://unpkg.com/tippy.js@6"></script> --> 
-
   <script>
       // 给图片添加链接
       $(document).ready(function() {
@@ -621,7 +710,10 @@
 
       });
   </script>
-  <script src="https://at.alicdn.com/t/font_3046306_rpxw9us9jmc.js"></script>
+  <script src="https://at.alicdn.com/t/font_3046306_5ex1jlxzv93.js"></script>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
   
   <script>
     if ("serviceWorker" in navigator) {
