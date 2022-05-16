@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://h2o-ac.pages.dev/" rel="alternate" type="text/html" /><updated>2022-05-14T13:42:53+00:00</updated><id>https://h2o-ac.pages.dev/feed.xml</id><title type="html">Mr Li</title><subtitle>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</subtitle><author><name>zhonger</name></author><entry><title type="html">H2O-ac theme for Jekyll</title><link href="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html" rel="alternate" type="text/html" title="H2O-ac theme for Jekyll" /><published>2021-12-22T11:50:00+00:00</published><updated>2021-12-22T11:50:00+00:00</updated><id>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac</id><content type="html" xml:base="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html"><![CDATA[<h2 id="前言">前言</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://h2o-ac.pages.dev/" rel="alternate" type="text/html" /><updated>2022-05-16T14:27:15+00:00</updated><id>https://h2o-ac.pages.dev/feed.xml</id><title type="html">Mr Li</title><subtitle>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</subtitle><author><name>zhonger</name></author><entry><title type="html">H2O-ac theme for Jekyll</title><link href="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html" rel="alternate" type="text/html" title="H2O-ac theme for Jekyll" /><published>2021-12-22T11:50:00+00:00</published><updated>2021-12-22T11:50:00+00:00</updated><id>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac</id><content type="html" xml:base="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html"><![CDATA[<h2 id="前言">前言</h2>
 
 <p>  正如大家所知，Jekyll 是一款高可定制的、非常流行的静态博客生成工具。围绕着 Jekyll 也衍生出了很多优秀的 Jekyll 主题， 由 <a href="https://github.com/kaeyleo">廖柯宇</a> 开发的 <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a> 主题就是其中之一。极简主义、风格扁平化、卡片式布局、Medium 及知乎专栏的视觉风格等等特点，为我们带来了或许是迄今为止最漂亮的 Jekyll 主题。</p>
 
@@ -181,11 +181,15 @@
 
 <p>(2022年4月30日更新)</p>
 
-<p>  新增全站一键灰度化功能、时间格式配置。在国家公祭日等需要灰度化以示哀悼的时候可以将灰度化配置设置为 true，平常使用默认配置 false。时间格式这里一共提供了 3 种：第一种中英文站点使用皆宜，第二种适用于英文站点，第三种适用于中文站点。默认时间格式为第一种。</p>
+<p>  新增<strong>全站一键灰度化功能</strong>、<strong>时间格式</strong>配置。在国家公祭日等需要灰度化以示哀悼的时候可以将灰度化配置设置为 true，平常使用默认配置 false。时间格式这里一共提供了 3 种：第一种中英文站点使用皆宜，第二种适用于英文站点，第三种适用于中文站点。默认时间格式为第一种。</p>
 
 <p>(2022年5月14日更新)</p>
 
-<p>  新增 <a href="https://busuanzi.ibruce.info/">不蒜子</a> 统计方式，可以显示全站访问次数、全站访问用户数、文章页面阅读量。如下设置可以开启。</p>
+<p>  新增 <a href="https://busuanzi.ibruce.info/"><strong>不蒜子</strong></a> 统计方式，可以显示全站访问次数、全站访问用户数、文章页面阅读量。如下设置可以开启。</p>
+
+<p>(2022年5月16日更新)</p>
+
+<p>  新增 <a href="https://github.com/mikecao/umami"><strong>umami</strong></a> 统计方式，需要自行先搭建 umami 然后接入。接入配置只需要如下所示配置跟踪 id 和 JS 脚本地址。</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Links 友情链接</span>
 <span class="na">links</span><span class="pi">:</span>
@@ -204,11 +208,17 @@
 
 <span class="c1"># Busuanzi Analytics</span>
 <span class="na">busuanzi</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="c1"># Umami Analytics</span>
+<span class="na">umami</span><span class="pi">:</span>
+  <span class="na">status</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">xxxxxxxxxxxxx</span>
+  <span class="na">js</span><span class="pi">:</span> <span class="s">https://umami.example.com/umami.js</span>
 </code></pre></div></div>
 
 <h4 id="前端自动构建工作流优化">前端自动构建工作流优化</h4>
 
-<p>  H2O 主题中使用了 Gulp + Node-Sass 的方案来自动化前端构建工作流。不得不说，这个方案还是很不错的，只是随着 Gulp 和 Node-Sass 版本的更新，对 NodeJS 环境及其他依赖库都有一些要求。这里，H2O-ac 主题在 package.json 文件中将所有库都更新到目前最新，对应版本列表如下所示。另外，为了减少一些第三方 CSS 样式的请求数，利用自动构建工作流将固定的第三方 CSS 样式文件合并并压缩为 plugins.min.css 文件。app.min.css 仍为多个自编写 CSS 样式文件的合并压缩。</p>
+<p>  H2O 主题中使用了 Gulp + <del>Node-Sass</del> Sass 的方案来自动化前端构建工作流。不得不说，这个方案还是很不错的，只是随着 Gulp 和 <del>Node-Sass</del> Sass 版本的更新，对 NodeJS 环境及其他依赖库都有一些要求。这里，H2O-ac 主题在 package.json 文件中将所有库都更新到目前最新，对应版本列表如下所示。另外，为了减少一些第三方 CSS 样式的请求数，利用自动构建工作流将固定的第三方 CSS 样式文件合并并压缩为 plugins.min.css 文件。app.min.css 仍为多个自编写 CSS 样式文件的合并压缩。</p>
 
 <table>
   <thead>
@@ -247,8 +257,12 @@
       <td style="text-align: center">v2.6.1</td>
     </tr>
     <tr>
-      <td style="text-align: center">node-sass</td>
-      <td style="text-align: center">v7.0.0</td>
+      <td style="text-align: center"><del>node-sass</del></td>
+      <td style="text-align: center"><del>v7.0.0</del></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sass</td>
+      <td style="text-align: center">v1.51.0</td>
     </tr>
   </tbody>
 </table>
@@ -273,7 +287,7 @@
 
 <h3 id="本地测试">本地测试</h3>
 
-<p>  在进行本地测试时，如果需要修改一些样式，则需要先执行 <code class="language-plaintext highlighter-rouge">npm install</code> 来完成前端自动构建工作流依赖库的安装。注意，这里设定的可用 NodeJS 版本为 v17.0.0，使用老版本会报错。其次，务必使用 <code class="language-plaintext highlighter-rouge">bundle install</code> 安装主题所需的所有 Ruby 依赖库。最后执行 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --livereload</code> 命令即可在本地实时同步预览。只要不修改 _config.yml 文件，不必中断后再启动。然后就是在 _posts 目录下写 markdown 文章即可。</p>
+<p>  在进行本地测试时，如果需要修改一些样式，则需要先执行 <code class="language-plaintext highlighter-rouge">npm install</code> 来完成前端自动构建工作流依赖库的安装。注意，这里设定的可用 NodeJS 版本为 v17.0.0，使用老版本会报错。其次，务必使用 <code class="language-plaintext highlighter-rouge">bundle install</code> 安装主题所需的所有 Ruby 依赖库。最后执行 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --livereload</code> 命令即可在本地实时同步预览。只要不修改 _config.yml 文件，不必中断后再启动。然后就是在 <code class="language-plaintext highlighter-rouge">_posts</code> 目录下写 markdown 文章即可。</p>
 
 <h3 id="发布部署">发布部署</h3>
 

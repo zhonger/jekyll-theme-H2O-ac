@@ -168,7 +168,7 @@
             <svg class="icon words" aria-hidden="true">
               <use xlink:href="#icon-words"></use>
             </svg>
-          本文总共 5984 字
+          本文总共 6158 字
           </span>
           <span class="post-meta-item">
             <svg class="icon time" aria-hidden="true">
@@ -384,11 +384,15 @@
 
 <p>(2022年4月30日更新)</p>
 
-<p>  新增全站一键灰度化功能、时间格式配置。在国家公祭日等需要灰度化以示哀悼的时候可以将灰度化配置设置为 true，平常使用默认配置 false。时间格式这里一共提供了 3 种：第一种中英文站点使用皆宜，第二种适用于英文站点，第三种适用于中文站点。默认时间格式为第一种。</p>
+<p>  新增<strong>全站一键灰度化功能</strong>、<strong>时间格式</strong>配置。在国家公祭日等需要灰度化以示哀悼的时候可以将灰度化配置设置为 true，平常使用默认配置 false。时间格式这里一共提供了 3 种：第一种中英文站点使用皆宜，第二种适用于英文站点，第三种适用于中文站点。默认时间格式为第一种。</p>
 
 <p>(2022年5月14日更新)</p>
 
-<p>  新增 <a href="https://busuanzi.ibruce.info/">不蒜子</a> 统计方式，可以显示全站访问次数、全站访问用户数、文章页面阅读量。如下设置可以开启。</p>
+<p>  新增 <a href="https://busuanzi.ibruce.info/"><strong>不蒜子</strong></a> 统计方式，可以显示全站访问次数、全站访问用户数、文章页面阅读量。如下设置可以开启。</p>
+
+<p>(2022年5月16日更新)</p>
+
+<p>  新增 <a href="https://github.com/mikecao/umami"><strong>umami</strong></a> 统计方式，需要自行先搭建 umami 然后接入。接入配置只需要如下所示配置跟踪 id 和 JS 脚本地址。</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Links 友情链接</span>
 <span class="na">links</span><span class="pi">:</span>
@@ -407,11 +411,17 @@
 
 <span class="c1"># Busuanzi Analytics</span>
 <span class="na">busuanzi</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="c1"># Umami Analytics</span>
+<span class="na">umami</span><span class="pi">:</span>
+  <span class="na">status</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">xxxxxxxxxxxxx</span>
+  <span class="na">js</span><span class="pi">:</span> <span class="s">https://umami.example.com/umami.js</span>
 </code></pre></div></div>
 
 <h4 id="前端自动构建工作流优化">前端自动构建工作流优化</h4>
 
-<p>  H2O 主题中使用了 Gulp + Node-Sass 的方案来自动化前端构建工作流。不得不说，这个方案还是很不错的，只是随着 Gulp 和 Node-Sass 版本的更新，对 NodeJS 环境及其他依赖库都有一些要求。这里，H2O-ac 主题在 package.json 文件中将所有库都更新到目前最新，对应版本列表如下所示。另外，为了减少一些第三方 CSS 样式的请求数，利用自动构建工作流将固定的第三方 CSS 样式文件合并并压缩为 plugins.min.css 文件。app.min.css 仍为多个自编写 CSS 样式文件的合并压缩。</p>
+<p>  H2O 主题中使用了 Gulp + <del>Node-Sass</del> Sass 的方案来自动化前端构建工作流。不得不说，这个方案还是很不错的，只是随着 Gulp 和 <del>Node-Sass</del> Sass 版本的更新，对 NodeJS 环境及其他依赖库都有一些要求。这里，H2O-ac 主题在 package.json 文件中将所有库都更新到目前最新，对应版本列表如下所示。另外，为了减少一些第三方 CSS 样式的请求数，利用自动构建工作流将固定的第三方 CSS 样式文件合并并压缩为 plugins.min.css 文件。app.min.css 仍为多个自编写 CSS 样式文件的合并压缩。</p>
 
 <table>
   <thead>
@@ -450,8 +460,12 @@
       <td style="text-align: center">v2.6.1</td>
     </tr>
     <tr>
-      <td style="text-align: center">node-sass</td>
-      <td style="text-align: center">v7.0.0</td>
+      <td style="text-align: center"><del>node-sass</del></td>
+      <td style="text-align: center"><del>v7.0.0</del></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">sass</td>
+      <td style="text-align: center">v1.51.0</td>
     </tr>
   </tbody>
 </table>
@@ -476,7 +490,7 @@
 
 <h3 id="本地测试">本地测试</h3>
 
-<p>  在进行本地测试时，如果需要修改一些样式，则需要先执行 <code class="language-plaintext highlighter-rouge">npm install</code> 来完成前端自动构建工作流依赖库的安装。注意，这里设定的可用 NodeJS 版本为 v17.0.0，使用老版本会报错。其次，务必使用 <code class="language-plaintext highlighter-rouge">bundle install</code> 安装主题所需的所有 Ruby 依赖库。最后执行 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --livereload</code> 命令即可在本地实时同步预览。只要不修改 _config.yml 文件，不必中断后再启动。然后就是在 _posts 目录下写 markdown 文章即可。</p>
+<p>  在进行本地测试时，如果需要修改一些样式，则需要先执行 <code class="language-plaintext highlighter-rouge">npm install</code> 来完成前端自动构建工作流依赖库的安装。注意，这里设定的可用 NodeJS 版本为 v17.0.0，使用老版本会报错。其次，务必使用 <code class="language-plaintext highlighter-rouge">bundle install</code> 安装主题所需的所有 Ruby 依赖库。最后执行 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --livereload</code> 命令即可在本地实时同步预览。只要不修改 _config.yml 文件，不必中断后再启动。然后就是在 <code class="language-plaintext highlighter-rouge">_posts</code> 目录下写 markdown 文章即可。</p>
 
 <h3 id="发布部署">发布部署</h3>
 
@@ -489,6 +503,12 @@
 <p>（Ps: <del>由于沿用了 H2O 的 Logo，可能会侵犯廖柯宇的版权。如果的确如此，后续将会设计一个新的 Logo。</del> 已采用新 Logo。）
 （2022年1月10日更新）</p>
 
+            <div class="post-copyright">
+              <p><span>版权声明：</span>如无特别声明，本文版权归&nbsp;<a href="https://h2o-ac.pages.dev">Mr Li</a>&nbsp;所有，转载请注明本文链接。</p>
+              <p>（采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议进行授权）</p>
+              <p><span>本文标题：</span>《 H2O-ac theme for Jekyll 》</p>
+              <p><span>本文链接：</span><a href="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html">https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html</a></p>
+            </div>
           </article>
         </div>   
         <div class="table-of-contents">
@@ -602,10 +622,7 @@
     <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxxxxxxx号</a>
   
   </section>
-  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">Theme H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a>) 
-  
-  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="知识共享许可协议" class="license" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-  
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> v1.1.4  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a>) 
   
   </section>
   
@@ -712,9 +729,10 @@
   </script>
   <script src="https://at.alicdn.com/t/font_3046306_5ex1jlxzv93.js"></script>
   
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
   
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   <script>
     if ("serviceWorker" in navigator) {
         if (navigator.serviceWorker.controller) {
