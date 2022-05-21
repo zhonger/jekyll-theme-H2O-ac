@@ -17,6 +17,10 @@
     <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。">
     <meta property="og:site_name" content="Mr Li">
     <meta property="og:gray" content="false">
+    <meta property="post-date-format" content="0">
+    
+    <meta property="post-date" content="2021-12-22 11:50:00 +0000" />
+    
     
     <meta name="theme-color" content="#81BBFF" />
     <link rel="manifest" href="/manifest.json" />
@@ -159,9 +163,7 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-calendar"></use>
             </svg>
-            
-              2021-12-22 11:50:00 +0000 
-            
+            <span></span>
           </time>
           
           <span class="post-meta-item">
@@ -701,6 +703,9 @@
   <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
   <script>
       // 给图片添加链接
       $(document).ready(function() {
@@ -725,6 +730,25 @@
           
           
 
+          dayjs.extend(window.dayjs_plugin_customParseFormat);
+          dayjs.extend(window.dayjs_plugin_relativeTime);
+          var post_date = $("meta[property='post-date']").attr('content');
+          var post_date_format = $("meta[property='post-date-format']").attr('content');
+          if(post_date_format == 0){
+            var local_post_date_org = dayjs(post_date, 'YYYY-MM-DD HH:mm:ss ZZ');
+            var local_post_date = local_post_date_org.format('YYYY-MM-DD HH:mm:ss ZZ');
+          }else if(post_date_format == 1){
+            var local_post_date_org = dayjs(post_date, 'YYYY DD MMM HH:mm:ss ZZ');
+            var local_post_date = local_post_date_org.format('YYYY DD MMM HH:mm:ss ZZ');
+          }else {
+            var local_post_date_org = dayjs(post_date, 'YYYY年MM月DD日 HH:mm:ss ZZ');
+            var local_post_date = local_post_date_org.format('YYYY年MM月DD日 HH:mm:ss ZZ');
+          }
+          $(".post time span").html(local_post_date);
+          var relative_time = dayjs().diff(local_post_date_org, 'month');
+          if(relative_time > 24){
+            $(".post-copyright").append("<p class='tips'><span>友情提醒：</span>这篇文章发表有点久远了，内容可能有所过时。</p>");
+          }
       });
   </script>
   <script src="https://at.alicdn.com/t/font_3046306_5ex1jlxzv93.js"></script>

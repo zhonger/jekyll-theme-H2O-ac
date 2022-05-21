@@ -5,8 +5,8 @@
     <description>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</description>
     <link>https://h2o-ac.pages.dev//</link>
     <atom:link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 18 May 2022 04:50:48 +0000</pubDate>
-    <lastBuildDate>Wed, 18 May 2022 04:50:48 +0000</lastBuildDate>
+    <pubDate>Sat, 21 May 2022 05:18:57 +0000</pubDate>
+    <lastBuildDate>Sat, 21 May 2022 05:18:57 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -350,13 +350,16 @@
 
 &lt;p&gt;&lt;strong&gt;这是一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;align&lt;/code&gt;的公式&lt;/strong&gt;：&lt;/p&gt;
 
-\[\text{for OTP : $\qquad$ if }\quad E(k,\:m)=c\\
-\begin{align}
-k\oplus m &amp;amp;= c \\
-k &amp;amp;= m\oplus c
-\end{align}
-\\
-\#\{\;k \in \mathscr K : \quad E(k,\:m)=c \;\}=1 \quad \forall m,\:c\]
+\[\begin{align}
+    \Phi(0,x) = \max_{u \in \mathcal{D}} \bigg[
+        \mathbb{E} &amp;amp; \Phi\left(1, 
+        x + \int_0^1 \sigma^2(s) \, \zeta(s) \, u_s \, ds
+        + \int_0^1 \sigma(s) \, dW_s
+    \right) \\
+        &amp;amp;- \frac{1}{2} \int_0^1 \sigma^2(s) \, \zeta(s) \,
+        \mathbb{E} u_s^2  \, ds
+    \bigg].
+\end{align}\]
 
 &lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;公式块要想有较好的显示效果，必须在公式块标记符&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;strong&gt;前后&lt;/strong&gt;留有空行，否则公式将不能正常居中。行内公式无此问题。&lt;/p&gt;
 </description>
