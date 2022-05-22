@@ -163,20 +163,27 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-calendar"></use>
             </svg>
-            <span></span>
+            <span class="create-at"></span>
+          </time>
+          <time class="post-meta-item" datetime="21-12-22">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-update"></use>
+            </svg>
+            <span class="update-at"></span>
           </time>
           
           <span class="post-meta-item">
             <svg class="icon words" aria-hidden="true">
               <use xlink:href="#icon-words"></use>
             </svg>
-          本文总共 6158 字
+            
+          本文总共  6.8k  字
           </span>
           <span class="post-meta-item">
             <svg class="icon time" aria-hidden="true">
               <use xlink:href="#icon-time"></use>
             </svg>
-             阅读全文大约需要 18 分钟
+             阅读全文大约需要 20 分钟
           </span>
           
           <span class="post-meta-item">
@@ -341,6 +348,35 @@
 
 <p>  字数统计及阅读时间估计这个小功能其实以前在用 WordPress 的时候比较常见。虽然说统计和估计的结果不一定完全准确，但是还是起到了一定的辅助阅读的作用。效果可以查看本页标题下的基本信息区域。</p>
 
+<h4 id="时间本地化与最近更新时间">时间本地化与最近更新时间</h4>
+
+<p>(2022年5月22日更新)</p>
+
+<p>  为了支持来自不同时区的读者直接可以看到文章发布对应的本地时间，现已利用 dayjs 新增<strong>时间本地化</strong>功能。并利用 Github API 查询页面的最近一次 commit 更新时间作为文章<strong>最近更新时间</strong>。效果如下图所示。</p>
+
+<p><img src="https://i.lisz.top/blog/Anb4xH.webp" alt="构建位置时区 Jekyll deployment timezone" />
+<img src="https://i.lisz.top/blog/NMPXmQ.webp" alt="读者时区 Reader timezone" /></p>
+
+<p>  如需使用<strong>最近更新时间</strong>功能，务必在 _config.yml 文件中添加以下配置项：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Github</span>
+<span class="na">github</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">owner</span><span class="pi">:</span> <span class="s">github_username</span>
+  <span class="na">repository</span><span class="pi">:</span> <span class="s">github_project_name</span>
+</code></pre></div></div>
+
+<p>  如未正确进行以上配置，默认会将最近更新时间与发布时间保持一致。</p>
+
+<h4 id="版权显式声明">版权显式声明</h4>
+
+<p>(2022年5月18日更新)</p>
+
+<p>  之前的版本只会在页面底部的信息栏中显示一个 CC 4.0 的小图标，不是很醒目。根据调研其他静态网站主题，发现一般都会在文章的末尾自动生成一个比较醒目的版权声明。另外，在版权声明中也将根据最近更新时间来判断内容是否可能过时。如果最近更新时间距离当前时间大于 365 天，则会显示具体日期并提醒有内容过时的可能。效果如下所示。</p>
+
+<p><img src="https://i.lisz.top/blog/scNRyd.webp" alt="版权显式声明 Copyright" />
+<img src="https://i.lisz.top/blog/C8RWtL.webp" alt="内容可能过时提醒 Long time ago notification" /></p>
+
 <h4 id="文章侧边索引导航">文章侧边索引导航</h4>
 
 <p>(2022年1月9日更新)</p>
@@ -366,7 +402,16 @@
   <span class="na">waline_url</span><span class="pi">:</span> <span class="s">https://xxxxxx.vercel.app</span>
 </code></pre></div></div>
 
-<p>  目前未对多评论系统同时支持进行优化，所以如果 Disqus 和 Waline 同时开启时，Disqus 在前 Waline 在后同时出现。如果用户环境无法访问 Disqus 即只能看到 Waline。</p>
+<p>  <del>目前未对多评论系统同时支持进行优化，所以如果 Disqus 和 Waline 同时开启时，Disqus 在前 Waline 在后同时出现。如果用户环境无法访问 Disqus 即只能看到 Waline。</del></p>
+
+<p>(2022年5月22日更新)</p>
+
+<p>  新增多评论切换按钮：当同时使用 Disqus 和 Waline 时，会在评论区域的右上角看到一个左右滑动切换按钮。如下所示，从左往右滑动即可从 Disqus 切换到 Waline。</p>
+
+<p>  同时修复了手动切换深色模式时 Disqus 不会自动切换模式而造成的显示问题。目前在模式切换时 Disqus 会主动进行重新加载以适应当前模式。</p>
+
+<p><img src="https://i.lisz.top/blog/WBgbUB.webp" alt="Disqus 评论系统 Disqus comment" />
+<img src="https://i.lisz.top/blog/45JQ9H.webp" alt="Waline 评论系统 Waline comments" /></p>
 
 <h4 id="支持-pwa">支持 PWA</h4>
 
@@ -515,7 +560,7 @@
         </div>   
         <div class="table-of-contents">
           <h2>Contents</h2>
-          <ul><li><a href="#前言">前言</a></li><li><a href="#新特性">新特性</a><ul><li><a href="#更适合学术人和运维程序员的页面结构">更适合学术人和运维程序员的页面结构</a><ul><li><a href="#学术首页">学术首页</a></li><li><a href="#归档页">归档页</a></li><li><a href="#系统日志页">系统日志页</a></li></ul></li><li><a href="#使用体验提升">使用体验提升</a><ul><li><a href="#社交图标扩展">社交图标扩展</a></li><li><a href="#查看大图">查看大图</a></li><li><a href="#深色模式切换按钮">深色模式切换按钮</a></li><li><a href="#提示框">提示框</a></li><li><a href="#代码高亮优化">代码高亮优化</a></li><li><a href="#代码复制">代码复制</a></li><li><a href="#字数统计及阅读时间估计">字数统计及阅读时间估计</a></li><li><a href="#文章侧边索引导航">文章侧边索引导航</a></li><li><a href="#支持-waline-评论系统">支持 Waline 评论系统</a></li><li><a href="#支持-pwa">支持 PWA</a></li><li><a href="#配置项">配置项</a></li><li><a href="#前端自动构建工作流优化">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a href="#使用方法">使用方法</a><ul><li><a href="#初始化">初始化</a><ul><li><a href="#方式一从模板新建博客">方式一：从模板新建博客</a></li><li><a href="#方式二已有博客迁移">方式二：已有博客迁移</a></li></ul></li><li><a href="#本地测试">本地测试</a></li><li><a href="#发布部署">发布部署</a></li></ul></li><li><a href="#结束语">结束语</a></li></ul>
+          <ul><li><a href="#前言">前言</a></li><li><a href="#新特性">新特性</a><ul><li><a href="#更适合学术人和运维程序员的页面结构">更适合学术人和运维程序员的页面结构</a><ul><li><a href="#学术首页">学术首页</a></li><li><a href="#归档页">归档页</a></li><li><a href="#系统日志页">系统日志页</a></li></ul></li><li><a href="#使用体验提升">使用体验提升</a><ul><li><a href="#社交图标扩展">社交图标扩展</a></li><li><a href="#查看大图">查看大图</a></li><li><a href="#深色模式切换按钮">深色模式切换按钮</a></li><li><a href="#提示框">提示框</a></li><li><a href="#代码高亮优化">代码高亮优化</a></li><li><a href="#代码复制">代码复制</a></li><li><a href="#字数统计及阅读时间估计">字数统计及阅读时间估计</a></li><li><a href="#时间本地化与最近更新时间">时间本地化与最近更新时间</a></li><li><a href="#版权显式声明">版权显式声明</a></li><li><a href="#文章侧边索引导航">文章侧边索引导航</a></li><li><a href="#支持-waline-评论系统">支持 Waline 评论系统</a></li><li><a href="#支持-pwa">支持 PWA</a></li><li><a href="#配置项">配置项</a></li><li><a href="#前端自动构建工作流优化">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a href="#使用方法">使用方法</a><ul><li><a href="#初始化">初始化</a><ul><li><a href="#方式一从模板新建博客">方式一：从模板新建博客</a></li><li><a href="#方式二已有博客迁移">方式二：已有博客迁移</a></li></ul></li><li><a href="#本地测试">本地测试</a></li><li><a href="#发布部署">发布部署</a></li></ul></li><li><a href="#结束语">结束语</a></li></ul>
         </div>
       </div>
       
@@ -608,6 +653,8 @@
         
       </section>
       
+   
+      
 
       
     </section>
@@ -624,7 +671,7 @@
     <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxxxxxxx号</a>
   
   </section>
-  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> v1.1.4  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a>) 
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> v1.1.6  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a>) 
   
   </section>
   
@@ -730,28 +777,62 @@
           
           
 
+          if($("#comments-switch").length > 0){
+            var comment_status = $("#cmn-toggle-4")[0].checked;
+            if(comment_status){
+              $("#waline").addClass("active");
+            }else {
+              $("#disqus_thread").addClass("active");
+            }
+            $("#cmn-toggle-4").click(function(){
+              $("#disqus_thread").toggleClass("active");
+              $("#waline").toggleClass("active");
+            })
+          }else {
+            if($("#disqus_thread").length > 0) {
+              $("#disqus_thread").addClass("active");
+            }else if($("#waline").length > 0) {
+              $("#waline").addClass("active");
+            }
+          }
+
+          var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+          function dateFormat(date, format){
+            var date_org = dayjs(date, time_formats[format]);
+            var date     = date_org.format(time_formats[format]);
+            return {"date_org": date_org, "date": date}
+          }
+
           dayjs.extend(window.dayjs_plugin_customParseFormat);
           dayjs.extend(window.dayjs_plugin_relativeTime);
           var post_date = $("meta[property='post-date']").attr('content');
           var post_date_format = $("meta[property='post-date-format']").attr('content');
-          if(post_date_format == 0){
-            var local_post_date_org = dayjs(post_date, 'YYYY-MM-DD HH:mm:ss ZZ');
-            var local_post_date = local_post_date_org.format('YYYY-MM-DD HH:mm:ss ZZ');
-          }else if(post_date_format == 1){
-            var local_post_date_org = dayjs(post_date, 'YYYY DD MMM HH:mm:ss ZZ');
-            var local_post_date = local_post_date_org.format('YYYY DD MMM HH:mm:ss ZZ');
-          }else {
-            var local_post_date_org = dayjs(post_date, 'YYYY年MM月DD日 HH:mm:ss ZZ');
-            var local_post_date = local_post_date_org.format('YYYY年MM月DD日 HH:mm:ss ZZ');
-          }
-          $(".post time span").html(local_post_date);
-          var relative_time = dayjs().diff(local_post_date_org, 'month');
-          if(relative_time > 24){
-            $(".post-copyright").append("<p class='tips'><span>友情提醒：</span>这篇文章发表有点久远了，内容可能有所过时。</p>");
-          }
+          var local_post_date = dateFormat(post_date, post_date_format);
+
+          $(".post time span.create-at").html(local_post_date["date"]);
+
+          fetch("https://api.github.com/repos/zhonger/jekyll-theme-H2O-ac/commits?path=_posts/2021-12-22-new-theme-h2o-ac.md")
+          .then((response) => {
+            return response.json();
+          })
+          .then((commits) => {
+            if(commits.length != 0){
+              var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            }else {
+              var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            if(relative_time > 365){
+              $(".post-copyright").append("<p class='tips'>本文最后一次更新为 <span>" + relative_time + "</span> 天前，文章中的某些内容可能已过时！</p>");
+            }
+          });         
       });
   </script>
-  <script src="https://at.alicdn.com/t/font_3046306_5ex1jlxzv93.js"></script>
+  <script src="https://at.alicdn.com/t/font_3046306_j3cma4iq93.js"></script>
   
   
   
