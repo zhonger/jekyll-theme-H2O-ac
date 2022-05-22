@@ -147,21 +147,14 @@
             <svg class="icon" aria-hidden="true">
               <use xlink:href="#icon-calendar"></use>
             </svg>
-            <span class="create-at"></span>
-          </time>
-          <time class="post-meta-item" datetime="17-04-18">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-update"></use>
-            </svg>
-            <span class="update-at"></span>
+            <span></span>
           </time>
           
           <span class="post-meta-item">
             <svg class="icon words" aria-hidden="true">
               <use xlink:href="#icon-words"></use>
             </svg>
-            
-          本文总共  941  字
+          本文总共 941 字
           </span>
           <span class="post-meta-item">
             <svg class="icon time" aria-hidden="true">
@@ -210,7 +203,7 @@
 
 <h3 id="video-test">Video Test</h3>
 
-<iframe type="text/html" width="100%" height="385" src="https://www.youtube.com/embed/gfmjMWjn-Xg" frameborder="0"></iframe>
+<iframe type="text/html" width="100%" height="385" src="http://www.youtube.com/embed/gfmjMWjn-Xg" frameborder="0"></iframe>
 
             <div class="post-copyright">
               <p><span>版权声明：</span>如无特别声明，本文版权归&nbsp;<a href="https://h2o-ac.pages.dev">Mr Li</a>&nbsp;所有，转载请注明本文链接。</p>
@@ -315,8 +308,6 @@
         
       </section>
       
-   
-      
 
       
     </section>
@@ -333,7 +324,7 @@
     <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxxxxxxx号</a>
   
   </section>
-  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> v1.1.6  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a>) 
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> v1.1.4  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a>) 
   
   </section>
   
@@ -439,62 +430,28 @@
           
           
 
-          if($("#comments-switch").length > 0){
-            var comment_status = $("#cmn-toggle-4")[0].checked;
-            if(comment_status){
-              $("#waline").addClass("active");
-            }else {
-              $("#disqus_thread").addClass("active");
-            }
-            $("#cmn-toggle-4").click(function(){
-              $("#disqus_thread").toggleClass("active");
-              $("#waline").toggleClass("active");
-            })
-          }else {
-            if($("#disqus_thread").length > 0) {
-              $("#disqus_thread").addClass("active");
-            }else if($("#waline").length > 0) {
-              $("#waline").addClass("active");
-            }
-          }
-
-          var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
-          function dateFormat(date, format){
-            var date_org = dayjs(date, time_formats[format]);
-            var date     = date_org.format(time_formats[format]);
-            return {"date_org": date_org, "date": date}
-          }
-
           dayjs.extend(window.dayjs_plugin_customParseFormat);
           dayjs.extend(window.dayjs_plugin_relativeTime);
           var post_date = $("meta[property='post-date']").attr('content');
           var post_date_format = $("meta[property='post-date-format']").attr('content');
-          var local_post_date = dateFormat(post_date, post_date_format);
-
-          $(".post time span.create-at").html(local_post_date["date"]);
-
-          fetch("https://api.github.com/repos/zhonger/jekyll-theme-H2O-ac/commits?path=_posts/2017-04-18-hello-jekyll.md")
-          .then((response) => {
-            return response.json();
-          })
-          .then((commits) => {
-            if(commits.length != 0){
-              var update_at = dayjs(commits[0]['commit']['committer']['date']);
-            }else {
-              var update_at = post_date
-            }
-
-            var local_update_at = dateFormat(update_at, post_date_format);
-            $('.post time span.update-at').html(local_update_at["date"]);
-
-            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
-            if(relative_time > 365){
-              $(".post-copyright").append("<p class='tips'>本文最后一次更新为 <span>" + relative_time + "</span> 天前，文章中的某些内容可能已过时！</p>");
-            }
-          });         
+          if(post_date_format == 0){
+            var local_post_date_org = dayjs(post_date, 'YYYY-MM-DD HH:mm:ss ZZ');
+            var local_post_date = local_post_date_org.format('YYYY-MM-DD HH:mm:ss ZZ');
+          }else if(post_date_format == 1){
+            var local_post_date_org = dayjs(post_date, 'YYYY DD MMM HH:mm:ss ZZ');
+            var local_post_date = local_post_date_org.format('YYYY DD MMM HH:mm:ss ZZ');
+          }else {
+            var local_post_date_org = dayjs(post_date, 'YYYY年MM月DD日 HH:mm:ss ZZ');
+            var local_post_date = local_post_date_org.format('YYYY年MM月DD日 HH:mm:ss ZZ');
+          }
+          $(".post time span").html(local_post_date);
+          var relative_time = dayjs().diff(local_post_date_org, 'month');
+          if(relative_time > 24){
+            $(".post-copyright").append("<p class='tips'><span>友情提醒：</span>这篇文章发表有点久远了，内容可能有所过时。</p>");
+          }
       });
   </script>
-  <script src="https://at.alicdn.com/t/font_3046306_j3cma4iq93.js"></script>
+  <script src="https://at.alicdn.com/t/font_3046306_5ex1jlxzv93.js"></script>
   
   
   
