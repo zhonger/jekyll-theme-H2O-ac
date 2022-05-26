@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://h2o-ac.pages.dev/" rel="alternate" type="text/html" /><updated>2022-05-22T14:22:10+00:00</updated><id>https://h2o-ac.pages.dev/feed.xml</id><title type="html">Mr Li</title><subtitle>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</subtitle><author><name>zhonger</name></author><entry><title type="html">H2O-ac theme for Jekyll</title><link href="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html" rel="alternate" type="text/html" title="H2O-ac theme for Jekyll" /><published>2021-12-22T11:50:00+00:00</published><updated>2021-12-22T11:50:00+00:00</updated><id>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac</id><content type="html" xml:base="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html"><![CDATA[<h2 id="前言">前言</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://h2o-ac.pages.dev/" rel="alternate" type="text/html" /><updated>2022-05-26T13:06:06+00:00</updated><id>https://h2o-ac.pages.dev/feed.xml</id><title type="html">Mr Li</title><subtitle>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</subtitle><author><name>zhonger</name></author><entry><title type="html">H2O-ac theme for Jekyll</title><link href="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html" rel="alternate" type="text/html" title="H2O-ac theme for Jekyll" /><published>2021-12-22T11:50:00+00:00</published><updated>2021-12-22T11:50:00+00:00</updated><id>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac</id><content type="html" xml:base="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html"><![CDATA[<h2 id="前言">前言</h2>
 
 <p>  正如大家所知，Jekyll 是一款高可定制的、非常流行的静态博客生成工具。围绕着 Jekyll 也衍生出了很多优秀的 Jekyll 主题， 由 <a href="https://github.com/kaeyleo">廖柯宇</a> 开发的 <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a> 主题就是其中之一。极简主义、风格扁平化、卡片式布局、Medium 及知乎专栏的视觉风格等等特点，为我们带来了或许是迄今为止最漂亮的 Jekyll 主题。</p>
 
@@ -107,6 +107,10 @@
 
 <p>  更换 Prism 库加载方式，采用按需自动加载代码类型，尽可能减少因 Prism 造成的阻塞。修复了某些样式问题。增加显示行数支持、官方主题选择支持。如下所示可以进行设置，具体主题风格样式可以访问 <a href="https://prismjs.com/">Prism 官网</a> 了解更多。</p>
 
+<p>(2022年5月23日更新)</p>
+
+<p>  除官方代码库中默认代码主题外，新增扩展代码主题支持，比如常用的 One Light 等等。具体主题风格样式可以查看 <a href="https://github.com/PrismJS/prism-themes/tree/master/themes">PrismJS/prism-themes</a> 了解更多。</p>
+
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Prism</span>
 <span class="na">prism</span><span class="pi">:</span>
   <span class="na">theme</span><span class="pi">:</span> <span class="s">tomorrow</span>
@@ -131,6 +135,55 @@
     <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"assets/clippy.svg"</span> <span class="na">alt=</span><span class="s">"Copy to clipboard"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
+
+<h4 id="文章置顶功能">文章置顶功能</h4>
+
+<p>(2022年5月26日更新)</p>
+
+<p>  鉴于现有的 Jekyll 文章置顶库有点年久失修，决定徒手实现了一下文章置顶功能。具体文章列表页和归档页置顶效果如下所示：</p>
+
+<p><img src="https://i.lisz.top/blog/mcF2Z3.webp" alt="文章置顶 Top acticles" />
+<img src="https://i.lisz.top/blog/yajcoi.webp" alt="归档页文章置顶 Top acticles in archives" /></p>
+
+<h4 id="分页依赖升级">分页依赖升级</h4>
+
+<p>(2022年5月26日更新)</p>
+
+<p>  由于原有的 jekyll-paginate 库已停止更新，所以升级到目前更新、维护活跃的 <a href="https://github.com/sverrirs/jekyll-paginate-v2">jekyll-paginate-v2</a> 库。原有的分页配置自 v1.1.7 版本后无法使用，请更换为如下类似设置：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml 旧配置</span>
+<span class="na">paginate</span><span class="pi">:</span> <span class="m">10</span>
+<span class="na">paginate_path</span><span class="pi">:</span> <span class="s1">'</span><span class="s">blog/page:num'</span>
+
+<span class="c1"># _config.yml 新配置</span>
+<span class="na">pagination</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">per_page</span><span class="pi">:</span> <span class="m">10</span>
+  <span class="na">permalink</span><span class="pi">:</span> <span class="s1">'</span><span class="s">page:num/'</span>
+</code></pre></div></div>
+
+<p>  另外，blog/index.html 的头部信息中应该加上如下<strong>启用分页</strong>的配置。否则，jekyll-paginate-v2 不会主动工作。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">pagination</span><span class="pi">:</span> 
+  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h4 id="封面图片作者及链接">封面图片作者及链接</h4>
+
+<p>(2022年5月26日更新)</p>
+
+<p>  一直以来封面图片都是来自 <a href="https://unsplash.com">Unsplash</a> 的免费高清图片，为了表明封面图片的来源和作者，现在文章的元信息中添加了对封面图片作者及链接的支持。如果想要声明，可以直接在文章的头部信息中添加如下配置：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">......</span>
+<span class="na">cover</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+<span class="na">cover_author</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+<span class="na">cover_author_link</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+<span class="s">......</span>
+</code></pre></div></div>
+
+<p>  非文章的页面中也可以像上面那样声明相关的封面作者及链接，效果如下所示：</p>
+
+<p><img src="https://i.lisz.top/blog/fzWjPs.webp" alt="页面封面图片信息 Cover author for pages" /></p>
 
 <h4 id="字数统计及阅读时间估计">字数统计及阅读时间估计</h4>
 
@@ -181,7 +234,7 @@
 
 <h4 id="支持-waline-评论系统">支持 Waline 评论系统</h4>
 
-<p>  目前已支持基于 Valine 衍生的简洁、安全的评论系统。可以根据官方提供的 <a href="https://waline.js.org/guide/get-started.html">快速上手</a> 进行配置，以下为 _config.yml 中需要配置的内容：</p>
+<p>  目前已支持基于 Valine 衍生的简洁、安全的评论系统 Waline。可以根据官方提供的 <a href="https://waline.js.org/guide/get-started.html">快速上手</a> 进行配置，以下为 _config.yml 中需要配置的内容：</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
 

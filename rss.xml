@@ -5,8 +5,8 @@
     <description>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</description>
     <link>https://h2o-ac.pages.dev//</link>
     <atom:link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 22 May 2022 14:22:10 +0000</pubDate>
-    <lastBuildDate>Sun, 22 May 2022 14:22:10 +0000</lastBuildDate>
+    <pubDate>Thu, 26 May 2022 13:06:06 +0000</pubDate>
+    <lastBuildDate>Thu, 26 May 2022 13:06:06 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -120,6 +120,10 @@
 
 &lt;p&gt;  更换 Prism 库加载方式，采用按需自动加载代码类型，尽可能减少因 Prism 造成的阻塞。修复了某些样式问题。增加显示行数支持、官方主题选择支持。如下所示可以进行设置，具体主题风格样式可以访问 &lt;a href=&quot;https://prismjs.com/&quot;&gt;Prism 官网&lt;/a&gt; 了解更多。&lt;/p&gt;
 
+&lt;p&gt;(2022年5月23日更新)&lt;/p&gt;
+
+&lt;p&gt;  除官方代码库中默认代码主题外，新增扩展代码主题支持，比如常用的 One Light 等等。具体主题风格样式可以查看 &lt;a href=&quot;https://github.com/PrismJS/prism-themes/tree/master/themes&quot;&gt;PrismJS/prism-themes&lt;/a&gt; 了解更多。&lt;/p&gt;
+
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Prism&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;prism&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tomorrow&lt;/span&gt;
@@ -144,6 +148,55 @@
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;assets/clippy.svg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Copy to clipboard&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;文章置顶功能&quot;&gt;文章置顶功能&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月26日更新)&lt;/p&gt;
+
+&lt;p&gt;  鉴于现有的 Jekyll 文章置顶库有点年久失修，决定徒手实现了一下文章置顶功能。具体文章列表页和归档页置顶效果如下所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.lisz.top/blog/mcF2Z3.webp&quot; alt=&quot;文章置顶 Top acticles&quot; /&gt;
+&lt;img src=&quot;https://i.lisz.top/blog/yajcoi.webp&quot; alt=&quot;归档页文章置顶 Top acticles in archives&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;分页依赖升级&quot;&gt;分页依赖升级&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月26日更新)&lt;/p&gt;
+
+&lt;p&gt;  由于原有的 jekyll-paginate 库已停止更新，所以升级到目前更新、维护活跃的 &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;jekyll-paginate-v2&lt;/a&gt; 库。原有的分页配置自 v1.1.7 版本后无法使用，请更换为如下类似设置：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# _config.yml 旧配置&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;blog/page:num&apos;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# _config.yml 新配置&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;pagination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;per_page&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;page:num/&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;  另外，blog/index.html 的头部信息中应该加上如下&lt;strong&gt;启用分页&lt;/strong&gt;的配置。否则，jekyll-paginate-v2 不会主动工作。&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;pagination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;封面图片作者及链接&quot;&gt;封面图片作者及链接&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月26日更新)&lt;/p&gt;
+
+&lt;p&gt;  一直以来封面图片都是来自 &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt; 的免费高清图片，为了表明封面图片的来源和作者，现在文章的元信息中添加了对封面图片作者及链接的支持。如果想要声明，可以直接在文章的头部信息中添加如下配置：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;......&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover_author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover_author_link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;......&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;  非文章的页面中也可以像上面那样声明相关的封面作者及链接，效果如下所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.lisz.top/blog/fzWjPs.webp&quot; alt=&quot;页面封面图片信息 Cover author for pages&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;字数统计及阅读时间估计&quot;&gt;字数统计及阅读时间估计&lt;/h4&gt;
 
@@ -194,7 +247,7 @@
 
 &lt;h4 id=&quot;支持-waline-评论系统&quot;&gt;支持 Waline 评论系统&lt;/h4&gt;
 
-&lt;p&gt;  目前已支持基于 Valine 衍生的简洁、安全的评论系统。可以根据官方提供的 &lt;a href=&quot;https://waline.js.org/guide/get-started.html&quot;&gt;快速上手&lt;/a&gt; 进行配置，以下为 _config.yml 中需要配置的内容：&lt;/p&gt;
+&lt;p&gt;  目前已支持基于 Valine 衍生的简洁、安全的评论系统 Waline。可以根据官方提供的 &lt;a href=&quot;https://waline.js.org/guide/get-started.html&quot;&gt;快速上手&lt;/a&gt; 进行配置，以下为 _config.yml 中需要配置的内容：&lt;/p&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# _config.yml&lt;/span&gt;
 
