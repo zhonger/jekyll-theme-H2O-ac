@@ -17,6 +17,12 @@
     <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。">
     <meta property="og:site_name" content="Mr Li">
     <meta property="og:gray" content="false">
+    
+    <meta property="og:previous_url" content="/tech/new-theme-h2o-ac.html">
+    
+    
+    <meta property="og:next_url" content="/tech/new-theme-h2o.html">
+    
     <meta property="post-date-format" content="0">
     
     <meta property="post-date" content="2017-07-30 00:00:00 +0000" />
@@ -57,6 +63,16 @@
   
   <div id="all" class="post">
   
+    <div class="alert-tip" id="no-previous">
+      
+      已经是最新一篇文章了！
+      
+    </div>
+    <div class="alert-tip" id="no-next">
+      
+      已经是最后一篇文章了！
+      
+    </div>
     <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
     <div class="g-logo">
       <a href="/" aria-label="logo"></a>
@@ -109,6 +125,12 @@
             <li>
                 <a href="/logs.html" aria-label="logs">
                     logs
+                </a>
+            </li>
+            
+            <li>
+                <a href="/tos.html" aria-label="tos">
+                    tos
                 </a>
             </li>
             
@@ -362,7 +384,7 @@
     <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备xxxxxxxx号</a>
   
   </section>
-  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> v1.1.9  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a>) 
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac">H2O-ac</a> v1.1.10  (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a>) 
   
   </section>
   
@@ -377,6 +399,12 @@
   
   
 </footer>
+<div class="cookie-tip">
+  
+  为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「<a href="/tos.html">本站使用条款</a>」了解更多。
+  
+  <button id="accept-tos">同意（Accept）</button>
+</div>
 <button id="list" aria-label="Scroll back to top" class="mobile-list" type="button">
   <svg class="icon list day" aria-hidden="true">
     <use xlink:href="#icon-list-day"></use>
@@ -440,6 +468,7 @@
   <script src="/assets/js/index.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
@@ -521,7 +550,42 @@
             if(relative_time > 365){
               $(".post-copyright").append("<p class='tips'>本文最后一次更新为 <span>" + relative_time + "</span> 天前，文章中的某些内容可能已过时！</p>");
             }
-          });         
+          });   
+          
+          /*
+          * Keyboard shortcut bind: left and right
+          */
+
+          var previous_url = $("meta[property='og:previous_url']").attr('content');
+          var next_url = $("meta[property='og:next_url']").attr('content');
+
+          hotkeys('left', function(event, handler){
+              // Prevent the default refresh event under WINDOWS system
+              event.preventDefault();
+              if(previous_url){
+                  console.log('you pressed left!');
+                  window.location.href = previous_url;
+              }else {
+                  $("#no-previous").addClass("active");
+                  console.log('已经是最新一篇文章了！');
+                  console.log('Already the latest article！');
+                  setTimeout(function(){$("#no-previous").removeClass("active");}, 1500);
+              }
+          });
+
+          hotkeys('right', function(event, handler){
+              // Prevent the default refresh event under WINDOWS system
+              event.preventDefault();
+              if(next_url){
+                  console.log('you pressed right!');
+                  window.location.href = next_url;
+              }else {
+                  $("#no-next").addClass("active");
+                  console.log('已经是最后一篇文章了！');
+                  console.log('Already the last article！');
+                  setTimeout(function(){$("#no-next").removeClass("active");}, 1500);
+              }
+          });
       });
   </script>
   <script src="https://at.alicdn.com/t/font_3046306_skfh9jzzbbf.js"></script>
