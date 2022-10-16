@@ -28,6 +28,9 @@
     <meta property="post-date" content="2017-04-18 00:00:00 +0000" />
     
     
+    <meta name="alivestart" content="12/23/2021">
+    
+    
     <meta name="theme-color" content="#81BBFF" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png"/>
@@ -495,9 +498,36 @@
         
       </section>
       
+      <section class="post-footer-item comment">
+        <div class="comments-headline">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+          </svg>
+          <span>评论</span>
+        </div>
+        
+        <div id="comments-switch">
+          <span class="first-comment">Disqus</span>
+          <span class="switch-button">
+            <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+            <label for="cmn-toggle-4"></label>
+          </span>
+          <span class="second-comment">Waline</span>
+        </div>
+        
+      </section>      
+      
    
       
+      <section class="post-footer-item comment">
+          <div id="disqus_thread"></div>
+      </section>
+      
 
+      
+      <section class="post-footer-item comment">
+          <div id="waline"></div>
+      </section>
       
     </section>
 
@@ -531,6 +561,22 @@
     <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">本网站由 <img src="/assets/icons/upyun.png" class="upyun" /></span> 提供 CDN 加速/云存储服务</a>
   </section>
   
+  <section>
+    本站已运行 <span class="alivetime"></span>
+    
+    <br/>
+    
+    
+    <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
+      <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
+    </a>
+    
+    
+    <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
+      <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+    </a>
+    
+  </section>
 </footer>
 <div class="cookie-tip">
   
@@ -604,6 +650,25 @@
   </script>
 
   
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://h2o-ac.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+
+  </script>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -613,6 +678,8 @@
   <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
   
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
@@ -625,6 +692,8 @@
               $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
               var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
               $(this).wrapAll(strA);
+              var caption = $(this)[0].alt;
+              $(this).parent().after('<span class="caption">' + caption + '</span>');
           });
 
           Fancybox.bind('[data-fancybox]', {
@@ -639,6 +708,13 @@
             }
           });   
           
+          
+            Waline.init({
+              el: '#waline',
+              serverURL: 'https://h2o-ac-waline.deta.dev/',
+              reaction: true,
+              comment: true,
+            });
           
 
           if($("#comments-switch").length > 0){
@@ -794,6 +870,9 @@ refer to:
             mermaid.init(undefined, $('.mermaid2'));
         });
     </script>
+ 
+  
+<!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BEoSVcN1J4tJu8PAJyJSgpeSa2GZH3dxotSuHDVE09DYi1_zoP8cSxl_jtxIf2OKaC6fabO8yxRT-yPyWBfxeTM' });</script><!-- end webpushr code -->
  
 </body>
 

@@ -16,6 +16,9 @@
     <meta property="og:site_name" content="Mr Li">
     <meta property="og:gray" content="false">
     
+    <meta name="alivestart" content="12/23/2021">
+    
+    
     <meta name="theme-color" content="#81BBFF" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
@@ -33,6 +36,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.css">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
@@ -473,6 +477,22 @@
     <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">本网站由 <img src="/assets/icons/upyun.png" class="upyun" /></span> 提供 CDN 加速/云存储服务</a>
   </section>
   
+  <section>
+    本站已运行 <span class="alivetime"></span>
+    
+    <br/>
+    
+    
+    <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
+      <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
+    </a>
+    
+    
+    <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
+      <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+    </a>
+    
+  </section>
 </footer>
 <div class="cookie-tip">
   
@@ -526,6 +546,9 @@
     <script src="/assets/js/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
     <script src="https://at.alicdn.com/t/font_3046306_skfh9jzzbbf.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
+
     
     
     
@@ -589,5 +612,34 @@ refer to:
         });
     </script>
 
+    
+<!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BEoSVcN1J4tJu8PAJyJSgpeSa2GZH3dxotSuHDVE09DYi1_zoP8cSxl_jtxIf2OKaC6fabO8yxRT-yPyWBfxeTM' });</script><!-- end webpushr code -->
+ 
+    
+
+<script>
+    $(document).ready(function(){
+    
+
+    if($("#comments-switch").length > 0){
+        var comment_status = $("#cmn-toggle-4")[0].checked;
+        if(comment_status){
+        $("#waline").addClass("active");
+        }else {
+        $("#disqus_thread").addClass("active");
+        }
+        $("#cmn-toggle-4").click(function(){
+        $("#disqus_thread").toggleClass("active");
+        $("#waline").toggleClass("active");
+        })
+    }else {
+        if($("#disqus_thread").length > 0) {
+        $("#disqus_thread").addClass("active");
+        }else if($("#waline").length > 0) {
+        $("#waline").addClass("active");
+        }
+    }
+    })
+</script>     
 </body>
 </html>
