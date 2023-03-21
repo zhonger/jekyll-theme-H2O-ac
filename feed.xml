@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://h2o-ac.pages.dev/" rel="alternate" type="text/html" /><updated>2022-11-24T04:06:46+00:00</updated><id>https://h2o-ac.pages.dev/feed.xml</id><title type="html">Mr Li</title><subtitle>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</subtitle><author><name>zhonger</name></author><entry><title type="html">H2O-ac theme for Jekyll</title><link href="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html" rel="alternate" type="text/html" title="H2O-ac theme for Jekyll" /><published>2021-12-22T11:50:00+00:00</published><updated>2021-12-22T11:50:00+00:00</updated><id>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac</id><content type="html" xml:base="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html"><![CDATA[<h2 id="前言">前言</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://h2o-ac.pages.dev/" rel="alternate" type="text/html" /><updated>2023-03-21T12:57:12+00:00</updated><id>https://h2o-ac.pages.dev/feed.xml</id><title type="html">Mr Li</title><subtitle>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</subtitle><author><name>zhonger</name></author><entry><title type="html">H2O-ac theme for Jekyll</title><link href="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html" rel="alternate" type="text/html" title="H2O-ac theme for Jekyll" /><published>2021-12-22T11:50:00+00:00</published><updated>2021-12-22T11:50:00+00:00</updated><id>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac</id><content type="html" xml:base="https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html"><![CDATA[<h2 id="前言">前言</h2>
 
 <p>  正如大家所知，Jekyll 是一款高可定制的、非常流行的静态博客生成工具。围绕着 Jekyll 也衍生出了很多优秀的 Jekyll 主题， 由 <a href="https://github.com/kaeyleo">廖柯宇</a> 开发的 <a href="https://github.com/kaeyleo/jekyll-theme-H2O">H2O</a> 主题就是其中之一。极简主义、风格扁平化、卡片式布局、Medium 及知乎专栏的视觉风格等等特点，为我们带来了或许是迄今为止最漂亮的 Jekyll 主题。</p>
 
@@ -114,7 +114,7 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Prism</span>
 <span class="na">prism</span><span class="pi">:</span>
   <span class="na">theme</span><span class="pi">:</span> <span class="s">tomorrow</span>
-  <span class="na">line_numbers</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">line_numbers</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h4 id="代码复制">代码复制</h4>
@@ -157,7 +157,7 @@
 
 <span class="c1"># _config.yml 新配置</span>
 <span class="na">pagination</span><span class="pi">:</span>
-  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">per_page</span><span class="pi">:</span> <span class="m">10</span>
   <span class="na">permalink</span><span class="pi">:</span> <span class="s1">'</span><span class="s">page:num/'</span>
 </code></pre></div></div>
@@ -165,7 +165,7 @@
 <p>  另外，blog/index.html 的头部信息中应该加上如下<strong>启用分页</strong>的配置。否则，jekyll-paginate-v2 不会主动工作。</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">pagination</span><span class="pi">:</span> 
-  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
 </code></pre></div></div>
 
 <h4 id="封面图片作者及链接">封面图片作者及链接</h4>
@@ -202,7 +202,7 @@
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Github</span>
 <span class="na">github</span><span class="pi">:</span>
-  <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">owner</span><span class="pi">:</span> <span class="s">github_username</span>
   <span class="na">repository</span><span class="pi">:</span> <span class="s">github_project_name</span>
 </code></pre></div></div>
@@ -239,7 +239,7 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
 
 <span class="na">comments</span><span class="pi">:</span>
-  <span class="na">waline</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">waline</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">waline_url</span><span class="pi">:</span> <span class="s">https://xxxxxx.vercel.app</span>
 </code></pre></div></div>
 
@@ -358,7 +358,7 @@
 <span class="na">beian</span><span class="pi">:</span> <span class="s1">'</span><span class="s">沪ICP备xxxxxxxx号'</span>
 
 <span class="c1"># Gray 灰度化</span>
-<span class="na">gray</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">gray</span><span class="pi">:</span> <span class="kc">true</span>
 
 <span class="c1"># Time format 时间格式 </span>
 <span class="c1"># 0 -- 2022-04-29    1 -- 29 Apr 2022   2 -- 2022年4月29日</span>
@@ -366,11 +366,11 @@
   <span class="na">time</span><span class="pi">:</span> <span class="s">0</span> 
 
 <span class="c1"># Busuanzi Analytics</span>
-<span class="na">busuanzi</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">busuanzi</span><span class="pi">:</span> <span class="kc">true</span>
 
 <span class="c1"># Umami Analytics</span>
 <span class="na">umami</span><span class="pi">:</span>
-  <span class="na">status</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">status</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">id</span><span class="pi">:</span> <span class="s">xxxxxxxxxxxxx</span>
   <span class="na">js</span><span class="pi">:</span> <span class="s">https://umami.example.com/umami.js</span>
 </code></pre></div></div>
