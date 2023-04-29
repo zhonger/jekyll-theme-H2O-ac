@@ -1308,6 +1308,22 @@ a {
                     color: #83888f;
                 }
             }
+            .links {
+                a {
+                    color: $color-f-dark;
+        
+                    &:before {
+                        position: absolute;
+                        top: 80%;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: rgba(21,101,192,.6);
+                        transition: top .2s cubic-bezier(0,.8,.13,1);
+                        z-index: 1;
+                    }
+                }
+            }
         }
     }
     .post-content {
@@ -1341,7 +1357,18 @@ a {
             }
         }
         a {
-            color: #58ceff;
+            color: $color-f-dark;
+
+            &:before {
+                position: absolute;
+                top: 80%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(21,101,192,.6);
+                transition: top .2s cubic-bezier(0,.8,.13,1);
+                z-index: 1;
+            }
         }
         .copy-container {
             background-color: #393939;
@@ -1438,12 +1465,26 @@ a {
 
 .markdown-body {
     a {
-        color: #005b81;
+        color: #24292f;
+        position: relative;
         text-decoration: none;
-
+        z-index: 2;
         &:hover {
-            color: #e32e00;
-            text-decoration: underline;
+            text-decoration: none;
+            &:before {
+                top: 0;
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: 80%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(20,148,251,.7);
+            transition: top .2s cubic-bezier(0,.8,.13,1);
+            z-index: 1;
         }
     }
     p {
@@ -1453,6 +1494,47 @@ a {
     }
     h1, h2 {
         border-bottom: none;
+    }
+    ul{
+        list-style: revert;
+    }
+    ol {
+        list-style: none;
+        li {
+            counter-increment: a 1; 
+            &:before {
+                content:counter(a);
+                font-weight: bold;
+                background-color: $color-theme-default;
+                color: #fff;
+                text-align: center;
+                padding: 0 5px;
+                margin-right: 10px;
+                border-radius: 50%;
+            }
+            &::marker {
+                content: "";
+            }
+            li {
+                counter-increment: b 1;
+                &:before {
+                    content:counter(a)"."counter(b);
+                    border-radius: 0;
+                }
+                li{
+                    counter-increment: c 1;
+                    &:before {
+                        content:counter(a)"."counter(b)"."counter(c);
+                    }
+                    li{
+                        counter-increment: d 1;
+                        &:before {
+                            content:counter(a)"."counter(b)"."counter(c)"."counter(d);
+                        }
+                    }
+                }
+            }
+        }
     }
     summary {
         &.render-expand {
@@ -1676,9 +1758,37 @@ a {
     }
 }
 
-#busuanzi_value_site_pv, #busuanzi_value_site_uv {
-    color: brown;
+.g-footer {
+    .links{
+        a {
+            color: #24292f;
+            position: relative;
+            text-decoration: none;
+            z-index: 2;
+            &:hover {
+                text-decoration: none;
+                &:before {
+                    top: 0;
+                }
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                top: 80%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(20,148,251,.7);
+                transition: top .2s cubic-bezier(0,.8,.13,1);
+                z-index: 1;
+            }
+        }
+    }
+    #busuanzi_value_site_pv, #busuanzi_value_site_uv {
+        color: brown;
+    }
 }
+
 
 .friends {
     .friendurl {
