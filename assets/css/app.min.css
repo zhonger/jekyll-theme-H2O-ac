@@ -1100,7 +1100,8 @@ a.extlinks::after {
   margin-bottom: 0;
 }
 .markdown-body mjx-math {
-  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: unset;
   width: 100%;
 }
 .markdown-body .copy-container {
@@ -1560,7 +1561,7 @@ a.extlinks::after {
 .night-mode .markdown-body a {
   color: #AAAAAA;
 }
-.night-mode .markdown-body a:before {
+.night-mode .markdown-body a:not([ref=gallery]):before {
   position: absolute;
   top: 80%;
   left: 0;
@@ -1660,10 +1661,10 @@ a.extlinks::after {
 .markdown-body a:hover {
   text-decoration: none;
 }
-.markdown-body a:hover:before {
+.markdown-body a:not([ref=gallery]):hover:before {
   top: 0;
 }
-.markdown-body a:before {
+.markdown-body a:not([ref=gallery]):before {
   content: "";
   position: absolute;
   top: 80%;

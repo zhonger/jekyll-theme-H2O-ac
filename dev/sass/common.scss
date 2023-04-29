@@ -858,7 +858,8 @@ a {
         }
     }
     mjx-math {
-        overflow: scroll;
+        overflow-x: auto;
+        overflow-y: unset;
         width: 100%;
     }
     .copy-container{
@@ -1359,7 +1360,7 @@ a {
         a {
             color: $color-f-dark;
 
-            &:before {
+            &:not([ref="gallery"]):before {
                 position: absolute;
                 top: 80%;
                 left: 0;
@@ -1471,11 +1472,13 @@ a {
         z-index: 2;
         &:hover {
             text-decoration: none;
+        }
+        &:not([ref="gallery"]):hover {
             &:before {
                 top: 0;
             }
         }
-        &:before {
+        &:not([ref="gallery"]):before {
             content: "";
             position: absolute;
             top: 80%;
