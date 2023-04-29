@@ -1,23 +1,27 @@
 {
   "name": "jekyll-theme-h2o-ac",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "engines": {
-    "node": "^17.0.0"
+    "node": "^18.0.0"
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "sass-ver": "sass --version"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
     "sass": "^1.51.0",
-    "gulp-uglify": "^3.0.2"
+    "sass-loader": "^13.2.2",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
   }
 }

@@ -9,3 +9,5 @@ Gemfile.lock
 _site
 
 *.gem
+
+dist
