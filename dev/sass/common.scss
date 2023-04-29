@@ -1322,14 +1322,23 @@ a {
 
     .markdown-body {
         color: $color-f-dark;
+        background-color: transparent;
         img {
             -webkit-filter: brightness(.6);
         }
         blockquote {
             border-left-color: #555A61;
         }
-        code {
-            text-shadow: none!important;
+        pre {
+            border: 3px solid #393939;
+            border-radius: 0px;
+            border-top: none;
+            code {
+                text-shadow: none!important;
+                .line-numbers-rows {
+                    border-right: 1px solid #9d9d9f;
+                }
+            }
         }
         a {
             color: #58ceff;
@@ -1339,6 +1348,9 @@ a {
         }
         .language-plaintext {
             color: chocolate;
+        }
+        .caption {
+            color: #aaaaaa;
         }
     }
     .read-next-item {
@@ -1351,7 +1363,8 @@ a {
         }
     }
     :not(pre) > code[class*="language-"], pre[class*="language-"] {
-        background-color: $color-dark-secondary;
+        // background-color: $color-dark-secondary;
+        background-color: #efefef;
     }
     code[class*="language-"], pre[class*="language-"], .token.punctuation,
     .token.operator, .token.entity, .token.url, .language-css .token.string,
@@ -1435,6 +1448,11 @@ a {
     }
     p {
         font-size: 16px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+    h1, h2 {
+        border-bottom: none;
     }
     summary {
         &.render-expand {
@@ -1466,7 +1484,10 @@ a {
                 color: transparent;
                 background-color: #eceff1;
             }
-        }
+        }  
+        border: 3px solid #e2e2e2;
+        border-radius: 0px!important;
+        border-top: none;
     }
     .mermaid2 {
         justify-content: center;
