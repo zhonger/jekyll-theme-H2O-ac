@@ -1,6 +1,12 @@
 [
   
     {
+      "title"    : "Test en",
+      "tags"     : "mathjax",
+      "url"      : "/test/test-en.html"
+    } ,
+  
+    {
       "title"    : "H2O-ac theme for Jekyll",
       "tags"     : "jekyll theme blog ac develop 主题 前端开发 学术 运维",
       "url"      : "/tech/new-theme-h2o-ac.html"
