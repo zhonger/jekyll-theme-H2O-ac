@@ -1,0 +1,75 @@
+cover: '封面圖片提供者'
+panel:
+  posts: '文章'
+  categories: '類別'
+  tags: '標籤'
+  hot_tags: '熱門標簽'
+  links: '鏈接'
+  update: '最近更新'
+footer:
+  driver: '本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基於 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 強力驅動'
+  views: '總瀏覽量'
+  visitors: '總訪問量'
+  upyun: 'CDN 加速/雲存儲服務提供商'
+  running:
+    info: '本站已運行'
+    day: '天'
+    hour: '小時'
+    minute: '分'
+    second: '秒'
+  tos:
+    left: '為了提升本站的使用體驗和必要功能的正常使用，本站會使用本地 Cookie。詳細請查看'
+    middle: '本站使用條款'
+    right: '了解更多。'
+    btn: '同意'
+post:
+  outline: '目錄'
+  cover:
+    total:
+      info: '本文總共'
+      unit: '字'
+    time:
+      info: '閱讀全文大約需要'
+      unit: '分鐘'
+    view:
+      info: '本文總閱讀量'
+      unit: '次'
+  tips:
+    left: '已經是最新一篇文章了！'
+    right: '已經是最後一篇文章了！'
+  copyright:
+    statement: 
+      name: '版權聲明'
+      left: '如無特別聲明，本文版權歸'
+      middle: '所有，轉載請註明本文鏈接。'
+      right1: '（採用 '
+      right2: '許可協議進行授權）'
+      outdate1: '本文最後一次更新為' 
+      outdate2: '天前，文章中的某些内容可能已過時！'
+    title: '本文標題'
+    link: '本文鏈接'
+  comment: '評論'
+archives:
+  title: '歸檔'
+  total:
+    info: '本站共有文章'
+    unit: '篇，'
+  pin:
+    info: '其中置頂文章'
+    unit: '篇，'
+    title: '置頂文章'
+  words:
+    info: '總計字數'
+    unit: '字。'
+categories:
+  title: '類別'
+  u_title: '未分類'
+  total: 
+    info: '本站共有文章'
+    unit: '篇，'
+  type:
+    info: '其中有類別'
+    unit: '個，'
+  uncategory: 
+    info: '未分類有'
+    unit: '篇。'

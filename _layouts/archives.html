@@ -18,14 +18,30 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
   {% assign total_size = total_size | plus:post_size %}
 {% endfor %}
 
-<h2>Archives</h2>
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
+{% assign archives = locales.archives%}
 
-<p>本站共有 {{ site.posts | size }} 篇文章{% if pin_posts_num > 0 %}，其中有 {{pin_posts_num}} 篇置顶文章{% endif %}，总计 {% if total_size < 1000 %} {{ total_size }} {% else %} {{ total_size | divided_by: 1000.0 | round: 1 }}k {% endif %}字</p>
+<h2>{{ archives.title }}</h2>
+
+<p>
+  {{ archives.total.info }} {{ site.posts | size }} {{ archives.total.unit }}
+  {% if pin_posts_num > 0 %}
+    {{ archives.pin.info }} {{pin_posts_num}} {{ archives.pin.unit }}
+  {% endif %}
+  {{ archives.words.info }} 
+  {% if total_size < 1000 %}
+   {{ total_size }} 
+  {% else %} 
+    {{ total_size | divided_by: 1000.0 | round: 1 }}k 
+  {% endif %}
+  {{ archives.words.unit }}
+</p>
 
 {% assign ssyears = "rat,ox,tiger,rabbit,dragon,snake,horse,goat,monkey,rooster,dog,pig" | split: "," %}
 
 {% if pin_posts_num > 0 %}
-<h3>置顶文章</h3>
+<h3>{{ archives.pin.title }}</h3>
 <ul>
   {% for post in pin_posts %}
     <li>

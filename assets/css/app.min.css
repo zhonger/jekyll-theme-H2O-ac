@@ -1199,7 +1199,7 @@ a.extlinks::after {
   margin-bottom: 20px;
   height: 40px;
   line-height: 40px;
-  min-width: 90px;
+  min-width: 150px;
 }
 .author-detail .comment .comments-headline .icon {
   width: 30px;
@@ -1793,6 +1793,10 @@ a.extlinks::after {
 }
 .markdown-body .post-copyright p.tips {
   color: #e32e00;
+  display: none;
+}
+.markdown-body .post-copyright p.tips.active {
+  display: block;
 }
 .markdown-body .language-plaintext {
   color: chocolate;

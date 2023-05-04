@@ -1,5 +1,6 @@
+{% assign lang = page.lang | default: site.default_lang %}
 <!DOCTYPE html>
-<html lang="{{site.language}}">
+<html lang="{{ lang }}">
 {% include head.html %}
 
 {% if site.prism.line_numbers %}
@@ -7,7 +8,6 @@
 {% else %}
 <body ontouchstart="">
 {% endif %}
-
     <!--[if lt IE 10]>
     <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
     <![endif]-->

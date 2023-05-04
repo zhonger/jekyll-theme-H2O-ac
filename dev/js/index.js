@@ -547,7 +547,10 @@ $(document).ready(function(){
      * Alive time
      */
     
-    var alivetime = $(".alivetime")
+    var alivetime_days = $(".alivetime_days")
+    var alivetime_hours = $(".alivetime_hours")
+    var alivetime_minutes = $(".alivetime_minutes")
+    var alivetime_seconds = $(".alivetime_seconds")
     function alive_time() {
         var alivestart = $("meta[name='alivestart']").attr('content');
         window.setTimeout(alive_time, 1000);
@@ -564,7 +567,11 @@ $(document).ready(function(){
         e_minsold = (e_hrsold - hrsold) * 60;
         minsold= Math.floor(e_minsold)                   
         seconds = Math.floor((e_minsold - minsold) * 60);  
-        alivetime.html(daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒");
+        alivetime_days.html(daysold)
+        alivetime_hours.html(hrsold)
+        alivetime_minutes.html(minsold)
+        alivetime_seconds.html(seconds)
+        // alivetime.html(daysold + " 天 " + hrsold + " 小时 " + minsold + " 分 " + seconds + " 秒");
 	}
 	alive_time();
 

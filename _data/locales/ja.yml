@@ -1,0 +1,75 @@
+cover: 'このイメージの提供者'
+panel:
+  posts: '記事'
+  categories: 'カテゴリー'
+  tags: 'タグ'
+  hot_tags: '人気タグ'
+  links: 'リンク'
+  update: '最新のアップデート'
+footer:
+  driver: 'このサイトは <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> と <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> を利用しています'
+  views: '総閲覧数'
+  visitors: '総訪問数'
+  upyun: 'CDN サービスプロバイダー'
+  running:
+    info: 'このサイト経過時間'
+    day: '日'
+    hour: '時'
+    minute: '分'
+    second: '秒'
+  tos:
+    left: '本ウェブサイトでは、サイト利便性向上のためCookieを使用しています。詳細は'
+    middle: 'このサイトについて'
+    right: 'をご覧ください。'
+    btn: '同意する'
+post:
+  outline: '目次'
+  cover:
+    total:
+      info: 'この記事は合計'
+      unit: '語です'
+    time:
+      info: '全文を読むのに約'
+      unit: '分かかります'
+    view:
+      info: 'この記事の総閲覧数は'
+      unit: 'です'
+  tips:
+    left: 'もう最新記事！'
+    right: 'もう最後の記事！'
+  copyright:
+    statement: 
+      name: '著作権表示'
+      left: '特に断りのない限り、この記事の著作権は'
+      middle: 'に帰属します。転載の時にこの記事のリンクを示してください。'
+      right1: '（'
+      right2: 'ライセンスの下でライセンスされています。）'
+      outdate1: 'この記事の最終更新日は' 
+      outdate2: '日前です。記事の内容の一部が古くなっている可能性があります！'
+    title: 'タイトル'
+    link: 'リンク'
+  comment: 'コメント'
+archives:
+  title: 'アーカイブス'
+  total:
+    info: '本サイトには'
+    unit: 'の記事があります。'
+  pin:
+    info: 'この中には'
+    unit: 'の付箋記事があります。'
+    title: '付箋記事'
+  words:
+    info: '合計'
+    unit: 'ワードです。'
+categories:
+  title: 'カテゴリ'
+  u_title: '未分類'
+  total: 
+    info: '本サイトには'
+    unit: 'の記事があります。'
+  type:
+    info: '('
+    unit: 'のカテゴリ、'
+  uncategory: 
+    info: ''
+    unit: 'の未分類の記事 )'

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-{% if post.language %}
-<html lang="{{post.language}}">
+{% if post.lang %}
+<html lang="{{post.lang}}">
 {% else %}
-<html lang="{{site.language}}">
+<html lang="{{site.default_lang}}">
 {% endif %}
 {% include post-head.html %}
 
@@ -11,7 +11,9 @@
 {% else %}
 <body ontouchstart="">
 {% endif %}
-
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
+{% assign post = locales.post %}
   <!--[if lt IE 10]>
   <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
   <![endif]-->
@@ -21,18 +23,10 @@
   <div id="all" class="post">
   {% endif %}
     <div class="alert-tip" id="no-previous">
-      {% if site.language == 'zh-cn' %}
-      已经是最新一篇文章了！
-      {% else %}
-      Already the latest article!
-      {% endif %}
+      {{ post.tips.left }}
     </div>
     <div class="alert-tip" id="no-next">
-      {% if site.language == 'zh-cn' %}
-      已经是最后一篇文章了！
-      {% else %}
-      Already the last article!
-      {% endif %}
+      {{ post.tips.right }}
     </div>
     <input id="nm-switch" type="hidden" value="{{ site.nightMode }}"> {% include header.html %}
 
@@ -68,67 +62,36 @@
             </svg>
             <span class="update-at"></span>
           </time>
-          {% if site.language == 'zh-cn' %}
             <span class="post-meta-item">
               <svg class="icon words" aria-hidden="true">
                 <use xlink:href="#icon-words"></use>
               </svg>
               {% assign total_size = page.content | strip_html | strip_newlines | remove: " " | size %}
-              本文总共 {% if total_size < 1000 %} {{ total_size }} {% else %} {{ total_size | divided_by: 1000.0 | round: 1 }}k {% endif %} 字
+              {{ post.cover.total.info }} {% if total_size < 1000 %} {{ total_size }} {% else %} {{ total_size | divided_by: 1000.0 | round: 1 }}k {% endif %} {{ post.cover.total.unit }}
             </span>
             <span class="post-meta-item">
               <svg class="icon time" aria-hidden="true">
                 <use xlink:href="#icon-time"></use>
               </svg>
-              阅读全文大约需要 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 分钟
+              {{ post.cover.time.info }} {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} {{ post.cover.time.unit }}
             </span>
             {% if site.busuanzi %}
               <span class="post-meta-item">
                 <svg class="icon pv" aria-hidden="true">
                   <use xlink:href="#icon-pv"></use>
                 </svg>
-                本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次 
+                {{ post.cover.view.info }} <span id="busuanzi_value_page_pv"></span> {{ post.cover.view.unit }}
               </span>
             {% endif %}
-          {% else %}
-            <span class="post-meta-item">
-              <svg class="icon words" aria-hidden="true">
-                <use xlink:href="#icon-words"></use>
-              </svg>
-              There are {{ page.content | strip_html | strip_newlines | remove: " " | size }} words totally 
-            </span>
-            <span class="post-meta-item">
-              <svg class="icon time" aria-hidden="true">
-                <use xlink:href="#icon-time"></use>
-              </svg>
-              It may needs {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} minutes
-            </span>
-            {% if site.busuanzi %}
-              <span class="post-meta-item">
-                <svg class="icon pv" aria-hidden="true">
-                  <use xlink:href="#icon-pv"></use>
-                </svg>
-                Total pageviews <span id="busuanzi_value_page_pv"></span>
-              </span>
-            {% endif %}
-          {% endif %}
-          {% if page.cover_author %}
+            {% if page.cover_author %}
             <span class="post-meta-item">
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-image"></use>
               </svg>
               {% if page.cover_author_link %}
-                {% if site.language == 'zh-cn' %}
-                  封面图片由 <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a> 提供
-                {% else %}
-                  Cover is provided by <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a>
-                {% endif %}
+                {{ locales.cover }} <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a>
               {% else %}
-                {% if site.language == 'zh-cn' %}
-                  封面图片由 {{ page.cover_author }} 提供
-                {% else %}
-                  Cover is provided by {{ page.cover_author }}
-                {% endif %}
+                {{ locales.cover }} {{ page.cover_author }}
               {% endif %}
             </span>
           {% endif %}
@@ -144,34 +107,58 @@
       <h2 class="post-subtitle">{{ page.subtitle }}</h2>
       {% endif %}
 
+      {% assign copyright = post.copyright %}
       {% if site.toc %}
       <div class="container">  
         <div class="contents">
           <article class="markdown-body">
-            {{ page.content | extlinks }}
+            {{ page.content }}
             <div class="post-copyright">
-              <p><span>版权声明：</span>如无特别声明，本文版权归&nbsp;<a href="{{ site.url }}">{{ site.title }}</a>&nbsp;所有，转载请注明本文链接。</p>
-              {% if site.cclicense %}<p>（采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC BY-NC-SA 4.0</a> 许可协议进行授权）</p>{% endif %}
-              <p><span>本文标题：</span>《 {{ page.title }} 》</p>
-              <p><span>本文链接：</span><a href="{{ page.url | prepend: site.url }}">{{ page.url | prepend: site.url }}</a></p>
+              <p>
+                <span>{{ copyright.statement.name }}：</span>
+                {{ copyright.statement.left }}
+                <a href="{{ site.url }}">{{ site.title }}</a>
+                {{ copyright.statement.middle }} 
+              </p>
+              {% if site.cclicense %}
+                <p> 
+                  {{ copyright.statement.right1 }}
+                  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC BY-NC-SA 4.0</a> 
+                  {{ copyright.statement.right2 }}
+                </p>
+              {% endif %}
+              <p><span>{{ copyright.title }}：</span>《 {{ page.title }} 》</p>
+              <p><span>{{ copyright.link }}：</span><a href="{{ page.url | prepend: site.url }}">{{ page.url | prepend: site.url }}</a></p>
+              <p class="tips">{{ copyright.statement.outdate1 }} <span></span> {{ copyright.statement.outdate2 }}</p>
             </div>
           </article>
         </div>   
         <div class="table-of-contents">
-          <h2>Contents</h2>
+          <h2>{{ post.outline }}</h2>
           {% include toc.html html=content %}
         </div>
       </div>
       {% else %}
         <article class="markdown-body">
-
-          <span class="post-meta-item">Cover is provided by {{ page.cover_author }}</span>
           {{ page.content }}
           <div class="post-copyright">
-            <p><span>版权声明：</span>如无特别声明，本文版权归&nbsp;<a href="{{ site.url }}">{{ site.title }}</a>&nbsp;所有，转载请注明本文链接。</p>
-            {% if site.cclicense %}<p>（采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC BY-NC-SA 4.0</a> 许可协议进行授权）</p>{% endif %}
-            <p><span>本文标题：</span>《 {{ page.title }} 》</p>
-            <p><span>本文链接：</span><a href="{{ page.url | prepend: site.url }}">{{ page.url | prepend: site.url }}</a></p>
+            {% assign copyright = post.copyright %}
+            <p>
+              <span>{{ copyright.statement.name }}：</span>
+              {{ copyright.statement.left }}
+              <a href="{{ site.url }}">{{ site.title }}</a>
+              {{ copyright.statement.middle }}
+            </p>
+            {% if site.cclicense %}
+              <p> 
+                {{ copyright.statement.right1 }}
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC BY-NC-SA 4.0</a> 
+                {{ copyright.statement.right2 }}
+              </p>
+            {% endif %}
+            <p><span>{{ copyright.title }}：</span>《 {{ page.title }} 》</p>
+            <p><span>{{ copyright.link }}：</span><a href="{{ page.url | prepend: site.url }}">{{ page.url | prepend: site.url }}</a></p>
+            <p class="tips">{{ copyright.statement.outdate1 }} <span></span> {{ copyright.statement.outdate2 }}</p>
           </div>
         </article>
       {% endif %}
@@ -241,7 +228,7 @@
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-comment"></use>
           </svg>
-          <span>评论</span>
+          <span>{{ locales.post.comment }}</span>
         </div>
         {% if site.comments.disqus and site.comments.waline %}
         <div id="comments-switch">
@@ -416,8 +403,9 @@
             $('.post time span.update-at').html(local_update_at["date"]);
 
             var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
             if(relative_time > 365){
-              $(".post-copyright").append("<p class='tips'>本文最后一次更新为 <span>" + relative_time + "</span> 天前，文章中的某些内容可能已过时！</p>");
+              $(".post-copyright .tips").addClass("active");
             }
           });   
           
@@ -436,8 +424,6 @@
                   window.location.href = previous_url;
               }else {
                   $("#no-previous").addClass("active");
-                  console.log('已经是最新一篇文章了！');
-                  console.log('Already the latest article！');
                   setTimeout(function(){$("#no-previous").removeClass("active");}, 1500);
               }
           });
@@ -450,8 +436,6 @@
                   window.location.href = next_url;
               }else {
                   $("#no-next").addClass("active");
-                  console.log('已经是最后一篇文章了！');
-                  console.log('Already the last article！');
                   setTimeout(function(){$("#no-next").removeClass("active");}, 1500);
               }
           });

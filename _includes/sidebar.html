@@ -1,3 +1,6 @@
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
+{% assign panel = locales.panel %}
 <aside class="g-sidebar-wrapper">
     <div class="g-sidebar">
         <section class="author-card">
@@ -10,19 +13,19 @@
             </div>
             <div class="level">
                 <div class="level-item">
-                    <p class="heading">Posts</p>
+                    <p class="heading">{{ panel.posts }}</p>
                     <a href="{{ "/archives.html" | prepend: site.baseurl }}">
                         <p class="title">{{ site.posts | size }}</p>
                     </a>
                 </div>
                 <div class="level-item">
-                    <p class="heading">Categories</p>
+                    <p class="heading">{{ panel.categories }}</p>
                     <a href="{{ "/categories.html" | prepend: site.baseurl }}">
                         <p class="title">{{ site.categories | size }}</p>
                     </a>
                 </div>
                 <div class="level-item">
-                    <p class="heading">Tags</p>
+                    <p class="heading">{{ panel.tags }}</p>
                     <a href="{{ "/tags.html" | prepend: site.baseurl }}">
                         <p class="title">{{ site.tags | size }}</p>
                     </a>
@@ -51,7 +54,7 @@
             {% endif %}
         {% endfor %}
         <section class="tags-card">
-            <div class="links" rel="links">热门标签</div>
+            <div class="links" rel="links">{{ panel.hot_tags }}</div>
             {% assign pnum = 0 %}
             {% for i in (1..max_tag_count) reversed %}
                 {% for tag in site.tags %}
@@ -72,7 +75,7 @@
 
         {% if site.links.size > 0 %}
         <section class="tags-card">
-            <div class="links" rel="links">Links</div>
+            <div class="links" rel="links">{{ panel.links }}</div>
             {% for link in site.links %}
                 <a href="{{ link[1] }}" target="_blank" class="tag" rel="noreferrer"> {{ link[0] }} </a>
             {% endfor %}
@@ -81,7 +84,7 @@
 
         <section class="tags-card">
             {% assign posts = site.posts | sort: "date" | reverse %}
-            <div class="links">最近更新</div>
+            <div class="links">{{ panel.update }}</div>
             <ul class="latest-articles">
                 {% for post in posts limit:3 %}
                     <li>

@@ -10,9 +10,21 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
 {% assign uncategory_posts = site.posts | where: "categories", empty | sort: "date" | reverse %}
 {% assign uncategory_posts_num = uncategory_posts | size %}
 
-<h2>Categories</h2>
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
+{% assign categories = locales.categories%}
 
-<p>本站共有 {{ site.posts | size }} 篇文章{% if category_posts_num > 0 %}，其中有 {{ category_posts_num }} 个类别{% endif %}{% if uncategory_posts_num > 0 %}，{{ uncategory_posts_num }} 篇未分类{% endif %}</p>
+<h2>{{ categories.title }}</h2>
+
+<p>
+  {{ categories.total.info }} {{ site.posts | size }} {{ categories.total.unit }} 
+  {% if category_posts_num > 0 %}
+    {{ categories.type.info }} {{ category_posts_num }} {{ categories.type.unit }}
+  {% endif %}
+  {% if uncategory_posts_num > 0 %} 
+    {{ categories.uncategory.info }} {{ uncategory_posts_num }} {{ categories.uncategory.unit }}
+  {% endif %}
+</p>
 
 {% for category in site.categories %}
   {% assign category_name = category | first %}
@@ -39,7 +51,7 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
 {% endfor %}
 
 {% if uncategory_posts_num > 0 %}
-  <h3 class="category">Uncategorized</h3>
+  <h3 class="category">{{ categories.u_title }}</h3>
   <ul>
   {% for post in uncategory_posts %}
     <li>

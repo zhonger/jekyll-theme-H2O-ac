@@ -17,6 +17,10 @@ url: 'https://h2o-ac.pages.dev' # your host
 # 但是，如果你创建了一个叫 "myblog" 的网站，此时网址会变成 "kaeyleo.github.io/myblog" ，这时再将 baseurl 设置为 '/myblog'
 baseurl: ''
 
+# Internalization 国际化
+languages: ["zh-Hans", "zh-Hant", "en", "ja"]
+default_lang: "zh-Hans"
+
 # Github
 github:
   enabled: true

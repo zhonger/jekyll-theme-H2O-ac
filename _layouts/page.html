@@ -5,7 +5,8 @@ description: 或许是最漂亮的Jekyll主题
 ---
 
 {% include header.html %}
-
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
 <div
     class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}"
     data-theme="{{ site.theme-color }}"
@@ -19,17 +20,9 @@ description: 或许是最漂亮的Jekyll主题
                 <use xlink:href="#icon-image"></use>
             </svg>
             {% if page.cover_author_link %}
-                {% if site.language == 'zh-cn' %}
-                    封面图片由 <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a> 提供
-                {% else %}
-                    Cover is provided by <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a>
-                {% endif %}
+                {{ locales.cover }} <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a>
             {% else %}
-                {% if site.language == 'zh-cn' %}
-                    封面图片由 {{ page.cover_author }} 提供
-                {% else %}
-                    Cover is provided by {{ page.cover_author }}
-                {% endif %}
+                {{ locales.cover }} {{ page.cover_author }}
             {% endif %}
         </p>
     {% endif %}

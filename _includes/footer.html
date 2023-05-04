@@ -1,3 +1,6 @@
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
+{% assign footer = locales.footer%}
 <footer class="g-footer">
   <section class="links">{{ site.title }} ©
   {% assign current = "now" | date: "%Y" | plus: 0%}
@@ -10,52 +13,56 @@
     <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
   {% endif %}
   </section>
-  <section class="links">Powered by <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> {% if site.version %}v{{ site.version }} {% endif %} (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a>) {% if site.supports.webify %} & <a href="https://webify.cloudbase.net/" target="_blank" class="extlinks">CloudBase Webify</a> {% endif %}
+  <section class="links">
+    {{ footer.driver }}
+    {% if site.version %} (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v.{{ site.version }}" target="_blank" class="extlinks">v{{ site.version }}</a>){% endif %}  
+    {% if site.supports.webify %} & <a href="https://webify.cloudbase.net/" target="_blank" class="extlinks">CloudBase Webify</a> {% endif %}
+  </section>
   {% if site.cnzz %}
   <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz }}'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D{{ site.cnzz }}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
   {% endif %}
-  </section>
   {% if site.busuanzi %}
   <section>
     <span id="busuanzi_container_site_pv">
-      👁️ Total Views <span id="busuanzi_value_site_pv"></span> <b>·</b>
+      👁️ {{ footer.views }} <span id="busuanzi_value_site_pv"></span> <b>·</b>
     </span>
     <span id="busuanzi_container_site_uv">
-      👤 Total Visitors <span id="busuanzi_value_site_uv"></span>
+      👤 {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
     </span>
   </section>
   {% endif %}
   {% if site.supports.upyun %}
   <section>
-    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">本网站由 <img src="{{ "/assets/icons/upyun.png" | relative_url }}" class="upyun" /></span> 提供 CDN 加速/云存储服务</a>
+    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">{{ footer.upyun }} <img src="{{ "/assets/icons/upyun.png" | relative_url }}" class="upyun" /></a>
   </section>
   {% endif %}
   <section>
     {% if site.alivetime %}
-    本站已运行 <span class="alivetime"></span>
+      {{ footer.running.info }} 
+      <span class="alivetime_days"></span> {{ footer.running.day }}
+      <span class="alivetime_hours"></span> {{ footer.running.hour }}
+      <span class="alivetime_minutes"></span> {{ footer.running.minute }}
+      <span class="alivetime_seconds"></span> {{ footer.running.second }}
     {% endif %}
     {% if site.foreverblog or site.wormhole %}
     <br/>
     {% endif %}
     {% if site.foreverblog %}
-    <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
-      <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
-    </a>
+      <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
+        <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
+      </a>
     {% endif %}
     {% if site.wormhole %}
-    <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
-      <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
-    </a>
+      <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
+        <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+      </a>
     {% endif%}
   </section>
 </footer>
 <div class="cookie-tip">
-  {% if site.language == 'zh-cn' %}
-  {{ cookie.cookieconsent_status }}为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「<a href="{{ site.tos | prepend: site.baseurl }}">本站使用条款</a>」了解更多。
-  {% else %}
-  In order to improve the experience and gurantee necessary functions of our website, we will use the local Cookie. More details in <a href="{{ site.tos | prepend: site.baseurl }}">ToS</a> page.
-  {% endif %}
-  <button id="accept-tos">同意（Accept）</button>
+  {{ cookie.cookieconsent_status }} {{ footer.tos.left }}「 <a href="{{ site.tos | prepend: site.baseurl }}">{{ footer.tos.middle }}</a> 」{{ footer.tos.right }}
+
+  <button id="accept-tos">{{ footer.tos.btn }}</button>
 </div>
 <button id="list" aria-label="Scroll back to top" class="mobile-list" type="button">
   <svg class="icon list day" aria-hidden="true">

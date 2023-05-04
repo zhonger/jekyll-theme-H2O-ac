@@ -1,0 +1,75 @@
+cover: '封面图片提供者'
+panel:
+  posts: '文章'
+  categories: '类别'
+  tags: '标签'
+  hot_tags: '热门标签'
+  links: '链接'
+  update: '最近更新'
+footer:
+  driver: '本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动'
+  views: '总浏览量'
+  visitors: '总访问量'
+  upyun: 'CDN 加速/云存储服务提供商'
+  running:
+    info: '本站已运行'
+    day: '天'
+    hour: '小时'
+    minute: '分'
+    second: '秒'
+  tos:
+    left: '为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看'
+    middle: '本站使用条款'
+    right: '了解更多。'
+    btn: '同意'
+post:
+  outline: '目录'
+  cover:
+    total:
+      info: '本文总共'
+      unit: '字'
+    time:
+      info: '阅读全文大约需要'
+      unit: '分钟'
+    view:
+      info: '本文总阅读量'
+      unit: '次'
+  tips:
+    left: '已经是最新一篇文章了！'
+    right: '已经是最后一篇文章了！'
+  copyright:
+    statement: 
+      name: '版权声明'
+      left: '如无特别声明，本文版权归'
+      middle: '所有，转载请注明本文链接。'
+      right1: '（采用 '
+      right2: '许可协议进行授权）'
+      outdate1: '本文最后一次更新为' 
+      outdate2: '天前，文章中的某些内容可能已过时！'
+    title: '本文标题'
+    link: '本文链接'
+  comment: '评论'
+archives:
+  title: '归档'
+  total:
+    info: '本站共有文章'
+    unit: '篇，'
+  pin:
+    info: '其中置顶文章'
+    unit: '篇，'
+    title: '置顶文章'
+  words:
+    info: '总计字数'
+    unit: '字。'
+categories:
+  title: '类别'
+  u_title: '未分类'
+  total: 
+    info: '本站共有文章'
+    unit: '篇，'
+  type:
+    info: '其中有类别'
+    unit: '个，'
+  uncategory: 
+    info: '未分类有'
+    unit: '篇。'

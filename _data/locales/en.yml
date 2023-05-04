@@ -1,0 +1,75 @@
+cover: 'The cover image is provided by'
+panel:
+  posts: 'POSTS'
+  categories: 'CATEGORIES'
+  tags: 'TAGS'
+  hot_tags: 'HOT TAGS'
+  links: 'LINKS'
+  update: 'RECENT UPDATES'
+footer:
+  driver: 'Powered by <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a>)'
+  views: 'Total Views'
+  visitors: 'Total Visitors'
+  upyun: 'CDN is provided by'
+  running:
+    info: 'This site has been alive for'
+    day: 'd'
+    hour: 'h'
+    minute: 'm'
+    second: 's'
+  tos:
+    left: 'In order to improve the experience and gurantee necessary functions of our website, we will use the local Cookie. More details in'
+    middle: 'Terms of Service'
+    right: 'page.'
+    btn: 'Accept'
+post:
+  outline: 'Contents'
+  cover:
+    total:
+      info: 'There are totally'
+      unit: 'words'
+    time:
+      info: 'It may needs'
+      unit: 'minutes'
+    view:
+      info: 'Total pageviews'
+      unit: ''
+  tips:
+    left: 'It is already the latest posts!'
+    right: 'It is already the oldest posts!'
+  copyright:
+    statement: 
+      name: 'Statement'
+      left: 'If no specific statement in the content, the copyright belongs to'
+      middle: '. Reprint please indicate the link of this article.'
+      right1: '(The content is authorized with'
+      right2: 'protocol)'
+      outdate1: 'The last update of this article was' 
+      outdate2: 'days ago, so it may be outdated!'
+    title: 'Title'
+    link: 'Link'
+  comment: 'Comment'
+archives:
+  title: 'Archives'
+  total:
+    info: 'There are totally'
+    unit: 'articles in this site.'
+  pin:
+    info: '('
+    unit: ' pinned articles,'
+    title: 'Pinned Articles'
+  words:
+    info: ' totally'
+    unit: 'words )'
+categories:
+  title: 'Categories'
+  u_title: 'Uncategorized'
+  total: 
+    info: 'There are totally'
+    unit: 'articles.'
+  type:
+    info: '('
+    unit: 'categories,'
+  uncategory: 
+    info: ''
+    unit: 'uncategoried articles )'
