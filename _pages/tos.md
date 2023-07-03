@@ -2,6 +2,7 @@
 layout: page
 home-title: Welcome to zhonger's blog!
 description: Writing, writing, writing ...
+permalink: /tos.html
 ---
 
 # 本站使用条款
