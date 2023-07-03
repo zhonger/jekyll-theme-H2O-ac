@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Li</title>
+    <meta name="author"  content="zhonger">
+    <meta name="description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。">
+    <meta name="keywords"  content="zhonger，zhonger的博客，nodejs，kvm, 机器学习">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mr Li">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://h2o-ac.pages.dev/index.html">
+    <meta property="og:baseurl" content="">
+    <meta property="og:description" content="个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。">
+    <meta property="og:site_name" content="Mr Li">
+    <meta property="og:gray" content="false">
+    
+    <meta name="alivestart" content="12/23/2021">
+    
+    
+    <meta name="theme-color" content="#81BBFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/assets/img/touch/apple-touch-icon.png" />
+    <link rel="Shortcut Icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="bookmark" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-one-light.min.css" />
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+</head>
+
+
+
+<body class="line-numbers" ontouchstart="">
+
+    <!--[if lt IE 10]>
+    <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+    <![endif]-->
+    
+    <div id="all">
+    
+      <input id="nm-switch" type="hidden" value="false">
+      <div class="visible">
+        <header class="g-header">
+    <div class="g-logo">
+      <a href="/" aria-label="logo"></a>
+    </div>
+    <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
+    <div id="mode-toggle">
+        <svg class="icon icon-day" aria-hidden="true">
+            <use xlink:href="#icon-day"></use>
+        </svg>
+        <svg class="icon icon-night" aria-hidden="true">
+            <use xlink:href="#icon-night"></use>
+        </svg>
+    </div>
+    <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+        <use xlink:href="#icon-menu"></use>
+    </svg>
+    <nav class="g-nav">
+        <ul>
+            
+                
+                <li>
+                    <a href="/" aria-label="home">
+                        home
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/blog/index.html" aria-label="blog">
+                        blog
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/archives.html" aria-label="archives">
+                        archives
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/tags.html" aria-label="tags">
+                        tags
+                    </a>
+                </li>
+                
+            
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle"> about </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li>
+                            <a href="/logs.html" aria-label="logs">
+                                logs
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/tos.html" aria-label="tos">
+                                tos
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/feed.xml" aria-label="RSS">
+                                RSS
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/cv.html" aria-label="CV">
+                                CV
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/links.html" aria-label="links">
+                                links
+                            </a>
+                        </li>
+                    
+                    </ul> 
+                </li>
+                
+            
+            <li class="mode">
+                <svg class="icon day" aria-hidden="true">
+                    <use xlink:href="#icon-day"></use>
+                </svg>
+                <svg class="icon night" aria-hidden="true">
+                    <use xlink:href="#icon-night"></use>
+                </svg>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<div
+    class="g-banner home-banner banner-theme-default"
+    data-theme="default"
+    style=""
+>
+    <h2>H2O-ac Theme For Jekyll</h2>
+    <h3>基于可能是最好看的 Jekyll 主题 H2O 的学术版主题</h3>
+    
+</div>
+
+<main class="g-container home-content">
+    <div class="article-list">
+        <div class="post-content" style="padding-left: 30px;padding-right: 30px;width: auto;">
+            <article class="markdown-body" style="width: auto;">
+                <h2 id="about-me">About me</h2>
+
+<p>  I am a PhD student from xxx University…..</p>
+
+<h2 id="publications">Publications</h2>
+
+<ol>
+  <li>Publication 1 <a href="https://doi.org" rel="nofollow" target="_blank" class="extlinks">[DOI]</a>
+</li>
+  <li>Publication 2 <a href="[#](https://doi.org)">[DOI]</a>
+</li>
+</ol>
+
+<h2 id="contact">Contact</h2>
+
+<p>Email: zhonger[at]live.cn (Please replace [at] with @.)</p>
+
+<h2 id="关于我">关于我</h2>
+
+<p>  我是一名来自xx大学的博士生。。。。。。</p>
+
+<h2 id="论文发表">论文发表</h2>
+
+<ol>
+  <li>论文1 <a href="https://doi.org" rel="nofollow" target="_blank" class="extlinks">[DOI]</a>
+</li>
+  <li>论文2 <a href="https://doi.org" rel="nofollow" target="_blank" class="extlinks">[DOI]</a>
+</li>
+</ol>
+
+<h2 id="联系我">联系我</h2>
+
+<p>邮箱：zhonger[at]live.cn (请使用@替换[at])</p>
+
+            </article>
+        </div>
+        <section class="author-detail">
+            
+            
+            
+            
+            
+        </section>
+    </div>
+
+    
+
+
+<aside class="g-sidebar-wrapper">
+    <div class="g-sidebar">
+        <section class="author-card">
+            <div class="avatar">
+                <img src="/assets/img/profile.webp" alt="">
+            </div>
+            <div class="author-name" rel="author">zhonger</div>
+            <div class="bio">
+                <p>全栈开发者，热爱前端、运维和架构设计</p>
+            </div>
+            <div class="level">
+                <div class="level-item">
+                    <p class="heading">文章</p>
+                    <a href="/archives.html">
+                        <p class="title">5</p>
+                    </a>
+                </div>
+                <div class="level-item">
+                    <p class="heading">类别</p>
+                    <a href="/categories.html">
+                        <p class="title">2</p>
+                    </a>
+                </div>
+                <div class="level-item">
+                    <p class="heading">标签</p>
+                    <a href="/tags.html">
+                        <p class="title">11</p>
+                    </a>
+                </div>
+            </div>
+            
+            <ul id="sns-links" class="sns-links">
+                
+                <li>
+                    <a href="https://scholar.google.com/citations?user=AUupIooAAAAJ" target="_blank" aria-label="google-scholar">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-google-scholar"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.researchgate.net/profile/Shengzhou-Li" target="_blank" aria-label="researchgate">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-researchgate"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://orcid.org/0000-0001-6973-3825" target="_blank" aria-label="ORCID">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-ORCID"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/zhonger" target="_blank" aria-label="github">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.linkedin.com/in/shengzhouli/" target="_blank" aria-label="linkedin">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-linkedin"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://segmentfault.com/u/wuwozhonger" target="_blank" aria-label="segmentfault">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-segmentfault"></use>
+                        </svg>
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </section>
+
+        
+        
+        
+        <section class="tags-card">
+            <div class="links" rel="links">热门标签</div>
+            
+            
+                
+                    
+                        
+                        
+                        <a href="/tags.html#jekyll" class="tag">jekyll<sup>3</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91" class="tag">前端开发<sup>2</sup></a>
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#mathjax" class="tag">mathjax<sup>2</sup></a>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+            
+                
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E8%AE%BE%E8%AE%A1" class="tag">设计<sup>1</sup></a>
+                    
+                
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#theme" class="tag">theme<sup>1</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#blog" class="tag">blog<sup>1</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#ac" class="tag">ac<sup>1</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#develop" class="tag">develop<sup>1</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E4%B8%BB%E9%A2%98" class="tag">主题<sup>1</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E5%AD%A6%E6%9C%AF" class="tag">学术<sup>1</sup></a>
+                    
+                
+                    
+                        
+                        
+                        <a href="/tags.html#%E8%BF%90%E7%BB%B4" class="tag">运维<sup>1</sup></a>
+                    
+                
+                
+            
+        </section>
+        
+
+        
+        <section class="tags-card">
+            <div class="links" rel="links">链接</div>
+            
+                <a href="https://lisz.me" target="_blank" class="tag" rel="noreferrer"> Mr Li </a>
+            
+        </section>
+        
+
+        <section class="tags-card">
+            
+            <div class="links">最近更新</div>
+            <ul class="latest-articles">
+                
+                    <li>
+                        <p class="latest-title">
+                            <a href="/test/test-en.html"> Test en </a>
+                        </p>
+                        <span class="latest-date">
+                            
+                              2022-04-29 
+                            
+                        </span>
+                    </li>   
+                
+                    <li>
+                        <p class="latest-title">
+                            <a href="/tech/new-theme-h2o-ac.html"> H2O-ac theme for Jekyll </a>
+                        </p>
+                        <span class="latest-date">
+                            
+                              2021-12-22 
+                            
+                        </span>
+                    </li>   
+                
+                    <li>
+                        <p class="latest-title">
+                            <a href="/test/mathjax-test.html"> MathJax Test </a>
+                        </p>
+                        <span class="latest-date">
+                            
+                              2017-07-30 
+                            
+                        </span>
+                    </li>   
+                
+            </ul>
+
+        </section>
+
+    </div>
+
+    
+    <div class="search-card">
+        <input id="search_input" type="text" placeholder="Search..." autocomplete="off">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-search"></use>
+        </svg>
+        <div class="search_result"></div>
+    </div>
+    
+
+</aside>
+
+</main>
+
+
+
+
+
+
+<footer class="g-footer">
+  <section class="links">Mr Li ©
+  
+  
+    2015
+    -
+  
+  2023
+  
+    <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">沪ICP备xxxxxxxx号</a>
+  
+  </section>
+  <section class="links">
+    本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
+     (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v.1.2.0" target="_blank" class="extlinks">v1.2.0</a>)  
+    
+  </section>
+  
+  
+  <section>
+    <span id="busuanzi_container_site_pv">
+      👁️ 总浏览量 <span id="busuanzi_value_site_pv"></span> <b>·</b>
+    </span>
+    <span id="busuanzi_container_site_uv">
+      👤 总访问量 <span id="busuanzi_value_site_uv"></span>
+    </span>
+  </section>
+  
+  
+  <section>
+    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">CDN 加速/云存储服务提供商 <img src="/assets/icons/upyun.png" class="upyun" /></a>
+  </section>
+  
+  <section>
+    
+      本站已运行 
+      <span class="alivetime_days"></span> 天
+      <span class="alivetime_hours"></span> 小时
+      <span class="alivetime_minutes"></span> 分
+      <span class="alivetime_seconds"></span> 秒
+    
+    
+    <br/>
+    
+    
+      <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
+        <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
+      </a>
+    
+    
+      <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
+        <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+      </a>
+    
+  </section>
+</footer>
+<div class="cookie-tip">
+   为了提升本站的使用体验和必要功能的正常使用，本站会使用本地 Cookie。详细请查看「 <a href="/tos.html">本站使用条款</a> 」了解更多。
+
+  <button id="accept-tos">同意</button>
+</div>
+<button id="list" aria-label="Scroll back to top" class="mobile-list" type="button">
+  <svg class="icon list day" aria-hidden="true">
+    <use xlink:href="#icon-list-day"></use>
+  </svg>
+  <svg class="icon list night" aria-hidden="true">
+    <use xlink:href="#icon-list-night"></use>
+  </svg>
+  <svg class="icon exit day" aria-hidden="true">
+    <use xlink:href="#icon-exit-day"></use>
+  </svg>
+  <svg class="icon exit night" aria-hidden="true">
+    <use xlink:href="#icon-exit-night"></use>
+  </svg>
+</button>
+<button id="bttb" aria-label="Scroll back to top" class="bttb" type="button">
+  <svg class="icon up day" aria-hidden="true">
+    <use xlink:href="#icon-up-day"></use>
+  </svg>
+  <svg class="icon up night" aria-hidden="true">
+    <use xlink:href="#icon-up-night"></use>
+  </svg>
+</button>
+
+
+      </div>
+    </div>
+    
+    <div class="modal">
+        <div class="modal-content">
+          <header>
+            <span class="close">&times;</span>
+          </header>
+          <div class="container"></div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+    <script src="https://at.alicdn.com/t/font_3046306_skfh9jzzbbf.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
+
+    
+    
+    
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <script>
+    if ("serviceWorker" in navigator) {
+        if (navigator.serviceWorker.controller) {
+            console.log("An active service worker found, no need to register");
+        } else {
+            // Register the service worker
+            navigator.serviceWorker
+            .register("/sw.js", {
+                scope: "/"
+            })
+            .then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    }
+
+// 检测浏览器是否支持SW
+// if(navigator.serviceWorker != null){
+//     navigator.serviceWorker.register("/sw.js")
+//         .then(function(registartion){
+//             console.log('支持sw:',registartion.scope)
+//         })
+// } else {
+//     console.log('不支持sw')
+// }
+</script>
+    <!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+     
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            mermaid.initialize({
+                startOnLoad:true,
+                theme: "default",
+            });
+            mermaid.init(undefined, $('.mermaid2'));
+        });
+    </script>
+
+    
+<!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BKfCOgmaRwWSMgx0RID3WIvqMSIHnVoL8fK7YfB8jeh2SgSEzWcvhhsxW2EmVl99Q-5f3KlxHUN4MxDIhgajiTo' });</script><!-- end webpushr code -->
+ 
+    
+
+<script>
+    $(document).ready(function(){
+    
+
+    if($("#comments-switch").length > 0){
+        var comment_status = $("#cmn-toggle-4")[0].checked;
+        if(comment_status){
+        $("#waline").addClass("active");
+        }else {
+        $("#disqus_thread").addClass("active");
+        }
+        $("#cmn-toggle-4").click(function(){
+        $("#disqus_thread").toggleClass("active");
+        $("#waline").toggleClass("active");
+        })
+    }else {
+        if($("#disqus_thread").length > 0) {
+        $("#disqus_thread").addClass("active");
+        }else if($("#waline").length > 0) {
+        $("#waline").addClass("active");
+        }
+    }
+    })
+</script>     
+</body>
+</html>

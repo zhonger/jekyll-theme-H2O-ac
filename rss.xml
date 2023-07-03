@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mr Li</title>
+    <description>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</description>
+    <link>https://h2o-ac.pages.dev//</link>
+    <atom:link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 03 Jul 2023 06:15:30 +0000</pubDate>
+    <lastBuildDate>Mon, 03 Jul 2023 06:15:30 +0000</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>Test en</title>
+        <description>&lt;h2 id=&quot;chapter-1&quot;&gt;Chapter 1&lt;/h2&gt;
+
+&lt;p&gt;This is a test paragraph for internalization.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 29 Apr 2022 10:50:00 +0000</pubDate>
+        <link>https://h2o-ac.pages.dev/test/test-en.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/test/test-en.html</guid>
+        
+        <category>mathjax</category>
+        
+        
+        <category>test</category>
+        
+      </item>
+    
+      <item>
+        <title>H2O-ac theme for Jekyll</title>
+        <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;  正如大家所知，Jekyll 是一款高可定制的、非常流行的静态博客生成工具。围绕着 Jekyll 也衍生出了很多优秀的 Jekyll 主题， 由 &lt;a href=&quot;https://github.com/kaeyleo&quot;&gt;廖柯宇&lt;/a&gt; 开发的 &lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;H2O&lt;/a&gt; 主题就是其中之一。极简主义、风格扁平化、卡片式布局、Medium 及知乎专栏的视觉风格等等特点，为我们带来了或许是迄今为止最漂亮的 Jekyll 主题。&lt;/p&gt;
+
+&lt;p&gt;  诞生之初，H2O 主题就在 Github 平台上以 MIT 许可证协议开放了源代码。这吸引了很多小伙伴纷纷转投 Jekyll 和 H2O 主题的阵营，本人也是其中之一。随着使用者越来越多，不少的小伙伴在使用过程中发现了一些小问题并主动修复，最后贡献到了 H2O 的主项目，这让 H2O 主题变得更好。本人在使用过程中也的确是发现了一些与自己实际需求不大一致的地方，并且在原 H2O 主题的基础上做了一些改动。考虑到这些改动可能并不是大多数人的需求，直接向原 H2O 主题提交 pull 请求合并的必要性不大，因此决定将原项目 fork 并改名。现正式将源代码以与 H2O 主题相同的 MIT 许可证协议在 Github 平台上公开，新项目地址为 &lt;a href=&quot;https://github.com/zhonger/jekyll-theme-H2O-ac&quot;&gt;zhonger/jekyll-theme-H2O-ac&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;  在此，非常感谢廖柯宇及其他小伙伴对于 H2O-ac 主题的基础主题 H2O 的代码开发和开放共享。&lt;/p&gt;
+
+&lt;h2 id=&quot;新特性&quot;&gt;新特性&lt;/h2&gt;
+
+&lt;h3 id=&quot;更适合学术人和运维程序员的页面结构&quot;&gt;更适合学术人和运维程序员的页面结构&lt;/h3&gt;
+
+&lt;p&gt;  H2O 主题其实在很大程度上已经满足了大部分人的需求，只是对于学术研究人员和运维程序员来说，个人觉得页面结构还是有点不够合适。学术研究人员比较重视在首页直接展示个人信息和研究情况，能够让人很快地了解到所需的信息，这其实是将 About me 这样一个平常的辅助页面当成了主页面来用。另外，运维程序员比较重视能一览所有文章的标题以迅速找到感兴趣的文章。虽然搜索功能、标签页、卡片展示页都能够列出所有的文章，但个人觉得还是不够简洁、方便。而像 Hexo 静态生成工具自带的 Archive 归档页面比较能满足这样的需求。除此之外，整个博客的系统日志变迁记录对于运维程序员来说也非常重要，毕竟如果通过发布一篇文章来描述变迁过程并不适合联系起来完整了解。如果有系统日志页，就可以按照年份、月份、事件的先后进行简要的描述，并且一览无遗。&lt;/p&gt;
+
+&lt;p&gt;  因此，在 H2O-ac 主题中，从原来 H2O 的主页中抽出框架做成了页面模板。根据实际页面的内容需求，增加了&lt;strong&gt;学术首页&lt;/strong&gt;、&lt;strong&gt;归档页&lt;/strong&gt;和&lt;strong&gt;系统日志页&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h4 id=&quot;学术首页&quot;&gt;学术首页&lt;/h4&gt;
+
+&lt;p&gt;  学术首页如下图所示，并将原来 H2O 中的卡片首页移动到 blog 子目录下了。如果读者想要看到文章卡片展示页，还是可以点击顶部的导航栏中的 BLOG 直接访问。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/XyT038.webp&quot; alt=&quot;首页 Home&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;归档页&quot;&gt;归档页&lt;/h4&gt;
+
+&lt;p&gt;  归档页设置为由 Jekyll 按照模板自动生成，以年份、日期、文章标题分级列表展示，简洁清晰。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/lj4vUP.webp&quot; alt=&quot;归档页 Archives&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;系统日志页&quot;&gt;系统日志页&lt;/h4&gt;
+
+&lt;p&gt;  系统日志页其实也不是经常更新的，只有在博客整体作出设置或改进的才加以说明。另外，也可以将一些固定的站点信息放置在系统日志页，比如站点的多点部署信息，读者可以根据此信息访问最快、最合适的节点。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/7QLEc6.webp&quot; alt=&quot;系统日志 Log&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;使用体验提升&quot;&gt;使用体验提升&lt;/h3&gt;
+
+&lt;p&gt;  廖柯宇也在 H2O 主题的默认页面中写道，目前 H2O 主题还有一些可优化的内容，比如夜间模式、查看大图等。这里，根据个人的一些实际需求和了解，在 H2O-ac 主题中做了调整。&lt;/p&gt;
+
+&lt;h4 id=&quot;社交图标扩展&quot;&gt;社交图标扩展&lt;/h4&gt;
+
+&lt;p&gt;  H2O 原有的社交图标其实已经比较广泛，只是还有些领域局限性，比如学术研究人员可能更希望展示谷歌学术、ResearchGate、ORCID 等社交图标及链接，而运维开发人员可能更希望展示 SegmentFault、CSDN、博客园等社交图标及链接。这里在 H2O 提供的社交图标类型基础上做了这些平台图标的扩充，同时尝试了 Symbol 引用的方式来实现社交图标鼠标悬停的效果，从而简化代码（H2O 采用的是字体图标的方式，需要为每一个社交图标定义不同的主题色）。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/UpnQdk.webp&quot; alt=&quot;社交图标 SNS&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;查看大图&quot;&gt;查看大图&lt;/h4&gt;
+
+&lt;p&gt;  查看大图功能的确对于读者的阅读体验来说有很大的提升。就像我们阅读文献一样，可能首先会只看文章附图来大致掌握文章的核心点。博文的查看大图功能也可能有这样的异曲同工之妙。这里是采用的 &lt;a href=&quot;https://fancyapps.com/docs/ui/fancybox&quot;&gt;Fancybox&lt;/a&gt; 插件实现的。H2O-ac 主题中只使用了最简单的配置，用户可以根据需求查看文档做出更多的修改。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/BzfBoz.webp&quot; alt=&quot;查看大图 Fancybox&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(2022年4月30日更新)&lt;/p&gt;
+
+&lt;p&gt;  由于 fancybox 库作者对原使用的 v3.5.7 版本不再进行维护和更新，现将版本更新至新的 v4.0 版本，即 &lt;a href=&quot;https://github.com/fancyapps/ui&quot;&gt;fancyapps/ui&lt;/a&gt;。另，新增将 alt 内容作为图片的描述显示在 fancybox 中。&lt;/p&gt;
+
+&lt;h4 id=&quot;深色模式切换按钮&quot;&gt;深色模式切换按钮&lt;/h4&gt;
+
+&lt;p&gt;(2022年4月30日更新)&lt;/p&gt;
+
+&lt;p&gt;  原来 H2O 主题的深色模式切换需要在 _config.yml 文件中配置开启，并且只能在固定时间段使用。此次更新在页面右上角提供了深色/浅色模式一键切换按钮，如下图所示。由于更新了深色模式采用 cookie 的方式来确定，此深色模式切换按钮可以与原来的深色模式配置共存。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/EPhFN9.webp&quot; alt=&quot;浅色模式 Day mode&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/BD7BqC.webp&quot; alt=&quot;深色模式 Night mode&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;提示框&quot;&gt;提示框&lt;/h4&gt;
+
+&lt;p&gt;(2022年4月30日更新)&lt;/p&gt;
+
+&lt;p&gt;  通过引入 &lt;a href=&quot;https://github.com/lazee/premonition&quot;&gt;lazee/premonition&lt;/a&gt; 库新增五种提示框：笔记、提示、警告、错误、引用，完全兼容原生 Markdown 语法，并对样式进行了主题适应。以下为五种提示框的实际效果。&lt;/p&gt;
+
+&lt;div class=&quot;premonition note&quot;&gt; &lt;div class=&quot;header&quot;&gt; &lt;svg class=&quot;icon note&quot; aria-hidden=&quot;true&quot;&gt; &lt;use xlink:href=&quot;#icon-note&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;div class=&quot;title&quot;&gt; Note &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;content&quot;&gt; &lt;p&gt;The body of the note goes here. Premonition allows you to write any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Markdown&lt;/code&gt; inside the block.&lt;/p&gt;
+
+
+
+ &lt;/div&gt; &lt;/div&gt;
+&lt;div class=&quot;premonition info&quot;&gt; &lt;div class=&quot;header&quot;&gt; &lt;svg class=&quot;icon info&quot; aria-hidden=&quot;true&quot;&gt; &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;div class=&quot;title&quot;&gt; 小提示 &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;content&quot;&gt; &lt;p&gt;The body of the info goes here. Premonition allows you to write any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Markdown&lt;/code&gt; inside the block.&lt;/p&gt;
+
+
+
+ &lt;/div&gt; &lt;/div&gt;
+&lt;div class=&quot;premonition warning&quot;&gt; &lt;div class=&quot;header&quot;&gt; &lt;svg class=&quot;icon warning&quot; aria-hidden=&quot;true&quot;&gt; &lt;use xlink:href=&quot;#icon-warning&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;div class=&quot;title&quot;&gt; Warning &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;content&quot;&gt; &lt;p&gt;The body of the warning goes here. Premonition allows you to write any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Markdown&lt;/code&gt; inside the block.&lt;/p&gt;
+
+
+
+ &lt;/div&gt; &lt;/div&gt;
+&lt;div class=&quot;premonition error&quot;&gt; &lt;div class=&quot;header&quot;&gt; &lt;svg class=&quot;icon error&quot; aria-hidden=&quot;true&quot;&gt; &lt;use xlink:href=&quot;#icon-error&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;div class=&quot;title&quot;&gt; Error &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;content&quot;&gt; &lt;p&gt;The body of the error goes here. Premonition allows you to write any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Markdown&lt;/code&gt; inside the block.&lt;/p&gt;
+
+
+
+ &lt;/div&gt; &lt;/div&gt;
+&lt;div class=&quot;premonition citation&quot;&gt; &lt;div class=&quot;header&quot;&gt; &lt;svg class=&quot;icon citation&quot; aria-hidden=&quot;true&quot;&gt; &lt;use xlink:href=&quot;#icon-citation&quot;&gt;&lt;/use&gt; &lt;/svg&gt; &lt;/div&gt; &lt;div class=&quot;content&quot;&gt; &lt;p&gt;To be or not to be is a question.&lt;/p&gt;
+
+
+
+ &lt;/div&gt; &lt;div class=&quot;ref&quot;&gt; ------ 莎士比亚 &lt;/div&gt; &lt;/div&gt;
+&lt;h4 id=&quot;代码高亮优化&quot;&gt;代码高亮优化&lt;/h4&gt;
+
+&lt;p&gt;  本人使用 H2O 主题的时候代码高亮功能还是沿用的 Jekyll 自带的，后来 H2O 主题也开始采用了 &lt;a href=&quot;https://prismjs.com/&quot;&gt;Prism.js&lt;/a&gt;。不过由于使用的是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;OKAIDIA&lt;/code&gt; 高亮主题，所以有些段落中的格式化字段显示上有些问题。这里，仍然采用默认主题，并且扩增到 Prism.js 支持的所有编程语言类型。效果可以从前一句的 OKAIDIA 字段和下面即将出现的代码片段看出。&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@font-face&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&apos;Merriweather&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;Merriweather&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(https://fonts.gstatic.com/...)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;woff2&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;(2022年5月14日更新)&lt;/p&gt;
+
+&lt;p&gt;  更换 Prism 库加载方式，采用按需自动加载代码类型，尽可能减少因 Prism 造成的阻塞。修复了某些样式问题。增加显示行数支持、官方主题选择支持。如下所示可以进行设置，具体主题风格样式可以访问 &lt;a href=&quot;https://prismjs.com/&quot;&gt;Prism 官网&lt;/a&gt; 了解更多。&lt;/p&gt;
+
+&lt;p&gt;(2022年5月23日更新)&lt;/p&gt;
+
+&lt;p&gt;  除官方代码库中默认代码主题外，新增扩展代码主题支持，比如常用的 One Light 等等。具体主题风格样式可以查看 &lt;a href=&quot;https://github.com/PrismJS/prism-themes/tree/master/themes&quot;&gt;PrismJS/prism-themes&lt;/a&gt; 了解更多。&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Prism&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;prism&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tomorrow&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;line_numbers&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;代码复制&quot;&gt;代码复制&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月1日更新)&lt;/p&gt;
+
+&lt;p&gt;  由于主题设置有复制自动添加版权保护文字，导致复制代码或无法直接使用。但是如果直接去掉版权保护又不大合适，于是新增代码复制功能。当使用如下所示代码片段右上角的复制按钮时，代码会被复制到粘贴板，且不包含版权保护文字，可以放心直接使用。&lt;/p&gt;
+
+&lt;p&gt;(2022年5月14日更新)&lt;/p&gt;
+
+&lt;p&gt;  调整复制按钮位置，自动识别代码块的代码类型并显示。&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Target --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;foo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://github.com/zenorocha/clipboard.js.git&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Trigger --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-clipboard-target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#foo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;assets/clippy.svg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Copy to clipboard&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;文章置顶功能&quot;&gt;文章置顶功能&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月26日更新)&lt;/p&gt;
+
+&lt;p&gt;  鉴于现有的 Jekyll 文章置顶库有点年久失修，决定徒手实现了一下文章置顶功能。具体文章列表页和归档页置顶效果如下所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/mcF2Z3.webp&quot; alt=&quot;文章置顶 Top acticles&quot; /&gt;
+&lt;img src=&quot;https://i.luish.cc/blog/yajcoi.webp&quot; alt=&quot;归档页文章置顶 Top acticles in archives&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;分页依赖升级&quot;&gt;分页依赖升级&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月26日更新)&lt;/p&gt;
+
+&lt;p&gt;  由于原有的 jekyll-paginate 库已停止更新，所以升级到目前更新、维护活跃的 &lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;jekyll-paginate-v2&lt;/a&gt; 库。原有的分页配置自 v1.1.7 版本后无法使用，请更换为如下类似设置：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# _config.yml 旧配置&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;blog/page:num&apos;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# _config.yml 新配置&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;pagination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;per_page&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;page:num/&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;  另外，blog/index.html 的头部信息中应该加上如下&lt;strong&gt;启用分页&lt;/strong&gt;的配置。否则，jekyll-paginate-v2 不会主动工作。&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;pagination&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;封面图片作者及链接&quot;&gt;封面图片作者及链接&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月26日更新)&lt;/p&gt;
+
+&lt;p&gt;  一直以来封面图片都是来自 &lt;a href=&quot;https://unsplash.com&quot;&gt;Unsplash&lt;/a&gt; 的免费高清图片，为了表明封面图片的来源和作者，现在文章的元信息中添加了对封面图片作者及链接的支持。如果想要声明，可以直接在文章的头部信息中添加如下配置：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;......&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover_author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cover_author_link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;......&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;  非文章的页面中也可以像上面那样声明相关的封面作者及链接，效果如下所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/fzWjPs.webp&quot; alt=&quot;页面封面图片信息 Cover author for pages&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;字数统计及阅读时间估计&quot;&gt;字数统计及阅读时间估计&lt;/h4&gt;
+
+&lt;p&gt;  字数统计及阅读时间估计这个小功能其实以前在用 WordPress 的时候比较常见。虽然说统计和估计的结果不一定完全准确，但是还是起到了一定的辅助阅读的作用。效果可以查看本页标题下的基本信息区域。&lt;/p&gt;
+
+&lt;h4 id=&quot;时间本地化与最近更新时间&quot;&gt;时间本地化与最近更新时间&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月22日更新)&lt;/p&gt;
+
+&lt;p&gt;  为了支持来自不同时区的读者直接可以看到文章发布对应的本地时间，现已利用 dayjs 新增&lt;strong&gt;时间本地化&lt;/strong&gt;功能。并利用 Github API 查询页面的最近一次 commit 更新时间作为文章&lt;strong&gt;最近更新时间&lt;/strong&gt;。效果如下图所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/Anb4xH.webp&quot; alt=&quot;构建位置时区 Jekyll deployment timezone&quot; /&gt;
+&lt;img src=&quot;https://i.luish.cc/blog/NMPXmQ.webp&quot; alt=&quot;读者时区 Reader timezone&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;  如需使用&lt;strong&gt;最近更新时间&lt;/strong&gt;功能，务必在 _config.yml 文件中添加以下配置项：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Github&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;owner&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;github_username&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;repository&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;github_project_name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;  如未正确进行以上配置，默认会将最近更新时间与发布时间保持一致。&lt;/p&gt;
+
+&lt;h4 id=&quot;版权显式声明&quot;&gt;版权显式声明&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月18日更新)&lt;/p&gt;
+
+&lt;p&gt;  之前的版本只会在页面底部的信息栏中显示一个 CC 4.0 的小图标，不是很醒目。根据调研其他静态网站主题，发现一般都会在文章的末尾自动生成一个比较醒目的版权声明。另外，在版权声明中也将根据最近更新时间来判断内容是否可能过时。如果最近更新时间距离当前时间大于 365 天，则会显示具体日期并提醒有内容过时的可能。效果如下所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/scNRyd.webp&quot; alt=&quot;版权显式声明 Copyright&quot; /&gt;
+&lt;img src=&quot;https://i.luish.cc/blog/C8RWtL.webp&quot; alt=&quot;内容可能过时提醒 Long time ago notification&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;文章侧边索引导航&quot;&gt;文章侧边索引导航&lt;/h4&gt;
+
+&lt;p&gt;(2022年1月9日更新)&lt;/p&gt;
+
+&lt;p&gt;  在一些基于 Bootstrap 前端框架的 Jekyll 主题中，这个功能比较常见。由于本主题未使用 Bootstrap 前端框架，所以添加起来稍微有些麻烦，现已增加此功能。在浏览器窗口超过 1050 px 的情况下，在文章页面可以正常看到右侧的文章侧边索引导航。当窗口滑动时，侧边索引导航也会跟着滑动。在浏览器窗口不足 1050 px 的情况下，侧边索引导航自动隐藏。在 _config.yml 配置文件中，可以通过设置 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toc: false&lt;/code&gt; 来全局禁用此功能。&lt;/p&gt;
+
+&lt;p&gt;(2022年4月30日更新)&lt;/p&gt;
+
+&lt;p&gt;  在原来的基础上增加了跟随左侧内容滑动高亮。当左侧内容向上或向下滑动时，右侧索引导航将会使对应的对应一级标题高亮。&lt;/p&gt;
+
+&lt;p&gt;(2022年5月14日更新)&lt;/p&gt;
+
+&lt;p&gt;  为文章的移动端页面添加了索引导航按钮。鉴于单页面的内容有限及侧边位置空间有限，暂未对单页面进行支持。&lt;/p&gt;
+
+&lt;h4 id=&quot;支持-waline-评论系统&quot;&gt;支持 Waline 评论系统&lt;/h4&gt;
+
+&lt;p&gt;  目前已支持基于 Valine 衍生的简洁、安全的评论系统 Waline。可以根据官方提供的 &lt;a href=&quot;https://waline.js.org/guide/get-started.html&quot;&gt;快速上手&lt;/a&gt; 进行配置，以下为 _config.yml 中需要配置的内容：&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# _config.yml&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;waline&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;waline_url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://xxxxxx.vercel.app&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;  &lt;del&gt;目前未对多评论系统同时支持进行优化，所以如果 Disqus 和 Waline 同时开启时，Disqus 在前 Waline 在后同时出现。如果用户环境无法访问 Disqus 即只能看到 Waline。&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;(2022年5月22日更新)&lt;/p&gt;
+
+&lt;p&gt;  新增多评论切换按钮：当同时使用 Disqus 和 Waline 时，会在评论区域的右上角看到一个左右滑动切换按钮。如下所示，从左往右滑动即可从 Disqus 切换到 Waline。&lt;/p&gt;
+
+&lt;p&gt;  同时修复了手动切换深色模式时 Disqus 不会自动切换模式而造成的显示问题。目前在模式切换时 Disqus 会主动进行重新加载以适应当前模式。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/WBgbUB.webp&quot; alt=&quot;Disqus 评论系统 Disqus comment&quot; /&gt;
+&lt;img src=&quot;https://i.luish.cc/blog/45JQ9H.webp&quot; alt=&quot;Waline 评论系统 Waline comments&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;支持-pwa&quot;&gt;支持 PWA&lt;/h4&gt;
+
+&lt;p&gt;(2022年5月11日更新)&lt;/p&gt;
+
+&lt;p&gt;  全面支持 PWA，访问速度得到较大提升。移动端访问可以像原生 APP 那样使用。如果访问过全站一遍之后，则可以完全离线使用。如下所示，可以配置 PWA 的主题色和短名称。&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# PWA&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;pwa&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;#81BBFF&apos;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;short_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;lisz&apos;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;支持-mermaid&quot;&gt;支持 Mermaid&lt;/h4&gt;
+
+&lt;p&gt;(2022年8月29日更新)&lt;/p&gt;
+
+&lt;p&gt;  不少同学可能会有在文章中放置流程图的需求，为了满足这一需求，现添加了 &lt;a href=&quot;https://mermaid-js.github.io/mermaid/#/&quot;&gt;Mermaid&lt;/a&gt; 来支持像写代码一样画图。&lt;/p&gt;
+
+&lt;p&gt;  为了兼容 Markdown 语法，这里采用了自定义的代码类型。当代码类型为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mermaid&lt;/code&gt; 时，PrismJS 会自动以代码的形式美化展示；当代码类型为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mermaid2&lt;/code&gt; 时，页面会自动使用 Mermaid 画成图展示出来，如下所示。&lt;/p&gt;
+
+&lt;p&gt;  考虑到页面宽度有限，Mermaid 所画出的甘特图等其他比较大一点的图不太好看，也增加了&lt;strong&gt;放大重绘&lt;/strong&gt;的功能。如下所示，点击图的右上角的按钮即可全屏查看大图。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph TD;
+    A--&amp;gt;B;
+    A--&amp;gt;C;
+    B--&amp;gt;D;
+    C--&amp;gt;D;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid2&quot;&gt;    graph TD;
+    A--&amp;gt;B;
+    A--&amp;gt;C;
+    B--&amp;gt;D;
+    C--&amp;gt;D;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid2&quot;&gt;    gantt
+      title A Gantt Diagram
+      dateFormat x
+      axisFormat %L
+      section Section
+      A task           :a1, 0, 30ms
+      Another task     :after a1, 20ms
+      section Another
+      Another another task      :b1, 20, 12ms
+      Another another another task     :after b1, 24ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid2&quot;&gt;    gantt
+    dateFormat  YYYY-MM-DD
+    title       Adding GANTT diagram functionality to mermaid
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week (&quot;sunday&quot;) or &quot;weekends&quot;, but not the word &quot;weekdays&quot;.)
+
+    section A section
+    Completed task            :done,    des1, 2014-01-06,2014-01-08
+    Active task               :active,  des2, 2014-01-09, 3d
+    Future task               :         des3, after des2, 5d
+    Future task2              :         des4, after des3, 5d
+
+    section Critical tasks
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+    Implement parser and jison          :crit, done, after des1, 2d
+    Create tests for parser             :crit, active, 3d
+    Future task in critical line        :crit, 5d
+    Create tests for renderer           :2d
+    Add to mermaid                      :1d
+    Functionality added                 :milestone, 2014-01-25, 0d
+
+    section Documentation
+    Describe gantt syntax               :active, a1, after des1, 3d
+    Add gantt diagram to demo page      :after a1  , 20h
+    Add another diagram to demo page    :doc1, after a1  , 48h
+
+    section Last section
+    Describe gantt syntax               :after doc1, 3d
+    Add gantt diagram to demo page      :20h
+    Add another diagram to demo page    :48h
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;配置项&quot;&gt;配置项&lt;/h4&gt;
+
+&lt;p&gt;  配置项中新增了&lt;strong&gt;友情链接&lt;/strong&gt;和&lt;strong&gt;备案号&lt;/strong&gt;功能，可以直接在 _config.yml 文件的对应配置项下设置即可，如下所示。友情链接主要是方便跟其他博主交换友链，备案号主要是为了方便部署在国内需备案的 vps 或虚拟主机上。此处，二者都可以置空。&lt;/p&gt;
+
+&lt;p&gt;(2022年4月30日更新)&lt;/p&gt;
+
+&lt;p&gt;  新增&lt;strong&gt;全站一键灰度化功能&lt;/strong&gt;、&lt;strong&gt;时间格式&lt;/strong&gt;配置。在国家公祭日等需要灰度化以示哀悼的时候可以将灰度化配置设置为 true，平常使用默认配置 false。时间格式这里一共提供了 3 种：第一种中英文站点使用皆宜，第二种适用于英文站点，第三种适用于中文站点。默认时间格式为第一种。&lt;/p&gt;
+
+&lt;p&gt;(2022年5月14日更新)&lt;/p&gt;
+
+&lt;p&gt;  新增 &lt;a href=&quot;https://busuanzi.ibruce.info/&quot;&gt;&lt;strong&gt;不蒜子&lt;/strong&gt;&lt;/a&gt; 统计方式，可以显示全站访问次数、全站访问用户数、文章页面阅读量。如下设置可以开启。&lt;/p&gt;
+
+&lt;p&gt;(2022年5月16日更新)&lt;/p&gt;
+
+&lt;p&gt;  新增 &lt;a href=&quot;https://github.com/mikecao/umami&quot;&gt;&lt;strong&gt;umami&lt;/strong&gt;&lt;/a&gt; 统计方式，需要自行先搭建 umami 然后接入。接入配置只需要如下所示配置跟踪 id 和 JS 脚本地址。&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Links 友情链接&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Mr&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Li&apos;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://lisz.me&apos;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Beian 备案号&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;beian&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;沪ICP备xxxxxxxx号&apos;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Gray 灰度化&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;gray&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Time format 时间格式 &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# 0 -- 2022-04-29    1 -- 29 Apr 2022   2 -- 2022年4月29日&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;formats&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;0&lt;/span&gt; 
+
+&lt;span class=&quot;c1&quot;&gt;# Busuanzi Analytics&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;busuanzi&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Umami Analytics&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;umami&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;xxxxxxxxxxxxx&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://umami.example.com/umami.js&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;前端自动构建工作流优化&quot;&gt;前端自动构建工作流优化&lt;/h4&gt;
+
+&lt;p&gt;  H2O 主题中使用了 Gulp + &lt;del&gt;Node-Sass&lt;/del&gt; Sass 的方案来自动化前端构建工作流。不得不说，这个方案还是很不错的，只是随着 Gulp 和 &lt;del&gt;Node-Sass&lt;/del&gt; Sass 版本的更新，对 NodeJS 环境及其他依赖库都有一些要求。这里，H2O-ac 主题在 package.json 文件中将所有库都更新到目前最新，对应版本列表如下所示。另外，为了减少一些第三方 CSS 样式的请求数，利用自动构建工作流将固定的第三方 CSS 样式文件合并并压缩为 plugins.min.css 文件。app.min.css 仍为多个自编写 CSS 样式文件的合并压缩。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;运行环境或依赖库&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;版本号&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NodeJS&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v17.0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;gulp&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v4.0.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;gulp-clean-css&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v4.3.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;gulp-rename&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v20.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;gulp-sass&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v5.0.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;gulp-uglify&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v3.0.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;gulp-concat&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v2.6.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;del&gt;node-sass&lt;/del&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;del&gt;v7.0.0&lt;/del&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;sass&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;v1.51.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;使用方法&quot;&gt;使用方法&lt;/h2&gt;
+
+&lt;h3 id=&quot;初始化&quot;&gt;初始化&lt;/h3&gt;
+
+&lt;h4 id=&quot;方式一从模板新建博客&quot;&gt;方式一：从模板新建博客&lt;/h4&gt;
+
+&lt;p&gt;  为了方便用户使用 H2O-ac 主题，特别提供了 Github 的模板功能。如下图所示，访问 &lt;a href=&quot;https://github.com/zhonger/jekyll-theme-H2O-ac&quot;&gt;H2O-ac&lt;/a&gt; 可以看到如下的 Use this template 按钮，点击该按钮即可用 H2O-ac 主题创建自己的博客代码仓库。想要了解更多步骤，可以访问 Github 官方文档之 &lt;a href=&quot;https://docs.github.com/cn/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template&quot;&gt;从模板创建仓库&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.luish.cc/blog/oHHZZh.webp&quot; alt=&quot;从模板新建 Start the blog from the template&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;方式二已有博客迁移&quot;&gt;方式二：已有博客迁移&lt;/h4&gt;
+
+&lt;p&gt;  &lt;del&gt;暂时无法支持 gem 直接切换主题，后续将更新此方式。目前只能使用方式一创建仓库后，将文章的 markdown 文件复制到 _posts 目录下应用 H2O-ac 主题。&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;(2021年12月26日更新)&lt;/p&gt;
+
+&lt;p&gt;  现已支持使用 gem 直接切换主题 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll-theme-h2o-ac&lt;/code&gt;。同时，也推出了一键式构建工具 &lt;a href=&quot;https://github.com/zhonger/easy-to-h2o-ac&quot;&gt;easy-to-h2o-ac&lt;/a&gt;，详细可以见项目主页。&lt;/p&gt;
+
+&lt;h3 id=&quot;本地测试&quot;&gt;本地测试&lt;/h3&gt;
+
+&lt;p&gt;  在进行本地测试时，如果需要修改一些样式，则需要先执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install&lt;/code&gt; 来完成前端自动构建工作流依赖库的安装。注意，这里设定的可用 NodeJS 版本为 v17.0.0，使用老版本会报错。其次，务必使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle install&lt;/code&gt; 安装主题所需的所有 Ruby 依赖库。最后执行 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle exec jekyll serve --livereload&lt;/code&gt; 命令即可在本地实时同步预览。只要不修改 _config.yml 文件，不必中断后再启动。然后就是在 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 目录下写 markdown 文章即可。&lt;/p&gt;
+
+&lt;h3 id=&quot;发布部署&quot;&gt;发布部署&lt;/h3&gt;
+
+&lt;p&gt;  由于 Github 提供 Jekyll 静态生成器的静态页面托管，只要打开仓库的 Pages 功能，当推送更新到 Github 时即会自动部署。此处值得注意的是，如果代码仓库的名字不是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;，而也没有为该仓库的 Pages 提供自定义域名，那么这个仓库将会被部署到子目录，因此此时必须在 _config.yml 文件中设置 base_url，从而生成正常的静态页面。&lt;/p&gt;
+
+&lt;h2 id=&quot;结束语&quot;&gt;结束语&lt;/h2&gt;
+
+&lt;p&gt;  再次感谢廖柯宇及其他小伙伴们对 H2O 主题的付出，没有 H2O 主题就没有 H2O-ac 主题！H2O-ac 主题后续也将继续更新，欢迎小伙伴们使用和 &lt;a href=&quot;https://github.com/zhonger/jekyll-theme-H2O-ac&quot;&gt;Star&lt;/a&gt;，也欢迎大家一起来贡献代码。&lt;/p&gt;
+
+&lt;p&gt;（Ps: &lt;del&gt;由于沿用了 H2O 的 Logo，可能会侵犯廖柯宇的版权。如果的确如此，后续将会设计一个新的 Logo。&lt;/del&gt; 已采用新 Logo。）
+（2022年1月10日更新）&lt;/p&gt;
+</description>
+        <pubDate>Wed, 22 Dec 2021 11:50:00 +0000</pubDate>
+        <link>https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/tech/new-theme-h2o-ac.html</guid>
+        
+        <category>jekyll</category>
+        
+        <category>theme</category>
+        
+        <category>blog</category>
+        
+        <category>ac</category>
+        
+        <category>develop</category>
+        
+        <category>主题</category>
+        
+        <category>前端开发</category>
+        
+        <category>学术</category>
+        
+        <category>运维</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
+        <title>MathJax Test</title>
+        <description>&lt;p&gt;mathjax in markdown :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;这是一个不&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;align&lt;/code&gt;的公式&lt;/strong&gt;：&lt;/p&gt;
+
+\[\forall \alpha \in A, \quad a \cdot b = 0\]
+
+&lt;p&gt;&lt;strong&gt;这是一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;align&lt;/code&gt;的公式&lt;/strong&gt;：&lt;/p&gt;
+
+\[\begin{align}
+    \Phi(0,x) = \max_{u \in \mathcal{D}} \bigg[
+        \mathbb{E} &amp;amp; \Phi\left(1, 
+        x + \int_0^1 \sigma^2(s) \, \zeta(s) \, u_s \, ds
+        + \int_0^1 \sigma(s) \, dW_s
+    \right) \\
+        &amp;amp;- \frac{1}{2} \int_0^1 \sigma^2(s) \, \zeta(s) \,
+        \mathbb{E} u_s^2  \, ds
+    \bigg].
+\end{align}\]
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;公式块要想有较好的显示效果，必须在公式块标记符&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt;&lt;strong&gt;前后&lt;/strong&gt;留有空行，否则公式将不能正常居中。行内公式无此问题。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Jul 2017 00:00:00 +0000</pubDate>
+        <link>https://h2o-ac.pages.dev/test/mathjax-test.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/test/mathjax-test.html</guid>
+        
+        <category>mathjax</category>
+        
+        
+        <category>test</category>
+        
+      </item>
+    
+      <item>
+        <title>H2O theme for Jekyll</title>
+        <description>&lt;p&gt;正如我在&lt;a href=&quot;http://weibo.com/1374146504/profile?topnav=1&amp;amp;wvr=6&quot;&gt;微博&lt;/a&gt;上所说的，使用&lt;a href=&quot;http://jekyll.com.cn/&quot;&gt;Jekyll&lt;/a&gt;半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模板。设计之初就明确了极简主义，风格采用扁平化了，通过卡片式设计来进行区块分明的布局，参考了Medium的ui样式和知乎专栏的视觉风格。&lt;/p&gt;
+
+&lt;h2 id=&quot;h2o&quot;&gt;H2O&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;源码及使用文档 →&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realhome.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;新主题名叫”H2O”，基于Jekyll 3.0.x（使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem update jekyll&lt;/code&gt;升级Jekyll），Markdown的代码高亮不再支持pygments转而使用rouge，咱已经默认配置了 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;highlighter: rouge&lt;/code&gt; 。用到的技术栈也很简单：引入jQuery类库，使用Sass编写样式，使用Gulp来编译Sass、合并压缩css、js，开源在&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Github&lt;/a&gt;上，稍作配置即可用于你的Jekyll博客上。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-sketchdesign.png&quot; alt=&quot;Design with Sketch&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;使用Sketch完成H2O主题的原型设计&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-vs.jpg&quot; alt=&quot;My Jekyll themes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;比之前漂亮不少吧，下面聊聊H2O的新特性。&lt;/p&gt;
+
+&lt;h2 id=&quot;新特性&quot;&gt;新特性&lt;/h2&gt;
+
+&lt;h3 id=&quot;主题配色&quot;&gt;主题配色&lt;/h3&gt;
+
+&lt;p&gt;支持两种主题配色——蓝色和粉色。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/screenshot/jekyll-theme-h2o-themecolor.jpg?raw=true&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;侧边栏&quot;&gt;侧边栏&lt;/h3&gt;
+
+&lt;p&gt;相比自己上一个版本的博客主题，首页增加了侧边栏，方便展示博主的个人信息和文章标签。&lt;/p&gt;
+
+&lt;h3 id=&quot;社交图标&quot;&gt;社交图标&lt;/h3&gt;
+
+&lt;p&gt;使用阿里的图标管理平台&lt;a href=&quot;http://iconfont.cn/&quot;&gt;Iconfont&lt;/a&gt;整理了一套&lt;strike&gt;墙内外&lt;/strike&gt;常用的社交图标，包括微博、知乎、掘金、简书、Github等十多个网站，鼠标悬停会显示该站的主题色。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-snstext.jpg&quot; alt=&quot;social iconfont&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;前后文导航&quot;&gt;前后文导航&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-nextpostnav.png&quot; alt=&quot;Next post navigator&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;自定义文章封面&quot;&gt;自定义文章封面&lt;/h3&gt;
+
+&lt;p&gt;在Markdown的&lt;a href=&quot;http://jekyll.com.cn/docs/frontmatter/&quot;&gt;文章头信息&lt;/a&gt;里添加cover参数来配置文章的封面图片，如果没有配置封面，则默认【主题色+底纹】的组合作为文章封面。值得一提的是，H2O有两种（粉、蓝）主题色和六种底纹（电路板、食物、云海、钻石等等）供你选择。&lt;/p&gt;
+
+&lt;h3 id=&quot;头图个性化底纹&quot;&gt;头图个性化底纹&lt;/h3&gt;
+
+&lt;p&gt;在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-headerpatterns.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;代码高亮&quot;&gt;代码高亮&lt;/h3&gt;
+
+&lt;p&gt;模板引入了&lt;a href=&quot;http://prismjs.com&quot;&gt;Prism.js&lt;/a&gt;，一款轻量、可扩展的代码语法高亮库。&lt;/p&gt;
+
+&lt;p&gt;很多知名网站如&lt;a href=&quot;https://developer.mozilla.org/&quot;&gt;MDN&lt;/a&gt;、&lt;a href=&quot;https://css-tricks.com/&quot;&gt;css-tricks&lt;/a&gt;也在用它，JavaScript 之父 &lt;a href=&quot;https://brendaneich.com/&quot;&gt;Brendan Eich&lt;/a&gt; 也在个人博客上使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png&quot; alt=&quot;代码高亮&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;遵循 &lt;a href=&quot;https://www.w3.org/TR/html5/grouping-content.html#the-pre-element&quot;&gt;HTML5&lt;/a&gt; 标准，Prism 使用语义化的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 元素和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 元素来标记代码区块：&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;pre&amp;gt;&amp;lt;code&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;language-css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;p { color: red }&lt;span class=&quot;nt&quot;&gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在Markdown中你可以这样写：&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;```&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;css
+&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;```&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;支持语言：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;Sass&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+  &lt;li&gt;CoffeeScript&lt;/li&gt;
+  &lt;li&gt;Java&lt;/li&gt;
+  &lt;li&gt;C-like&lt;/li&gt;
+  &lt;li&gt;Swift&lt;/li&gt;
+  &lt;li&gt;PHP&lt;/li&gt;
+  &lt;li&gt;Go&lt;/li&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;第三方评论&quot;&gt;第三方评论&lt;/h3&gt;
+
+&lt;p&gt;由于多说关闭，又对国内其他第三方评论插件无感，所以将&lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt;列为首选（目前模板也只提供了这个），请自备梯子。&lt;/p&gt;
+
+&lt;h3 id=&quot;移动端优化&quot;&gt;移动端优化&lt;/h3&gt;
+
+&lt;p&gt;响应式设计，对手机和平板等移动设备做了优化。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realm.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;关于阅读体验&quot;&gt;关于阅读体验&lt;/h3&gt;
+
+&lt;p&gt;我认为在内容质量相同的情况下，出色的沉浸式阅读体验是博客的核心。&lt;/p&gt;
+
+&lt;p&gt;H2O在这方面还有很多需要完善的地方，比如：&lt;strike&gt;代码高亮&lt;/strike&gt;、夜间模式、查看大图…&lt;/p&gt;
+
+&lt;h3 id=&quot;其他特性&quot;&gt;其他特性：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;网页标题SEO优化&lt;/li&gt;
+  &lt;li&gt;标签索引，点击标签跳转到标签目录，即可查看对应的全部文章&lt;/li&gt;
+  &lt;li&gt;漂亮&lt;/li&gt;
+  &lt;li&gt;好看&lt;/li&gt;
+  &lt;li&gt;美&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;本想趁这次机会将整站https化的，但折腾了半天发现弹性web托管并不支持，所以暂时搁置https的想法。另外，博客统计工具一直使用的是&lt;a href=&quot;https://tongji.baidu.com&quot;&gt;百度统计&lt;/a&gt;，这次新增了Google Analytics。&lt;/p&gt;
+
+&lt;p&gt;这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎&lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;Star&lt;/a&gt;。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
+        <link>https://h2o-ac.pages.dev/tech/new-theme-h2o.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/tech/new-theme-h2o.html</guid>
+        
+        <category>jekyll</category>
+        
+        <category>前端开发</category>
+        
+        <category>设计</category>
+        
+        
+        <category>tech</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello Jekyll</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Transform your plain text into static websites and blogs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;welcome&quot;&gt;Welcome&lt;/h3&gt;
+
+&lt;p&gt;This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing your content, customizing the way your site works and looks, deploying to various environments, and give you some advice on participating in the future development of Jekyll itself.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-what-is-jekyll-exactlypermalink&quot;&gt;So what is Jekyll, exactly?Permalink&lt;/h3&gt;
+
+&lt;p&gt;Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;) and our &lt;a href=&quot;https://github.com/Shopify/liquid/wiki&quot;&gt;Liquid&lt;/a&gt; renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.&lt;/p&gt;
+
+&lt;h3 id=&quot;helpful-hintspermalink&quot;&gt;Helpful HintsPermalink&lt;/h3&gt;
+
+&lt;p&gt;Throughout this guide there are a number of small-but-handy pieces of information that can make using Jekyll easier, more interesting, and less hazardous. Here’s what to look out for.&lt;/p&gt;
+
+&lt;h3 id=&quot;video-test&quot;&gt;Video Test&lt;/h3&gt;
+
+&lt;iframe type=&quot;text/html&quot; width=&quot;100%&quot; height=&quot;385&quot; src=&quot;https://www.youtube.com/embed/gfmjMWjn-Xg&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
+        <link>https://h2o-ac.pages.dev/hello-jekyll.html</link>
+        <guid isPermaLink="true">https://h2o-ac.pages.dev/hello-jekyll.html</guid>
+        
+        <category>jekyll</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
