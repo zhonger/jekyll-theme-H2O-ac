@@ -323,9 +323,9 @@ $(document).ready(function(){
 
         var mode = getCookie("mode");
         if (mode == "") {
-            console.log(mode);
+            // console.log(mode);
             if (hour <= 6 || hour >= 18){
-                console.log("Start night mode");
+                // console.log("Start night mode");
                 setCookie("mode", "night", 1)
             }
             // el.addClass(className);
@@ -391,7 +391,7 @@ $(document).ready(function(){
         for(var i=0; i<ca.length; i++) 
         {
             var c = ca[i].trim();
-            if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+            if (c.indexOf(name)===0) return c.substring(name.length,c.length);
         }
         return "";
     }
