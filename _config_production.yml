@@ -159,7 +159,7 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
-exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md', '*.gemspec', '*.gem']
+exclude: ['node_modules', 'dev', 'package.json', 'webpack.config.js', '.gitignore', 'README.md', '*.gemspec', '*.gem']
 
 # Markdown
 markdown: kramdown
