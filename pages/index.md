@@ -14,7 +14,7 @@ permalink: /index.html
 ## Publications
 
 1. Publication 1 [[DOI]](https://doi.org)
-2. Publication 2 [[DOI]]([#](https://doi.org))
+2. Publication 2 [[DOI]](https://doi.org)
 
 ## Contact
 
