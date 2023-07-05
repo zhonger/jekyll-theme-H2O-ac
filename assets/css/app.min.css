@@ -404,7 +404,7 @@ a {
   padding-left: 0;
 }
 .markdown-body ol {
-  list-style: none;
+  list-style: none !important;
 }
 .markdown-body ol li {
   counter-increment: a 1;

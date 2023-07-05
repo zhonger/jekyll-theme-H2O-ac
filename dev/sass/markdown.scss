@@ -109,7 +109,7 @@
         padding-left: 0;
     }
     ol {
-        list-style: none;
+        list-style: none!important;
         li {
             counter-increment: a 1; 
             &:before {
