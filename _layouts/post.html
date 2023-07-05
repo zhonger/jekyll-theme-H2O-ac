@@ -321,6 +321,19 @@
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
   <script>
+    /**
+    * Better Scroll Experience
+    */
+    function scrollToAdjust(id){
+      var element = document.getElementById(id);
+      var headerOffset = 90;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.scrollY - headerOffset;
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+      });
+    }
       // 给图片添加链接
       $(document).ready(function() {
           var baseurl = $("meta[property='og:baseurl']").attr('content');
