@@ -1929,6 +1929,27 @@ a.extlinks::after {
   background-color: #ffffff;
   box-shadow: 0 -1px 3px rgba(0, 37, 55, 0.06);
 }
+.g-footer .g-container {
+  margin: 0 auto;
+}
+.g-footer .g-container:before, .g-footer .g-container:after {
+  content: "";
+  display: table;
+}
+.g-footer .g-container:after {
+  clear: both;
+}
+.g-footer .g-container .g-left {
+  width: 600px;
+  text-align: left;
+}
+.g-footer .g-container .g-right {
+  width: 400px;
+  text-align: right;
+}
+.g-footer .g-container .g-right .badges {
+  margin-top: 10px;
+}
 .g-footer section {
   font-size: 14px;
   line-height: 20px;
@@ -1959,6 +1980,10 @@ a.extlinks::after {
 .g-footer section .wormhole img {
   width: auto;
   height: 24px;
+  margin-right: 10px;
+}
+.g-footer section .notbyAI img {
+  width: 100px;
 }
 
 .tags-banner {
@@ -2211,6 +2236,9 @@ a.extlinks::after {
   .g-sidebar-wrapper {
     display: none;
   }
+  .g-footer .g-container {
+    margin: auto 20px;
+  }
   .post-wrapper {
     width: auto;
     padding: 30px;
@@ -2272,6 +2300,15 @@ a.extlinks::after {
   }
   .tags-content {
     width: auto;
+  }
+}
+@media screen and (max-width: 810px) {
+  .g-footer .g-container {
+    flex-direction: column;
+  }
+  .g-footer .g-container .g-left, .g-footer .g-container .g-right {
+    width: auto;
+    text-align: center;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2384,7 +2421,7 @@ a.extlinks::after {
   .home-content {
     margin-top: 0;
   }
-  .article-list, .tags-content {
+  .article-list, .tags-content, .g-footer .g-left, .g-footer .g-right {
     width: 100%;
   }
   .tags-content {

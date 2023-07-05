@@ -300,6 +300,21 @@ a {
     text-align: center;
     background-color: #ffffff;
     box-shadow: 0 -1px 3px rgba(0,37,55,.06);
+    .g-container {
+        margin: 0 auto;
+        @include clearfix;
+        .g-left {
+            width: 600px;
+            text-align: left;
+        }
+        .g-right {
+            width: 400px;
+            text-align: right;
+            .badges {
+                margin-top: 10px;
+            }
+        }
+    }
     section {
         font-size: 14px;
         line-height: 20px;
@@ -330,6 +345,10 @@ a {
         .wormhole img {
             width: auto;
             height: 24px;
+            margin-right: 10px;
+        }
+        .notbyAI img {
+            width: 100px;
         }
     }
 }

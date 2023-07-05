@@ -46,6 +46,9 @@
     .g-sidebar-wrapper {
         display: none;
     }
+    .g-footer .g-container {
+        margin: auto 20px;
+    }
     .post-wrapper {
         width: auto;
         padding: 30px;
@@ -113,6 +116,16 @@
     
     .tags-content {
         width: auto;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .g-footer .g-container {
+        flex-direction: column;
+        .g-left, .g-right {
+            width: auto;
+            text-align: center;
+        }
     }
 }
 
@@ -240,7 +253,7 @@
     .home-content {
         margin-top: 0;
     }
-    .article-list, .tags-content {
+    .article-list, .tags-content, .g-footer .g-left, .g-footer .g-right {
         width: 100%;
     }
     .tags-content {

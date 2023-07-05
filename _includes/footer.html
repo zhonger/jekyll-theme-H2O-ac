@@ -2,62 +2,74 @@
 {% assign locales = site.data.locales[lang] %}
 {% assign footer = locales.footer%}
 <footer class="g-footer">
-  <section class="links">{{ site.title }} ©
-  {% assign current = "now" | date: "%Y" | plus: 0%}
-  {% unless site.footer.since and site.footer.since == current %}
-    {{ site.footer.since }}
-    -
-  {% endunless %}
-  {{ current }}
-  {% if site.beian %}
-    <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
-  {% endif %}
-  </section>
-  <section class="links">
-    {{ footer.driver }}
-    {% if site.version %} (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v.{{ site.version }}" target="_blank" class="extlinks">v{{ site.version }}</a>){% endif %}  
-    {% if site.supports.webify %} & <a href="https://webify.cloudbase.net/" target="_blank" class="extlinks">CloudBase Webify</a> {% endif %}
-  </section>
-  {% if site.cnzz %}
-  <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz }}'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D{{ site.cnzz }}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-  {% endif %}
-  {% if site.busuanzi %}
-  <section>
-    <span id="busuanzi_container_site_pv">
-      👁️ {{ footer.views }} <span id="busuanzi_value_site_pv"></span> <b>·</b>
-    </span>
-    <span id="busuanzi_container_site_uv">
-      👤 {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
-    </span>
-  </section>
-  {% endif %}
-  {% if site.supports.upyun %}
-  <section>
-    <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">{{ footer.upyun }} <img src="{{ "/assets/icons/upyun.png" | relative_url }}" class="upyun" /></a>
-  </section>
-  {% endif %}
-  <section>
-    {% if site.alivetime %}
-      {{ footer.running.info }} 
-      <span class="alivetime_days"></span> {{ footer.running.day }}
-      <span class="alivetime_hours"></span> {{ footer.running.hour }}
-      <span class="alivetime_minutes"></span> {{ footer.running.minute }}
-      <span class="alivetime_seconds"></span> {{ footer.running.second }}
+  <div class="g-container">
+    <div class="g-left">
+      <section class="links">
+        {{ footer.driver }}
+        {% if site.version %} (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v.{{ site.version }}" target="_blank" class="extlinks">v{{ site.version }}</a>){% endif %}  
+        {% if site.supports.webify %} & <a href="https://webify.cloudbase.net/" target="_blank" class="extlinks">CloudBase Webify</a> {% endif %}
+      </section>
+      <section class="links">{{ site.title }} ©
+        {% assign current = "now" | date: "%Y" | plus: 0%}
+        {% unless site.footer.since and site.footer.since == current %}
+          {{ site.footer.since }}
+          -
+        {% endunless %}
+        {{ current }}
+        {% if site.beian %}
+          <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
+        {% endif %}
+      </section>
+      {% if site.busuanzi %}
+      <section>
+        <span id="busuanzi_container_site_pv">
+          👁️ {{ footer.views }} <span id="busuanzi_value_site_pv"></span> <b>·</b>
+        </span>
+        <span id="busuanzi_container_site_uv">
+          👤 {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
+        </span>
+      </section>
+      {% endif %}
+      <section>
+        {% if site.alivetime %}
+          {{ footer.running.info }} 
+          <span class="alivetime_days"></span> {{ footer.running.day }}
+          <span class="alivetime_hours"></span> {{ footer.running.hour }}
+          <span class="alivetime_minutes"></span> {{ footer.running.minute }}
+          <span class="alivetime_seconds"></span> {{ footer.running.second }}
+        {% endif %}
+      </section>
+    </div>
+    <div class="g-right">
+      {% if site.supports.upyun %}
+      <section>
+        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">{{ footer.upyun }} <img src="{{ "/assets/icons/upyun.png" | relative_url }}" class="upyun" /></a>
+      </section>
+      {% endif %}
+      {% if site.foreverblog or site.wormhole or site.notbyAI %}
+      <section class="badges">
+        {% if site.foreverblog %}
+          <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
+            <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
+          </a>
+        {% endif %}
+        {% if site.wormhole %}
+          <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
+            <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+          </a>
+        {% endif%}
+        {% if site.notbyAI %}
+          <a href="https://notbyai.fyi/" target="_blank" class="notbyAI"> 
+            <img src="{{ "/assets/icons/notbyAI-white.png" | prepend: site.baseurl }}" alt="Written by Human, Not by AI">
+          </a>
+        {% endif %}
+      </section>
+      {% endif %}
+    </div>
+    {% if site.cnzz %}
+    <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz }}'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D{{ site.cnzz }}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
     {% endif %}
-    {% if site.foreverblog or site.wormhole %}
-    <br/>
-    {% endif %}
-    {% if site.foreverblog %}
-      <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
-        <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
-      </a>
-    {% endif %}
-    {% if site.wormhole %}
-      <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
-        <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
-      </a>
-    {% endif%}
-  </section>
+  </div>
 </footer>
 <div class="cookie-tip">
   {{ cookie.cookieconsent_status }} {{ footer.tos.left }}「 <a href="{{ site.tos | prepend: site.baseurl }}">{{ footer.tos.middle }}</a> 」{{ footer.tos.right }}

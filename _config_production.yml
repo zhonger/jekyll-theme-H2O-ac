@@ -197,6 +197,9 @@ foreverblog: true
 # Wormhole
 wormhole: true
 
+# NotByAI
+notbyAI: true
+
 # Alive time
 alivetime: true
 alivestart: "12/23/2021"
