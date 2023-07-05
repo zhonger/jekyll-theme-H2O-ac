@@ -64,7 +64,7 @@
   <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
   <![endif]-->
   
-  <div id="all" class="post">
+  <div id="all" class="post" data-theme="pink">
   
     <div class="alert-tip" id="no-previous">
       It is already the latest posts!
@@ -72,7 +72,7 @@
     <div class="alert-tip" id="no-next">
       It is already the oldest posts!
     </div>
-    <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
+    <input id="nm-switch" type="hidden" value="false"> <header class="g-header" data-theme="pink">
     <div class="g-logo">
       <a href="/" aria-label="logo"></a>
     </div>
@@ -176,8 +176,8 @@
 
 
     <header
-      class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
-      data-theme="default"
+      class="g-banner post-header post-pattern-circuitBoard bgcolor-pink "
+      data-theme="pink"
     >
       <div class="post-wrapper">
         <div class="post-tags">
@@ -254,7 +254,7 @@
       
       <div class="container">  
         <div class="contents">
-          <article class="markdown-body">
+          <article class="markdown-body post">
             <h2 id="chapter-1">Chapter 1</h2>
 
 <p>This is a test paragraph for internalization.</p>
@@ -263,7 +263,7 @@
               <p>
                 <span>Statement：</span>
                 If no specific statement in the content, the copyright belongs to
-                <a href="https://h2o-ac.pages.dev">Mr Li</a>
+                <a href="https://h2o-ac.pages.dev" class="cplink">Mr Li</a>
                 . Reprint please indicate the link of this article. 
               </p>
               
@@ -274,14 +274,14 @@
                 </p>
               
               <p><span>Title：</span>《 Test en 》</p>
-              <p><span>Link：</span><a href="https://h2o-ac.pages.dev/test/test-en.html">https://h2o-ac.pages.dev/test/test-en.html</a></p>
+              <p><span>Link：</span><a href="https://h2o-ac.pages.dev/test/test-en.html" class="cplink">https://h2o-ac.pages.dev/test/test-en.html</a></p>
               <p class="tips">The last update of this article was <span></span> days ago, so it may be outdated!</p>
             </div>
           </article>
         </div>   
         <div class="table-of-contents">
           <h2>Contents</h2>
-          <ul><li><a href="#chapter-1">Chapter 1</a></li></ul>
+          <ul><li><a onclick="scrollToAdjust('chapter-1')">Chapter 1</a></li></ul>
         </div>
       </div>
       
@@ -572,6 +572,19 @@
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
   <script>
+    /**
+    * Better Scroll Experience
+    */
+    function scrollToAdjust(id){
+      var element = document.getElementById(id);
+      var headerOffset = 90;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.scrollY - headerOffset;
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+      });
+    }
       // 给图片添加链接
       $(document).ready(function() {
           var baseurl = $("meta[property='og:baseurl']").attr('content');

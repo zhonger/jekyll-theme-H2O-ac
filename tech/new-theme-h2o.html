@@ -66,7 +66,7 @@
   <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
   <![endif]-->
   
-  <div id="all" class="post">
+  <div id="all" class="post" data-theme="pink">
   
     <div class="alert-tip" id="no-previous">
       已经是最新一篇文章了！
@@ -74,7 +74,7 @@
     <div class="alert-tip" id="no-next">
       已经是最后一篇文章了！
     </div>
-    <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
+    <input id="nm-switch" type="hidden" value="false"> <header class="g-header" data-theme="pink">
     <div class="g-logo">
       <a href="/" aria-label="logo"></a>
     </div>
@@ -178,8 +178,8 @@
 
 
     <header
-      class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
-      data-theme="default"
+      class="g-banner post-header post-pattern-circuitBoard bgcolor-pink "
+      data-theme="pink"
     >
       <div class="post-wrapper">
         <div class="post-tags">
@@ -260,22 +260,22 @@
       
       <div class="container">  
         <div class="contents">
-          <article class="markdown-body">
-            <p>正如我在<a href="http://weibo.com/1374146504/profile?topnav=1&amp;wvr=6">微博</a>上所说的，使用<a href="http://jekyll.com.cn/">Jekyll</a>半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模板。设计之初就明确了极简主义，风格采用扁平化了，通过卡片式设计来进行区块分明的布局，参考了Medium的ui样式和知乎专栏的视觉风格。</p>
+          <article class="markdown-body post">
+            <p>正如我在<a href="http://weibo.com/1374146504/profile?topnav=1&amp;wvr=6" rel="nofollow" target="_blank" class="extlinks">微博</a>上所说的，使用<a href="http://jekyll.com.cn/" rel="nofollow" target="_blank" class="extlinks">Jekyll</a>半年以来一直没有令我满意的主题模板，所以开始计划自己写一套好看又好用的主题模板。设计之初就明确了极简主义，风格采用扁平化了，通过卡片式设计来进行区块分明的布局，参考了Medium的ui样式和知乎专栏的视觉风格。</p>
 
 <h2 id="h2o">H2O</h2>
 
-<p><a href="https://github.com/kaeyleo/jekyll-theme-H2O">源码及使用文档 →</a></p>
+<p><a href="https://github.com/kaeyleo/jekyll-theme-H2O" rel="nofollow" target="_blank" class="extlinks">源码及使用文档 →</a></p>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realhome.jpg" alt="" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realhome.jpg" alt=""></p>
 
-<p>新主题名叫”H2O”，基于Jekyll 3.0.x（使用<code class="language-plaintext highlighter-rouge">gem update jekyll</code>升级Jekyll），Markdown的代码高亮不再支持pygments转而使用rouge，咱已经默认配置了 <code class="language-plaintext highlighter-rouge">highlighter: rouge</code> 。用到的技术栈也很简单：引入jQuery类库，使用Sass编写样式，使用Gulp来编译Sass、合并压缩css、js，开源在<a href="https://github.com/kaeyleo/jekyll-theme-H2O">Github</a>上，稍作配置即可用于你的Jekyll博客上。</p>
+<p>新主题名叫”H2O”，基于Jekyll 3.0.x（使用<code class="language-plaintext highlighter-rouge">gem update jekyll</code>升级Jekyll），Markdown的代码高亮不再支持pygments转而使用rouge，咱已经默认配置了 <code class="language-plaintext highlighter-rouge">highlighter: rouge</code> 。用到的技术栈也很简单：引入jQuery类库，使用Sass编写样式，使用Gulp来编译Sass、合并压缩css、js，开源在<a href="https://github.com/kaeyleo/jekyll-theme-H2O" rel="nofollow" target="_blank" class="extlinks">Github</a>上，稍作配置即可用于你的Jekyll博客上。</p>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-sketchdesign.png" alt="Design with Sketch" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-sketchdesign.png" alt="Design with Sketch"></p>
 
 <p>使用Sketch完成H2O主题的原型设计</p>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-vs.jpg" alt="My Jekyll themes" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-vs.jpg" alt="My Jekyll themes"></p>
 
 <p>比之前漂亮不少吧，下面聊聊H2O的新特性。</p>
 
@@ -285,7 +285,7 @@
 
 <p>支持两种主题配色——蓝色和粉色。</p>
 
-<p><img src="https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/screenshot/jekyll-theme-h2o-themecolor.jpg?raw=true" alt="" /></p>
+<p><img src="https://github.com/kaeyleo/jekyll-theme-H2O/blob/master/screenshot/jekyll-theme-h2o-themecolor.jpg?raw=true" alt=""></p>
 
 <h3 id="侧边栏">侧边栏</h3>
 
@@ -293,33 +293,33 @@
 
 <h3 id="社交图标">社交图标</h3>
 
-<p>使用阿里的图标管理平台<a href="http://iconfont.cn/">Iconfont</a>整理了一套<strike>墙内外</strike>常用的社交图标，包括微博、知乎、掘金、简书、Github等十多个网站，鼠标悬停会显示该站的主题色。</p>
+<p>使用阿里的图标管理平台<a href="http://iconfont.cn/" rel="nofollow" target="_blank" class="extlinks">Iconfont</a>整理了一套<strike>墙内外</strike>常用的社交图标，包括微博、知乎、掘金、简书、Github等十多个网站，鼠标悬停会显示该站的主题色。</p>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-snstext.jpg" alt="social iconfont" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-snstext.jpg" alt="social iconfont"></p>
 
 <h3 id="前后文导航">前后文导航</h3>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-nextpostnav.png" alt="Next post navigator" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-nextpostnav.png" alt="Next post navigator"></p>
 
 <h3 id="自定义文章封面">自定义文章封面</h3>
 
-<p>在Markdown的<a href="http://jekyll.com.cn/docs/frontmatter/">文章头信息</a>里添加cover参数来配置文章的封面图片，如果没有配置封面，则默认【主题色+底纹】的组合作为文章封面。值得一提的是，H2O有两种（粉、蓝）主题色和六种底纹（电路板、食物、云海、钻石等等）供你选择。</p>
+<p>在Markdown的<a href="http://jekyll.com.cn/docs/frontmatter/" rel="nofollow" target="_blank" class="extlinks">文章头信息</a>里添加cover参数来配置文章的封面图片，如果没有配置封面，则默认【主题色+底纹】的组合作为文章封面。值得一提的是，H2O有两种（粉、蓝）主题色和六种底纹（电路板、食物、云海、钻石等等）供你选择。</p>
 
 <h3 id="头图个性化底纹">头图个性化底纹</h3>
 
 <p>在没有图片的情况下单纯显示颜色会不会太无趣了点？于是想到了加入底纹元素，底纹素材是SVG格式的（保存在css样式里），加载比图片快很多。</p>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-headerpatterns.jpg" alt="" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-headerpatterns.jpg" alt=""></p>
 
 <h3 id="代码高亮">代码高亮</h3>
 
-<p>模板引入了<a href="http://prismjs.com">Prism.js</a>，一款轻量、可扩展的代码语法高亮库。</p>
+<p>模板引入了<a href="http://prismjs.com" rel="nofollow" target="_blank" class="extlinks">Prism.js</a>，一款轻量、可扩展的代码语法高亮库。</p>
 
-<p>很多知名网站如<a href="https://developer.mozilla.org/">MDN</a>、<a href="https://css-tricks.com/">css-tricks</a>也在用它，JavaScript 之父 <a href="https://brendaneich.com/">Brendan Eich</a> 也在个人博客上使用。</p>
+<p>很多知名网站如<a href="https://developer.mozilla.org/" rel="nofollow" target="_blank" class="extlinks">MDN</a>、<a href="https://css-tricks.com/" rel="nofollow" target="_blank" class="extlinks">css-tricks</a>也在用它，JavaScript 之父 <a href="https://brendaneich.com/" rel="nofollow" target="_blank" class="extlinks">Brendan Eich</a> 也在个人博客上使用。</p>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png" alt="代码高亮" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-highlight.png" alt="代码高亮"></p>
 
-<p>遵循 <a href="https://www.w3.org/TR/html5/grouping-content.html#the-pre-element">HTML5</a> 标准，Prism 使用语义化的 <code class="language-plaintext highlighter-rouge">&lt;pre&gt;</code> 元素和 <code class="language-plaintext highlighter-rouge">&lt;code&gt;</code> 元素来标记代码区块：</p>
+<p>遵循 <a href="https://www.w3.org/TR/html5/grouping-content.html#the-pre-element" rel="nofollow" target="_blank" class="extlinks">HTML5</a> 标准，Prism 使用语义化的 <code class="language-plaintext highlighter-rouge">&lt;pre&gt;</code> 元素和 <code class="language-plaintext highlighter-rouge">&lt;code&gt;</code> 元素来标记代码区块：</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;pre&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-css"</span><span class="nt">&gt;</span>p { color: red }<span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
 </code></pre></div></div>
@@ -349,13 +349,13 @@
 
 <h3 id="第三方评论">第三方评论</h3>
 
-<p>由于多说关闭，又对国内其他第三方评论插件无感，所以将<a href="https://disqus.com/">Disqus</a>列为首选（目前模板也只提供了这个），请自备梯子。</p>
+<p>由于多说关闭，又对国内其他第三方评论插件无感，所以将<a href="https://disqus.com/" rel="nofollow" target="_blank" class="extlinks">Disqus</a>列为首选（目前模板也只提供了这个），请自备梯子。</p>
 
 <h3 id="移动端优化">移动端优化</h3>
 
 <p>响应式设计，对手机和平板等移动设备做了优化。</p>
 
-<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realm.png" alt="" /></p>
+<p><img src="http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-realm.png" alt=""></p>
 
 <h3 id="关于阅读体验">关于阅读体验</h3>
 
@@ -375,15 +375,15 @@
 
 <h2 id="最后">最后</h2>
 
-<p>本想趁这次机会将整站https化的，但折腾了半天发现弹性web托管并不支持，所以暂时搁置https的想法。另外，博客统计工具一直使用的是<a href="https://tongji.baidu.com">百度统计</a>，这次新增了Google Analytics。</p>
+<p>本想趁这次机会将整站https化的，但折腾了半天发现弹性web托管并不支持，所以暂时搁置https的想法。另外，博客统计工具一直使用的是<a href="https://tongji.baidu.com" rel="nofollow" target="_blank" class="extlinks">百度统计</a>，这次新增了Google Analytics。</p>
 
-<p>这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎<a href="https://github.com/kaeyleo/jekyll-theme-H2O">Star</a>。</p>
+<p>这次从0到1，独自设计、开发再到发布大约用了一周时间，也算完成一个小小的开源项目了，后续也将持续完善和更新，欢迎<a href="https://github.com/kaeyleo/jekyll-theme-H2O" rel="nofollow" target="_blank" class="extlinks">Star</a>。</p>
 
             <div class="post-copyright">
               <p>
                 <span>版权声明：</span>
                 如无特别声明，本文版权归
-                <a href="https://h2o-ac.pages.dev">Mr Li</a>
+                <a href="https://h2o-ac.pages.dev" class="cplink">Mr Li</a>
                 所有，转载请注明本文链接。 
               </p>
               
@@ -394,14 +394,14 @@
                 </p>
               
               <p><span>本文标题：</span>《 H2O theme for Jekyll 》</p>
-              <p><span>本文链接：</span><a href="https://h2o-ac.pages.dev/tech/new-theme-h2o.html">https://h2o-ac.pages.dev/tech/new-theme-h2o.html</a></p>
+              <p><span>本文链接：</span><a href="https://h2o-ac.pages.dev/tech/new-theme-h2o.html" class="cplink">https://h2o-ac.pages.dev/tech/new-theme-h2o.html</a></p>
               <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！</p>
             </div>
           </article>
         </div>   
         <div class="table-of-contents">
           <h2>目录</h2>
-          <ul><li><a href="#h2o">H2O</a></li><li><a href="#新特性">新特性</a><ul><li><a href="#主题配色">主题配色</a></li><li><a href="#侧边栏">侧边栏</a></li><li><a href="#社交图标">社交图标</a></li><li><a href="#前后文导航">前后文导航</a></li><li><a href="#自定义文章封面">自定义文章封面</a></li><li><a href="#头图个性化底纹">头图个性化底纹</a></li><li><a href="#代码高亮">代码高亮</a></li><li><a href="#第三方评论">第三方评论</a></li><li><a href="#移动端优化">移动端优化</a></li><li><a href="#关于阅读体验">关于阅读体验</a></li><li><a href="#其他特性">其他特性：</a></li></ul></li><li><a href="#最后">最后</a></li></ul>
+          <ul><li><a onclick="scrollToAdjust('h2o')">H2O</a></li><li><a onclick="scrollToAdjust('新特性')">新特性</a><ul><li><a onclick="scrollToAdjust('主题配色')">主题配色</a></li><li><a onclick="scrollToAdjust('侧边栏')">侧边栏</a></li><li><a onclick="scrollToAdjust('社交图标')">社交图标</a></li><li><a onclick="scrollToAdjust('前后文导航')">前后文导航</a></li><li><a onclick="scrollToAdjust('自定义文章封面')">自定义文章封面</a></li><li><a onclick="scrollToAdjust('头图个性化底纹')">头图个性化底纹</a></li><li><a onclick="scrollToAdjust('代码高亮')">代码高亮</a></li><li><a onclick="scrollToAdjust('第三方评论')">第三方评论</a></li><li><a onclick="scrollToAdjust('移动端优化')">移动端优化</a></li><li><a onclick="scrollToAdjust('关于阅读体验')">关于阅读体验</a></li><li><a onclick="scrollToAdjust('其他特性')">其他特性：</a></li></ul></li><li><a onclick="scrollToAdjust('最后')">最后</a></li></ul>
         </div>
       </div>
       
@@ -704,6 +704,19 @@
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
   <script>
+    /**
+    * Better Scroll Experience
+    */
+    function scrollToAdjust(id){
+      var element = document.getElementById(id);
+      var headerOffset = 90;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.scrollY - headerOffset;
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+      });
+    }
       // 给图片添加链接
       $(document).ready(function() {
           var baseurl = $("meta[property='og:baseurl']").attr('content');

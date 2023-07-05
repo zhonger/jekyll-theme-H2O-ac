@@ -64,7 +64,7 @@
   <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
   <![endif]-->
   
-  <div id="all" class="post">
+  <div id="all" class="post" data-theme="pink">
   
     <div class="alert-tip" id="no-previous">
       已经是最新一篇文章了！
@@ -72,7 +72,7 @@
     <div class="alert-tip" id="no-next">
       已经是最后一篇文章了！
     </div>
-    <input id="nm-switch" type="hidden" value="false"> <header class="g-header">
+    <input id="nm-switch" type="hidden" value="false"> <header class="g-header" data-theme="pink">
     <div class="g-logo">
       <a href="/" aria-label="logo"></a>
     </div>
@@ -176,8 +176,8 @@
 
 
     <header
-      class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
-      data-theme="default"
+      class="g-banner post-header post-pattern-circuitBoard bgcolor-pink "
+      data-theme="pink"
     >
       <div class="post-wrapper">
         <div class="post-tags">
@@ -252,7 +252,7 @@
       
       <div class="container">  
         <div class="contents">
-          <article class="markdown-body">
+          <article class="markdown-body post">
             <blockquote>
   <p>Transform your plain text into static websites and blogs.</p>
 </blockquote>
@@ -263,7 +263,7 @@
 
 <h3 id="so-what-is-jekyll-exactlypermalink">So what is Jekyll, exactly?Permalink</h3>
 
-<p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like <a href="https://daringfireball.net/projects/markdown/">Markdown</a>) and our <a href="https://github.com/Shopify/liquid/wiki">Liquid</a> renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.</p>
+<p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like <a href="https://daringfireball.net/projects/markdown/" rel="nofollow" target="_blank" class="extlinks">Markdown</a>) and our <a href="https://github.com/Shopify/liquid/wiki" rel="nofollow" target="_blank" class="extlinks">Liquid</a> renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.</p>
 
 <h3 id="helpful-hintspermalink">Helpful HintsPermalink</h3>
 
@@ -277,7 +277,7 @@
               <p>
                 <span>版权声明：</span>
                 如无特别声明，本文版权归
-                <a href="https://h2o-ac.pages.dev">Mr Li</a>
+                <a href="https://h2o-ac.pages.dev" class="cplink">Mr Li</a>
                 所有，转载请注明本文链接。 
               </p>
               
@@ -288,14 +288,14 @@
                 </p>
               
               <p><span>本文标题：</span>《 Hello Jekyll 》</p>
-              <p><span>本文链接：</span><a href="https://h2o-ac.pages.dev/hello-jekyll.html">https://h2o-ac.pages.dev/hello-jekyll.html</a></p>
+              <p><span>本文链接：</span><a href="https://h2o-ac.pages.dev/hello-jekyll.html" class="cplink">https://h2o-ac.pages.dev/hello-jekyll.html</a></p>
               <p class="tips">本文最后一次更新为 <span></span> 天前，文章中的某些内容可能已过时！</p>
             </div>
           </article>
         </div>   
         <div class="table-of-contents">
           <h2>目录</h2>
-          <ul><li><a href="#welcome">Welcome</a></li><li><a href="#so-what-is-jekyll-exactlypermalink">So what is Jekyll, exactly?Permalink</a></li><li><a href="#helpful-hintspermalink">Helpful HintsPermalink</a></li><li><a href="#video-test">Video Test</a></li></ul>
+          <ul><li><a onclick="scrollToAdjust('welcome')">Welcome</a></li><li><a onclick="scrollToAdjust('so-what-is-jekyll,-exactly?permalink')">So what is Jekyll, exactly?Permalink</a></li><li><a onclick="scrollToAdjust('helpful-hintspermalink')">Helpful HintsPermalink</a></li><li><a onclick="scrollToAdjust('video-test')">Video Test</a></li></ul>
         </div>
       </div>
       
@@ -586,6 +586,19 @@
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
   <script>
+    /**
+    * Better Scroll Experience
+    */
+    function scrollToAdjust(id){
+      var element = document.getElementById(id);
+      var headerOffset = 90;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.scrollY - headerOffset;
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+      });
+    }
       // 给图片添加链接
       $(document).ready(function() {
           var baseurl = $("meta[property='og:baseurl']").attr('content');
