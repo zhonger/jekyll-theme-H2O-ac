@@ -32,6 +32,37 @@ description: 或许是最漂亮的Jekyll主题
     <div class="article-list">
         <div class="post-content" style="padding-left: 30px;padding-right: 30px;width: auto;">
             <article class="markdown-body" style="width: auto;">
+                {% assign lang = page.lang | default: site.default_lang %}
+                {% assign locales = site.data.locales[lang] %}
+                {% if page.langs %}
+                    <p><b>{{ locales.langs }}</b>
+                    {% assign langs = "zh-Hans, zh-Hant, en, ja" | split: ", " %}
+                    {% assign langnames = "简中, 繁中, EN, 日本語" | split: ", " %}
+                    {% if lang == site.default_lang %}
+                        {% assign url = page.url %}
+                    {% else %}
+                        {% assign urls = page.url | split: '/' %}
+                        {% assign url = "" %}
+                        {% for u in urls offset:2 %}
+                            {% assign url = url | append: "/" | append: u %}
+                        {% endfor %}
+                    {% endif %}
+                    {% for l in page.langs %}
+                        {% for i in (0..4) %}
+                            {% if langs[i] == l %}
+                                {% if l == page.lang %}
+                                    {{ langnames[i] }}
+                                {% elsif l == site.default_lang %}
+                                    <a href="{{ url }}">{{ langnames[i] }}</a>
+                                {% else %}
+                                    {% assign prefix = "/" | append: l %}
+                                    <a href="{{ url | prepend: prefix }}">{{ langnames[i] }}</a>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    </p>
+                {% endif %}
                 {{ content | extlinks }}
             </article>
         </div>
