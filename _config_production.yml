@@ -32,9 +32,6 @@ pwa:
   color: '#81BBFF'
   short_name: 'lisz'
 
-# International
-language: zh-cn
-
 # Navigation links
 nav:
   home: '/'
@@ -92,7 +89,8 @@ social-share: true
 social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
 
 # theme color 主题皮肤
-theme-color: 'default'  # pink or default
+# theme-color: 'default'  # pink or default
+theme-color: 'pink'  # pink or default
 
 # Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
 postPatterns: 'circuitBoard'

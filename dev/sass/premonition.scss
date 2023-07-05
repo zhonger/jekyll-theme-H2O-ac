@@ -1,57 +1,64 @@
 .premonition {
+    p {
+        margin-bottom: 0;
+    }
     &.note, &.info, &.warning, &.error, &.citation{
         border-radius: 6.4px;
-        padding: 10px 16px 1px 16px;
-        margin-bottom: 20px;
+        padding: 1rem;
+        margin-bottom: 1em;
     }
     &.note{
-        background-color: #d4deea;
-        border-left: 5px solid #045494;
-        color: #045494;
+        background-color: $color-note-contrast-background;
+        border-left: 5px solid $color-note-darkest;
+        color: $color-note-darkest;
         code{
-            color: #045494!important;
+            background-color: $color-note-code-background;
+            color: $color-note-darkest!important;
         }
     }
     &.info{
-        background-color: #e6f6e6;
-        border-left: 5px solid #009400;
-        color: #009400;
+        background-color: $color-info-contrast-background;
+        border-left: 5px solid $color-info-dark;
+        color: $color-info-dark;
         code{
-            color: #009400!important;
+            background-color: $color-info-code-background;
+            color: $color-info-dark!important;
         }
     }
     &.warning{
-        background-color: #fcf8f2;
-        border-left: 5px solid #f0ad4e;
-        color: #f0ad4e;
+        background-color: $color-warning-contrast-background;
+        border-left: 5px solid $color-warning-dark;
+        color: $color-warning-dark;
         code{
-            color: #f0ad4e!important;
+            background-color: $color-warning-code-background;
+            color: $color-warning-dark!important;
         }
     }
     &.error{
-        background-color: #fdf7f7;
-        border-left: 5px solid #d9534f;
-        color: #d9534f;
+        background-color: $color-error-contrast-background;
+        border-left: 5px solid $color-error-dark;
+        color: $color-error-dark;
         code{
-            color: #d9534f!important;
+            background-color: $color-error-code-background;
+            color: $color-error-dark!important;
         }
     }
     &.citation{
-        background-color: #f8f9fa;
-        border-left: 5px solid #495057;
-        color: #495057;
+        background-color: $color-citation-contrast-background;
+        border-left: 5px solid $color-citation-darkest;
+        color: $color-citation-darkest;
         code{
-            color: #495057!important;
+            background-color: $color-citation-code-background;
+            color: $color-citation-darkest!important;
         }
         .ref{
             text-align: right;
-            margin-bottom: 10px;
         }
     }
     .header{
         font-weight: 700;
         line-height: 17.5px;
-        margin-bottom: 10px;
+        margin-bottom: 0.3rem;
     }
     code{
         text-shadow: none;
@@ -71,22 +78,19 @@
     .premonition {
         color: #fff;
         &.note{
-            background-color: #193c45;
+            background-color: $color-note-contrast-foreground;
         }
         &.info{
-            background-color: #1c4a1c;
+            background-color: $color-info-contrast-foreground;
         }
         &.warning{
-            background-color: #3d2d14;
+            background-color: $color-warning-contrast-foreground;
         }
         &.error{
-            background-color: #3e1616;
+            background-color: $color-error-contrast-foreground;
         }
         &.citation{
-            background-color: #323940;
-            code{
-                color: #848e97!important;
-            }
+            background-color: $color-citation-contrast-foreground;
         }
     }
 }

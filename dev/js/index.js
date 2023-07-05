@@ -1,5 +1,3 @@
-"use strict";
-
 $(document).ready(function () {
     document.body.addEventListener('touchstart', function () {}, { passive: true });
 
@@ -73,8 +71,6 @@ $(document).ready(function () {
         $(document).scroll(function () {
             var scrollTop = $(this).scrollTop();
             var navClassName = 'nav-' + themeStyle;
-
-
             if (scrollTop > headerHeight) {
                 if (scrollTop > 3 * headerHeight) {
                     header.addClass('headerUp');
@@ -87,7 +83,7 @@ $(document).ready(function () {
                     'background': 'url(' + baseurl + '/assets/icons/' + themeStyle + '.svg) no-repeat center',
                     'background-size': '100% 100%'
                 });
-                navText.css('color', '#666');
+                navText.addClass('color-f-gray');
                 nav.addClass(navClassName);
             } else {
                 header.removeClass('headerUp');
@@ -101,7 +97,7 @@ $(document).ready(function () {
                     'background': 'url(' + baseurl + '/assets/icons/' + themeStyle + '.svg) no-repeat center',
                     'background-size': '100% 100%'
                 });
-                navText.css('color', '#fff');
+                navText.removeClass('color-f-gray');
                 nav.removeClass(navClassName);
             }
 
@@ -282,7 +278,7 @@ $(document).ready(function () {
         $.getJSON(jsonfile).done(function (data) {
             var html = '';
             for (var i in data) {
-                var item = data[parseInt(i)];
+                var item = data[i];
                 var title = item.title;
                 var tags = item.tags;
                 var url = item.url;
@@ -371,11 +367,11 @@ $(document).ready(function () {
         }
         for (var i = 0; i < alis.length; i++) {
             /*获取锚点集合中的元素分别到顶点的距离*/
-            var a_height = $(alis[parseInt(i)]).offset().top - 100;
+            var a_height = $(alis[i]).offset().top - 100;
             if (a_height < scroll_height) {
                 /*高亮显示*/
                 $(sidebar_alis).removeClass('active');
-                $(sidebar_alis[parseInt(i)]).addClass('active');
+                $(sidebar_alis[i]).addClass('active');
             }
         }
     }
@@ -390,7 +386,7 @@ $(document).ready(function () {
         var name = cname + "=";
         var ca = document.cookie.split(';');
         for (var i = 0; i < ca.length; i++) {
-            var c = ca[parseInt(i)].trim();
+            var c = ca[i].trim();
             if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
         }
         return "";

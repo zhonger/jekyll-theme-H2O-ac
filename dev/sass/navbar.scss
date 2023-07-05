@@ -1,0 +1,235 @@
+.g-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // height: $g-header-h;
+    height: 50px;
+    padding: 16px 0;
+    background-color: transparent;
+    transition: all .6s;
+    z-index: 1000;
+    .g-logo {
+        float: left;
+        margin-left: 2%;
+        // width: 70px;
+        // height: $g-header-h;
+        width: 50px;
+        height: 50px;
+        // background: url('../icons/default.svg') no-repeat center;
+        // background-size: 100% 100%;
+        opacity: .8;
+        transition: all .2s;
+        &:hover {
+            opacity: 1;
+        }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    #mode-toggle{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 35px;
+        right: 57px;
+        display: none;
+        .icon-day, .icon-night{
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            display: none;
+            &.active{
+                display: block;
+            }
+            &:hover{
+                background-color: #81bbff;
+                border-radius: 50%;
+            }
+        }
+    }
+    .icon-menu {
+        display: none;
+        position: absolute;
+        top: 32px;
+        right: 0;
+        padding: 8px;
+        font-size: 28px;
+        color: #fff;
+        opacity: .8;
+        border-radius: 3px;
+        &:active {
+            background-color: rgba(255, 255, 255, .2);
+        }
+    }
+    .g-nav {
+        float: right;
+        margin-right: 2%;
+        &>ul>li{
+            float: left;
+            // height: $g-header-h;
+            // line-height: $g-header-h;
+            height: 50px;
+            line-height: 50px;
+            text-transform: uppercase;
+            margin-right: 18px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &>a {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                color: #fff;
+                padding: 0 12px;
+                // opacity: .7;
+                opacity: 1;
+                &:hover {
+                    // opacity: 1;
+                    opacity: .7;
+                }
+            }
+            &.mode{
+                width: 40px;
+                height: 40px;
+                margin: 5px 0;
+                cursor: pointer;
+                .icon{
+                    width: 30px;
+                    height: 30px;
+                    padding: 5px;
+                    display: none;
+                    &.active{
+                        display: block;
+                    }
+                }
+                // &:hover{
+                    // background-color: rgb(129, 187, 255);
+                    // background-color: $color-theme-pink-2;
+                    // border-radius: 50%;
+                // }
+            }
+        }
+        .dropdown-toggle{
+            white-space: nowrap;
+            &::after {
+                content: "";
+                display: inline-block;
+                vertical-align: 0.306em;
+                width: 0.36em;
+                height: 0.36em;
+                border-bottom: 2px solid;
+                border-left: 2px solid;
+                margin-right: 0.1em;
+                margin-left: 0.4em;
+                transform: rotate(-45deg);
+            }
+            &.show::after {
+                vertical-align: 0.1em;
+                transform: rotate(+135deg);
+            }
+        }
+        
+        ul.dropdown-menu {
+            background-color: #fff;
+            box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+            border-radius: 3px;
+            display: none;
+            float: left;
+            position: absolute;
+            min-width: 140px;
+            padding: 5px 0;
+            margin-left: 12px;
+            &.show {
+                display: block;
+            }
+            li{
+                padding: 0rem 0.75rem;
+                line-height: 2.5rem;
+                &:hover {
+                    background-color: rgba(98, 105, 118, 0.04); 
+                }
+                a {
+                    color: $color-f-primary;
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// header scroll
+.headerUp{
+    top: -82px;
+}
+.headerDown{
+    top: 0;
+}
+
+.g-banner {
+    height: $g-banner-h;
+    background-color: #2F3139;
+    color: #fff;
+    padding: 0 60px;
+    .meta-item {
+        margin-top: 20px;
+        svg {
+            width: 20px;
+            height: 20px;
+            margin-bottom: -5px;
+        }
+        a {
+            text-decoration: underline;
+            color: #fff;
+        }
+    }
+}
+
+.home-banner {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 38, 55, .16);
+    h2, h3{
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    }
+    h2 {
+        padding-top: 190px;
+        line-height: 38px;
+        font-size: 42px;
+        font-family: $fonts;
+        font-weight: bold;
+        line-height: 52px;
+    }
+    h3 {
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 8px;
+    }
+}
+
+.banner-theme-default {
+    background: -webkit-linear-gradient(0deg, #3CD5FF, #a8b8c9);
+    background: -o-linear-gradient(0deg, #3CD5FF, #a8b8c9);
+    background: -moz-linear-gradient(0deg, #3CD5FF, #a8b8c9);
+    background: linear-gradient(100deg, #3CD5FF, #a8b8c9);
+}
+.banner-theme-pink {
+    background: -webkit-linear-gradient(0deg, #FFCE69, #fcc6d7);
+    background: -o-linear-gradient(0deg, #FFCE69, #fcc6d7);
+    background: -moz-linear-gradient(0deg, #FFCE69, #fcc6d7);
+    background: linear-gradient(100deg, #FFCE69, #fcc6d7);
+}
+
+.themeColor-default {
+    background-color: $color-theme-default;
+}
+.themeColor-pink {
+    background-color: $color-theme-pink;
+}

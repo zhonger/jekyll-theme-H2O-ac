@@ -43,3 +43,8 @@ a {
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
 }
+
+:root {
+    --waline-theme-color: #81bbff!important;
+    --waline-active-color: #1B7EFF!important;
+}

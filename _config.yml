@@ -32,9 +32,6 @@ pwa:
   color: '#81BBFF'
   short_name: 'lisz'
 
-# International
-language: zh-cn
-
 # Navigation links
 nav:
   home: '/'
