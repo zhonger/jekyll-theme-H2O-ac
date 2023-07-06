@@ -17,8 +17,8 @@ A Jekyll theme for researchers and maintainers based on Jekyll and [H2O](https:/
 
 ### [在线预览 Live Demo →](https://h2o-ac.pages.dev/)
 
-![vgy.me](https://i.vgy.me/tDC0t6.png)
-![vgy.me](https://i.vgy.me/2Oj0Tj.png)
+![vgy.me](https://i.vgy.me/PbODHY.png)
+![vgy.me](https://i.vgy.me/EPFN8X.png)
 
 如果你喜欢这个博客模板，请在右上角star一下，非常感谢～
 
@@ -51,6 +51,7 @@ Using your smartphone to scan the QR Code for preview
 - 提示框支持
 - 文章置顶
 - 版权显式声明
+- 国际化支持（简中、繁中、英文、日文）
 
 ### EN
 
@@ -71,6 +72,7 @@ Using your smartphone to scan the QR Code for preview
 - Premonition
 - Top article pin
 - Copyright statement for articles
+- Internationlization (Simplified Chinese, Traditional Chinse, English, Japanese)
 
 ## Usage 快速开始
 
