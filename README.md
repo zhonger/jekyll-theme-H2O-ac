@@ -16,9 +16,8 @@ A Jekyll theme for researchers and maintainers based on Jekyll and [H2O](https:/
 ## Preview
 
 ### [在线预览 Live Demo →](https://h2o-ac.pages.dev/)
-
-![vgy.me](https://i.vgy.me/PbODHY.png)
-![vgy.me](https://i.vgy.me/EPFN8X.png)
+![Picyard Thu Jul 06 2023 14_59_28 GMT+0900 (日本标准时间)](https://github.com/zhonger/jekyll-theme-H2O-ac/assets/12064158/e6d55bf7-b956-46e9-80d0-f33397a62215)
+![Picyard Thu Jul 06 2023 15_09_27 GMT+0900 (日本标准时间)](https://github.com/zhonger/jekyll-theme-H2O-ac/assets/12064158/fa9a087a-d849-4469-9830-2400d3410660)
 
 如果你喜欢这个博客模板，请在右上角star一下，非常感谢～
 
@@ -28,7 +27,7 @@ If you like this theme or using it, please give a ⭐️ for motivation ;)
 
 Using your smartphone to scan the QR Code for preview
 
-<img src="https://i.vgy.me/0zuPYl.png" width=200 />
+<img src="https://github.com/zhonger/jekyll-theme-H2O-ac/assets/12064158/b01c0a31-4fad-413c-9692-a67d330699b1" width=200 />
 
 ## New Features compared with H2O， 与 H2O 不同的新特性
 
