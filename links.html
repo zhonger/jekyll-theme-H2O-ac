@@ -691,25 +691,21 @@
 //     console.log('不支持sw')
 // }
 </script>
-    <!--
-Author: Ray-Eldath
-refer to:
- - http://docs.mathjax.org/en/latest/options/index.html
--->
-
+    
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
 		jax: ["input/TeX", "output/HTML-CSS"],
 		tex2jax: {
-			inlineMath: [ ["$", "$"] ],
-			displayMath: [ ["$$", "$$"] ],
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
 			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
 		},
 		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
       });
     </script>
+
 
      
     <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
