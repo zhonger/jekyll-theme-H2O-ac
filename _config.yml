@@ -2,10 +2,10 @@
 version: 1.2.1
 
 # Site settings 配置站点
-title: 'Mr Li'
-description: '个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。'
-keyword: 'zhonger，zhonger的博客，nodejs，kvm, 机器学习'
-url: 'https://h2o-ac.pages.dev' # your host
+title: '袁滚滚的自留地'
+description: '树林美丽，幽暗而深邃, 但我有诺言尚待实现， 还要奔行百里方可沉睡。'
+keyword: '袁滚滚，博客，观察者，ENFP-T, 终生探索'
+url: 'https://jekyll-theme-h2o-ac.pages.dev/' # your host
 
 # when build blog on server, if you don't need baseurl, you should leave this value blank.
 # 在服务器上建站时，如果你不需要子域名，请将这一格留空
@@ -24,7 +24,7 @@ default_lang: "zh-Hans"
 # Github
 github:
   enabled: true
-  owner: zhonger
+  owner: wenny_yy
   repository: jekyll-theme-H2O-ac
 
 # PWA
@@ -57,9 +57,9 @@ footer:
   since: 2015
 
 # Author 配置博主信息
-author: 'zhonger'
-nickname: 'zhonger'
-bio: '全栈开发者，热爱前端、运维和架构设计'
+author: 'wenny_yy'
+nickname: '袁滚滚'
+bio: '袁滚滚，博客，观察者，ENFP-T, 终生探索'
 avatar: '/assets/img/profile.webp'
 
 # Search
@@ -85,7 +85,7 @@ social-share: true
 social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
 
 # theme color 主题皮肤
-theme-color: 'default'  # pink or default
+theme-color: 'pink'  # pink or default
 
 # Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
 postPatterns: 'circuitBoard'
@@ -93,16 +93,15 @@ postPatterns: 'circuitBoard'
 # SNS settings 配置社交网站
 # url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
 sns:
-  # google-scholar: 'https://scholar.google.com/citations?user=AUupIooAAAAJ'
   # researchgate: 'https://www.researchgate.net/profile/Shengzhou-Li'
   # ORCID: 'https://orcid.org/0000-0001-6973-3825'
-  # github: 'https://github.com/zhonger'
-  # linkedin: 'https://www.linkedin.com/in/shengzhouli/'
-  # segmentfault: 'https://segmentfault.com/u/wuwozhonger'
+  # github: 'https://github.com/wennyyuan'
+  # Twitter:'https://twitter.com/rollrollyuan'
+  
 
 # Links 友情链接
 links:
-  # 'Mr Li': 'https://lisz.me'
+  # '现阶段签约厂牌': 'https://www.csdn.net/'
 
 # Supports 赞助商
 supports:
@@ -110,7 +109,7 @@ supports:
   webify: 
 
 # Beian 备案号
-beian: '沪ICP备xxxxxxxx号'
+beian: '你看可能会去备案么'
 
 # CC License
 cclicense: true
