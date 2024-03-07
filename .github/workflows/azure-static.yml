@@ -22,6 +22,7 @@ jobs:
         with:
           ruby-version: '3.1.0'
           bundler-cache: false
+      - run: bundle install
       - run: bundle exec jekyll build --config _config_production.yml
       - name: Build And Deploy
         id: builddeploy

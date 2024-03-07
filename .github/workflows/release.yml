@@ -17,6 +17,7 @@ jobs:
       with:
         ruby-version: '3.1.0'
         bundler-cache: false
+    - run: bundle install
     - name: Build the gem
       run: |
         gem build *.gemspec
