@@ -12,7 +12,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1.0'
-          bundler-cache: true
+          bundler-cache: false
       - run: bundle exec jekyll build --config _config_production.yml
       - uses: peaceiris/actions-gh-pages@v3.7.3
         with:
