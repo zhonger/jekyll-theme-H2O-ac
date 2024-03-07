@@ -6,7 +6,7 @@
     <div class="g-left">
       <section class="links">
         {{ footer.driver }}
-        {% if site.version %} (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v.{{ site.version }}" target="_blank" class="extlinks">v{{ site.version }}</a>){% endif %}  
+        {% if site.version %} (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v{{ site.version }}" target="_blank" class="extlinks">v{{ site.version }}</a>){% endif %}  
         {% if site.supports.webify %} & <a href="https://webify.cloudbase.net/" target="_blank" class="extlinks">CloudBase Webify</a> {% endif %}
       </section>
       <section class="links">{{ site.title }} ©
@@ -16,7 +16,7 @@
           -
         {% endunless %}
         {{ current }}
-        {% if site.beian %}
+        {% if site.beian and site.beian != "" %}
           <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
         {% endif %}
       </section>
