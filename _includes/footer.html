@@ -19,14 +19,28 @@
         {% if site.beian and site.beian != "" %}
           <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
         {% endif %}
+        <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-rss"></use>
+          </svg> RSS  
+        </a>
+        <a href="/tos" target="_blank" aria-label="Terms of Service" class="others">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-tos"></use>
+          </svg> {{footer.tos.name}}  
+        </a>
       </section>
       {% if site.busuanzi %}
-      <section>
+      <section class="links">
         <span id="busuanzi_container_site_pv">
-          👁️ {{ footer.views }} <span id="busuanzi_value_site_pv"></span> <b>·</b>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pv"></use>
+          </svg> {{ footer.views }} <span id="busuanzi_value_site_pv"></span> <b>·</b>
         </span>
         <span id="busuanzi_container_site_uv">
-          👤 {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-user"></use>
+          </svg> {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
         </span>
       </section>
       {% endif %}

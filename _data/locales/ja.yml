@@ -6,6 +6,8 @@ panel:
   hot_tags: '人気タグ'
   links: 'リンク'
   update: '最新のアップデート'
+  friends: '友達'
+  nolink: 'リンクがありません'
 footer:
   driver: 'このサイトは <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> と <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> を利用しています'
   views: '総閲覧数'
@@ -22,6 +24,7 @@ footer:
     middle: 'このサイトについて'
     right: 'をご覧ください。'
     btn: '同意する'
+    name: '利用規約'
 post:
   outline: '目次'
   cover:

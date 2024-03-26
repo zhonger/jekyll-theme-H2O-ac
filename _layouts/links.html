@@ -3,10 +3,16 @@ layout: page
 home-title: H2O-ac Theme For Jekyll
 description: 或许是最漂亮的Jekyll主题
 ---
-
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
+{% assign panel = locales.panel %}
 {% if site.data.links %}
 <div class="friends">
-    <h2>{% if site.language == "zh-cn" %}链接{% else %}Links{% endif %}</h2>
+    <h2>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-links"></use>
+        </svg> {{panel.links}}
+    </h2>
     {% for f in site.data.links.links %}
     <a target="_blank" href="{{ f.url }}" title="{{ f.name }}" class="friendurl">
         <div class="frienddiv">
@@ -23,7 +29,11 @@ description: 或许是最漂亮的Jekyll主题
     {% endfor %}
 </div>
 <div class="friends">
-    <h2>{% if site.language == "zh-cn" %}朋友们{% else %}Friends{% endif %}</h2>
+    <h2>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-friends"></use>
+        </svg> {{panel.friends}}
+    </h2>
     {% for f in site.data.links.friends %}
     <a target="_blank" href="{{ f.url }}" title="{{ f.name }}" class="friendurl">
         <div class="frienddiv">
@@ -40,7 +50,7 @@ description: 或许是最漂亮的Jekyll主题
     {% endfor %}
 </div>
 {% else %}
-暂无链接
+{{panel.nolink}}
 {% endif %}
 
 {{ content }}

@@ -138,6 +138,8 @@
                 width: 18px;
                 height: 18px;
                 margin-bottom: -3px;
+                fill: currentColor;
+                overflow: hidden;
             }
         }
     }
@@ -232,6 +234,8 @@
                 width: 30px;
                 height: 30px;
                 margin-bottom: -7px;
+                fill: currentColor;
+                overflow: hidden;
             }
         } 
         #comments-switch {
@@ -399,6 +403,13 @@
 }
 
 .friends {
+    .icon {
+        width: 20px;
+        height: 20px;
+        margin-bottom: -3px;
+        fill: currentColor;
+        overflow: hidden;
+    }
     .friendurl {
         text-decoration: none!important;
         color: inherit;

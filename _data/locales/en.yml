@@ -6,6 +6,8 @@ panel:
   hot_tags: 'HOT TAGS'
   links: 'LINKS'
   update: 'RECENT UPDATES'
+  friends: 'FRIENDS'
+  nolink: 'No any links'
 footer:
   driver: 'Powered by <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> & <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> (based on <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a>)'
   views: 'Total Views'
@@ -22,6 +24,7 @@ footer:
     middle: 'Terms of Service'
     right: 'page.'
     btn: 'Accept'
+    name: 'Terms of Service'
 post:
   outline: 'Contents'
   cover:

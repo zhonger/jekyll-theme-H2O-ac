@@ -47,6 +47,11 @@
             background-color: $color-theme-default-1;
         }
     }
+    .search-card {
+        .icon {
+            color: $color-theme-default;
+        }
+    }
     #accept-tos {
         background-color: $color-theme-default-1;
         &:hover {
@@ -104,10 +109,41 @@
             background-color: $color-theme-pink-1;
         }
     }
+    .search-card {
+        .icon {
+            color: $color-theme-pink;
+        }
+    }
     #accept-tos {
         background-color: $color-theme-pink-1;
         &:hover {
             background-color: $color-theme-pink;
+        }
+    }
+}
+
+.night-mode {
+    [data-theme='default'] {
+        a.button {
+            color: #aaaaaa;
+        }
+
+        a.button:hover,
+        .g-sidebar .tags-card a.button:hover,
+        .friends .frienddiv:hover {
+            background-color: $color-theme-default-3;
+        }
+    }
+
+    [data-theme='pink'] {
+        a.button {
+            color: #aaaaaa;
+        }
+
+        a.button:hover,
+        .g-sidebar .tags-card a.button:hover,
+        .friends .frienddiv:hover {
+            background-color: $color-theme-pink-3;
         }
     }
 }

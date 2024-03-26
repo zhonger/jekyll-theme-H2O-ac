@@ -54,7 +54,12 @@
             {% endif %}
         {% endfor %}
         <section class="tags-card">
-            <div class="links" rel="links">{{ panel.hot_tags }}</div>
+            <div class="links" rel="links">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-tags"></use>
+                </svg>                
+                {{ panel.hot_tags }}
+            </div>
             {% assign pnum = 0 %}
             {% for i in (1..max_tag_count) reversed %}
                 {% for tag in site.tags %}
@@ -75,7 +80,12 @@
 
         {% if site.links.size > 0 %}
         <section class="tags-card">
-            <div class="links" rel="links">{{ panel.links }}</div>
+            <div class="links" rel="links">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-links"></use>
+                </svg>       
+                {{ panel.links }}
+            </div>
             {% for link in site.links %}
                 <a href="{{ link[1] }}" target="_blank" class="tag" rel="noreferrer"> {{ link[0] }} </a>
             {% endfor %}
@@ -84,7 +94,12 @@
 
         <section class="tags-card">
             {% assign posts = site.posts | sort: "date" | reverse %}
-            <div class="links">{{ panel.update }}</div>
+            <div class="links">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-new"></use>
+                </svg>       
+                {{ panel.update }}
+            </div>
             <ul class="latest-articles">
                 {% for post in posts limit:3 %}
                     <li>

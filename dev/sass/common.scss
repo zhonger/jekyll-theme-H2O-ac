@@ -149,6 +149,13 @@ a {
         .tag {
             margin-bottom: 8px;
         }
+        .icon {
+            width: 30px;
+            height: 16px;
+            margin-bottom: -3px;
+            fill: currentColor;
+            overflow: hidden;
+        }
         .latest-articles {
             li {
                 margin-bottom: 15px;
@@ -209,7 +216,6 @@ a {
         position: absolute;
         top: 13px;
         right: 18px;
-        color: #CAD3DC;
         z-index: 1;
         width: 20px;
         height: 20px;
@@ -316,11 +322,14 @@ a {
         }
     }
     section {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 12px;
+        line-height: 18px;
         color: #4E4E4E;
         a {
             color: #4E4E4E;
+            &.others {
+                margin-left: 10px;
+            }
             &:hover {
                 color: #83888F;
             }
@@ -331,6 +340,13 @@ a {
                 height: 15px;
             }
 
+        }
+        .icon {
+            width: 14px;
+            height: 14px;
+            margin-bottom: -3px;
+            fill: currentColor;
+            overflow: hidden;
         }
         .upyun {
             height: 25px;

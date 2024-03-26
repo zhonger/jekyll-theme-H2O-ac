@@ -177,10 +177,13 @@
     padding: 0 60px;
     .meta-item {
         margin-top: 20px;
-        svg {
+        color: #fff;
+        .icon {
             width: 20px;
             height: 20px;
             margin-bottom: -5px;
+            fill: currentColor;
+            overflow: hidden;
         }
         a {
             text-decoration: underline;

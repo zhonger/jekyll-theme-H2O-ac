@@ -138,7 +138,9 @@
         background-color: $color-dark-primary;
         border-color: rgba(255,255,255,.1);
         .post-subtitle {
-            &:before, &:after {
+            color: #ffffff;
+            &:before,
+            &:after {
                 background-color: #575B63;
             }
         }
@@ -192,6 +194,10 @@
             background-color: transparent;
         }
     }
+    .table-of-contents,
+    .table-of-contents a {
+        color: #ffffff;
+    }
     .read-next-item {
         background-color: #484D59;
         section {
@@ -227,34 +233,32 @@
     .bttb, .mobile-list {
         background-color: #444950;
     }
+    .author-detail,
+    #waline button,
+    .wl-editor,
+    .wl-input,
+    .wl-info .wl-text-number,
+    .wl-content p,
+    .wl-panel label,
+    .wl-card .wl-meta span {
+        color: #ffffff;
+    }
     .wl-panel {
         background-color: #282C34;
-        label {
-            color: #666666;
-        }
     }
     .wl-editor:focus, .wl-input:focus {
         background: #252934;
     }
-    .wl-card {
-        .wl-meta{
-            span {
+    .wl-card .wl-meta span {
                 background: #272727;
-                color: #666666;
-            }
-        }
-        .wl-content {
-            p {
-                color: #888888;
-            }
-        }
     }
+
     .archives-date {
         color: #eff0f0;
     }
     .year {
         span {
-            background-color: #fff;
+            background-color: #ffffff;
         }
     }
 }

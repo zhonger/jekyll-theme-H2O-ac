@@ -6,6 +6,8 @@ panel:
   hot_tags: '熱門標簽'
   links: '鏈接'
   update: '最近更新'
+  friends: '朋友們'
+  nolink: '暫無鏈接'
 footer:
   driver: '本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基於 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 強力驅動'
   views: '總瀏覽量'
@@ -22,6 +24,7 @@ footer:
     middle: '本站使用條款'
     right: '了解更多。'
     btn: '同意'
+    name: '使用條款'
 post:
   outline: '目錄'
   cover:
