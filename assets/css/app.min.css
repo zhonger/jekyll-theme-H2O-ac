@@ -453,6 +453,7 @@ a {
   float: right;
   font-size: 12px;
   margin: 5px;
+  min-width: 150px;
 }
 .markdown-body .calendar-top .legends #ex-ghDay-legend2 {
   display: inline-block;
@@ -1933,6 +1934,7 @@ a.extlinks::after {
   float: right;
   font-size: 12px;
   margin: 5px;
+  min-width: 100px;
 }
 .g-sidebar section .calendar-top .legends .text {
   color: #768390;
