@@ -19,6 +19,7 @@ a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
     &.extlinks::after {
         content: "↗️";
         font-size: 12px;
@@ -34,16 +35,20 @@ a {
 
 .article-list {
     width: $post-content-w;
+
     .author-detail {
-        top: 20px!important;
+        top: 20px !important;
     }
+
     .article-item {
         width: 100%;
         margin-bottom: 16px;
         @include cardStyle;
+
         &:last-child {
             margin-bottom: 0;
         }
+
         .post-link {
             position: absolute;
             top: 0;
@@ -51,28 +56,34 @@ a {
             width: 100%;
             height: 100%;
         }
+
         .post-cover {
             position: relative;
             width: 100%;
             max-height: 300px;
             margin-bottom: 14px;
             overflow: hidden;
+
             img {
                 width: 100%;
                 vertical-align: middle;
             }
         }
+
         .post-preview {
             position: relative;
+
             .post-title {
                 font-family: $fonts;
                 color: $color-f-primary;
                 font-size: 24px;
                 line-height: 32px;
+
                 .keep-top {
                     color: red;
                 }
             }
+
             .post-subtitle {
                 margin-top: 3px;
                 font-size: 18px;
@@ -80,6 +91,7 @@ a {
                 color: #585858;
                 line-height: 26px;
             }
+
             .post-excerpt {
                 margin-top: 8px;
                 font-size: 16px;
@@ -90,17 +102,21 @@ a {
                 color: #585858;
             }
         }
+
         .post-meta {
             min-height: 22px;
             margin-top: 8px;
             display: flex;
             justify-content: space-between;
+
             .post-tags {
                 display: inline-block;
                 width: 515px;
             }
+
             .post-date {
                 @include timeStyle;
+
                 .icon {
                     width: 16px;
                     height: 16px;
@@ -114,7 +130,10 @@ a {
 .author-card {
     @include authorCard;
 }
-.article-item .post-meta .post-tag, .tags-card .tag, .tags-content .tag{
+
+.article-item .post-meta .post-tag,
+.tags-card .tag,
+.tags-content .tag {
     @include tagStyle;
 }
 
@@ -125,7 +144,7 @@ a {
     font-weight: bold;
     margin: 10px 0 16px;
     text-align: center;
-  }
+}
 
 .g-sidebar-wrapper {
     width: 300px;
@@ -136,19 +155,24 @@ a {
 
 .g-sidebar {
     @include cardStyle;
+
     section {
         padding: 10px 0;
         border-bottom: 1px solid #E7EAF1;
+
         &:first-child {
             padding-top: 0;
         }
+
         &:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
+
         .tag {
             margin-bottom: 8px;
         }
+
         .icon {
             width: 30px;
             height: 16px;
@@ -156,10 +180,12 @@ a {
             fill: currentColor;
             overflow: hidden;
         }
+
         .latest-articles {
             li {
                 margin-bottom: 15px;
                 font-size: 14px;
+
                 .latest-title {
                     margin: 5px 0;
                     text-align: justify;
@@ -168,10 +194,44 @@ a {
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
+
                 .latest-date {
                     font-size: 12px;
                 }
-            }  
+            }
+        }
+
+        .calendar-top {
+            margin: 10px auto;
+            .button {
+                border-radius: 5px;
+                padding: 3px 5px;
+                display: inline-block;
+
+                &:hover {
+                    background-color: #ebedf0;
+                }
+
+                .icon {
+                    width: 16px;
+                }
+            }
+
+            .legends {
+                float: right;
+                font-size: 12px;
+                margin: 5px;
+
+                .text {
+                    color: #768390;
+                    font-size: 11px;
+                }
+
+                #ex-ghDay-legend {
+                    display: inline-block;
+                    margin: 0 4px;
+                }
+            }
         }
     }
 }
@@ -180,10 +240,13 @@ a {
     position: relative;
     margin-top: 16px;
     padding: 0;
-    input, .search_item {
+
+    input,
+    .search_item {
         font-size: 16px;
         color: $color-f-primary;
     }
+
     input {
         @include cardStyle;
         position: relative;
@@ -194,15 +257,21 @@ a {
         outline: none;
         z-index: 1;
     }
+
     ::-webkit-input-placeholder {
         color: #9EA8B3;
     }
-    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+
+    :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
         color: #9EA8B3;
     }
-    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+
+    ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
         color: #9EA8B3;
     }
+
     .icon-search {
         position: absolute;
         top: 10px;
@@ -212,6 +281,7 @@ a {
         transition: .2s;
         z-index: 1;
     }
+
     .icon {
         position: absolute;
         top: 13px;
@@ -223,6 +293,7 @@ a {
         fill: currentColor;
         overflow: hidden;
     }
+
     .search_result {
         position: relative;
         margin-top: -2px;
@@ -230,27 +301,31 @@ a {
         border-radius: 0 0 4px 4px;
         z-index: 0;
     }
+
     .search_item {
         padding: 6px 18px;
         margin-bottom: 0;
         width: 100%;
         display: block;
         overflow: hidden;
-        text-overflow:ellipsis;
+        text-overflow: ellipsis;
         white-space: nowrap;
         border-left: 1px solid #E7EAF1;
         border-right: 1px solid #E7EAF1;
         box-sizing: border-box;
         opacity: .8;
         transition: .2s;
+
         &:first-child {
             padding-top: 14px;
         }
+
         &:last-child {
             padding-bottom: 14px;
             border-radius: 0 0 4px 4px;
             border-bottom: 1px solid #E7EAF1;
         }
+
         &:hover {
             opacity: 1;
             background-color: #FAFAFA;
@@ -263,6 +338,7 @@ a {
     position: relative;
     left: 50%;
     margin: 8px auto 0;
+
     .page-links {
         position: relative;
         left: -50%;
@@ -273,6 +349,7 @@ a {
         overflow: auto;
         box-shadow: 0 1px 3px rgba(0, 37, 55, .06);
     }
+
     .page-link {
         display: block;
         float: left;
@@ -285,15 +362,18 @@ a {
         text-align: center;
         border-radius: 2px;
         cursor: pointer;
+
         &:hover {
             color: #8F98AA;
             background-color: #EEF0F4;
         }
     }
+
     .active {
         color: #8F98AA;
         background-color: #EEF0F4;
     }
+
     #page-link-container {
         float: left;
     }
@@ -305,42 +385,52 @@ a {
     border-top: 1px solid #E7EAF1;
     text-align: center;
     background-color: #ffffff;
-    box-shadow: 0 -1px 3px rgba(0,37,55,.06);
+    box-shadow: 0 -1px 3px rgba(0, 37, 55, .06);
+
     .g-container {
         margin: 0 auto;
         @include clearfix;
+
         .g-left {
             width: 600px;
             text-align: left;
         }
+
         .g-right {
             width: 400px;
             text-align: right;
+
             .badges {
                 margin-top: 10px;
             }
         }
     }
+
     section {
         font-size: 12px;
         line-height: 18px;
         color: #4E4E4E;
+
         a {
             color: #4E4E4E;
+
             &.others {
                 margin-left: 10px;
             }
+
             &:hover {
                 color: #83888F;
             }
+
             .license {
                 border-width: 0px;
                 margin-bottom: -3px;
                 width: 80px;
                 height: 15px;
             }
-
+            
         }
+
         .icon {
             width: 14px;
             height: 14px;
@@ -348,21 +438,25 @@ a {
             fill: currentColor;
             overflow: hidden;
         }
+
         .upyun {
             height: 25px;
             margin-bottom: -8px;
         }
+
         .foreverblog img {
             width: auto;
             height: 16px;
-            vertical-align: super; 
+            vertical-align: super;
             margin: 10px 10px 0 0;
         }
+
         .wormhole img {
             width: auto;
             height: 24px;
             margin-right: 10px;
         }
+
         .notbyAI img {
             width: 100px;
         }
@@ -372,29 +466,36 @@ a {
 .tags-banner {
     height: 300px;
     text-align: center;
+
     h2 {
         font-size: 36px;
         line-height: 300px;
     }
 }
+
 .tags-content {
     width: $post-content-w;
     margin: -100px auto 0;
 }
+
 .tags-list {
     padding: 40px 0;
+
     li {
         @include cardStyle;
         margin-bottom: 12px;
+
         &:first-child {
             margin-bottom: 24px;
             cursor: default;
         }
+
         .tag {
             box-shadow: 0 0 .3px #BFC2C6;
             margin-bottom: 12px;
             white-space: nowrap;
         }
+
         .tag-name {
             display: block;
             font-size: 20px;
@@ -402,6 +503,7 @@ a {
             text-align: center;
             margin-bottom: 20px;
         }
+
         .tag-post {
             display: block;
             font-size: 16px;
@@ -422,15 +524,18 @@ a {
     height: 100%;
     padding: 0 !important;
     text-align: center;
+
     h1 {
         font-size: 86px;
         letter-spacing: 4px;
         font-weight: normal;
         padding: 160px 0 20px;
     }
+
     .subheading {
         font-size: 18px;
     }
+
     .btn {
         display: block;
         width: 160px;
@@ -453,11 +558,13 @@ a {
         height: 25px;
         text-align: center;
         border-radius: 2px;
+
         .icon {
             &.animal {
                 width: 25px;
                 height: 25px;
             }
+
             &.dz {
                 width: 15px;
                 height: 15px;
@@ -465,25 +572,29 @@ a {
                 margin-left: -5px;
             }
         }
-    }  
+    }
 }
 
 .g-footer {
-    .links{
+    .links {
         a {
             color: #24292f;
             position: relative;
             text-decoration: none;
             z-index: 2;
+
             &:hover {
                 text-decoration: none;
+
                 &:before {
                     top: 0;
                 }
             }
         }
     }
-    #busuanzi_value_site_pv, #busuanzi_value_site_uv {
+
+    #busuanzi_value_site_pv,
+    #busuanzi_value_site_uv {
         color: brown;
     }
 }

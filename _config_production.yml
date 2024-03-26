@@ -109,6 +109,9 @@ sns:
 links:
   'Mr Li': 'https://lisz.me'
 
+# Calendar 日历
+calendar: true
+
 # Supports 赞助商
 supports:
   upyun: true

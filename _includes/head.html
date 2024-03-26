@@ -13,6 +13,7 @@
     <meta property="og:description" content="{{ site.description }}">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:gray" content="{{ site.gray }}">
+    <meta property="og:lang" content="{{ lang }}">
     {% if site.alivetime %}
     <meta name="alivestart" content="{{ site.alivestart }}">
     {% endif %}
@@ -40,6 +41,9 @@
     {% endif %}
     {% if site.prism.line_numbers %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.css">
+    {% endif %}
+    {% if site.calendar %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/cal-heatmap.min.css">
     {% endif %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
     <link rel="stylesheet" href="{{ "/assets/css/app.min.css" | prepend: site.baseurl }}">

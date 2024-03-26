@@ -45,7 +45,9 @@
             </ul>
             {% endif %}
         </section>
-
+        {% if site.calendar %}
+            {% include calendar.html %}
+        {% endif %}
         {% if site.recommend-tags and site.tags.size>0 %}
         {% assign max_tag_count = 0 %}
         {% for tag in site.tags %}

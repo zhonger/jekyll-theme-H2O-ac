@@ -1,0 +1,31 @@
+<section class="tags-card">
+    <div class="links">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-calendar"></use>
+        </svg> {{ panel.calendar }}
+    </div>
+    <div id="cal-heatmap">
+        <div id="ex-ghDay" class="calendar-top">
+            <a id="ex-ghDay-prev" class="button" href="#">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-left"></use>
+                </svg>       
+            </a>
+            <a id="ex-ghDay-next" class="button" href="#">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-right"></use>
+                </svg>
+            </a>
+            <a id="ex-ghDay-today" class="button" href="#">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-rotate"></use>
+                </svg>
+            </a>
+            <div class="legends">
+                <span class="text">{{panel.calendar_less}}</span>
+                <div id="ex-ghDay-legend"></div>
+                <span class="text">{{panel.calendar_more}}</span>
+            </div>
+        </div>
+    </div>
+</section>

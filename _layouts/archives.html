@@ -38,6 +38,31 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
   {{ archives.words.unit }}
 </p>
 
+<div id="archive-heatmap">
+  <div id="ex-ghDay2" class="calendar-top">
+      <a id="ex-ghDay-prev2" class="button" href="#">
+          <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-left"></use>
+          </svg>       
+      </a>
+      <a id="ex-ghDay-next2" class="button" href="#">
+          <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-right"></use>
+          </svg>
+      </a>
+      <a id="ex-ghDay-today2" class="button" href="#">
+          <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-rotate"></use>
+          </svg>
+      </a>
+      <div class="legends">
+          <span class="text">Less</span>
+          <div id="ex-ghDay-legend2"></div>
+          <span class="text">More</span>
+      </div>
+  </div>
+</div>
+
 {% assign ssyears = "rat,ox,tiger,rabbit,dragon,snake,horse,goat,monkey,rooster,dog,pig" | split: "," %}
 
 {% if pin_posts_num > 0 %}
