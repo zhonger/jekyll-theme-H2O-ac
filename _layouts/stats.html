@@ -1,0 +1,22 @@
+{% capture stats_data %}
+{"calendar":[
+{% assign vdate = "2001-01-01" %}
+{% assign vcount = 0 %}
+{% assign total = 0 %}  
+{% for post in site.posts %}
+    {% assign cdate = post.date | date: "%Y-%m-%d" %}
+    {% if vdate == cdate %}
+        {% assign vcount = vcount | plus: 1 %}
+    {% else %}
+        {% if vdate != "2001-01-01" %}
+        {"date": "{{ vdate }}", "count": {{ vcount }} }, 
+        {% endif %}
+        {% assign vdate = cdate %}
+        {% assign vcount = 1 %}
+    {% endif %}
+    {% assign total = total | plus: 1 %}
+{% endfor %}
+    {"date": "{{ vdate }}", "count": {{ vcount }} }],
+    "total": {{total}}
+}
+{% endcapture %}{{ stats_data | strip | strip_newlines}}
