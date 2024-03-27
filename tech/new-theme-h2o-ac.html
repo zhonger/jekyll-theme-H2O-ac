@@ -127,7 +127,7 @@
             
                 
                 <li class="dropdown">
-                    <a class="dropdown-toggle"> about </a>
+                    <a class="dropdown-toggle" href="#"> about </a>
                     <ul class="dropdown-menu">
                     
                         <li>
@@ -230,13 +230,13 @@
                 <use xlink:href="#icon-words"></use>
               </svg>
               
-              本文总共  9.0k  字
+              本文总共  9.7k  字
             </span>
             <span class="post-meta-item">
               <svg class="icon time" aria-hidden="true">
                 <use xlink:href="#icon-time"></use>
               </svg>
-              阅读全文大约需要 26 分钟
+              阅读全文大约需要 28 分钟
             </span>
             
               <span class="post-meta-item">
@@ -632,6 +632,61 @@
     Add another diagram to demo page    :48h
 </code></pre>
 
+<h4 id="发表日历">发表日历</h4>
+
+<p>(2024年3月27日更新)</p>
+
+<p>  新增文章发表日历统计功能，类似与 Github 的 commit 日历，如下图所示。主题自 v1.3.0 之后开始支持，并默认开启，如需停用请如下修改配置。日历提供三个按钮：向前、向后、回到今天。除此之外，当鼠标悬浮在小方块时可以看到当天具体的文章贡献数量，目前仅统计发表贡献，后续将增加对更新等贡献的统计。侧边栏日历显示三个月，归档页内日历显示 3~12 个月不等（根据视图宽度自动调整）。</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 默认开启</span>
+<span class="na">calendar</span><span class="pi">:</span> <span class="kc">true</span>
+
+<span class="c1"># 停用日历功能</span>
+<span class="na">calendar</span><span class="pi">:</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<p><img src="https://i.lisz.top/blog/4XUGTS.webp" alt="日历 Calendar"></p>
+
+<h4 id="系列文章导航">系列文章导航</h4>
+
+<p>(2024年3月27日更新)</p>
+
+<p>  之前的 collection 系列文章是通过标签页实现的，目前新增的是文章页内系列文章导航，如下图所示。本功能自 v1.3.0 之后开始支持。使用方法是：</p>
+
+<p><img src="https://i.lisz.top/blog/bJlpQ3.webp" alt="系列文章导航 submenu"></p>
+
+<p>首先，在 <code class="language-plaintext highlighter-rouge">_data/collections.yml</code> 文件中准备好如下类似的导航信息：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">begin'</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">H2O-ac</span><span class="nv"> </span><span class="s">主题入门系列'</span>
+  <span class="na">articles</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">快速入门'</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/tech/new-theme-h2o-ac.html'</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">快速入门'</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/tech/new-theme-h2o-ac.html'</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">快速入门'</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/tech/new-theme-h2o-ac.html'</span>
+</code></pre></div></div>
+
+<p>其次，在文章页添加如下元信息：</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">submenu</span><span class="pi">:</span> <span class="s1">'</span><span class="s">begin'</span>
+</code></pre></div></div>
+
+<p>然后就可以在文章内容左侧看到<strong>文章导航</strong>了。与此同时，当视窗大小不足以显示文章导航时，文章导航会自动隐藏，并显示如下工具按钮。</p>
+
+<p><img src="https://i.lisz.top/blog/3gD7XT.webp" alt="工具按钮 toolb buttons"></p>
+
+<div class="premonition note"> <div class="header"> <svg class="icon note" aria-hidden="true"> <use xlink:href="#icon-note"></use> </svg> <div class="title"> 注意 </div> </div> <div class="content"> <p>  TOC（文章目录导航）与系列文章导航工具按钮均是根据视窗大小自适应隐藏或显示，并支持夜间模式。</p>
+
+
+
+ </div> </div>
+<div class="premonition warning"> <div class="header"> <svg class="icon warning" aria-hidden="true"> <use xlink:href="#icon-warning"></use> </svg> <div class="title"> 提示 </div> </div> <div class="content"> <p>  目前仅支持站内链接，且自动根据配置增加链接前缀。</p>
+
+
+
+ </div> </div>
 <h4 id="配置项">配置项</h4>
 
 <p>  配置项中新增了<strong>友情链接</strong>和<strong>备案号</strong>功能，可以直接在 _config.yml 文件的对应配置项下设置即可，如下所示。友情链接主要是方便跟其他博主交换友链，备案号主要是为了方便部署在国内需备案的 vps 或虚拟主机上。此处，二者都可以置空。</p>
@@ -788,7 +843,7 @@
         
         <div class="table-of-contents">
           <h2>目录</h2>
-          <ul><li><a onclick="scrollToAdjust('前言')">前言</a></li><li><a onclick="scrollToAdjust('新特性')">新特性</a><ul><li><a onclick="scrollToAdjust('更适合学术人和运维程序员的页面结构')">更适合学术人和运维程序员的页面结构</a><ul><li><a onclick="scrollToAdjust('学术首页')">学术首页</a></li><li><a onclick="scrollToAdjust('归档页')">归档页</a></li><li><a onclick="scrollToAdjust('系统日志页')">系统日志页</a></li></ul></li><li><a onclick="scrollToAdjust('使用体验提升')">使用体验提升</a><ul><li><a onclick="scrollToAdjust('社交图标扩展')">社交图标扩展</a></li><li><a onclick="scrollToAdjust('查看大图')">查看大图</a></li><li><a onclick="scrollToAdjust('深色模式切换按钮')">深色模式切换按钮</a></li><li><a onclick="scrollToAdjust('提示框')">提示框</a></li><li><a onclick="scrollToAdjust('代码高亮优化')">代码高亮优化</a></li><li><a onclick="scrollToAdjust('代码复制')">代码复制</a></li><li><a onclick="scrollToAdjust('文章置顶功能')">文章置顶功能</a></li><li><a onclick="scrollToAdjust('分页依赖升级')">分页依赖升级</a></li><li><a onclick="scrollToAdjust('封面图片作者及链接')">封面图片作者及链接</a></li><li><a onclick="scrollToAdjust('字数统计及阅读时间估计')">字数统计及阅读时间估计</a></li><li><a onclick="scrollToAdjust('时间本地化与最近更新时间')">时间本地化与最近更新时间</a></li><li><a onclick="scrollToAdjust('版权显式声明')">版权显式声明</a></li><li><a onclick="scrollToAdjust('文章侧边索引导航')">文章侧边索引导航</a></li><li><a onclick="scrollToAdjust('支持-waline-评论系统')">支持 Waline 评论系统</a></li><li><a onclick="scrollToAdjust('支持-pwa')">支持 PWA</a></li><li><a onclick="scrollToAdjust('支持-mermaid')">支持 Mermaid</a></li><li><a onclick="scrollToAdjust('配置项')">配置项</a></li><li><a onclick="scrollToAdjust('前端自动构建工作流优化')">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a onclick="scrollToAdjust('使用方法')">使用方法</a><ul><li><a onclick="scrollToAdjust('初始化')">初始化</a><ul><li><a onclick="scrollToAdjust('方式一从模板新建博客')">方式一：从模板新建博客</a></li><li><a onclick="scrollToAdjust('方式二已有博客迁移')">方式二：已有博客迁移</a></li></ul></li><li><a onclick="scrollToAdjust('本地测试')">本地测试</a></li><li><a onclick="scrollToAdjust('发布部署')">发布部署</a></li></ul></li><li><a onclick="scrollToAdjust('结束语')">结束语</a></li></ul>
+          <ul><li><a onclick="scrollToAdjust('前言')">前言</a></li><li><a onclick="scrollToAdjust('新特性')">新特性</a><ul><li><a onclick="scrollToAdjust('更适合学术人和运维程序员的页面结构')">更适合学术人和运维程序员的页面结构</a><ul><li><a onclick="scrollToAdjust('学术首页')">学术首页</a></li><li><a onclick="scrollToAdjust('归档页')">归档页</a></li><li><a onclick="scrollToAdjust('系统日志页')">系统日志页</a></li></ul></li><li><a onclick="scrollToAdjust('使用体验提升')">使用体验提升</a><ul><li><a onclick="scrollToAdjust('社交图标扩展')">社交图标扩展</a></li><li><a onclick="scrollToAdjust('查看大图')">查看大图</a></li><li><a onclick="scrollToAdjust('深色模式切换按钮')">深色模式切换按钮</a></li><li><a onclick="scrollToAdjust('提示框')">提示框</a></li><li><a onclick="scrollToAdjust('代码高亮优化')">代码高亮优化</a></li><li><a onclick="scrollToAdjust('代码复制')">代码复制</a></li><li><a onclick="scrollToAdjust('文章置顶功能')">文章置顶功能</a></li><li><a onclick="scrollToAdjust('分页依赖升级')">分页依赖升级</a></li><li><a onclick="scrollToAdjust('封面图片作者及链接')">封面图片作者及链接</a></li><li><a onclick="scrollToAdjust('字数统计及阅读时间估计')">字数统计及阅读时间估计</a></li><li><a onclick="scrollToAdjust('时间本地化与最近更新时间')">时间本地化与最近更新时间</a></li><li><a onclick="scrollToAdjust('版权显式声明')">版权显式声明</a></li><li><a onclick="scrollToAdjust('文章侧边索引导航')">文章侧边索引导航</a></li><li><a onclick="scrollToAdjust('支持-waline-评论系统')">支持 Waline 评论系统</a></li><li><a onclick="scrollToAdjust('支持-pwa')">支持 PWA</a></li><li><a onclick="scrollToAdjust('支持-mermaid')">支持 Mermaid</a></li><li><a onclick="scrollToAdjust('发表日历')">发表日历</a></li><li><a onclick="scrollToAdjust('系列文章导航')">系列文章导航</a></li><li><a onclick="scrollToAdjust('配置项')">配置项</a></li><li><a onclick="scrollToAdjust('前端自动构建工作流优化')">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a onclick="scrollToAdjust('使用方法')">使用方法</a><ul><li><a onclick="scrollToAdjust('初始化')">初始化</a><ul><li><a onclick="scrollToAdjust('方式一从模板新建博客')">方式一：从模板新建博客</a></li><li><a onclick="scrollToAdjust('方式二已有博客迁移')">方式二：已有博客迁移</a></li></ul></li><li><a onclick="scrollToAdjust('本地测试')">本地测试</a></li><li><a onclick="scrollToAdjust('发布部署')">发布部署</a></li></ul></li><li><a onclick="scrollToAdjust('结束语')">结束语</a></li></ul>
         
         </div>
       </div>
@@ -934,7 +989,7 @@
     <div class="g-left">
       <section class="links">
         本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
-         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.2.1" target="_blank" class="extlinks">v1.2.1</a>)  
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.3.0" target="_blank" class="extlinks">v1.3.0</a>)  
         
       </section>
       <section class="links">Mr Li ©
@@ -985,23 +1040,23 @@
     <div class="g-right">
       
       <section>
-        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">CDN 加速/云存储服务提供商 <img src="/assets/icons/upyun.png" class="upyun" /></a>
+        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">CDN 加速/云存储服务提供商 <img src="/assets/icons/upyun.png" class="upyun" alt="upyun" /></a>
       </section>
       
       
       <section class="badges">
         
-          <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog"> 
+          <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog"> 
             <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
           </a>
         
         
-          <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole"> 
+          <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole"> 
             <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
           </a>
         
         
-          <a href="https://notbyai.fyi/" target="_blank" class="notbyAI"> 
+          <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI"> 
             <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
           </a>
         
