@@ -1,0 +1,20 @@
+{% if page.submenu %}
+<div class="submenu">
+    {% for collection in site.data.collections %}
+        {% if collection.id == page.submenu %} 
+            <h4>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-submenu"></use>
+                </svg>{{ collection.name }}
+            </h4>
+            <ul>
+                {% for article in collection.articles %}
+                    <li><a href="{{ article.url | prepend: site.baseurl }}">{{ article.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+{% else %}
+<div class="submenu hidden">
+{% endif %}
+</div>

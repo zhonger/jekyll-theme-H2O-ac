@@ -183,6 +183,12 @@
                 background-color: #575B63;
             }
         }
+        .submenu {
+            color: #ffffff;
+            a {
+                color: #ffffff;
+            }
+        }
     }
 
     .markdown-body {
@@ -307,9 +313,13 @@
         color: #61BDCF;
     }
 
-    .bttb,
-    .mobile-list {
+    #tools .tool,
+    .bttb .tool {
         background-color: #444950;
+        color: #AFB3B7;
+        &:hover {
+            background-color: #606770;
+        }
     }
 
     .author-detail,

@@ -138,25 +138,33 @@ $(document).ready(function () {
     /**
     * List for contents
     */
-
-    function clickMobileList() {
+    function clickTOC() {
         $('.table-of-contents').toggleClass("active");
-        var mode = getCookie("mode");
-        if (mode == "night") {
-            $('.mobile-list .icon.list.night').toggleClass('active');
-            $('.mobile-list .icon.exit.night').toggleClass('active');
-        } else {
-            $('.mobile-list .icon.list.day').toggleClass('active');
-            $('.mobile-list .icon.exit.day').toggleClass('active');
-        }
+        $('#tools .tool.toc .b1').toggleClass("active");
+        $('#tools .tool.toc .b2').toggleClass("active");
+        $('.submenu').removeClass("active");
+        $('#tools .tool.collection .b1').addClass("active");
+        $('#tools .tool.collection .b2').removeClass("active");
     }
-
-    $('.mobile-list').bind('click', function () {
-        clickMobileList();
+    function clickSubmenu() {
+        $('.submenu').toggleClass("active");
+        $('#tools .tool.collection .b1').toggleClass("active");
+        $('#tools .tool.collection .b2').toggleClass("active");
+        $('.table-of-contents').removeClass("active");
+        $('#tools .tool.toc .b1').addClass("active");
+        $('#tools .tool.toc .b2').removeClass("active");
+    }
+    $('#tools .tool.toc').bind('click', function () {
+        clickTOC()
     });
-
+    $('#tools .tool.collection').bind('click', function () {
+        clickSubmenu()
+    });
     $(".table-of-contents").on('click', function () {
-        clickMobileList();
+        clickTOC()
+    });
+    $(".submenu").on('click', function () {
+        clickSubmenu()
     });
 
 
@@ -686,7 +694,7 @@ $(document).ready(function () {
             month = 6
         } else {
             month = 3
-        } 
+        }
 
         const cal = new CalHeatmap();
         axios.get(baseurl + "/stats.json").then(res => {
@@ -711,7 +719,7 @@ $(document).ready(function () {
                         radius: 2,
                     },
                     date: {
-                        start: new Date(dayjs(endDay).subtract(month-1, 'month')),
+                        start: new Date(dayjs(endDay).subtract(month - 1, 'month')),
                         max: new Date(endDay),
                         highlight: [new Date(endDay)],
                         locale: locales[lang]

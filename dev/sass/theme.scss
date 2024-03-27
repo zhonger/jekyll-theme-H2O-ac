@@ -19,6 +19,8 @@
         }
     }
 
+    .submenu li:hover::marker, 
+    .submenu li a:hover,
     .table-of-contents h2,
     .table-of-contents a.active {
         color: $color-theme-default;
@@ -91,6 +93,8 @@
         }
     }
 
+    .submenu li:hover::marker, 
+    .submenu li a:hover,
     .table-of-contents h2,
     .table-of-contents a.active {
         color: $color-theme-pink;
@@ -153,6 +157,9 @@
         .friends .frienddiv:hover {
             background-color: $color-theme-default-3;
         }
+        .submenu li:hover::marker, .submenu a:hover {
+            color: $color-theme-default;
+        }
     }
 
     [data-theme='pink'] {
@@ -164,6 +171,9 @@
         .g-sidebar .tags-card a.button:hover,
         .friends .frienddiv:hover {
             background-color: $color-theme-pink-3;
+        }
+        .submenu li:hover::marker, .submenu a:hover {
+            color: $color-theme-pink;
         }
     }
 }

@@ -36,6 +36,44 @@
     }
 }
 
+@media screen and (max-width: $g-container-l) {
+    .post-content .container {
+        width: 90%;
+    }
+    .night-mode {
+        .post-content {
+            .submenu, .table-of-contents {
+                background-color: #606770;
+            }
+        }
+    }
+    .submenu {
+        visibility: hidden;
+        opacity: 0;
+        position: fixed;
+        right: 20.8px;
+        bottom: 140px;
+        top: auto;
+        background-color: aliceblue;
+        z-index: 1010;
+        max-width: 75%;
+        max-height: 60%;
+        overflow: scroll;
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            transition: .5s;
+            border-radius: 0px;
+        }
+    }
+    #tools {
+        visibility: visible;
+        .tool.toc {
+            visibility: hidden;
+        }
+    }
+}
+
 @media screen and (max-width: 1050px) {
     #all {
         overflow: hidden;
@@ -66,6 +104,9 @@
             } 
         }
     }
+    #tools .tool.toc {
+        visibility: visible;
+    }
     .table-of-contents {
         visibility: hidden;
         opacity: 0;
@@ -74,14 +115,14 @@
         right: 20.8px;
         top: auto;
         max-height: 60%;
-        bottom: 127px;
+        bottom: 157px;
         margin-left: 0px;
         max-width: 95%;
         background-color: aliceblue;
-        z-index: 1000;
+        z-index: 1010;
         overflow: scroll;
         // max-height: 450px;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
         padding: 25px;
         &.active {
             visibility: visible;
@@ -435,32 +476,15 @@
 }
 
 @media (hover: hover){
-    .bttb {
-        &:hover {
-            background-color: #dadde1;
-        }
-    }
     #accept-tos {
         &:hover {
             background-color: #71a7ff;
-        }
-    }
-    .mobile-list {
-        &:hover {
-            background-color: #dadde1;
         }
     }
     .markdown-body{
         .btn {
             &:hover {
                 background-color: #dadde1;
-            }
-        }
-    }
-    .night-mode {
-        .bttb {
-            &:hover{
-                background-color: #606770;
             }
         }
     }

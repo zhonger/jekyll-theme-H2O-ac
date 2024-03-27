@@ -108,8 +108,9 @@
       {% endif %}
 
       {% assign copyright = post.copyright %}
-      {% if site.toc %}
+      
       <div class="container">  
+        {% include submenu.html %}
         <div class="contents">
           <article class="markdown-body post">
               {% if page.langs %}
@@ -162,64 +163,15 @@
             </div>
           </article>
         </div>   
+        {% if page.content contains 'h1' or page.content contains 'h2' or page.content contains 'h3' or page.content contains 'h4' or page.content contains 'h5' or page.content contains 'h6' and site.toc %}
         <div class="table-of-contents">
           <h2>{{ post.outline }}</h2>
           {% include toc.html html=content %}
+        {% else %}
+        <div class="table-of-contents hidden">
+        {% endif %}
         </div>
       </div>
-      {% else %}
-        <article class="markdown-body">
-          {% if page.langs %}
-              <p><b>{{ locales.langs }}</b>
-              {% assign langs = "zh-Hans, zh-Hant, en, ja" | split: ", " %}
-              {% assign langnames = "简中, 繁中, EN, 日本語" | split: ", " %}
-              {% if lang == site.default_lang %}
-                  {% assign url = page.url %}
-              {% else %}
-                  {% assign urls = page.url | split: '/' %}
-                  {% assign url = "" %}
-                  {% for u in urls offset:2 %}
-                      {% assign url = url | append: "/" | append: u %}
-                  {% endfor %}
-              {% endif %}
-              {% for l in page.langs %}
-                  {% for i in (0..4) %}
-                      {% if langs[i] == l %}
-                          {% if l == page.lang %}
-                              {{ langnames[i] }}
-                          {% elsif l == site.default_lang %}
-                              <a href="{{ url }}">{{ langnames[i] }}</a>
-                          {% else %}
-                              {% assign prefix = "/" | append: l %}
-                              <a href="{{ url | prepend: prefix }}">{{ langnames[i] }}</a>
-                          {% endif %}
-                      {% endif %}
-                  {% endfor %}
-              {% endfor %}
-              </p>
-          {% endif %}
-          {{ page.content }}
-          <div class="post-copyright">
-            {% assign copyright = post.copyright %}
-            <p>
-              <span>{{ copyright.statement.name }}：</span>
-              {{ copyright.statement.left }}
-              <a href="{{ site.url }}" class="cplink">{{ site.title }}</a>
-              {{ copyright.statement.middle }}
-            </p>
-            {% if site.cclicense %}
-              <p> 
-                {{ copyright.statement.right1 }}
-                <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC BY-NC-SA 4.0</a> 
-                {{ copyright.statement.right2 }}
-              </p>
-            {% endif %}
-            <p><span>{{ copyright.title }}：</span>《 {{ page.title }} 》</p>
-            <p><span>{{ copyright.link }}：</span><a href="{{ page.url | prepend: site.url }}" class="cplink">{{ page.url | prepend: site.url }}</a></p>
-            <p class="tips">{{ copyright.statement.outdate1 }} <span></span> {{ copyright.statement.outdate2 }}</p>
-          </div>
-        </article>
-      {% endif %}
 
       {% if site.social-share %}
       <div class="social-share-wrapper">
@@ -512,7 +464,7 @@
           });
       });
   </script>
-  <script src="https://at.alicdn.com/t/c/font_3046306_rifslacm9z.js"></script>
+  <script src="https://at.alicdn.com/t/c/font_3046306_9tox63bysiw.js"></script>
   {% include analytics.html %}
   {% include umami.html %}
   {% include busuanzi.html %}
