@@ -361,6 +361,60 @@ graph TD;
     Add another diagram to demo page    :48h
 ```
 
+#### 发表日历
+
+(2024年3月27日更新)
+
+&emsp;&emsp;新增文章发表日历统计功能，类似与 Github 的 commit 日历，如下图所示。主题自 v1.3.0 之后开始支持，并默认开启，如需停用请如下修改配置。日历提供三个按钮：向前、向后、回到今天。除此之外，当鼠标悬浮在小方块时可以看到当天具体的文章贡献数量，目前仅统计发表贡献，后续将增加对更新等贡献的统计。侧边栏日历显示三个月，归档页内日历显示 3~12 个月不等（根据视图宽度自动调整）。
+
+```yaml
+# 默认开启
+calendar: true
+
+# 停用日历功能
+calendar: false
+```
+
+![日历 Calendar](https://i.lisz.top/blog/4XUGTS.webp)
+
+#### 系列文章导航
+
+(2024年3月27日更新)
+
+&emsp;&emsp;之前的 collection 系列文章是通过标签页实现的，目前新增的是文章页内系列文章导航，如下图所示。本功能自 v1.3.0 之后开始支持。使用方法是：
+
+![系列文章导航 submenu](https://i.lisz.top/blog/bJlpQ3.webp)
+
+首先，在 `_data/collections.yml` 文件中准备好如下类似的导航信息：
+
+```yaml
+- id: 'begin'
+  name: 'H2O-ac 主题入门系列'
+  articles:
+  - name: '快速入门'
+    url: '/tech/new-theme-h2o-ac.html'
+  - name: '快速入门'
+    url: '/tech/new-theme-h2o-ac.html'
+  - name: '快速入门'
+    url: '/tech/new-theme-h2o-ac.html'
+```
+
+其次，在文章页添加如下元信息：
+
+```yaml
+submenu: 'begin'
+```
+
+然后就可以在文章内容左侧看到**文章导航**了。与此同时，当视窗大小不足以显示文章导航时，文章导航会自动隐藏，并显示如下工具按钮。
+
+![工具按钮 toolb buttons](https://i.lisz.top/blog/3gD7XT.webp)
+
+> note "注意"
+> &emsp;&emsp;TOC（文章目录导航）与系列文章导航工具按钮均是根据视窗大小自适应隐藏或显示，并支持夜间模式。
+
+> warning "提示"
+> &emsp;&emsp;目前仅支持站内链接，且自动根据配置增加链接前缀。
+
 #### 配置项
 
 &emsp;&emsp;配置项中新增了**友情链接**和**备案号**功能，可以直接在 _config.yml 文件的对应配置项下设置即可，如下所示。友情链接主要是方便跟其他博主交换友链，备案号主要是为了方便部署在国内需备案的 vps 或虚拟主机上。此处，二者都可以置空。
