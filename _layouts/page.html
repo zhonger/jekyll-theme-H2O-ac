@@ -2,29 +2,26 @@
 layout: default
 home-title: H2O Theme For Jekyll
 description: 或许是最漂亮的Jekyll主题
+type: page
 ---
 
-{% include header.html %}
 {% assign lang = page.lang | default: site.default_lang %}
 {% assign locales = site.data.locales[lang] %}
-<div
-    class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}"
-    data-theme="{{ site.theme-color }}"
-    style="{% if page.cover %}background: url({{ page.cover | relative_url }}) no-repeat center center; background-size: cover;{% endif %}"
->
+<div class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}" data-theme="{{ site.theme-color }}"
+    style="{% if page.cover %}background: url({{ page.cover | relative_url }}) no-repeat center center; background-size: cover;{% endif %}">
     <h2>{{ page.home-title }}</h2>
     <h3>{{ page.description }}</h3>
     {% if page.cover_author %}
-        <p class="meta-item">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-image"></use>
-            </svg>
-            {% if page.cover_author_link %}
-                {{ locales.cover }} <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a>
-            {% else %}
-                {{ locales.cover }} {{ page.cover_author }}
-            {% endif %}
-        </p>
+    <p class="meta-item">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-image"></use>
+        </svg>
+        {% if page.cover_author_link %}
+        {{ locales.cover }} <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a>
+        {% else %}
+        {{ locales.cover }} {{ page.cover_author }}
+        {% endif %}
+    </p>
     {% endif %}
 </div>
 
@@ -32,80 +29,13 @@ description: 或许是最漂亮的Jekyll主题
     <div class="article-list">
         <div class="post-content" style="padding-left: 30px;padding-right: 30px;width: auto;">
             <article class="markdown-body" style="width: auto;">
-                {% assign lang = page.lang | default: site.default_lang %}
-                {% assign locales = site.data.locales[lang] %}
-                {% if page.langs %}
-                    <p><b>{{ locales.langs }}</b>
-                    {% assign langs = "zh-Hans, zh-Hant, en, ja" | split: ", " %}
-                    {% assign langnames = "简中, 繁中, EN, 日本語" | split: ", " %}
-                    {% if lang == site.default_lang %}
-                        {% assign url = page.url %}
-                    {% else %}
-                        {% assign urls = page.url | split: '/' %}
-                        {% assign url = "" %}
-                        {% for u in urls offset:2 %}
-                            {% assign url = url | append: "/" | append: u %}
-                        {% endfor %}
-                    {% endif %}
-                    {% for l in page.langs %}
-                        {% for i in (0..4) %}
-                            {% if langs[i] == l %}
-                                {% if l == page.lang %}
-                                    {{ langnames[i] }}
-                                {% elsif l == site.default_lang %}
-                                    <a href="{{ url }}">{{ langnames[i] }}</a>
-                                {% else %}
-                                    {% assign prefix = "/" | append: l %}
-                                    <a href="{{ url | prepend: prefix }}">{{ langnames[i] }}</a>
-                                {% endif %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                    </p>
-                {% endif %}
+                {% include plugins/i18n.html %}
                 {{ content | extlinks }}
             </article>
         </div>
         <section class="author-detail">
-            {% if page.comments.disqus or page.comments.waline %}
-            <section class="post-footer-item comment">
-                <div class="comments-headline">
-                    <svg class="icon" aria-hidden="true">
-                    <use xlink:href="#icon-comment"></use>
-                    </svg>
-                    <span>评论</span>
-                </div>
-                {% if page.comments.disqus and page.comments.waline %}
-                <div id="comments-switch">
-                    <span class="first-comment">Disqus</span>
-                    <span class="switch-button">
-                    <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
-                    <label for="cmn-toggle-4"></label>
-                    </span>
-                    <span class="second-comment">Waline</span>
-                </div>
-                {% endif %}
-            </section>      
-            {% endif %}
-            
-            {% if page.comments.disqus %}
-            <section class="post-footer-item comment">
-                <div id="disqus_thread"></div>
-            </section>
-            {% endif %}
-            
-            {% if page.comments.waline %}
-            <section class="post-footer-item comment">
-                <div id="waline"></div>
-            </section>
-            {% endif %}
+            {% include plugins/comments/comments_block.html %}
         </section>
     </div>
-
-    {% include sidebar.html %}
-
+    {% include layouts/sidebar.html %}
 </main>
-
-
-
-{% include footer.html %}

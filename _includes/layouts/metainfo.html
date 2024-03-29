@@ -1,0 +1,40 @@
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
+<script>
+    $(document).ready(function () {
+        var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
+        function dateFormat(date, format) {
+            var date_org = dayjs(date, time_formats[format]);
+            var date = date_org.format(time_formats[format]);
+            return { "date_org": date_org, "date": date }
+        }
+
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        dayjs.extend(window.dayjs_plugin_relativeTime);
+        var post_date = $("meta[property='post-date']").attr('content');
+        var post_date_format = $("meta[property='post-date-format']").attr('content');
+        var local_post_date = dateFormat(post_date, post_date_format);
+
+        $(".post time span.create-at").html(local_post_date["date"]);
+
+        fetch("https://api.github.com/repos/{{ site.github.owner }}/{{ site.github.repository }}/commits?path={{ page.path }}").then((response) => {
+            return response.json();
+        }).then((commits) => {
+            if (commits.length != 0) {
+                var update_at = dayjs(commits[0]['commit']['committer']['date']);
+            } else {
+                var update_at = post_date
+            }
+
+            var local_update_at = dateFormat(update_at, post_date_format);
+            $('.post time span.update-at').html(local_update_at["date"]);
+
+            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
+            $(".post-copyright .tips span").append(relative_time);
+            if (relative_time > 365) {
+                $(".post-copyright .tips").addClass("active");
+            }
+        });
+    });
+</script>

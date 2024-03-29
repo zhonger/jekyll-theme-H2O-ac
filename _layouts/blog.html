@@ -4,8 +4,6 @@ home-title: H2O Theme For Jekyll
 description: 或许是最漂亮的Jekyll主题
 ---
 
-{% include header.html %}
-
 <div
     class="g-banner home-banner {{ site.theme-color | prepend: 'banner-theme-' }}"
     data-theme="{{ site.theme-color }}"
@@ -17,15 +15,11 @@ description: 或许是最漂亮的Jekyll主题
 
 <main class="g-container home-content">
     <div class="article-list">
-        {% include paginate.html %}
+        {% include layouts/paginate.html %}
 
         {% if paginator.total_pages > 1 %}
-            {% include pageNav.html %}
+            {% include layouts/pageNav.html %}
         {% endif %}
     </div>
-
-    {% include sidebar.html %}
-
+    {% include layouts/sidebar.html %}
 </main>
-
-{% include footer.html %}

@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var previous_url = $("meta[property='og:previous_url']").attr('content');
+        var next_url = $("meta[property='og:next_url']").attr('content');
+
+        hotkeys('left', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (previous_url) {
+                console.log('you pressed left!');
+                window.location.href = previous_url;
+            } else {
+                $("#no-previous").addClass("active");
+                setTimeout(function () { $("#no-previous").removeClass("active"); }, 1500);
+            }
+        });
+
+        hotkeys('right', function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            if (next_url) {
+                console.log('you pressed right!');
+                window.location.href = next_url;
+            } else {
+                $("#no-next").addClass("active");
+                setTimeout(function () { $("#no-next").removeClass("active"); }, 1500);
+            }
+        });
+    });
+</script>

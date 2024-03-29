@@ -1,0 +1,67 @@
+{% capture block %}
+<section class="post-footer-item comment">
+    <div class="comments-headline">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-comment"></use>
+        </svg>
+        <span>{{ locales.post.comment }}</span>
+    </div>
+    {% if layout.type == "post" %}
+        {% if site.comments.disqus and site.comments.waline %}
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        {% endif %}
+    {% else %}
+        {% if page.comments.disqus and page.comments.waline %}
+        <div id="comments-switch">
+            <span class="first-comment">Disqus</span>
+            <span class="switch-button">
+                <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+                <label for="cmn-toggle-4"></label>
+            </span>
+            <span class="second-comment">Waline</span>
+        </div>
+        {% endif %}
+    {% endif %}
+</section>
+{% endcapture %}
+
+{% if layout.type == "post" %}
+    {% if site.comments.disqus or site.comments.waline or page.comments.waline or page.comments.disqus %}
+        {{ block }}
+    {% endif %}
+{% else %}
+    {% if page.comments.disqus or page.comments.waline %} 
+        {{ block }}
+    {% endif %}
+{% endif %}
+
+{% if layout.type == "post" %}
+    {% if site.comments.disqus %}
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    {% endif %}
+    {% if site.comments.waline %}
+    <section class="post-footer-item comment">
+        <div id="waline"></div>
+    </section>
+    {% endif %}
+{% else %}
+    {% if page.comments.disqus %}
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    {% endif %}
+    {% if page.comments.waline %}
+    <section class="post-footer-item comment">
+        <div id="waline"></div>
+    </section>
+    {% endif %}
+{% endif %}

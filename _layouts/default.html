@@ -1,61 +1,70 @@
 {% assign lang = page.lang | default: site.default_lang %}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
-{% include head.html %}
-
-{% if site.prism.line_numbers %}
-<body class="line-numbers" ontouchstart="">
-{% else %}
-<body ontouchstart="">
-{% endif %}
+    {% include layouts/head.html %}
+    {% if site.prism.line_numbers %}
+    <body class="line-numbers" ontouchstart="">
+    {% else %}
+    <body ontouchstart="">
+    {% endif %}
     <!--[if lt IE 10]>
     <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
     <![endif]-->
-    {% if site.gray %}
-    <div id=all class="gray" data-theme="{{ site.theme-color }}">
-    {% else %}
-    <div id="all" data-theme="{{ site.theme-color }}">
-    {% endif %}
-      <input id="nm-switch" type="hidden" value="{{ site.nightMode }}">
-      <div class="visible">
-        {{ content }}
-      </div>
-    </div>
-    {% if page.mermaid or site.mermaid %}
-    <div class="modal">
-        <div class="modal-content">
-          <header>
-            <span class="close">&times;</span>
-          </header>
-          <div class="container"></div>
+        {% if layout.type == "post" %}
+        {% if site.gray %}
+        <div id=all class="post gray" data-theme="{{ site.theme-color }}">
+        {% else %}
+        <div id="all" class="post" data-theme="{{ site.theme-color }}">
+        {% endif %}
+            {% assign locales = site.data.locales[lang] %}
+            {% assign post = locales.post %}
+            <div class="alert-tip" id="no-previous">{{ post.tips.left }}</div>
+            <div class="alert-tip" id="no-next">{{ post.tips.right }}</div>
+        {% else %}
+            {% if site.gray %}
+                <div id=all class="gray" data-theme="{{ site.theme-color }}">
+            {% else %}
+                <div id="all" data-theme="{{ site.theme-color }}">
+            {% endif %}
+        {% endif %}
+            <input id="nm-switch" type="hidden" value="{{ site.nightMode }}">
+            {% include layouts/header.html %}
+            {{ content }}
+            {% include layouts/footer.html %}
         </div>
-    </div>
-    {% endif%}
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-    {% if site.calendar %}
-    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/cal-heatmap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/plugins/Tooltip.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/plugins/LegendLite.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/plugins/CalendarLabel.min.js"></script>
-    {% endif %}
-    <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <script src="{{ "/assets/js/app.min.js" | prepend: site.baseurl }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
-    <script src="https://at.alicdn.com/t/c/font_3046306_9tox63bysiw.js"></script>
-    {% include waline.html %}
-    {% include analytics.html %}
-    {% include umami.html %}
-    {% include busuanzi.html %}
-    {% include pwa.html %}
-    {% include mathjax.html %}
-    {% include mermaid.html%}
-    {% include webpusher.html %} 
-    {% include comments.html %}     
-</body>
+        {% include plugins/markdown/mermaid_block.html %}
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+        {% if layout.type == "post" %}
+            {% include layouts/metainfo.html %}
+            {% include plugins/others/social_js.html %}
+        {% else %}
+            {% include plugins/others/calendar_js.html %}
+        {% endif %}
+        <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+        <script>
+            /**
+            * Better Scroll Experience
+            */
+            function scrollToAdjust(id){
+              var element = document.getElementById(id);
+              var headerOffset = 90;
+              var elementPosition = element.getBoundingClientRect().top;
+              var offsetPosition = elementPosition + window.scrollY - headerOffset;
+              window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+              });
+            }
+        </script>
+        <script src="{{ " /assets/js/app.min.js" | prepend: site.baseurl }}"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_9tox63bysiw.js"></script>
+        {% include plugins/analytics/analytics.html %}
+        {% include plugins/markdown/markdown.html %}
+        {% include plugins/comments/comments_js.html %}
+        {% include plugins/others/pwa.html %}
+        {% include plugins/others/webpusher.html %}
+  </body>
+
 </html>

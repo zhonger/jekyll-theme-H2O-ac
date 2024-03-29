@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var baseurl = $("meta[property='og:baseurl']").attr('content');
+        $("p img").each(function () {
+            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
+            var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
+            $(this).wrapAll(strA);
+            var caption = $(this)[0].alt;
+            $(this).parent().after('<span class="caption">' + caption + '</span>');
+        });
+        Fancybox.bind('[data-fancybox]', {
+            on: {
+                load: (fancybox, slide) => {
+                    var gray = $("meta[property='og:gray']").attr('content');
+                    if (gray == "true") {
+                        $(".fancybox__content img").addClass("gray");
+                        $(".carousel__track .fancybox__thumb").addClass("gray");
+                    }
+                }
+            }
+        });
+    });
+</script>

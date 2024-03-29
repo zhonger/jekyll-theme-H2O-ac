@@ -15,13 +15,13 @@
     {% endif %}
     {% for i in (unpin_start..unpin_end) %}
         {% assign post = unpin_posts[i] %}
-        {% include paginate-article.html %}
+        {% include layouts/paginate-article.html %}
     {% endfor %}
 {% elsif pin_posts_num < max_num %}
     {% assign pin_end = pin_posts_num | minus: 1 %}
     {% for i in (min_num..pin_end) %}
         {% assign post = pin_posts[i] %}
-        {% include paginate-article.html %}
+        {% include layouts/paginate-article.html %}
     {% endfor %}
     {% assign unpin_end = max_num | minus: pin_posts_num | minus: 1 %}
     {% if unpin_end >= unpin_posts_num %}
@@ -29,13 +29,13 @@
     {% endif %}
     {% for i in (0..unpin_end) %}
         {% assign post = unpin_posts[i] %}
-        {% include paginate-article.html %}
+        {% include layouts/paginate-article.html %}
     {% endfor %}
 {% else %}
     {% assign pin_start = min_num %}
     {% assign pin_end = max_num | minus: 1 %}
     {% for i in (pin_start..pin_end) %}
         {% assign post = pin_posts[i] %}
-        {% include paginate-article.html %}
+        {% include layouts/paginate-article.html %}
     {% endfor %}
 {% endif %}

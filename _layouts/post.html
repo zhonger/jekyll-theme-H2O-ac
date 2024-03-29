@@ -1,229 +1,179 @@
-<!DOCTYPE html>
-{% if post.lang %}
-<html lang="{{post.lang}}">
-{% else %}
-<html lang="{{site.default_lang}}">
-{% endif %}
-{% include post-head.html %}
+---
+layout: default
+type: post
+---
 
-{% if site.prism.line_numbers %}
-<body class="line-numbers" ontouchstart="">
-{% else %}
-<body ontouchstart="">
-{% endif %}
 {% assign lang = page.lang | default: site.default_lang %}
 {% assign locales = site.data.locales[lang] %}
 {% assign post = locales.post %}
-  <!--[if lt IE 10]>
-  <div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
-  <![endif]-->
-  {% if site.gray %}
-  <div id=all class="post gray" data-theme="{{ site.theme-color }}">
-  {% else %}
-  <div id="all" class="post" data-theme="{{ site.theme-color }}">
-  {% endif %}
-    <div class="alert-tip" id="no-previous">
-      {{ post.tips.left }}
-    </div>
-    <div class="alert-tip" id="no-next">
-      {{ post.tips.right }}
-    </div>
-    <input id="nm-switch" type="hidden" value="{{ site.nightMode }}"> {% include header.html %}
-
-    <header
-      class="g-banner post-header {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }} {% unless page.cover %}post-no-cover{% endunless %}"
-      data-theme="{{ site.theme-color }}"
-    >
-      <div class="post-wrapper">
+<div class="g-banner post-header {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }} {% unless page.cover %}post-no-cover{% endunless %}"
+    data-theme="{{ site.theme-color }}">
+    <div class="post-wrapper">
         <div class="post-tags">
-          {% if page.tags.size > 0 %}
-            {% for tag in page.tags  %}
-              <a href="{{ "/tags.html#" | append: tag | relative_url }}" class="post-tag">{{ tag }}</a>
+            {% if page.tags.size > 0 %}
+            {% for tag in page.tags %}
+            <a href="{{ " /tags.html#" | append: tag | relative_url }}" class="post-tag">{{ tag }}</a>
             {% endfor %}
-          {% endif %}
+            {% endif %}
         </div>
         <h1>{{ page.title }}</h1>
         <div class="post-meta">
-          <span class="post-meta-item">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-user"></use>
-            </svg>
-            {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
-          </span>
-          <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-calendar"></use>
-            </svg>
-            <span class="create-at"></span>
-          </time>
-          <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}">
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-update"></use>
-            </svg>
-            <span class="update-at"></span>
-          </time>
             <span class="post-meta-item">
-              <svg class="icon words" aria-hidden="true">
-                <use xlink:href="#icon-words"></use>
-              </svg>
-              {% assign total_size = page.content | strip_html | strip_newlines | remove: " " | size %}
-              {{ post.cover.total.info }} {% if total_size < 1000 %} {{ total_size }} {% else %} {{ total_size | divided_by: 1000.0 | round: 1 }}k {% endif %} {{ post.cover.total.unit }}
-            </span>
-            <span class="post-meta-item">
-              <svg class="icon time" aria-hidden="true">
-                <use xlink:href="#icon-time"></use>
-              </svg>
-              {{ post.cover.time.info }} {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} {{ post.cover.time.unit }}
-            </span>
-            {% if site.busuanzi %}
-              <span class="post-meta-item">
-                <svg class="icon pv" aria-hidden="true">
-                  <use xlink:href="#icon-pv"></use>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-user"></use>
                 </svg>
-                {{ post.cover.view.info }} <span id="busuanzi_value_page_pv"></span> {{ post.cover.view.unit }}
-              </span>
-            {% endif %}
-            {% if page.cover_author %}
-            <span class="post-meta-item">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-image"></use>
-              </svg>
-              {% if page.cover_author_link %}
-                {{ locales.cover }} <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author }}</a>
-              {% else %}
-                {{ locales.cover }} {{ page.cover_author }}
-              {% endif %}
+                {% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}
             </span>
-          {% endif %}
-        </div>
-      </div>
-      {% if page.cover %}
-      <div class="filter"></div>
-        <div class="post-cover" style="background: url('{{ page.cover | relative_url }}') center no-repeat; background-size: cover;"></div>
-      {% endif %}
-    </header>
-    <div class="post-content visible">
-      {% if page.subtitle %}
-      <h2 class="post-subtitle">{{ page.subtitle }}</h2>
-      {% endif %}
-
-      {% assign copyright = post.copyright %}
-      
-      <div class="container">  
-        {% include submenu.html %}
-        <div class="contents">
-          <article class="markdown-body post">
-              {% if page.langs %}
-                <p><b>{{ locales.langs }}</b>
-                {% assign langs = "zh-Hans, zh-Hant, en, ja" | split: ", " %}
-                {% assign langnames = "简中, 繁中, EN, 日本語" | split: ", " %}
-                {% if lang == site.default_lang %}
-                    {% assign url = page.url %}
-                {% else %}
-                    {% assign urls = page.url | split: '/' %}
-                    {% assign url = "" %}
-                    {% for u in urls offset:2 %}
-                        {% assign url = url | append: "/" | append: u %}
-                    {% endfor %}
-                {% endif %}
-                {% for l in page.langs %}
-                    {% for i in (0..4) %}
-                        {% if langs[i] == l %}
-                            {% if l == page.lang %}
-                                {{ langnames[i] }}
-                            {% elsif l == site.default_lang %}
-                                <a href="{{ url }}">{{ langnames[i] }}</a>
-                            {% else %}
-                                {% assign prefix = "/" | append: l %}
-                                <a href="{{ url | prepend: prefix }}">{{ langnames[i] }}</a>
-                            {% endif %}
+            <time class="post-meta-item" datetime="{{ page.date | date:" %y-%m-%d" }}">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-calendar"></use>
+                </svg>
+                <span class="create-at"></span>
+            </time>
+            <time class="post-meta-item" datetime="{{ page.date | date:" %y-%m-%d" }}">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-update"></use>
+                </svg>
+                <span class="update-at"></span>
+            </time>
+            <span class="post-meta-item">
+                <svg class="icon words" aria-hidden="true">
+                    <use xlink:href="#icon-words"></use>
+                </svg>
+                {% assign total_size = page.content | strip_html | strip_newlines | remove: " " | size %}
+                {{ post.cover.total.info }} {% if total_size < 1000 %} {{ total_size }} {% else %} {{ total_size |
+                    divided_by: 1000.0 | round: 1 }}k {% endif %} {{ post.cover.total.unit }} </span>
+                    <span class="post-meta-item">
+                        <svg class="icon time" aria-hidden="true">
+                            <use xlink:href="#icon-time"></use>
+                        </svg>
+                        {{ post.cover.time.info }} {{ page.content | strip_html | strip_newlines | remove: " " | size |
+                        divided_by: 350 | plus: 1 }} {{ post.cover.time.unit }}
+                    </span>
+                    {% if site.busuanzi %}
+                    <span class="post-meta-item">
+                        <svg class="icon pv" aria-hidden="true">
+                            <use xlink:href="#icon-pv"></use>
+                        </svg>
+                        {{ post.cover.view.info }} <span id="busuanzi_value_page_pv"></span> {{ post.cover.view.unit }}
+                    </span>
+                    {% endif %}
+                    {% if page.cover_author %}
+                    <span class="post-meta-item">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-image"></use>
+                        </svg>
+                        {% if page.cover_author_link %}
+                        {{ locales.cover }} <a href="{{ page.cover_author_link }}" target="_blank">{{ page.cover_author
+                            }}</a>
+                        {% else %}
+                        {{ locales.cover }} {{ page.cover_author }}
                         {% endif %}
-                    {% endfor %}
-                {% endfor %}
-                </p>
-            {% endif %}
-            {{ page.content | extlinks }}
-            <div class="post-copyright">
-              <p>
-                <span>{{ copyright.statement.name }}：</span>
-                {{ copyright.statement.left }}
-                <a href="{{ site.url }}" class="cplink">{{ site.title }}</a>
-                {{ copyright.statement.middle }} 
-              </p>
-              {% if site.cclicense %}
-                <p> 
-                  {{ copyright.statement.right1 }}
-                  <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC BY-NC-SA 4.0</a> 
-                  {{ copyright.statement.right2 }}
-                </p>
-              {% endif %}
-              <p><span>{{ copyright.title }}：</span>《 {{ page.title }} 》</p>
-              <p><span>{{ copyright.link }}：</span><a href="{{ page.url | prepend: site.url }}" class="cplink">{{ page.url | prepend: site.url }}</a></p>
-              <p class="tips">{{ copyright.statement.outdate1 }} <span></span> {{ copyright.statement.outdate2 }}</p>
-            </div>
-          </article>
-        </div>   
-        {% if page.content contains 'h1' or page.content contains 'h2' or page.content contains 'h3' or page.content contains 'h4' or page.content contains 'h5' or page.content contains 'h6' and site.toc %}
-        <div class="table-of-contents">
-          <h2>{{ post.outline }}</h2>
-          {% include toc.html html=content %}
-        {% else %}
-        <div class="table-of-contents hidden">
-        {% endif %}
+                    </span>
+                    {% endif %}
         </div>
-      </div>
-
-      {% if site.social-share %}
-      <div class="social-share-wrapper">
-        <div class="social-share"></div>
-      </div>
-      {% endif %}
     </div>
+    {% if page.cover %}
+    <div class="filter"></div>
+    <div class="post-cover"
+        style="background: url('{{ page.cover | relative_url }}') center no-repeat; background-size: cover;"></div>
+    {% endif %}
+</div>
 
-    <section class="author-detail">
-      <section class="post-footer-item author-card">
+<main class="post-content visible">
+    {% if page.subtitle %}
+    <h2 class="post-subtitle">{{ page.subtitle }}</h2>
+    {% endif %}
+
+    {% assign copyright = post.copyright %}
+
+    <div class="container">
+        {% include layouts/submenu.html %}
+        <div class="contents">
+            <article class="markdown-body post">
+                {% include plugins/i18n.html %}
+                {{ page.content | extlinks }}
+                <div class="post-copyright">
+                    <p>
+                        <span>{{ copyright.statement.name }}：</span>
+                        {{ copyright.statement.left }}
+                        <a href="{{ site.url }}" class="cplink">{{ site.title }}</a>
+                        {{ copyright.statement.middle }}
+                    </p>
+                    {% if site.cclicense %}
+                    <p>
+                        {{ copyright.statement.right1 }}
+                        <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" class="extlinks">CC
+                            BY-NC-SA 4.0</a>
+                        {{ copyright.statement.right2 }}
+                    </p>
+                    {% endif %}
+                    <p><span>{{ copyright.title }}：</span>《 {{ page.title }} 》</p>
+                    <p><span>{{ copyright.link }}：</span><a href="{{ page.url | prepend: site.url }}" class="cplink">{{
+                            page.url | prepend: site.url }}</a></p>
+                    <p class="tips">{{ copyright.statement.outdate1 }} <span></span> {{ copyright.statement.outdate2 }}
+                    </p>
+                </div>
+            </article>
+        </div>
+        {% if page.content contains 'h1' or page.content contains 'h2' or page.content contains 'h3' or page.content
+        contains 'h4' or page.content contains 'h5' or page.content contains 'h6' and site.toc %}
+        <div class="table-of-contents">
+            <h2>{{ post.outline }}</h2>
+            {% include layouts/toc.html html=content %}
+            {% else %}
+            <div class="table-of-contents hidden">
+                {% endif %}
+            </div>
+        </div>
+        {% include plugins/others/social_block.html %}
+</main>
+
+<section class="author-detail">
+    <section class="post-footer-item author-card">
         <div class="avatar">
-          <img src="{{ site.avatar | relative_url }}" alt="">
+            <img src="{{ site.avatar | relative_url }}" alt="">
         </div>
         <div class="author-name" rel="author">{{ site.author }}</div>
         <div class="bio">
-          <p>{{ site.bio }}</p>
+            <p>{{ site.bio }}</p>
         </div>
         {% if site.sns.size > 0 %}
         <ul class="sns-links">
-          {% for s in site.sns %}
-          <li>
-            <a href="{{ s[1] }}" target="_blank" aria-label="{{ s[0] }}">
-              <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-{{ s[0] }}"></use>
-              </svg>
-            </a>
-          </li>
-          {% endfor %}
+            {% for s in site.sns %}
+            <li>
+                <a href="{{ s[1] }}" target="_blank" aria-label="{{ s[0] }}">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-{{ s[0] }}"></use>
+                    </svg>
+                </a>
+            </li>
+            {% endfor %}
         </ul>
         {% endif %}
-      </section>
-      <section class="post-footer-item read-next">
+    </section>
+    <section class="post-footer-item read-next">
         {% if page.next.url %}
         <div class="read-next-item">
-          <a href="{{ page.next.url | relative_url }}" class="read-next-link" aria-label="{{ page.next.title }}"></a>
-          <section>
-            <span>{{ page.next.title }}</span>
-            <p>{{ page.next.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
-          </section>
-          {% if page.next.cover %}
-          <div class="filter"></div>
-          <img src="{{ page.next.cover | relative_url }}" alt="">
-          {% endif %}
-      </div>
+            <a href="{{ page.next.url | relative_url }}" class="read-next-link" aria-label="{{ page.next.title }}"></a>
+            <section>
+                <span>{{ page.next.title }}</span>
+                <p>{{ page.next.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
+            </section>
+            {% if page.next.cover %}
+            <div class="filter"></div>
+            <img src="{{ page.next.cover | relative_url }}" alt="">
+            {% endif %}
+        </div>
         {% endif %}
 
         {% if page.previous.url %}
         <div class="read-next-item">
-          <a href="{{ page.previous.url | relative_url }}" class="read-next-link" aria-label="{{ page.previous.title }}"></a>
+            <a href="{{ page.previous.url | relative_url }}" class="read-next-link"
+                aria-label="{{ page.previous.title }}"></a>
             <section>
-              <span>{{ page.previous.title }}</span>
-              <p>{{ page.previous.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
+                <span>{{ page.previous.title }}</span>
+                <p>{{ page.previous.excerpt | strip_html | strip_newlines | truncate: 60}}</p>
             </section>
             {% if page.previous.cover %}
             <div class="filter"></div>
@@ -231,247 +181,6 @@
             {% endif %}
         </div>
         {% endif %}
-      </section>
-      {% if site.comments.disqus or site.comments.waline %}
-      <section class="post-footer-item comment">
-        <div class="comments-headline">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-comment"></use>
-          </svg>
-          <span>{{ locales.post.comment }}</span>
-        </div>
-        {% if site.comments.disqus and site.comments.waline %}
-        <div id="comments-switch">
-          <span class="first-comment">Disqus</span>
-          <span class="switch-button">
-            <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
-            <label for="cmn-toggle-4"></label>
-          </span>
-          <span class="second-comment">Waline</span>
-        </div>
-        {% endif %}
-      </section>      
-      {% endif %}
-   
-      {% if site.comments.disqus %}
-      <section class="post-footer-item comment">
-          <div id="disqus_thread"></div>
-      </section>
-      {% endif %}
-
-      {% if site.comments.waline %}
-      <section class="post-footer-item comment">
-          <div id="waline"></div>
-      </section>
-      {% endif %}
     </section>
-
-    {% include footer.html %}
-    {% if page.mermaid or site.mermaid %}
-    <div class="modal">
-        <div class="modal-content">
-          <header>
-            <span class="close">&times;</span>
-          </header>
-          <div class="container"></div>
-        </div>
-    </div>
-    {% endif%}
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
-  <script>
-    socialShare('.social-share', {
-      sites: [
-        {% for i in site.social-share-items %}
-          '{{ i }}'
-          {% if forloop.last == false %},
-          {% endif %}
-        {% endfor %}
-      ],
-      wechatQrcodeTitle: "分享到微信朋友圈",
-      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
-    });
-    $("a.social-share-icon").each(function() {
-      $(this).attr("aria-label", $(this).attr("class").split(' ')[1])
-    });
-  </script>
-
-  {% if site.comments.disqus %}
-  <script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = '{{ site.comments.disqus_url }}';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-
-  </script>
-  {% endif %}
-
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-  <script src="{{ "/assets/js/app.min.js" | relative_url }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/hotkeys-js/dist/hotkeys.min.js"></script>
-  {% include waline.html %}
-  <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/customParseFormat.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/plugin/relativeTime.js"></script>
-  <script>
-    /**
-    * Better Scroll Experience
-    */
-    function scrollToAdjust(id){
-      var element = document.getElementById(id);
-      var headerOffset = 90;
-      var elementPosition = element.getBoundingClientRect().top;
-      var offsetPosition = elementPosition + window.scrollY - headerOffset;
-      window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-      });
-    }
-      // 给图片添加链接
-      $(document).ready(function() {
-          var baseurl = $("meta[property='og:baseurl']").attr('content');
-          $("p img").each(function() {
-              $(this).attr('data-src', $(this).attr('src')).removeAttr('src').addClass("lazyload").attr('src', baseurl + '/assets/img/loading.gif');
-              var strA = "<a data-fancybox='gallery' ref='gallery' href='" + $(this).attr('data-src') + "' data-caption='" + $(this).attr('alt') + "'></a>";
-              $(this).wrapAll(strA);
-              var caption = $(this)[0].alt;
-              $(this).parent().after('<span class="caption">' + caption + '</span>');
-          });
-
-          Fancybox.bind('[data-fancybox]', {
-            on: {
-              load: (fancybox, slide) => {
-                var gray = $("meta[property='og:gray']").attr('content');
-                if(gray == "true"){
-                    $(".fancybox__content img").addClass("gray");
-                    $(".carousel__track .fancybox__thumb").addClass("gray");
-                }
-              }
-            }
-          });   
-          
-          {% if site.comments.waline %}
-            Waline.init({
-              el: '#waline',
-              serverURL: '{{ site.comments.waline_url }}',
-              reaction: {{ site.comments.waline_reaction }},
-              comment: true,
-              locale: {{ site.comments.waline_locale }}
-            });
-          {% endif %}
-
-          if($("#comments-switch").length > 0){
-            var comment_status = $("#cmn-toggle-4")[0].checked;
-            if(comment_status){
-              $("#waline").addClass("active");
-            }else {
-              $("#disqus_thread").addClass("active");
-            }
-            $("#cmn-toggle-4").click(function(){
-              $("#disqus_thread").toggleClass("active");
-              $("#waline").toggleClass("active");
-            })
-          }else {
-            if($("#disqus_thread").length > 0) {
-              $("#disqus_thread").addClass("active");
-            }else if($("#waline").length > 0) {
-              $("#waline").addClass("active");
-            }
-          }
-
-          var time_formats = ['YYYY-MM-DD HH:mm:ss ZZ', 'YYYY DD MMM HH:mm:ss ZZ', 'YYYY年MM月DD日 HH:mm:ss ZZ'];
-          function dateFormat(date, format){
-            var date_org = dayjs(date, time_formats[format]);
-            var date     = date_org.format(time_formats[format]);
-            return {"date_org": date_org, "date": date}
-          }
-
-          dayjs.extend(window.dayjs_plugin_customParseFormat);
-          dayjs.extend(window.dayjs_plugin_relativeTime);
-          var post_date = $("meta[property='post-date']").attr('content');
-          var post_date_format = $("meta[property='post-date-format']").attr('content');
-          var local_post_date = dateFormat(post_date, post_date_format);
-
-          $(".post time span.create-at").html(local_post_date["date"]);
-
-          fetch("https://api.github.com/repos/{{ site.github.owner }}/{{ site.github.repository }}/commits?path={{ page.path }}")
-          .then((response) => {
-            return response.json();
-          })
-          .then((commits) => {
-            if(commits.length != 0){
-              var update_at = dayjs(commits[0]['commit']['committer']['date']);
-            }else {
-              var update_at = post_date
-            }
-
-            var local_update_at = dateFormat(update_at, post_date_format);
-            $('.post time span.update-at').html(local_update_at["date"]);
-
-            var relative_time = dayjs().diff(local_update_at["date_org"], 'day');
-            $(".post-copyright .tips span").append(relative_time);
-            if(relative_time > 365){
-              $(".post-copyright .tips").addClass("active");
-            }
-          });   
-          
-          /*
-          * Keyboard shortcut bind: left and right
-          */
-
-          var previous_url = $("meta[property='og:previous_url']").attr('content');
-          var next_url = $("meta[property='og:next_url']").attr('content');
-
-          hotkeys('left', function(event, handler){
-              // Prevent the default refresh event under WINDOWS system
-              event.preventDefault();
-              if(previous_url){
-                  console.log('you pressed left!');
-                  window.location.href = previous_url;
-              }else {
-                  $("#no-previous").addClass("active");
-                  setTimeout(function(){$("#no-previous").removeClass("active");}, 1500);
-              }
-          });
-
-          hotkeys('right', function(event, handler){
-              // Prevent the default refresh event under WINDOWS system
-              event.preventDefault();
-              if(next_url){
-                  console.log('you pressed right!');
-                  window.location.href = next_url;
-              }else {
-                  $("#no-next").addClass("active");
-                  setTimeout(function(){$("#no-next").removeClass("active");}, 1500);
-              }
-          });
-      });
-  </script>
-  <script src="https://at.alicdn.com/t/c/font_3046306_9tox63bysiw.js"></script>
-  {% include analytics.html %}
-  {% include umami.html %}
-  {% include busuanzi.html %}
-  {% include pwa.html %}
-	{% include mathjax.html %}
-  {% include mermaid.html %} 
-  {% include webpusher.html %} 
-</body>
-
-</html>
+    {% include plugins/comments/comments_block.html %}
+</section>

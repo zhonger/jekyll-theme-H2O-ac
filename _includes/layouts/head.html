@@ -3,8 +3,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="author"  content="{{ site.author }}">
+    {% if layout.type == "post" %}
+    <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="keywords"  content="{% if page.tags.size > 0 %}{% for tag in page.tags  %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}">
+    {% if page.next.url %}
+    <meta property="og:previous_url" content="{{ page.next.url | relative_url }}">
+    {% endif %}
+    {% if page.previous.url %}
+    <meta property="og:next_url" content="{{ page.previous.url | relative_url }}">
+    {% endif %}
+    {% else %}
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords"  content="{{ site.keyword }}">
+    {% endif %}
+    <meta property="post-date-format" content="{{ site.formats.time }}">
+    {% case site.formats.time %}
+    {% when 0 %}
+    <meta property="post-date" content="{{ page.date | date: '%Y-%m-%d %H:%M:%S %z' }}" />
+    {% when 1 %}
+    <meta property="post-date" content="{{ page.date | date_to_rfc822 }}" />
+    {% else %}
+    <meta property="post-date" content="{{ page.date | date: '%Y年%-m月%-d日 %H:%M:%S %z'  }}" />
+    {% endcase %}
     <!-- Open Graph -->
     <meta property="og:title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:type" content="website">
@@ -29,23 +49,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.min.css" async>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
-    {% assign prisms1 = "coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight" | split: "," %}
-    {% assign prisms2 = "a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,coldark-cold,coy-without-shadows,darcula,duotone-dark,duotone-earth,duotone-light,dutone-sea,dutone-space,ghcolors,gruvbox-dark,gruvbox-light,holi-theme,hopscotch,lucario,material-dark,material-light,material-oceanic,night-owl,nord,one-dark,one-light,pojoaque,shades-of-purple,solarized-dark-atom,synthwave84,vs,vsc-dark-plus,xonokai,z-touch" | split: "," %}
-    {% if prisms1 contains site.prism.theme %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism-{{site.prism.theme}}.min.css" />
-    {% else if prisms2 contains site.prism.theme %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-{{site.prism.theme}}.min.css" />
+    {% if layout.type == "post" %}
+    {% include plugins/others/social_css.html%}
+    {% include plugins/markdown/fancybox_css.html %}
     {% else %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css">
+    {% include plugins/others/calendar_css.html %}
     {% endif %}
-    {% if site.prism.line_numbers %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-numbers/prism-line-numbers.min.css">
-    {% endif %}
-    {% if site.calendar %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cal-heatmap@4.2.4/dist/cal-heatmap.min.css">
-    {% endif %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+    {% include plugins/markdown/prism_css.html %}
+    {% include plugins/comments/waline_css.html %}
     <link rel="stylesheet" href="{{ "/assets/css/app.min.css" | prepend: site.baseurl }}">
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>

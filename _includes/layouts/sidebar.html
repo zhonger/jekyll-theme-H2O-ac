@@ -46,7 +46,7 @@
             {% endif %}
         </section>
         {% if site.calendar %}
-            {% include calendar.html %}
+            {% include plugins/others/calendar_block.html %}
         {% endif %}
         {% if site.recommend-tags and site.tags.size>0 %}
         {% assign max_tag_count = 0 %}

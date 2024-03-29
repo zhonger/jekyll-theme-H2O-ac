@@ -1,0 +1,14 @@
+{% if site.comments.waline or page.comments.waline %}
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
+<script>
+    $(document).ready(function () {
+        Waline.init({
+            el: '#waline',
+            serverURL: '{{ site.comments.waline_url }}',
+            reaction: {{ site.comments.waline_reaction }},
+        comment: true,
+        locale: {{ site.comments.waline_locale }}
+        });
+    });
+</script>
+{% endif %}
