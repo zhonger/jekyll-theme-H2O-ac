@@ -12,6 +12,9 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
 {% assign unpin_posts_num = unpin_posts | size %}
 {% assign nyear = "1900" %}
 {% assign total_size = 0 %}
+{% assign lang = page.lang | default: site.default_lang %}
+{% assign locales = site.data.locales[lang] %}
+{% assign panel = locales.panel %}
 
 {% for post in site.posts %}
   {% assign post_size = post.content | strip_html | strip_newlines | remove: " " | size %}
@@ -56,9 +59,9 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
           </svg>
       </a>
       <div class="legends">
-          <span class="text">Less</span>
+          <span class="text">{{panel.calendar_less}}</span>
           <div id="ex-ghDay-legend2"></div>
-          <span class="text">More</span>
+          <span class="text">{{panel.calendar_more}}</span>
       </div>
   </div>
 </div>
