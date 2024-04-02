@@ -1,7 +1,11 @@
 {% capture stats_data %}
-{"calendar":[
+{"calendar":{ "by_day": [
 {% assign vdate = "2001-01-01" %}
+{% assign mdate = "2001-01" %}
+{% assign ydate = "2001" %}
 {% assign vcount = 0 %}
+{% assign mcount = 0 %}
+{% assign ycount = 0 %}
 {% assign total = 0 %}  
 {% for post in site.posts %}
     {% assign cdate = post.date | date: "%Y-%m-%d" %}
@@ -16,7 +20,33 @@
     {% endif %}
     {% assign total = total | plus: 1 %}
 {% endfor %}
-    {"date": "{{ vdate }}", "count": {{ vcount }} }],
+    {"date": "{{ vdate }}", "count": {{ vcount }} }], "by_month": [
+{% for post in site.posts %}
+    {% assign cdate = post.date | date: "%Y-%m" %}
+    {% if mdate == cdate %}
+        {% assign mcount = mcount | plus: 1 %}
+    {% else %}
+        {% if mdate != "2001-01" %}
+        {"date": "{{ mdate }}", "count": {{ mcount }} }, 
+        {% endif %}
+        {% assign mdate = cdate %}
+        {% assign mcount = 1 %}
+    {% endif %}
+{% endfor %}
+    {"date": "{{ mdate }}", "count": {{ mcount }} }], "by_year": [
+{% for post in site.posts %}
+    {% assign cdate = post.date | date: "%Y" %}
+    {% if ydate == cdate %}
+        {% assign ycount = ycount | plus: 1 %}
+    {% else %}
+        {% if ydate != "2001" %}
+        {"date": "{{ ydate }}", "count": {{ ycount }} }, 
+        {% endif %}
+        {% assign ydate = cdate %}
+        {% assign ycount = 1 %}
+    {% endif %}
+{% endfor %}
+    {"date": "{{ ydate }}", "count": {{ ycount }} }]},
     "total": {{total}}
 }
 {% endcapture %}{{ stats_data | strip | strip_newlines}}

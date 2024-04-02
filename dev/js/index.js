@@ -583,210 +583,220 @@ $(document).ready(function () {
     /**
     * Calendar plugin
     **/
+    var calendarScale = $("meta[property='calendar-scale']").attr('content');
     today = new Date();
     year = today.getFullYear();
     month = today.getMonth() + 1;
     day = today.getDate();
     endDay = year + '-' + ("0" + month).slice(-2) + '-' + ("0" + day).slice(-2);
     locales = { "zh-Hans": "zh", "zh-Hant": "zh-tw", "en": "en", "ja": "ja" };
-    if ($("#cal-heatmap").length > 0) {
-        const cal = new CalHeatmap();
-        axios.get(baseurl + "/stats.json").then(res => {
-            stats_data = res.data;
-            cal.paint(
-                {
-                    itemSelector: "#cal-heatmap",
-                    domain: {
-                        type: 'month',
-                        gutter: 5,
-                        label: {
-                            text: 'MMM',
-                            textAlign: 'start',
-                            position: 'top'
-                        }
-                    },
-                    subDomain: {
-                        type: 'ghDay',
-                        gutter: 5,
-                        width: 13,
-                        height: 13,
-                        radius: 3,
-                        label: null
-                    },
-                    date: {
-                        start: new Date(dayjs(endDay).subtract(2, 'month')),
-                        max: new Date(endDay),
-                        highlight: [new Date(endDay)],
-                        locale: locales[lang]
-                    },
-                    range: 3,
-                    data: {
-                        source: stats_data.calendar,
-                        x: 'date',
-                        y: 'count',
-                    },
-                    scale: {
-                        color: {
-                            type: 'threshold',
-                            // range: ['#b0f5e5', '#35f2c6', '#0fbdb4', '#077485'],
-                            range: ['#9be9a8', '#40c463', '#30a14e', '#216e39'],
-                            domain: [4, 6, 8]
-                        }
-                    }
-                },
-                [
-                    [
-                        Tooltip,
-                        {
-                            text: function (date, value, dayjsDate) {
-                                if (value == 1) {
-                                    return value + ' contribution on ' + dayjsDate.format('YYYY-MM-DD');
-                                }
-                                return (
-                                    (value ? value + ' contributions' : 'No contribution') + ' on ' + dayjsDate.format('YYYY-MM-DD')
-                                );
-                            },
-                        },
-                    ],
-                    [
-                        LegendLite,
-                        {
-                            includeBlank: true,
-                            itemSelector: "#ex-ghDay-legend",
-                            radius: 3,
-                            width: 10,
-                            height: 10,
-                            gutter: 2,
-                        },
-                    ],
-                    [
-                        CalendarLabel,
-                        {
-                            width: 30,
-                            textAlign: 'start',
-                            text: () => dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? '' : d)),
-                            padding: [25, 0, 0, 0],
-                        },
-                    ],
-                ]
-            );
-            $("#ex-ghDay-prev").on('click', function (e) {
-                e.preventDefault();
-                cal.previous();
-            });
-            $("#ex-ghDay-next").on('click', function (e) {
-                e.preventDefault();
-                cal.next();
-            });
-            $("#ex-ghDay-today").on('click', function (e) {
-                e.preventDefault();
-                cal.jumpTo(new Date(endDay));
-            });
-        });
-    }
-    if ($("#archive-heatmap").length > 0) {
-        postWidth = $(".post-content").width()
-        if (postWidth >= 633) {
-            month = 12
-        } else if (postWidth >= 400) {
-            month = 8
-        } else if (postWidth >= 300) {
-            month = 6
-        } else {
-            month = 3
-        }
 
-        const cal = new CalHeatmap();
-        axios.get(baseurl + "/stats.json").then(res => {
-            stats_data = res.data;
-            cal.paint(
+    axios.get(baseurl + "/stats.json").then(res => {
+        stats_data = res.data;
+        if ($("#cal-heatmap").length > 0) {
+            var cal = new CalHeatmap();
+            selectors = {
+                'cal': '#cal-heatmap',
+                'legend': '#ex-ghDay-legend',
+                'prev': '#ex-ghDay-prev',
+                'next': '#ex-ghDay-next',
+                'today': '#ex-ghDay-today',
+            }
+            cal = makeCalendar(cal, selectors, calendarScale);
+        }
+        if ($("#archive-heatmap").length > 0) {
+            var cal2 = new CalHeatmap();
+            selectors2 = {
+                'cal': '#archive-heatmap',
+                'legend': '#ex-ghDay-legend2',
+                'prev': '#ex-ghDay-prev2',
+                'next': '#ex-ghDay-next2',
+                'today': '#ex-ghDay-today2',
+            }
+            cal2 = makeCalendar(cal2, selectors2, "day", "True")
+        }
+    }).catch(function (error) {
+        console.log("'stats.json' is not found. Calendar will be abnormal. Please make sure it exits.");
+    });
+
+
+    function makeCalendar(cal, selectors, by, archive = "False") {
+        var paras = {}
+        var options = [[
+            Tooltip,
+            {
+                text: function (date, value, dayjsDate) {
+                    if (value == 1) {
+                        return value + ' contribution on ' + dayjsDate.format(paras.format);
+                    }
+                    return (
+                        (value ? value + ' contributions' : 'No contribution') + ' on ' + dayjsDate.format(paras.format)
+                    );
+                },
+            },
+        ], [
+            LegendLite,
+            {
+                includeBlank: true,
+                itemSelector: selectors.legend,
+                radius: 3,
+                width: 10,
+                height: 10,
+                gutter: 2,
+            },
+        ]]
+        if (by == "month") {
+            const xMonth = function (DateHelper) {
+                return {
+                    name: 'xMonth',
+                    allowedDomainType: ["year"],
+                    rowsCount: () => 3,
+                    columnsCount: () => 4,
+                    mapping: (startTimestamp, endTimestamp) => DateHelper.intervals(
+                        'month',
+                        startTimestamp,
+                        DateHelper.date(endTimestamp)
+                    ).map((ts) => ({
+                        t: ts,
+                        x: DateHelper.date(ts).month() % 4,
+                        y: parseInt(DateHelper.date(ts).month() / 4),
+                    })),
+                    extractUnit: (ts) => DateHelper.date(ts).startOf('month').valueOf(),
+                };
+            };
+            cal.addTemplates(xMonth);
+            var paras = {
+                'format': 'YYYY-MM',
+                'domain': {
+                    'type': 'year',
+                    'gutter': 5,
+                    'label': { 'text': (ts) => dayjs(ts).format("YYYY"), 'align': 'middle' }
+                },
+                'subDomain': { 'type': 'xMonth', 'width': 60, 'height': 36, 'gutter': 5, 'radius': 3 },
+                'range': 1,
+            };
+            var start_date = new Date(dayjs(endDay).startOf('year').add(1, 'month'))
+        } else if (by == "year") {
+            const xYear = function (DateHelper) {
+                return {
+                    name: 'xYear',
+                    allowedDomainType: ["year"],
+                    rowsCount: () => 1,
+                    columnsCount: () => 1,
+                    mapping: (startTimestamp, endTimestamp) => DateHelper.intervals(
+                        'year',
+                        startTimestamp,
+                        DateHelper.date(endTimestamp)
+                    ).map((ts, index) => ({
+                        t: ts,
+                        x: index,
+                        y: 0,
+                    })),
+                    extractUnit: (ts) => DateHelper.date(ts).startOf('year').valueOf(),
+                };
+            };
+            cal.addTemplates(xYear);
+            var paras = {
+                'format': 'YYYY',
+                'domain': { 'type': 'year', 'gutter': 5, 'label': { 'text': 'YYYY', 'align': 'middle' } },
+                'subDomain': { 'type': 'xYear', 'width': 36, 'height': 36, 'gutter': 5, 'radius': 3 },
+                'range': 6,
+            };
+            var start_date = new Date(dayjs(endDay).subtract(paras.range - 1, 'year'))
+        } else {
+            var paras = {
+                'format': 'YYYY-MM-DD',
+                'domain': { 'type': 'month', 'gutter': 5, 'label': { 'text': 'MMM', 'align': 'start' } },
+                'subDomain': { 'type': 'ghDay', 'width': 13, 'height': 13, 'gutter': 5, 'radius': 3 },
+                'range': 3,
+            };
+            var start_date = new Date(dayjs(endDay).subtract(paras.range - 1, 'month'))
+            options[2] = [
+                CalendarLabel,
                 {
-                    itemSelector: "#archive-heatmap",
-                    domain: {
-                        type: 'month',
-                        gutter: 2,
-                        label: {
-                            text: 'MMM',
-                            textAlign: 'start',
-                            position: 'top'
-                        }
-                    },
-                    subDomain: {
-                        type: 'ghDay',
-                        gutter: 2,
-                        width: 9,
-                        height: 9,
-                        radius: 2,
-                    },
-                    date: {
-                        start: new Date(dayjs(endDay).subtract(month - 1, 'month')),
-                        max: new Date(endDay),
-                        highlight: [new Date(endDay)],
-                        locale: locales[lang]
-                    },
-                    range: month,
-                    data: {
-                        source: stats_data.calendar,
-                        x: 'date',
-                        y: 'count',
-                    },
-                    scale: {
-                        color: {
-                            type: 'threshold',
-                            // range: ['#b0f5e5', '#35f2c6', '#0fbdb4', '#077485'],
-                            range: ['#9be9a8', '#40c463', '#30a14e', '#216e39'],
-                            domain: [4, 6, 8]
-                        }
+                    width: 30,
+                    textAlign: 'start',
+                    text: () => dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? '' : d)),
+                    padding: [25, 0, 0, 0],
+                },
+            ];
+        }
+        if (archive == "True") {
+            postWidth = $(".post-content").width()
+            if (postWidth >= 633) {
+                paras.range = 12
+            } else if (postWidth >= 400) {
+                paras.range = 8
+            } else if (postWidth >= 300) {
+                paras.range = 6
+            } else {
+                paras.range = 3
+            }
+            paras.domain.gutter = 2
+            paras.subDomain.width = 9
+            paras.subDomain.height = 9
+            paras.subDomain.gutter = 2
+            paras.subDomain.radius = 2
+            start_date = new Date(dayjs(endDay).subtract(paras.range - 1, 'month'))
+        }
+        if (by == "month") {
+            var source_data = stats_data.calendar.by_month
+        } else if (by == "year") {
+            var source_data = stats_data.calendar.by_year
+        } else {
+            var source_data = stats_data.calendar.by_day
+        }
+        cal.paint(
+            {
+                itemSelector: selectors.cal,
+                domain: {
+                    type: paras.domain.type,
+                    gutter: paras.domain.gutter,
+                    label: {
+                        text: paras.domain.label.text,
+                        textAlign: paras.domain.label.align,
+                        position: 'top'
                     }
                 },
-                [
-                    [
-                        Tooltip,
-                        {
-                            text: function (date, value, dayjsDate) {
-                                if (value == 1) {
-                                    return value + ' contribution on ' + dayjsDate.format('YYYY-MM-DD');
-                                }
-                                return (
-                                    (value ? value + ' contributions' : 'No contribution') + ' on ' + dayjsDate.format('YYYY-MM-DD')
-                                );
-                            },
-                        },
-                    ],
-                    [
-                        LegendLite,
-                        {
-                            includeBlank: true,
-                            itemSelector: "#ex-ghDay-legend2",
-                            radius: 3,
-                            width: 10,
-                            height: 10,
-                            gutter: 2,
-                        },
-                    ],
-                    [
-                        CalendarLabel,
-                        {
-                            width: 30,
-                            textAlign: 'start',
-                            text: () => dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? '' : d)),
-                            padding: [25, 0, 0, 0],
-                        },
-                    ],
-                ]
-            );
-            $("#ex-ghDay-prev2").on('click', function (e) {
-                e.preventDefault();
-                cal.previous();
-            });
-            $("#ex-ghDay-next2").on('click', function (e) {
-                e.preventDefault();
-                cal.next();
-            });
-            $("#ex-ghDay-today2").on('click', function (e) {
-                e.preventDefault();
-                cal.jumpTo(new Date(endDay));
-            });
+                subDomain: {
+                    type: paras.subDomain.type,
+                    gutter: paras.subDomain.gutter,
+                    width: paras.subDomain.width,
+                    height: paras.subDomain.height,
+                    radius: paras.subDomain.radius,
+                    label: null
+                },
+                date: {
+                    start: start_date,
+                    max: new Date(endDay),
+                    highlight: [new Date(endDay)],
+                    locale: locales[lang]
+                },
+                range: paras.range,
+                data: { source: source_data, x: 'date', y: 'count' },
+                scale: {
+                    color: {
+                        type: 'threshold',
+                        // range: ['#b0f5e5', '#35f2c6', '#0fbdb4', '#077485'],
+                        range: ['#9be9a8', '#40c463', '#30a14e', '#216e39'],
+                        domain: [4, 6, 8]
+                    }
+                }
+            },
+            options
+        );
+        $(selectors.prev).on('click', function (e) {
+            e.preventDefault();
+            cal.previous();
         });
+        $(selectors.next).on('click', function (e) {
+            e.preventDefault();
+            cal.next();
+        });
+        $(selectors.today).on('click', function (e) {
+            e.preventDefault();
+            cal.jumpTo(new Date(endDay));
+        });
+        return cal;
     }
 });
