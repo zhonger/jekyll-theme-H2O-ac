@@ -27,8 +27,9 @@
     <meta property="post-date" content="{{ page.date | date: '%Y年%-m月%-d日 %H:%M:%S %z'  }}" />
     {% endcase %}
     {% if site.calendar %}
-    <meta property="calendar-scale" content="{{ site.calendar.scale | default: 'day' }}" />
-    <meta property="calendar-colors" content="{{ site.calendar.colors | default: '#9be9a8, #40c463, #30a14e, #216e39' }}" />
+    <meta property="calendar-scale" content="{{ site.calendar.scale | default: 'year' }}" />
+    <meta property="calendar-scheme" content="{{ site.calendar.scheme | default: 'null' }}" />
+    <meta property="calendar-color" content="{{ site.calendar.color | default: 'null' }}" />
     {% endif %}
     <!-- Open Graph -->
     <meta property="og:title"

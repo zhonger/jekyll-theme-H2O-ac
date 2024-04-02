@@ -584,6 +584,22 @@ $(document).ready(function () {
     * Calendar plugin
     **/
     var calendarScale = $("meta[property='calendar-scale']").attr('content');
+    var calendarScheme = $("meta[property='calendar-scheme']").attr('content');
+    var calendarColor = $("meta[property='calendar-color']").attr('content');
+    var cal_color = { 'type': 'threshold', 'domain': [4, 6, 8] };
+    var d3Colors = ['blues', 'greens', 'greys', 'oranges', 'purples', 'reds', 'bugn', 'bupu', 'gnbu', 'orrd', 'pubu', 'pubugn', 'purd', 'rdpu', 'ylgn', 'ylgnbu', 'ylorbr', 'ylorrd', 'cividis', 'inferno', 'magma', 'plasma', 'viridis', 'cubehelix', 'turbo', 'warm', 'cool', 'brbg', 'prgn', 'piyg', 'puor', 'rdbu', 'rdgy', 'rdylbu', 'rdylgn', 'spectral', 'burd', 'buylrd', 'rainbow', 'sinebow']
+    if (calendarScheme !== "null") {
+        if (d3Colors.includes(calendarScheme)) {
+            cal_color.scheme = calendarScheme
+        } else {
+            cal_color.range = ['#9be9a8', '#40c463', '#30a14e', '#216e39']
+            console.log("'" + calendarScheme + "' is not supported. Please check it in https://cal-heatmap.com/!")
+        }
+    } else if (calendarColor !== "null") {
+        cal_color.range = calendarColor
+    } else {
+        cal_color.range = ['#9be9a8', '#40c463', '#30a14e', '#216e39']
+    }
     today = new Date();
     year = today.getFullYear();
     month = today.getMonth() + 1;
@@ -774,14 +790,7 @@ $(document).ready(function () {
                 },
                 range: paras.range,
                 data: { source: source_data, x: 'date', y: 'count' },
-                scale: {
-                    color: {
-                        type: 'threshold',
-                        // range: ['#b0f5e5', '#35f2c6', '#0fbdb4', '#077485'],
-                        range: ['#9be9a8', '#40c463', '#30a14e', '#216e39'],
-                        domain: [4, 6, 8]
-                    }
-                }
+                scale: { color: cal_color }
             },
             options
         );
