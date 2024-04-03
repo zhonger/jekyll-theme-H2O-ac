@@ -11,7 +11,14 @@
     {% endif %}
     <section class="post-preview">
         <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}"></a>
-        <h2 class="post-title">{% if post.pin %}<span class="keep-top">[置顶]</span> {% endif %}{{ post.title }}</h2>
+        <h2 class="post-title">
+            {% if post.pin %}
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-pin"></use>
+                </svg>
+            {% endif %}
+            {{ post.title }}
+        </h2>
         {% if post.subtitle %}
         <h3 class="post-subtitle">{{ post.subtitle }}</h3>
         {% endif %}
