@@ -718,6 +718,9 @@ $(document).ready(function () {
                 'subDomain': { 'type': 'xYear', 'width': 36, 'height': 36, 'gutter': 5, 'radius': 3 },
                 'range': 6,
             };
+            if(archive=="False"){
+                paras.range = parseInt($("#cal-heatmap").width()/40)
+            }
             var start_date = new Date(dayjs(endDay).subtract(paras.range - 1, 'year'))
         } else {
             var paras = {
