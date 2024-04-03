@@ -26,6 +26,7 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
   {% endif %}
 </p>
 
+<div id="archive-articles">
 {% for category in site.categories %}
   {% assign category_name = category | first %}
   <h3 class="category">{{ category[0] }}</h3>
@@ -72,3 +73,4 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
   {% endfor %}
   </ul>
 {% endif %}
+</div>

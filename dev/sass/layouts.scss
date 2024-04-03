@@ -143,12 +143,8 @@
 }
 
 @media screen and (max-width: 960px) {
-    .archives-date {
-        display: none;
-    }
 
     .archives-title {
-        width: 290px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;

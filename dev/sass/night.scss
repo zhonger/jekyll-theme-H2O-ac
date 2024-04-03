@@ -248,6 +248,13 @@
         table tr {
             background-color: transparent;
         }
+        #archive-articles {
+            ul {
+                li:before {
+                    background: #aaaaaa;
+                }
+            }
+        }
     }
 
     .table-of-contents,

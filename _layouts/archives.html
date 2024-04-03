@@ -68,63 +68,65 @@ cover: https://images.unsplash.com/photo-1465189684280-6a8fa9b19a7a?w=1600&q=900
 
 {% assign ssyears = "rat,ox,tiger,rabbit,dragon,snake,horse,goat,monkey,rooster,dog,pig" | split: "," %}
 
-{% if pin_posts_num > 0 %}
-<h3>{{ archives.pin.title }}</h3>
-<ul>
-  {% for post in pin_posts %}
-    <li>
-      <p class="archives-title">
-        <span class="archives-date">
-          {% case site.formats.time %}
-          {% when 0 %}
-            {{ post.date | date: "%Y-%m-%d" }} 
-          {% when 1 %}
-            {{ post.date | date_to_string }}
-          {% else %}
-            {{ post.date | date: "%Y年%-m月%-d日"  }}
-          {% endcase %}
-        </span>
-        <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} </a>
-      </p>
-    </li>
-  {% endfor %}
-{% endif %}
-
-{% if unpin_posts_num > 0%}
-  {% for post in unpin_posts %}
-    {% assign year = post.date | date: '%Y' %}
-    {% assign animal = year | minus:1900 | modulo:12 %}
-    {% if year != nyear %}
-      {% assign nyear = year %}
-      </ul>
-      <h3 class="year">{{ post.date | date: '%Y' }}
-        <span class="icon-item">
-          <svg class="icon animal" aria-hidden="true">
-            <use xlink:href="#icon-{{ ssyears[animal] }}"></use>
-          </svg>
-          <svg class="icon dz" aria-hidden="true">
-            <use xlink:href="#icon-{{ ssyears[animal]}}_dz"></use>
-          </svg>
-        </span>
-      </h3>
-      <ul>
-    {% endif %}
-
-    <li>
-      <p class="archives-title">
-        <span class="archives-date">
-          {% case site.formats.time %}
-          {% when 0 %}
-            {{ post.date | date: "%Y-%m-%d" }} 
-          {% when 1 %}
-            {{ post.date | date_to_string }}
-          {% else %}
-            {{ post.date | date: "%Y年%-m月%-d日"  }}
-          {% endcase %}
-        </span>
-        <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} </a>
-      </p>
-    </li>
-  {% endfor %}
-{% endif %}
-</ul>
+<div id="archive-articles">
+  {% if pin_posts_num > 0 %}
+  <h3>{{ archives.pin.title }}</h3>
+  <ul>
+    {% for post in pin_posts %}
+      <li>
+        <p class="archives-title">
+          <span class="archives-date">
+            {% case site.formats.time %}
+            {% when 0 %}
+              {{ post.date | date: "%Y-%m-%d" }} 
+            {% when 1 %}
+              {{ post.date | date_to_string }}
+            {% else %}
+              {{ post.date | date: "%Y年%-m月%-d日"  }}
+            {% endcase %}
+          </span>
+          <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} </a>
+        </p>
+      </li>
+    {% endfor %}
+  {% endif %}
+  
+  {% if unpin_posts_num > 0%}
+    {% for post in unpin_posts %}
+      {% assign year = post.date | date: '%Y' %}
+      {% assign animal = year | minus:1900 | modulo:12 %}
+      {% if year != nyear %}
+        {% assign nyear = year %}
+        </ul>
+        <h3 class="year">{{ post.date | date: '%Y' }}
+          <span class="icon-item">
+            <svg class="icon animal" aria-hidden="true">
+              <use xlink:href="#icon-{{ ssyears[animal] }}"></use>
+            </svg>
+            <svg class="icon dz" aria-hidden="true">
+              <use xlink:href="#icon-{{ ssyears[animal]}}_dz"></use>
+            </svg>
+          </span>
+        </h3>
+        <ul>
+      {% endif %}
+  
+      <li>
+        <p class="archives-title">
+          <span class="archives-date">
+            {% case site.formats.time %}
+            {% when 0 %}
+              {{ post.date | date: "%m-%d" }} 
+            {% when 1 %}
+              {{ post.date | date_to_string }}
+            {% else %}
+              {{ post.date | date: "%-m月%-d日"  }}
+            {% endcase %}
+          </span>
+          <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} </a>
+        </p>
+      </li>
+    {% endfor %}
+  {% endif %}
+  </ul>
+</div>

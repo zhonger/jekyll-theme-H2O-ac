@@ -333,4 +333,37 @@
             overflow: hidden;
         }
     }
+    #archive-articles {
+        ul {
+            border-left: 4px solid #efefef;
+            padding-left: 0;
+            list-style: none;
+            li {
+                padding-left: 15px;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: -4px;
+                    width: 4px;
+                    border-radius: 12px;
+                    height: 4px;
+                    top: calc(50% - .5* 4px);
+                    background: #cccccc;
+                    transition: background .2s ease-out, height .2s ease-out, top .2s ease-out, transform .2s ease-out;
+                    -moz-transition: background .2s ease-out, height .2s ease-out, top .2s ease-out, transform .2s ease-out;
+                    -webkit-transition: background .2s ease-out, height .2s ease-out, top .2s ease-out, transform .2s ease-out;
+                    -o-transition: background .2s ease-out, height .2s ease-out, top .2s ease-out, transform .2s ease-out;
+                    transform: scale(2);    
+                }
+                &:hover:before {
+                    border-radius: 0px;
+                    height: 15px;
+                    top: 7px;
+                    width: 2px;
+                    left: -3px;
+                }
+            }
+        }
+    }
 }

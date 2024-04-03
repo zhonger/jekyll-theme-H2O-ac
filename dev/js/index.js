@@ -392,9 +392,11 @@ $(document).ready(function () {
             }
         }
     }
-    $($('.table-of-contents a').parent()[0]).addClass('active');
-    locateCatelogList();
-    $(window).bind('scroll', locateCatelogList);
+    if($(".toc-body").length >0){
+        $($('.table-of-contents a').parent()[0]).addClass('active');
+        locateCatelogList();
+        $(window).bind('scroll', locateCatelogList);
+    }
 
     /**
     * Day/Night mode switch button

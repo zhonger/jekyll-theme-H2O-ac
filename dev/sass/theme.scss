@@ -55,6 +55,13 @@
         ol li:before {
             background-color: $color-theme-default-1;
         }
+        #archive-articles {
+            ul {
+                li:hover:before {
+                    background: $color-theme-default-1;
+                }
+            }
+        }
     }
 
     .table-of-contents li.active:before {
@@ -134,6 +141,13 @@
             background-color: $color-theme-pink-1;
         }
 
+        #archive-articles {
+            ul {
+                li:hover:before {
+                    background: $color-theme-pink-1;
+                }
+            }
+        }
 
     }
 
