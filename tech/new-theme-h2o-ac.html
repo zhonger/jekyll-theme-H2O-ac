@@ -92,6 +92,15 @@
       <a href="/" aria-label="logo"></a>
     </div>
     <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
+    
+    <div id="travelling-toggle">
+        <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-train-subway"></use>
+            </svg>
+        </a>
+    </div>
+    
     <div id="mode-toggle">
         <svg class="icon icon-day" aria-hidden="true">
             <use xlink:href="#icon-day"></use>
@@ -176,6 +185,15 @@
                     </ul> 
                 </li>
                 
+            
+            
+            <li class="travelling">
+                <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-train-subway"></use>
+                    </svg>
+                </a>
+            </li>
             
             <li class="mode">
                 <svg class="icon day" aria-hidden="true">
@@ -859,10 +877,12 @@
             </article>
         </div>
         
-        <div class="table-of-contents">
-            <h2>目录</h2>
-            <ul><li><a onclick="scrollToAdjust('前言')">前言</a></li><li><a onclick="scrollToAdjust('新特性')">新特性</a><ul><li><a onclick="scrollToAdjust('更适合学术人和运维程序员的页面结构')">更适合学术人和运维程序员的页面结构</a><ul><li><a onclick="scrollToAdjust('学术首页')">学术首页</a></li><li><a onclick="scrollToAdjust('归档页')">归档页</a></li><li><a onclick="scrollToAdjust('系统日志页')">系统日志页</a></li></ul></li><li><a onclick="scrollToAdjust('使用体验提升')">使用体验提升</a><ul><li><a onclick="scrollToAdjust('社交图标扩展')">社交图标扩展</a></li><li><a onclick="scrollToAdjust('查看大图')">查看大图</a></li><li><a onclick="scrollToAdjust('深色模式切换按钮')">深色模式切换按钮</a></li><li><a onclick="scrollToAdjust('提示框')">提示框</a></li><li><a onclick="scrollToAdjust('代码高亮优化')">代码高亮优化</a></li><li><a onclick="scrollToAdjust('代码复制')">代码复制</a></li><li><a onclick="scrollToAdjust('文章置顶功能')">文章置顶功能</a></li><li><a onclick="scrollToAdjust('分页依赖升级')">分页依赖升级</a></li><li><a onclick="scrollToAdjust('封面图片作者及链接')">封面图片作者及链接</a></li><li><a onclick="scrollToAdjust('字数统计及阅读时间估计')">字数统计及阅读时间估计</a></li><li><a onclick="scrollToAdjust('时间本地化与最近更新时间')">时间本地化与最近更新时间</a></li><li><a onclick="scrollToAdjust('版权显式声明')">版权显式声明</a></li><li><a onclick="scrollToAdjust('文章侧边索引导航')">文章侧边索引导航</a></li><li><a onclick="scrollToAdjust('支持-waline-评论系统')">支持 Waline 评论系统</a></li><li><a onclick="scrollToAdjust('支持-pwa')">支持 PWA</a></li><li><a onclick="scrollToAdjust('支持-mermaid')">支持 Mermaid</a></li><li><a onclick="scrollToAdjust('发表日历')">发表日历</a></li><li><a onclick="scrollToAdjust('系列文章导航')">系列文章导航</a></li><li><a onclick="scrollToAdjust('配置项')">配置项</a></li><li><a onclick="scrollToAdjust('前端自动构建工作流优化')">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a onclick="scrollToAdjust('使用方法')">使用方法</a><ul><li><a onclick="scrollToAdjust('初始化')">初始化</a><ul><li><a onclick="scrollToAdjust('方式一从模板新建博客')">方式一：从模板新建博客</a></li><li><a onclick="scrollToAdjust('方式二已有博客迁移')">方式二：已有博客迁移</a></li></ul></li><li><a onclick="scrollToAdjust('本地测试')">本地测试</a></li><li><a onclick="scrollToAdjust('发布部署')">发布部署</a></li></ul></li><li><a onclick="scrollToAdjust('结束语')">结束语</a></li></ul>
-            
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>目录</h2></div>
+                <div class="toc-body">
+                    <ul><li><a onclick="scrollToAdjust('前言')">前言</a></li><li><a onclick="scrollToAdjust('新特性')">新特性</a><ul><li><a onclick="scrollToAdjust('更适合学术人和运维程序员的页面结构')">更适合学术人和运维程序员的页面结构</a><ul><li><a onclick="scrollToAdjust('学术首页')">学术首页</a></li><li><a onclick="scrollToAdjust('归档页')">归档页</a></li><li><a onclick="scrollToAdjust('系统日志页')">系统日志页</a></li></ul></li><li><a onclick="scrollToAdjust('使用体验提升')">使用体验提升</a><ul><li><a onclick="scrollToAdjust('社交图标扩展')">社交图标扩展</a></li><li><a onclick="scrollToAdjust('查看大图')">查看大图</a></li><li><a onclick="scrollToAdjust('深色模式切换按钮')">深色模式切换按钮</a></li><li><a onclick="scrollToAdjust('提示框')">提示框</a></li><li><a onclick="scrollToAdjust('代码高亮优化')">代码高亮优化</a></li><li><a onclick="scrollToAdjust('代码复制')">代码复制</a></li><li><a onclick="scrollToAdjust('文章置顶功能')">文章置顶功能</a></li><li><a onclick="scrollToAdjust('分页依赖升级')">分页依赖升级</a></li><li><a onclick="scrollToAdjust('封面图片作者及链接')">封面图片作者及链接</a></li><li><a onclick="scrollToAdjust('字数统计及阅读时间估计')">字数统计及阅读时间估计</a></li><li><a onclick="scrollToAdjust('时间本地化与最近更新时间')">时间本地化与最近更新时间</a></li><li><a onclick="scrollToAdjust('版权显式声明')">版权显式声明</a></li><li><a onclick="scrollToAdjust('文章侧边索引导航')">文章侧边索引导航</a></li><li><a onclick="scrollToAdjust('支持-waline-评论系统')">支持 Waline 评论系统</a></li><li><a onclick="scrollToAdjust('支持-pwa')">支持 PWA</a></li><li><a onclick="scrollToAdjust('支持-mermaid')">支持 Mermaid</a></li><li><a onclick="scrollToAdjust('发表日历')">发表日历</a></li><li><a onclick="scrollToAdjust('系列文章导航')">系列文章导航</a></li><li><a onclick="scrollToAdjust('配置项')">配置项</a></li><li><a onclick="scrollToAdjust('前端自动构建工作流优化')">前端自动构建工作流优化</a></li></ul></li></ul></li><li><a onclick="scrollToAdjust('使用方法')">使用方法</a><ul><li><a onclick="scrollToAdjust('初始化')">初始化</a><ul><li><a onclick="scrollToAdjust('方式一从模板新建博客')">方式一：从模板新建博客</a></li><li><a onclick="scrollToAdjust('方式二已有博客迁移')">方式二：已有博客迁移</a></li></ul></li><li><a onclick="scrollToAdjust('本地测试')">本地测试</a></li><li><a onclick="scrollToAdjust('发布部署')">发布部署</a></li></ul></li><li><a onclick="scrollToAdjust('结束语')">结束语</a></li></ul>
+                </div>
+        
             </div>
         </div>
         
@@ -1082,6 +1102,11 @@
           </a>
         
         
+          <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling" rel="noopener" title="开往-友链接力">
+            <img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力">
+          </a>
+        
+        
           <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI"> 
             <img src="/assets/icons/notbyAI-white.png" alt="Written by Human, Not by AI">
           </a>
@@ -1221,7 +1246,7 @@
             }
         </script>
         <script src=" /assets/js/app.min.js"></script>
-        <script src="https://at.alicdn.com/t/c/font_3046306_9tox63bysiw.js"></script>
+        <script src="https://at.alicdn.com/t/c/font_3046306_ujr2yq34hw.js"></script>
         
 
 
