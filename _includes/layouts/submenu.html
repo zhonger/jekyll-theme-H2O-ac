@@ -8,9 +8,19 @@
                 </svg>{{ collection.name }}
             </h4>
             <ul>
-                {% for article in collection.articles %}
-                    <li><a href="{{ article.url | prepend: site.baseurl }}">{{ article.name }}</a></li>
-                {% endfor %}
+            {% for article in collection.articles %}
+                <li>
+                    {% if article.url contains "://" %}
+                    <a href="{{ article.url }}" class="extlinks">
+                        {{ article.name }}
+                    </a>
+                    {% else %}
+                    <a href="{{ article.url | prepend: site.baseurl }}">
+                        {{ article.name }}
+                    </a>
+                    {% endif %}
+                </li>
+            {% endfor %}
             </ul>
         {% endif %}
     {% endfor %}
