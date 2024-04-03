@@ -120,6 +120,17 @@ supports:
 # Beian 备案号
 beian: '沪ICP备xxxxxxxx号'
 
+# Badges
+badges:
+  foreverblog: true # Foreverblog
+  wormhole: true # Wormhole
+  travelling: true # Travelling
+  notbyAI: true # NotByAI
+
+# Alive time
+alivetime: true
+alivestart: "12/23/2021"
+
 # CC License
 cclicense: true
 
@@ -193,19 +204,6 @@ mermaid: true
 
 # Webpusher
 webpusher: BKfCOgmaRwWSMgx0RID3WIvqMSIHnVoL8fK7YfB8jeh2SgSEzWcvhhsxW2EmVl99Q-5f3KlxHUN4MxDIhgajiTo
-
-# Foreverblog
-foreverblog: true
-
-# Wormhole
-wormhole: true
-
-# NotByAI
-notbyAI: true
-
-# Alive time
-alivetime: true
-alivestart: "12/23/2021"
 
 # TOC
 toc: true

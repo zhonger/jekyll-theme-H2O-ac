@@ -393,12 +393,12 @@ a {
         @include clearfix;
 
         .g-left {
-            width: 600px;
+            width: 500px;
             text-align: left;
         }
 
         .g-right {
-            width: 400px;
+            width: 500px;
             text-align: right;
 
             .badges {
@@ -455,6 +455,11 @@ a {
         .wormhole img {
             width: auto;
             height: 24px;
+            margin-right: 10px;
+        }
+
+        .travelling-badge img {
+            width: 120px;
             margin-right: 10px;
         }
 

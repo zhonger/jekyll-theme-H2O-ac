@@ -112,6 +112,17 @@ supports:
   upyun: 
   webify: 
 
+# Badges
+badges:
+  foreverblog: true # Foreverblog
+  wormhole: true # Wormhole
+  travelling: true # Travelling
+  notbyAI: true # NotByAI
+
+# Alive time
+alivetime: true
+alivestart: "12/23/2021"
+
 # Beian 备案号
 beian: '沪ICP备xxxxxxxx号'
 
@@ -185,22 +196,6 @@ extlinks:
 
 # Mermaid
 mermaid: true
-
-# Webpusher
-webpusher: false
-
-# Foreverblog
-foreverblog: false
-
-# Wormhole
-wormhole: false
-
-# NotByAI
-notbyAI: false
-
-# Alive time
-alivetime: false
-alivestart: "12/23/2021"
 
 # TOC
 toc: true
