@@ -114,16 +114,16 @@
         position: fixed;
         right: 20.8px;
         top: auto;
-        max-height: 60%;
         bottom: 157px;
         margin-left: 0px;
         max-width: 95%;
         background-color: aliceblue;
         z-index: 1010;
-        overflow: scroll;
-        // max-height: 450px;
         margin-bottom: 5px;
         padding: 25px;
+        .toc-body {
+            height: 300px;
+        }
         &.active {
             visibility: visible;
             opacity: 1;

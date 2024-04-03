@@ -118,12 +118,14 @@ type: post
         </div>
         {% if page.content contains 'h1' or page.content contains 'h2' or page.content contains 'h3' or page.content
         contains 'h4' or page.content contains 'h5' or page.content contains 'h6' and site.toc %}
-        <div class="table-of-contents">
-            <h2>{{ post.outline }}</h2>
-            {% include layouts/toc.html html=content %}
-            {% else %}
+            <div class="table-of-contents">
+                <div class="toc-header"><h2>{{ post.outline }}</h2></div>
+                <div class="toc-body">
+                    {% include layouts/toc.html html=content %}
+                </div>
+        {% else %}
             <div class="table-of-contents hidden">
-                {% endif %}
+        {% endif %}
             </div>
         </div>
         {% include plugins/others/social_block.html %}

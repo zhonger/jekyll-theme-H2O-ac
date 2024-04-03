@@ -368,7 +368,7 @@ $(document).ready(function () {
         /*获取文章目录集合,可通过：header过滤器*/
         var alis = $('article :header');
         /*获取侧边栏目录列表集合**/
-        var sidebar_alis = $('.table-of-contents').find('a');
+        var sidebar_alis = $('.table-of-contents a').parent();
         /*获取滚动条到顶部的距离*/
         var scroll_height = $(window).scrollTop();
         if (scroll_height > 0) {
@@ -384,7 +384,7 @@ $(document).ready(function () {
             }
         }
     }
-
+    $($('.table-of-contents a').parent()[0]).addClass('active');
     locateCatelogList();
     $(window).bind('scroll', locateCatelogList);
 
@@ -718,8 +718,8 @@ $(document).ready(function () {
                 'subDomain': { 'type': 'xYear', 'width': 36, 'height': 36, 'gutter': 5, 'radius': 3 },
                 'range': 6,
             };
-            if(archive=="False"){
-                paras.range = parseInt($("#cal-heatmap").width()/40)
+            if (archive == "False") {
+                paras.range = parseInt($("#cal-heatmap").width() / 40)
             }
             var start_date = new Date(dayjs(endDay).subtract(paras.range - 1, 'year'))
         } else {

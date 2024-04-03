@@ -19,10 +19,10 @@
         }
     }
 
-    .submenu li:hover::marker, 
+    .submenu li:hover::marker,
     .submenu li a:hover,
     .table-of-contents h2,
-    .table-of-contents a.active {
+    .table-of-contents li.active > a {
         color: $color-theme-default;
     }
 
@@ -55,6 +55,10 @@
         ol li:before {
             background-color: $color-theme-default-1;
         }
+    }
+
+    .table-of-contents li.active:before {
+        background-color: $color-theme-default;
     }
 
     .search-card {
@@ -93,10 +97,10 @@
         }
     }
 
-    .submenu li:hover::marker, 
+    .submenu li:hover::marker,
     .submenu li a:hover,
     .table-of-contents h2,
-    .table-of-contents a.active {
+    .table-of-contents li.active > a {
         color: $color-theme-pink;
     }
 
@@ -129,6 +133,12 @@
         ol li:before {
             background-color: $color-theme-pink-1;
         }
+
+
+    }
+
+    .table-of-contents ul li.active:before {
+        background-color: $color-theme-pink;
     }
 
     .search-card {
@@ -157,7 +167,9 @@
         .friends .frienddiv:hover {
             background-color: $color-theme-default-3;
         }
-        .submenu li:hover::marker, .submenu a:hover {
+
+        .submenu li:hover::marker,
+        .submenu a:hover {
             color: $color-theme-default;
         }
     }
@@ -172,7 +184,9 @@
         .friends .frienddiv:hover {
             background-color: $color-theme-pink-3;
         }
-        .submenu li:hover::marker, .submenu a:hover {
+
+        .submenu li:hover::marker,
+        .submenu a:hover {
             color: $color-theme-pink;
         }
     }

@@ -14,8 +14,8 @@
         transition: .3s;
         max-width: 100%;
         max-height: 100%;
-        margin-top: 16px;
-        margin-bottom: 5px;
+        margin: 16px auto 5px;
+        display: block;
     }
 
     .caption {
@@ -259,12 +259,14 @@
 
     .table-area {
         overflow: auto;
+        margin: 0 auto;
 
         table {
             word-break: keep-all;
             word-wrap: break-word;
             text-overflow: ellipsis;
             white-space: nowrap;
+            margin: 0 auto;
         }
     }
 
