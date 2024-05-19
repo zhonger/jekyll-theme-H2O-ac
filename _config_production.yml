@@ -68,6 +68,11 @@ avatar: '/assets/img/profile.webp'
 
 # Search
 search: true
+# search_type: docsearch  # "default", "docsearch" are supported.
+# docsearch:
+#   appId: 
+#   apiKey: 
+#   indexName: 
 
 # Night mode
 nightMode: false

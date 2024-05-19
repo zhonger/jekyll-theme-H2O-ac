@@ -3,6 +3,9 @@
       <a href="{{ "/" | relative_url }}" aria-label="logo"></a>
     </div>
     <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
+    {% if site.search and site.search_type == "docsearch" %}
+        <div id="search-toggle"></div>
+    {% endif %}
     {% if site.badges.travelling %}
     <div id="travelling-toggle">
         <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
@@ -64,6 +67,9 @@
                     <use xlink:href="#icon-night"></use>
                 </svg>
             </li>
+            {% if site.search and site.search_type == "docsearch" %}
+            <li id="search"></li>
+            {% endif %}
         </ul>
     </nav>
 </header>

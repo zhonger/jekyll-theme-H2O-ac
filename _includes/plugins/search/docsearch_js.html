@@ -1,0 +1,19 @@
+{% if site.search and site.search_type == "docsearch" %}
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+    docsearch({
+        appId: "{{ site.docsearch.appId }}",
+        apiKey: "{{ site.docsearch.apiKey }}",
+        indexName: "{{ site.docsearch.indexName }}",
+        container: 'li#search',
+        debug: true,
+    });
+    docsearch({
+        appId: "{{ site.docsearch.appId }}",
+        apiKey: "{{ site.docsearch.apiKey }}",
+        indexName: "{{ site.docsearch.indexName }}",
+        container: '#search-toggle',
+        debug: true,
+    });
+</script>
+{% endif %}

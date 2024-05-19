@@ -187,7 +187,7 @@
         position: absolute;
         top: 0;
         padding: 28px 0;
-        #travelling-toggle, #mode-toggle {
+        #search-toggle, #travelling-toggle, #mode-toggle {
             display: block;
         }
         .icon-menu {
@@ -218,7 +218,7 @@
                     color: #A5A8B0;
                     opacity: 1;
                 }
-                &.travelling, &.mode{
+                &#search, &.travelling, &.mode{
                     display: none;
                 }
             }

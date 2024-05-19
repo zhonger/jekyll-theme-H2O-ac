@@ -205,6 +205,7 @@ a {
 
         .calendar-top {
             margin: 10px auto;
+
             .button {
                 border-radius: 5px;
                 padding: 3px 5px;
@@ -237,6 +238,13 @@ a {
             }
         }
     }
+}
+li#search {
+    margin: 8px 5px;
+}
+
+.DocSearch-Container {
+    z-index: 1002;
 }
 
 .search-card {
@@ -431,7 +439,7 @@ a {
                 width: 80px;
                 height: 15px;
             }
-            
+
         }
 
         .icon {
