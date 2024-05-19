@@ -48,8 +48,8 @@
     <meta name="google-site-verification" content="{{ site.google_search }}" />
     {% endif %}
     <meta name="theme-color" content="{{ site.pwa.color }}" />
-    <link rel="manifest" href="{{ " /manifest.json" | prepend: site.baseurl }}" />
-    <link rel="apple-touch-icon" href="{{ " /assets/img/touch/apple-touch-icon.png" | prepend: site.baseurl }}" />
+    <link rel="manifest" href="{{ "/manifest.json" | prepend: site.baseurl }}" />
+    <link rel="apple-touch-icon" href="{{ "/assets/img/touch/apple-touch-icon.png" | prepend: site.baseurl }}" />
     <link rel="Shortcut Icon" href="{{ site.favicon | prepend: site.baseurl }}">
     <link rel="icon" href="{{ site.favicon | prepend: site.baseurl }}" type="image/x-icon" />
     <link rel="bookmark" href="{{ site.favicon | prepend: site.baseurl }}" type="image/x-icon" />
@@ -65,6 +65,6 @@
     {% include plugins/markdown/prism_css.html %}
     {% include plugins/comments/waline_css.html %}
     {% include plugins/search/docsearch_css.html %}
-    <link rel="stylesheet" href="{{ " /assets/css/app.min.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/assets/css/app.min.css" | prepend: site.baseurl }}">
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
