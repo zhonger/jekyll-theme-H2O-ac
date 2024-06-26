@@ -123,6 +123,9 @@
 
     ul {
         list-style: revert;
+        li {
+            line-height: 1.8;
+        }
     }
 
     &>ol {
