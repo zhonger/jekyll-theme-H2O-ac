@@ -13,9 +13,14 @@
 
 A Jekyll theme for researchers and maintainers based on Jekyll and [H2O](https://github.com/kaeyleo/jekyll-theme-H2O) theme.
 
+使用文档：[https://h2o-ac-doc.lisz.me](https://h2o-ac-doc.lisz.me)
+
+Usage documentation is only available in Chinese now, but English version will be available soon.
+
 ## Preview
 
 ### [在线预览 Live Demo →](https://h2o-ac.pages.dev/)
+
 ![Picyard Thu Jul 06 2023 14_59_28 GMT+0900 (日本标准时间)](https://github.com/zhonger/jekyll-theme-H2O-ac/assets/12064158/e6d55bf7-b956-46e9-80d0-f33397a62215)
 ![Picyard Thu Jul 06 2023 15_09_27 GMT+0900 (日本标准时间)](https://github.com/zhonger/jekyll-theme-H2O-ac/assets/12064158/fa9a087a-d849-4469-9830-2400d3410660)
 
