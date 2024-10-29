@@ -57,30 +57,32 @@
     <div class="g-right">
       {% if site.supports.upyun %}
       <section>
-        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">{{ footer.upyun }} <img src="{{ "/assets/icons/upyun.png" | relative_url }}" class="upyun" alt="upyun" /></a>
+        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">{{
+          footer.upyun }} <img src="{{ " /assets/icons/upyun.png" | prepend: site.baseurl }}" class="upyun" alt="upyun" /></a>
       </section>
       {% endif %}
       {% if site.badges.foreverblog or site.badges.wormhole or site.badges.travelling or site.badges.notbyAI %}
       <section class="badges">
         {% if site.badges.foreverblog %}
-          <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog"> 
-            <img src="https://img.foreverblog.cn/logo_en_default.png" alt=""> 
-          </a>
+        <a href="https://www.foreverblog.cn/" target="_blank" class="foreverblog" aria-label="foreverblog">
+          <img src="{{ " /assets/icons/forever_en_default.png" | prepend: site.baseurl }}" alt="foreverblog">
+        </a>
         {% endif %}
         {% if site.badges.wormhole %}
-          <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole"> 
-            <img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
-          </a>
+        <a href="https://www.foreverblog.cn/go.html" target="_blank" class="wormhole" aria-label="wormhole">
+          <img src="{{ " /assets/icons/wormhole_3.gif" | prepend: site.baseurl }}" alt="" title="穿梭虫洞-随机访问十年之约友链博客">
+        </a>
         {% endif%}
         {% if site.badges.travelling %}
-          <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling" rel="noopener" title="开往-友链接力">
-            <img src="https://cdn.jsdelivr.net/gh/travellings-link/travellings/assets/logo.gif" alt="开往-友链接力">
-          </a>
+        <a href="https://www.travellings.cn/go.html" target="_blank" class="travelling-badge" aria-label="Travelling"
+          rel="noopener" title="开往-友链接力">
+          <img src="{{ " /assets/icons/travellings.gif" | prepend: site.baseurl }}" alt="开往-友链接力">
+        </a>
         {% endif %}
         {% if site.badges.notbyAI %}
-          <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI"> 
-            <img src="{{ "/assets/icons/notbyAI-white.png" | prepend: site.baseurl }}" alt="Written by Human, Not by AI">
-          </a>
+        <a href="https://notbyai.fyi/" target="_blank" class="notbyAI" aria-label="notbyAI">
+          <img src="{{ " /assets/icons/notbyAI-white.png" | prepend: site.baseurl }}" alt="Written by Human, Not by AI">
+        </a>
         {% endif %}
       </section>
       {% endif %}
