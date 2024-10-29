@@ -1,3 +1,7 @@
 {% if site.busuanzi %}
+{% if site.busuanzi_url %}
+<script async src="{{site.busuanzi_url}}"></script>
+{% else %}
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+{% endif %}
 {% endif %}

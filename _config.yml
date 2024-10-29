@@ -73,7 +73,7 @@ comments:
   disqus: false
   disqus_url: 'https://h2o-ac.disqus.com/embed.js'
   waline: false
-  waline_url: 'https://h2o-ac-waline.deta.dev/'
+  waline_url: 'https://h2o-ac-waline.lisz.top/'
   waline_reaction: false
   waline_locale: 
 
@@ -135,6 +135,7 @@ cnzz:
 
 # Busuanzi Analytics
 busuanzi: true
+#busuanzi_url: https://busuanzi.lisz.top/js 
 
 # Umami Analytics
 umami:

@@ -82,7 +82,7 @@ comments:
   disqus: true
   disqus_url: 'https://h2o-ac.disqus.com/embed.js'
   waline: true
-  waline_url: 'https://h2o-ac-waline.deta.dev/'
+  waline_url: 'https://h2o-ac-waline.lisz.top/'
   waline_reaction: true
   waline_locale: "{reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}"
 
@@ -145,6 +145,7 @@ cnzz:
 
 # Busuanzi Analytics
 busuanzi: true
+busuanzi_url: https://busuanzi.lisz.top/js
 
 # Umami Analytics
 umami:

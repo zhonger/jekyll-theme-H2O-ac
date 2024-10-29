@@ -6,28 +6,30 @@
     <div class="g-left">
       <section class="links">
         {{ footer.driver }}
-        {% if site.version %} (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v{{ site.version }}" target="_blank" class="extlinks">v{{ site.version }}</a>){% endif %}  
-        {% if site.supports.webify %} & <a href="https://webify.cloudbase.net/" target="_blank" class="extlinks">CloudBase Webify</a> {% endif %}
+        {% if site.version %} (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v{{ site.version }}"
+          target="_blank" class="extlinks">v{{ site.version }}</a>){% endif %}
+        {% if site.supports.webify %} & <a href="https://webify.cloudbase.net/" target="_blank"
+          class="extlinks">CloudBase Webify</a> {% endif %}
       </section>
       <section class="links">{{ site.title }} ©
         {% assign current = "now" | date: "%Y" | plus: 0%}
         {% unless site.footer.since and site.footer.since == current %}
-          {{ site.footer.since }}
-          -
+        {{ site.footer.since }}
+        -
         {% endunless %}
         {{ current }}
         {% if site.beian and site.beian != "" %}
-          <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
+        <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
         {% endif %}
         <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-rss"></use>
-          </svg> RSS  
+          </svg> RSS
         </a>
         <a href="/tos" target="_blank" aria-label="Terms of Service" class="others">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-tos"></use>
-          </svg> {{footer.tos.name}}  
+          </svg> {{footer.tos.name}}
         </a>
       </section>
       {% if site.busuanzi %}
@@ -35,22 +37,34 @@
         <span id="busuanzi_container_site_pv">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-pv"></use>
-          </svg> {{ footer.views }} <span id="busuanzi_value_site_pv"></span> <b>·</b>
+          </svg> {{ footer.views }}
+          {% if site.busuanzi_url %}
+          <span id="busuanzi_site_pv">
+            {% else %}
+            <span id="busuanzi_value_site_pv"></span>
+            {% endif %}
+            <b>·</b>
+          </span>
         </span>
         <span id="busuanzi_container_site_uv">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-user"></use>
-          </svg> {{ footer.visitors }} <span id="busuanzi_value_site_uv"></span>
+          </svg> {{ footer.visitors }}
+          {% if site.busuanzi_url %}
+          <span id="busuanzi_site_uv"></span>
+          {% else %}
+          <span id="busuanzi_value_site_uv"></span>
+          {% endif %}
         </span>
       </section>
       {% endif %}
       <section>
         {% if site.alivetime %}
-          {{ footer.running.info }} 
-          <span class="alivetime_days"></span> {{ footer.running.day }}
-          <span class="alivetime_hours"></span> {{ footer.running.hour }}
-          <span class="alivetime_minutes"></span> {{ footer.running.minute }}
-          <span class="alivetime_seconds"></span> {{ footer.running.second }}
+        {{ footer.running.info }}
+        <span class="alivetime_days"></span> {{ footer.running.day }}
+        <span class="alivetime_hours"></span> {{ footer.running.hour }}
+        <span class="alivetime_minutes"></span> {{ footer.running.minute }}
+        <span class="alivetime_seconds"></span> {{ footer.running.second }}
         {% endif %}
       </section>
     </div>
@@ -88,12 +102,14 @@
       {% endif %}
     </div>
     {% if site.cnzz %}
-    <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz }}'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D{{ site.cnzz }}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script
+      type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_{{ site.cnzz }}'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D{{ site.cnzz }}%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
     {% endif %}
   </div>
 </footer>
 <div class="cookie-tip">
-  {{ cookie.cookieconsent_status }} {{ footer.tos.left }}「 <a href="{{ site.tos | prepend: site.baseurl }}">{{ footer.tos.middle }}</a> 」{{ footer.tos.right }}
+  {{ cookie.cookieconsent_status }} {{ footer.tos.left }}「 <a href="{{ site.tos | prepend: site.baseurl }}">{{
+    footer.tos.middle }}</a> 」{{ footer.tos.right }}
 
   <button id="accept-tos">{{ footer.tos.btn }}</button>
 </div>
@@ -109,7 +125,8 @@
     </svg>
   </div>
   {% endif %}
-  {% if page.content contains 'h1' or page.content contains 'h2' or page.content contains 'h3' or page.content contains 'h4' or page.content contains 'h5' or page.content contains 'h6' and site.toc %}
+  {% if page.content contains 'h1' or page.content contains 'h2' or page.content contains 'h3' or page.content contains
+  'h4' or page.content contains 'h5' or page.content contains 'h6' and site.toc %}
   <div class="tool toc">
     <svg class="icon b1 active" aria-hidden="true">
       <use xlink:href="#icon-toc"></use>
