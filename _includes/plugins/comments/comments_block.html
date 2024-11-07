@@ -1,3 +1,35 @@
+{% assign page_comments = "" %}
+{% assign page_comments_num = 0 %}
+{% if page.comments.disqus %}
+    {% assign page_comments = page_comments | append: "disqus, " %}
+    {% assign page_comments_num = page_comments_num | plus: 1 %}
+{% endif %}
+{% if page.comments.waline %}
+    {% assign page_comments = page_comments | append: "waline, " %}
+    {% assign page_comments_num = page_comments_num | plus: 1 %}
+{% endif %}
+{% if page.comments.artalk %}
+    {% assign page_comments = page_comments | append: "artalk, " %}
+    {% assign page_comments_num = page_comments_num | plus: 1 %}
+{% endif %}
+{% assign page_comments = page_comments | split: ", " %}
+
+{% assign total_comments = "" %}
+{% assign total_comments_num = 0 %}
+{% if page.comments.disqus or site.comments.disqus and page.comments.disqus == nil %}
+    {% assign total_comments = total_comments | append: "disqus, " %}
+    {% assign total_comments_num = total_comments_num | plus: 1 %}
+{% endif %}
+{% if page.comments.waline or site.comments.waline and page.comments.waline == nil %}
+    {% assign total_comments = total_comments | append: "waline, " %}
+    {% assign total_comments_num = total_comments_num | plus: 1 %}
+{% endif %}
+{% if page.comments.artalk or site.comments.artalk and page.comments.artalk == nil %}
+    {% assign total_comments = total_comments | append: "artalk, " %}
+    {% assign total_comments_num = total_comments_num | plus: 1 %}
+{% endif %}
+{% assign total_comments = total_comments | split: ", " %}
+
 {% capture block %}
 <section class="post-footer-item comment">
     <div class="comments-headline">
@@ -7,61 +39,101 @@
         <span>{{ locales.post.comment }}</span>
     </div>
     {% if layout.type == "post" %}
-        {% if site.comments.disqus and site.comments.waline %}
+        {% if total_comments_num >= 2 %}
         <div id="comments-switch">
-            <span class="first-comment">Disqus</span>
+            <span class="first-comment">{{ total_comments[0] | capitalize }}</span>
             <span class="switch-button">
                 <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
                 <label for="cmn-toggle-4"></label>
             </span>
-            <span class="second-comment">Waline</span>
+            <span class="second-comment">{{ total_comments[1] | capitalize }}</span>
         </div>
         {% endif %}
     {% else %}
-        {% if page.comments.disqus and page.comments.waline %}
+        {% if page_comments_num >= 2 %}
         <div id="comments-switch">
-            <span class="first-comment">Disqus</span>
+            <span class="first-comment">{{ page_comments[0] | capitalize }}</span>
             <span class="switch-button">
                 <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
                 <label for="cmn-toggle-4"></label>
             </span>
-            <span class="second-comment">Waline</span>
+            <span class="second-comment">{{ page_comments[1] | capitalize }}</span>
         </div>
         {% endif %}
     {% endif %}
 </section>
 {% endcapture %}
 
+{% capture disqus_block %}
+<section class="post-footer-item comment">
+    <div id="disqus_thread"></div>
+</section>
+{% endcapture %}
+
+{% capture waline_block %}
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+{% endcapture %}
+
+{% capture artalk_block %}
+<section class="post-footer-item comment">
+    <div id="artalk"></div>
+</section>
+{% endcapture %}
+
 {% if layout.type == "post" %}
-    {% if site.comments.disqus or site.comments.waline or page.comments.waline or page.comments.disqus %}
+    {% if total_comments_num > 0 %}
         {{ block }}
     {% endif %}
 {% else %}
-    {% if page.comments.disqus or page.comments.waline %} 
+    {% if page_comments_num > 0 %}
         {{ block }}
     {% endif %}
 {% endif %}
 
 {% if layout.type == "post" %}
-    {% if site.comments.disqus %}
-    <section class="post-footer-item comment">
-        <div id="disqus_thread"></div>
-    </section>
-    {% endif %}
-    {% if site.comments.waline %}
-    <section class="post-footer-item comment">
-        <div id="waline"></div>
-    </section>
+    {% if total_comments_num >= 2 %}
+        {% for comments in total_comments limit: 2 %}
+            {% if comments == "disqus" %}
+                {{ disqus_block }}
+            {% elsif comments == "waline" %}
+                {{ waline_block }}
+            {% elsif comments == "artalk" %}
+                {{ artalk_block }}
+            {% endif %}
+        {% endfor %}
+    {% elsif total_comments_num > 0 %}
+        {% for comments in total_comments %}
+            {% if comments == "disqus" %}
+                {{ disqus_block }}
+            {% elsif comments == "waline" %}
+                {{ waline_block }}
+            {% elsif comments == "artalk" %}
+                {{ artalk_block }}
+            {% endif %}
+        {% endfor %}
     {% endif %}
 {% else %}
-    {% if page.comments.disqus %}
-    <section class="post-footer-item comment">
-        <div id="disqus_thread"></div>
-    </section>
-    {% endif %}
-    {% if page.comments.waline %}
-    <section class="post-footer-item comment">
-        <div id="waline"></div>
-    </section>
+    {% if page_comments_num >= 2 %}
+        {% for comments in page_comments limit: 2 %}
+            {% if comments == "disqus" %}
+                {{ disqus_block }}
+            {% elsif comments == "waline" %}
+                {{ waline_block }}
+            {% elsif comments == "artalk" %}
+                {{ artalk_block }}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% if page.comments.disqus %}
+            {{ disqus_block }}
+        {% endif %}
+        {% if page.comments.waline %}
+            {{ waline_block }}
+        {% endif %}
+        {% if page.comments.artalk %}
+            {{ artalk_block }}
+        {% endif %}
     {% endif %}
 {% endif %}

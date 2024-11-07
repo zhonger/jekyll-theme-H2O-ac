@@ -76,6 +76,10 @@ comments:
   waline_url: 'https://h2o-ac-waline.lisz.top/'
   waline_reaction: false
   waline_locale: 
+  artalk: false
+  artalk_url: 'https://artalk.lisz.top'
+  artalk_name: 'h2o-ac'
+  artalk_uaBadge: false
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true

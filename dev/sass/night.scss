@@ -183,8 +183,10 @@
                 background-color: #575B63;
             }
         }
+
         .submenu {
             color: #ffffff;
+
             a {
                 color: #ffffff;
             }
@@ -248,6 +250,7 @@
         table tr {
             background-color: transparent;
         }
+
         #archive-articles {
             ul {
                 li:before {
@@ -330,6 +333,7 @@
     }
 
     .author-detail,
+    .atk-dropdown-wrap,
     #waline button,
     .wl-editor,
     .wl-input,
@@ -351,6 +355,31 @@
 
     .wl-card .wl-meta span {
         background: #272727;
+    }
+
+    .atk-main-editor,
+    .atk-textarea,
+    .atk-fade-in,
+    .atk-grp-switcher {
+        background: #252934 !important;
+        color: #ffffff!important;
+    }
+
+    .atk-grp-switcher {
+        span:hover,
+        span.active {
+            color: #252934;
+        }
+    }
+
+    .artalk {
+        color: #ffffff;
+    }
+
+    .atk-actions {
+        span:hover {
+            color: #0083ff!important;
+        }
     }
 
     .archives-date {
