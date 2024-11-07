@@ -334,6 +334,7 @@
 
         #disqus_thread,
         #artalk,
+        .utterances,
         #waline {
             display: none;
 
@@ -369,7 +370,7 @@
             display: block;
             float: right;
             margin-bottom: 10px;
-            min-width: 176px;
+            min-width: 190px;
             text-align: center;
 
             .first-comment {

@@ -1,0 +1,10 @@
+{% if site.comments.utterances or page.comments.utterances %}
+<script src="{{ site.comments.utterances_url }}"
+        repo="{{ site.comments.utterances_repo }}"
+        issue-term="{{ site.comments.utterances_issue_term | default: 'pathname' }}"
+        label="{{ site.comments.utterances_label | default: '' }}"
+        theme="{{ site.comments.utterances_theme | default: 'github-light' }}"
+        crossorigin="anonymous"
+        async>
+</script>
+{% endif %}

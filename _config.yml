@@ -80,6 +80,9 @@ comments:
   artalk_url: 'https://artalk.lisz.top'
   artalk_name: 'h2o-ac'
   artalk_uaBadge: false
+  utterances: true
+  utterances_url: 'https://utteranc.es/client.js'
+  utterances_repo: 'zhonger/utterances-comments'
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true
