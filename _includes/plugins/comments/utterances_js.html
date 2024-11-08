@@ -1,4 +1,4 @@
-{% if site.comments.utterances or page.comments.utterances %}
+{% if page.comments.utterances or site.comments.utterances and layout.type == "post" %}
 <script src="{{ site.comments.utterances_url }}"
         repo="{{ site.comments.utterances_repo }}"
         issue-term="{{ site.comments.utterances_issue_term | default: 'pathname' }}"

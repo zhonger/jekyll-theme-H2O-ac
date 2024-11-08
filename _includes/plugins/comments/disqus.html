@@ -1,4 +1,4 @@
-{% if site.comments.disqus or page.comments.disqus %}
+{% if  page.comments.utterances or site.comments.disqus and layout.type == "post" %}
 <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.

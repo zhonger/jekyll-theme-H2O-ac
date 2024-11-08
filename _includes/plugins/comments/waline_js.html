@@ -1,4 +1,4 @@
-{% if site.comments.waline or page.comments.waline %}
+{% if page.comments.waline or site.comments.waline and layout.type == "post" %}
 <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
 <script>
     $(document).ready(function () {
