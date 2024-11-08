@@ -1,0 +1,53 @@
+{% if page.comments.giscus or site.comments.giscus and layout.type == "post" %}
+<script>
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+    function changeGiscusTheme() {
+        const theme = getCookie("mode") === 'night' ? 'dark' : 'light'
+        const url = "{{ site.comments.giscus_url | default: 'https://giscus.app/client.js' }}"
+        const baseUrl = url.split('/').slice(0, 3).join('/')
+        console.log(baseUrl, theme);
+
+        function sendMessage(message) {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (!iframe) return;
+            iframe.contentWindow.postMessage({ giscus: message }, baseUrl);
+        }
+
+        sendMessage({
+            setConfig: {
+                theme: theme
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const n = {
+            src: "{{ site.comments.giscus_url | default: 'https://giscus.app/client.js' }}",
+            "data-repo": "{{ site.comments.giscus_repo }}",
+            "data-repo-id": "{{ site.comments.giscus_repo_id }}",
+            "data-category-id": "{{ site.comments.giscus_category_id }}",
+            "data-mapping": "{{ site.comments.giscus_mapping | default: 'pathname' }}",
+            "data-strict": "1",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "top",
+            "data-theme": getCookie("mode") === 'night' ? 'dark' : 'light',
+            "data-lang": "{{ site.comments.giscus_lang | default: 'zh-CN' }}",
+            "data-loading": "lazy",
+            crossorigin: "anonymous",
+            async: ""
+        }, e = document.createElement("script");
+        Object.entries(n).forEach( ([t,n]) => e.setAttribute(t, n)),
+        document.body.appendChild(e);
+    });
+</script>
+{% endif %}

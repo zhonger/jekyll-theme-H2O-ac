@@ -382,17 +382,17 @@ $(document).ready(function () {
                 $(sidebar_alis).removeClass('active');
                 $(sidebar_alis[i]).addClass('active');
                 a_height = $(".toc-body li.active").offset().top - $(".toc-header h2").offset().top
-                var t_height = $(".toc-body li.active").offset().top-$(".toc-body li:first-child").offset().top
+                var t_height = $(".toc-body li.active").offset().top - $(".toc-body li:first-child").offset().top
                 if (a_height < 22) {
-                    $(".toc-body").scrollTop(t_height-350);
+                    $(".toc-body").scrollTop(t_height - 350);
                 }
                 if (a_height > 350) {
-                    $(".toc-body").scrollTop(t_height-72);
+                    $(".toc-body").scrollTop(t_height - 72);
                 }
             }
         }
     }
-    if($(".toc-body").length >0){
+    if ($(".toc-body").length > 0) {
         $($('.table-of-contents a').parent()[0]).addClass('active');
         locateCatelogList();
         $(window).bind('scroll', locateCatelogList);
@@ -455,6 +455,9 @@ $(document).ready(function () {
             DISQUS.reset({
                 reload: true
             });
+        }
+        if ($(".giscus").length > 0) {
+            changeGiscusTheme();
         }
         $(".g-nav li.mode .icon").toggleClass("active");
         $("#mode-toggle .icon").toggleClass("active");

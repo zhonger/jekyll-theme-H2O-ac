@@ -80,9 +80,15 @@ comments:
   artalk_url: 'https://artalk.lisz.top'
   artalk_name: 'h2o-ac'
   artalk_uaBadge: false
-  utterances: true
+  utterances: false
   utterances_url: 'https://utteranc.es/client.js'
-  utterances_repo: 'zhonger/utterances-comments'
+  # utterances_repo: 'zhonger/utterances-comments'
+  giscus: false
+  giscus_url: 'https://giscus.app/client.js'
+  # giscus_repo: 'zhonger/giscus-comments'
+  # giscus_repo_id: 'R_kgDONLt80A'
+  # giscus_category_id: 'DIC_kwDONLt80M4CkDnG'
+  giscus_lang: 'zh-CN'
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true
