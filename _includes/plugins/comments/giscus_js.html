@@ -14,7 +14,6 @@
         const theme = getCookie("mode") === 'night' ? 'dark' : 'light'
         const url = "{{ site.comments.giscus_url | default: 'https://giscus.app/client.js' }}"
         const baseUrl = url.split('/').slice(0, 3).join('/')
-        console.log(baseUrl, theme);
 
         function sendMessage(message) {
             const iframe = document.querySelector('iframe.giscus-frame');
