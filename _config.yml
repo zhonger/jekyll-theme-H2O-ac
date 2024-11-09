@@ -89,6 +89,10 @@ comments:
   # giscus_repo_id: 'R_kgDONLt80A'
   # giscus_category_id: 'DIC_kwDONLt80M4CkDnG'
   giscus_lang: 'zh-CN'
+  twikoo: false
+  twikoo_url: 'https://twikoo.lisz.top'
+  # twikoo_region: 'ap-shanghai'
+  # twikoo_lang: 'zh-CN'
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true

@@ -382,6 +382,15 @@
         }
     }
 
+    .tk-footer {
+        a {
+            color: #ffffff;
+            &:hover {
+                color: #0083ff;
+            }
+        }
+    }
+
     .archives-date {
         color: #eff0f0;
     }

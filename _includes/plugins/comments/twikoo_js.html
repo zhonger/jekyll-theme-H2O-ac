@@ -1,0 +1,11 @@
+{% if page.comments.twikoo or site.comments.twikoo and layout.type == "post" %}
+<script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.all.min.js"></script>
+<script>
+    twikoo.init({
+        envId: "{{ site.comments.twikoo_url }}",
+        el: "#twikoo",
+        region: "{{ site.comments.twikoo_region | default: '' }}",
+        lang: "{{ site.comments.twikoo_lang | default: 'zh-CN' }}"
+    })
+</script>
+{% endif %}

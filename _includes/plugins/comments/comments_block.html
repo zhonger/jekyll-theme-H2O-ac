@@ -20,6 +20,10 @@
     {% assign page_comments = page_comments | append: "giscus, " %}
     {% assign page_comments_num = page_comments_num | plus: 1 %}
 {% endif %}
+{% if page.comments.twikoo %}
+    {% assign page_comments = page_comments | append: "twikoo, " %}
+    {% assign page_comments_num = page_comments_num | plus: 1 %}
+{% endif %}
 {% assign page_comments = page_comments | split: ", " %}
 
 {% assign total_comments = "" %}
@@ -42,6 +46,10 @@
 {% endif %}
 {% if page.comments.giscus or site.comments.giscus and page.comments.giscus == nil %}
     {% assign total_comments = total_comments | append: "giscus, " %}
+    {% assign total_comments_num = total_comments_num | plus: 1 %}
+{% endif %}
+{% if page.comments.twikoo or site.comments.twikoo and page.comments.twikoo == nil %}
+    {% assign total_comments = total_comments | append: "twikoo, " %}
     {% assign total_comments_num = total_comments_num | plus: 1 %}
 {% endif %}
 {% assign total_comments = total_comments | split: ", " %}
@@ -110,6 +118,12 @@
 </section>
 {% endcapture %}
 
+{% capture twikoo_block %}  
+<section class="post-footer-item comment">
+    <div id="twikoo"></div>
+</section>
+{% endcapture %}
+
 {% if layout.type == "post" %}
     {% if total_comments_num > 0 %}
         {{ block }}
@@ -133,6 +147,8 @@
                 {{ utterances_block }}
             {% elsif comments == "giscus" %}
                 {{ giscus_block }}
+            {% elsif comments == "twikoo" %}
+                {{ twikoo_block }}
             {% endif %}
         {% endfor %}
     {% elsif total_comments_num > 0 %}
@@ -147,6 +163,8 @@
                 {{ utterances_block }}
             {% elsif comments == "giscus" %}
                 {{ giscus_block }}
+            {% elsif comments == "twikoo" %}
+                {{ twikoo_block }}
             {% endif %}
         {% endfor %}
     {% endif %}
@@ -163,6 +181,8 @@
                 {{ utterances_block }}
             {% elsif comments == "giscus" %}
                 {{ giscus_block }}
+            {% elsif comments == "twikoo" %}
+                {{ twikoo_block }}
             {% endif %}
         {% endfor %}
     {% else %}
@@ -180,6 +200,9 @@
         {% endif %}
         {% if page.comments.giscus %}
             {{ giscus_block }}
+        {% endif %}
+        {% if page.comments.twikoo %}
+            {{ twikoo_block }}
         {% endif %}
     {% endif %}
 {% endif %}
