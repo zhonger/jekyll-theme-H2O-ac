@@ -75,6 +75,25 @@
           footer.upyun }} <img src="{{ "/assets/icons/upyun.png" | prepend: site.baseurl }}" class="upyun" alt="upyun" /></a>
       </section>
       {% endif %}
+      {% if site.badges.netlify or site.badges.vercel or site.badges.cloudflare %}
+      <section class="badges">
+        {% if site.badges.netlify %}
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="{{ "/assets/icons/netlify-icon-light.svg" | prepend: site.baseurl }}" alt="netlify">
+        </a>
+        {% endif %}
+        {% if site.badges.vercel %}
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="{{ "/assets/icons/vercel-logotype-dark.png" | prepend: site.baseurl }}" alt="vercel">
+        </a>
+        {% endif %}
+        {% if site.badges.cloudflare %}
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="{{ "/assets/icons/cloudflare-logo.webp" | prepend: site.baseurl }}" alt="cloudflare">
+        </a>
+        {% endif %}
+      </section>
+      {% endif %}
       {% if site.badges.foreverblog or site.badges.wormhole or site.badges.travelling or site.badges.notbyAI %}
       <section class="badges">
         {% if site.badges.foreverblog %}

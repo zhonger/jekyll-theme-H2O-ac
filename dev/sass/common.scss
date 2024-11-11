@@ -455,6 +455,29 @@ li#search {
             margin-bottom: -8px;
         }
 
+        .netlify img {
+            height: 20px;
+            background: #ffffff;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .vercel img {
+            height: 16px;
+            margin-left: 10px;
+            background: #ffffff;
+            padding: 7px 10px;
+            border-radius: 3px;
+        }
+
+        .cloudflare img {
+            height: 20px;
+            margin-left: 10px;
+            background: #ffffff;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
         .foreverblog img {
             width: auto;
             height: 16px;

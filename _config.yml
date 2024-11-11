@@ -131,6 +131,9 @@ supports:
 
 # Badges
 badges:
+  netlify: true # Netlify
+  vercel: true # Vercel
+  cloudflare: true # Cloudflare
   foreverblog: true # Foreverblog
   wormhole: true # Wormhole
   travelling: true # Travelling
