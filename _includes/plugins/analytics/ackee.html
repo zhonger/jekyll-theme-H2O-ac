@@ -1,0 +1,3 @@
+{% if site.ackee %}
+<script async src="{{ site.ackee_url }}/{{ site.ackee_js | default: 'tracker.js' }}" data-ackee-server="{{ site.ackee_url }}" data-ackee-domain-id="{{ site.ackee_id }}"></script>
+{% endif %}

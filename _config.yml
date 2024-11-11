@@ -172,11 +172,17 @@ shynet_url: ''
 plausible: false
 plausible_domain: 'example.com'
 plausible_url: ''
-plausible_js: ''
+# plausible_js: ''
 
 # Fathom Analytics
 fathom: false
 fathom_id: ''
+
+# Ackee Analytics
+ackee: false
+ackee_url: ''
+ackee_id: ''
+# ackee_js: ''
 
 # Google Analytics
 # google_analytics: UA-XXXXXXXXX-X
