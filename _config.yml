@@ -184,6 +184,11 @@ ackee_url: ''
 ackee_id: ''
 # ackee_js: ''
 
+# Matomo Analytics
+matomo: false
+matomo_url: ''
+matomo_id: ''
+
 # Google Analytics
 # google_analytics: UA-XXXXXXXXX-X
 google_analytics: 
