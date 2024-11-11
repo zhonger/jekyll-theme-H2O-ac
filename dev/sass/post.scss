@@ -327,7 +327,14 @@
     position: relative;
     top: -35px;
 
+    .comment-switch {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
     .comment {
+
         .wl-gif-popup {
             max-width: 90%;
         }
@@ -339,6 +346,7 @@
         .giscus,
         #waline {
             display: none;
+            position: relative;
 
             &.active {
                 display: block;
@@ -346,15 +354,15 @@
             }
         }
 
+        .tk-submit {
+            width: 100%;
+        }
+
         .comments-headline {
             display: inline-block;
             vertical-align: middle;
             font-weight: 700;
-            font-size: 1.43em;
-            margin-bottom: 20px;
-            height: 40px;
-            line-height: 40px;
-            min-width: 150px;
+            font-size: 1.2em;
 
             .icon {
                 width: 30px;
@@ -367,25 +375,22 @@
 
         #comments-switch {
             background-color: #f1f1f1;
-            padding: 10px;
-            border-radius: 10px;
-            display: block;
-            float: right;
-            margin-bottom: 10px;
-            min-width: 190px;
-            text-align: center;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
 
             .first-comment {
                 color: #3CD5FF;
+                margin-right: 5px;
             }
 
             .second-comment {
                 color: #FFCE69;
+                margin-left: 5px;
             }
 
             .switch-button {
-                display: inline-block;
-                margin-bottom: -5px;
 
                 .cmn-toggle {
                     position: absolute;

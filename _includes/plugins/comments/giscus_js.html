@@ -27,26 +27,28 @@
             }
         });
     }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const n = {
-            src: "{{ site.comments.giscus_url | default: 'https://giscus.app/client.js' }}",
-            "data-repo": "{{ site.comments.giscus_repo }}",
-            "data-repo-id": "{{ site.comments.giscus_repo_id }}",
-            "data-category-id": "{{ site.comments.giscus_category_id }}",
-            "data-mapping": "{{ site.comments.giscus_mapping | default: 'pathname' }}",
-            "data-strict": "1",
-            "data-reactions-enabled": "1",
-            "data-emit-metadata": "0",
-            "data-input-position": "top",
-            "data-theme": getCookie("mode") === 'night' ? 'dark' : 'light',
-            "data-lang": "{{ site.comments.giscus_lang | default: 'zh-CN' }}",
-            "data-loading": "lazy",
-            crossorigin: "anonymous",
-            async: ""
-        }, e = document.createElement("script");
-        Object.entries(n).forEach( ([t,n]) => e.setAttribute(t, n)),
-        document.body.appendChild(e);
-    });
+    
+    if ($(".giscuss").length > 0){
+        document.addEventListener("DOMContentLoaded", function() {
+            const n = {
+                src: "{{ site.comments.giscus_url | default: 'https://giscus.app/client.js' }}",
+                "data-repo": "{{ site.comments.giscus_repo }}",
+                "data-repo-id": "{{ site.comments.giscus_repo_id }}",
+                "data-category-id": "{{ site.comments.giscus_category_id }}",
+                "data-mapping": "{{ site.comments.giscus_mapping | default: 'pathname' }}",
+                "data-strict": "1",
+                "data-reactions-enabled": "1",
+                "data-emit-metadata": "0",
+                "data-input-position": "top",
+                "data-theme": getCookie("mode") === 'night' ? 'dark' : 'light',
+                "data-lang": "{{ site.comments.giscus_lang | default: 'zh-CN' }}",
+                "data-loading": "lazy",
+                crossorigin: "anonymous",
+                async: ""
+            }, e = document.createElement("script");
+            Object.entries(n).forEach( ([t,n]) => e.setAttribute(t, n)),
+            document.body.appendChild(e);
+        });
+    }
 </script>
 {% endif %}
