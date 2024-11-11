@@ -79,12 +79,28 @@ nightMode: false
 
 # Comments 评论功能
 comments:
-  disqus: true
+  disqus: false
   disqus_url: 'https://h2o-ac.disqus.com/embed.js'
   waline: true
   waline_url: 'https://h2o-ac-waline.lisz.top/'
   waline_reaction: true
   waline_locale: "{reaction0: '赞一个', reaction1: '踩一下', reaction2: '有点酷', reaction3: '看不懂', reaction4: '啥玩意', reaction5: '想睡觉'}"
+  artalk: true
+  artalk_url: 'https://artalk.lisz.top'
+  artalk_name: 'h2o-ac'
+  artalk_uaBadge: false
+  utterances: false
+  utterances_url: 'https://utteranc.es/client.js'
+  utterances_repo: 'zhonger/utterances-comments'
+  utterances_theme: 'github-light'
+  giscus: false
+  giscus_url: 'https://giscus.app/client.js'
+  giscus_repo: 'zhonger/giscus-comments'
+  giscus_repo_id: 'R_kgDONLt80A'
+  giscus_category_id: 'DIC_kwDONLt80M4CkDnG'
+  giscus_lang: 'zh-CN'
+  twikoo: false
+  twikoo_url: 'https://twikoo.lisz.top'
 
 # MathJax 公式支持 by Ray-Eldath
 mathjax: true
@@ -124,9 +140,13 @@ supports:
 
 # Beian 备案号
 beian: '沪ICP备xxxxxxxx号'
+# moe_beian: '20240463'
 
 # Badges
 badges:
+  netlify: true # Netlify
+  vercel: true # Vercel
+  cloudflare: true # Cloudflare
   foreverblog: true # Foreverblog
   wormhole: true # Wormhole
   travelling: true # Travelling
