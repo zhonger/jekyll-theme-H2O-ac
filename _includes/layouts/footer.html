@@ -21,6 +21,9 @@
         {% if site.beian and site.beian != "" %}
         <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
         {% endif %}
+        {% if site.moe_beian and site.moe_beian != "" %}
+        <a href="https://icp.gov.moe/?keyword={{ site.moe_beian }}" target="_blank" class="extlinks">萌ICP备{{ site.moe_beian }}号</a>
+        {% endif %}
         <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-rss"></use>
