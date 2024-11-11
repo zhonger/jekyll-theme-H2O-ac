@@ -67,6 +67,9 @@
 
 
     
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/artalk/dist/Artalk.min.css">
+
+    
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 </head>
@@ -440,9 +443,41 @@
     
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
         
-<section class="post-footer-item comment">
+<section class="post-footer-item comment comment-switch">
     <div class="comments-headline">
         <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-comment"></use>
@@ -452,12 +487,12 @@
     
         
         <div id="comments-switch">
-            <span class="first-comment">Disqus</span>
+            <span class="first-comment">Waline</span>
             <span class="switch-button">
                 <input id="cmn-toggle-4" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
                 <label for="cmn-toggle-4"></label>
             </span>
-            <span class="second-comment">Waline</span>
+            <span class="second-comment">Artalk</span>
         </div>
         
     
@@ -468,14 +503,23 @@
 
 
     
-    <section class="post-footer-item comment">
-        <div id="disqus_thread"></div>
-    </section>
-    
-    
-    <section class="post-footer-item comment">
-        <div id="waline"></div>
-    </section>
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="waline"></div>
+</section>
+
+            
+        
+            
+                
+<section class="post-footer-item comment">
+    <div id="artalk"></div>
+</section>
+
+            
+        
     
 
 </section>
@@ -487,8 +531,8 @@
     <div class="g-left">
       <section class="links">
         本站由 <a href="//jekyllrb.com" target="_blank" class="extlinks">Jekyll</a> 和 (基于 <a href="https://github.com/kaeyleo/jekyll-theme-H2O" target="_blank" class="extlinks">H2O</a> 的) <a href="https://github.com/zhonger/jekyll-theme-H2O-ac" target="_blank" class="extlinks">H2O-ac</a> 强力驱动
-         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.3.6"
-          target="_blank" class="extlinks">v1.3.6</a>)
+         (<a href="https://github.com/zhonger/jekyll-theme-H2O-ac/releases/tag/v1.4.0"
+          target="_blank" class="extlinks">v1.4.0</a>)
         
       </section>
       <section class="links">Mr Li ©
@@ -500,6 +544,7 @@
         2024
         
         <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">沪ICP备xxxxxxxx号</a>
+        
         
         <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
           <svg class="icon" aria-hidden="true">
@@ -548,6 +593,25 @@
       
       <section>
         <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" class="extlinks">CDN 加速/云存储服务提供商 <img src="/assets/icons/upyun.png" class="upyun" alt="upyun" /></a>
+      </section>
+      
+      
+      <section class="badges">
+        
+        <a href="https://netlify.com" target="_blank" class="netlify" aria-label="netlify">
+          <img src="/assets/icons/netlify-icon-light.svg" alt="netlify">
+        </a>
+        
+        
+        <a href="https://vercel.com" target="_blank" class="vercel" aria-label="vercel">
+          <img src="/assets/icons/vercel-logotype-dark.png" alt="vercel">
+        </a>
+        
+        
+        <a href="https://www.cloudflare.com" target="_blank" class="cloudflare" aria-label="cloudflare">
+          <img src="/assets/icons/cloudflare-logo.webp" alt="cloudflare">
+        </a>
+        
       </section>
       
       
@@ -795,24 +859,6 @@
 <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
         
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function () { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://h2o-ac.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-
 
 <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.umd.js"></script>
 <script>
@@ -827,24 +873,40 @@
     });
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/artalk/dist/Artalk.min.js"></script>
 <script>
     $(document).ready(function () {
-        if ($("#comments-switch").length > 0) {
+        if ($("#artalk").length > 0) {
+            Artalk.init({
+                el: '#artalk',
+                pageKey: '/hello-jekyll.html',
+                server: 'https://artalk.lisz.top',
+                site: 'h2o-ac',
+                uaBadge: 'true'
+            });
+        }
+    });
+</script>
+
+
+
+<script>
+    $(document).ready(function () {
+        if ($(".comment").length == 3) {
             var comment_status = $("#cmn-toggle-4")[0].checked;
             if (comment_status) {
-                $("#waline").addClass("active");
+                $(".comment:last > div").addClass("active");
             } else {
-                $("#disqus_thread").addClass("active");
+                $(".comment:nth-last-child(2) > div").addClass("active");
             }
             $("#cmn-toggle-4").click(function () {
-                $("#disqus_thread").toggleClass("active");
-                $("#waline").toggleClass("active");
+                $(".comment:nth-last-child(2) > div").toggleClass("active");
+                $(".comment:last > div").toggleClass("active");
             })
         } else {
-            if ($("#disqus_thread").length > 0) {
-                $("#disqus_thread").addClass("active");
-            } else if ($("#waline").length > 0) {
-                $("#waline").addClass("active");
+            if ($(".comment").length == 2) {
+                $(".comment:last > div").addClass("active")
             }
         }
     })
