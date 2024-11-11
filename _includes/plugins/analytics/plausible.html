@@ -1,0 +1,4 @@
+{% if site.plausible %}
+<script defer data-domain="{{ site.plausible_domain }}" data-api="{{ site.plausible_url }}/event"
+    src="{{ site.plausible_url }}/{{ site.plausible_js | default: 'js/plausible.js' }}"></script>
+{% endif %}

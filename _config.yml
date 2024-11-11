@@ -168,6 +168,12 @@ umami:
 shynet: false
 shynet_url: ''
 
+# Plausible Analytics
+plausible: false
+plausible_domain: 'example.com'
+plausible_url: ''
+plausible_js: ''
+
 # Google Analytics
 # google_analytics: UA-XXXXXXXXX-X
 google_analytics: 
