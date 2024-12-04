@@ -15,7 +15,7 @@ A Jekyll theme for researchers and maintainers based on Jekyll and [H2O](https:/
 
 使用文档：[https://h2o-ac-doc.lisz.me](https://h2o-ac-doc.lisz.me)
 
-Usage documentation is available in [https://h2o-ac-doc.lisz.me](https://h2o-ac-doc.lisz.me).
+Usage documentation is available in [https://h2o-ac-doc.lisz.me/en/](https://h2o-ac-doc.lisz.me/en/).
 
 ## Preview
 
