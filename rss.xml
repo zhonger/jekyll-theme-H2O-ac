@@ -5,8 +5,8 @@
     <description>个人的一个技术博客站点，主要用于记录个人在学习过程中遇到的技术问题及解决方法、技术实验，以及一些比较有趣的事情。</description>
     <link>https://h2o-ac.pages.dev//</link>
     <atom:link href="https://h2o-ac.pages.dev/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 11 Nov 2024 12:30:53 +0000</pubDate>
-    <lastBuildDate>Mon, 11 Nov 2024 12:30:53 +0000</lastBuildDate>
+    <pubDate>Wed, 04 Dec 2024 03:33:46 +0000</pubDate>
+    <lastBuildDate>Wed, 04 Dec 2024 03:33:46 +0000</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
     
       <item>
@@ -30,7 +30,7 @@
         <title>H2O-ac theme for Jekyll</title>
         <description>&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 
-&lt;p&gt;  正如大家所知，Jekyll &lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 是一款高可定制的、非常流行的静态博客生成工具。围绕着 Jekyll 也衍生出了很多优秀的 Jekyll 主题， 由 &lt;a href=&quot;https://github.com/kaeyleo&quot;&gt;廖柯宇&lt;/a&gt; 开发的 &lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;H2O&lt;/a&gt; 主题就是其中之一。极简主义、风格扁平化、卡片式布局、Medium 及知乎专栏的视觉风格等等特点，为我们带来了或许是迄今为止最漂亮的 Jekyll 主题。&lt;/p&gt;
+&lt;p&gt;  正如大家所知，Jekyll &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 是一款高可定制的、非常流行的静态博客生成工具。围绕着 Jekyll 也衍生出了很多优秀的 Jekyll 主题， 由 &lt;a href=&quot;https://github.com/kaeyleo&quot;&gt;廖柯宇&lt;/a&gt; 开发的 &lt;a href=&quot;https://github.com/kaeyleo/jekyll-theme-H2O&quot;&gt;H2O&lt;/a&gt; 主题就是其中之一。极简主义、风格扁平化、卡片式布局、Medium 及知乎专栏的视觉风格等等特点，为我们带来了或许是迄今为止最漂亮的 Jekyll 主题。&lt;/p&gt;
 
 &lt;p&gt;  诞生之初，H2O 主题就在 Github 平台上以 MIT 许可证协议开放了源代码。这吸引了很多小伙伴纷纷转投 Jekyll 和 H2O 主题的阵营，本人也是其中之一。随着使用者越来越多，不少的小伙伴在使用过程中发现了一些小问题并主动修复，最后贡献到了 H2O 的主项目，这让 H2O 主题变得更好。本人在使用过程中也的确是发现了一些与自己实际需求不大一致的地方，并且在原 H2O 主题的基础上做了一些改动。考虑到这些改动可能并不是大多数人的需求，直接向原 H2O 主题提交 pull 请求合并的必要性不大，因此决定将原项目 fork 并改名。现正式将源代码以与 H2O 主题相同的 MIT 许可证协议在 Github 平台上公开，新项目地址为 &lt;a href=&quot;https://github.com/zhonger/jekyll-theme-H2O-ac&quot;&gt;zhonger/jekyll-theme-H2O-ac&lt;/a&gt;。&lt;/p&gt;
 
@@ -546,7 +546,7 @@
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
       &lt;p&gt;Jekyll 商标归 Jekyll 项目所有。 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
