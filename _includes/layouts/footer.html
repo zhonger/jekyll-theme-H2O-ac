@@ -12,12 +12,8 @@
           class="extlinks">CloudBase Webify</a> {% endif %}
       </section>
       <section class="links">{{ site.title }} ©
-        {% assign current = "now" | date: "%Y" | plus: 0%}
-        {% unless site.footer.since and site.footer.since == current %}
-        {{ site.footer.since }}
-        -
-        {% endunless %}
-        {{ current }}
+        <input type="hidden" id="footer-since" value="{{ site.footer.since }}">
+        <span id="footer-year"></span>
         {% if site.beian and site.beian != "" %}
         <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
         {% endif %}

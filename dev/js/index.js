@@ -834,7 +834,7 @@ $(document).ready(function () {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(response.data, "application/xml");
         const items = xmlDoc.getElementsByTagName("item")
-        for (let i = 0; i< items.length; i++) {
+        for (let i = 0; i < items.length; i++) {
             const link = items[i].getElementsByTagName("link")[0].textContent;
             posts.push(link);
         }
@@ -842,10 +842,10 @@ $(document).ready(function () {
         console.error("Error fetching RSS feed:", error)
     })
 
-    $(".random a, #random-toggle a").on("click", function(e){
+    $(".random a, #random-toggle a").on("click", function (e) {
         e.preventDefault();
         if (posts.length > 0) {
-            const randomIndex = Math.floor(Math.random()*posts.length);
+            const randomIndex = Math.floor(Math.random() * posts.length);
             const randomPostUrl = posts[randomIndex];
             window.location.href = randomPostUrl;
         } else {
@@ -853,4 +853,13 @@ $(document).ready(function () {
         }
 
     })
+
+    const currentYear = new Date().getFullYear();
+    const footerSince = $("#footer-since").val();
+    const footerYearElement = $("#footer-year");
+    if (footerSince && footerSince != currentYear) {
+        footerYearElement.text(`${footerSince} - ${currentYear}`);
+    } else {
+        footerYearElement.text(currentYear);
+    }
 });
