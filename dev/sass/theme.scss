@@ -73,11 +73,21 @@
             color: $color-theme-default;
         }
     }
-
+    
     #accept-tos {
         background-color: $color-theme-default-1;
+        
+        &:hover {
+            background-color: $color-theme-default;
+        }
+    }
+
+    .np-banner .btn {
+        color: $color-theme-default;
+        border-color: $color-theme-default;
 
         &:hover {
+            color: #fff;
             background-color: $color-theme-default;
         }
     }
@@ -165,6 +175,16 @@
         background-color: $color-theme-pink-1;
 
         &:hover {
+            background-color: $color-theme-pink;
+        }
+    }
+
+    .np-banner .btn {
+        color: $color-theme-pink;
+        border-color: $color-theme-pink;
+
+        &:hover {
+            color: #fff;
             background-color: $color-theme-pink;
         }
     }

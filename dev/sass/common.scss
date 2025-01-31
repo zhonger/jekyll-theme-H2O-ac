@@ -239,6 +239,7 @@ a {
         }
     }
 }
+
 li#search {
     margin: 8px 5px;
 }
@@ -580,12 +581,11 @@ li#search {
         width: 160px;
         height: 38px;
         font-size: 16px;
-        color: #fff;
         line-height: 38px;
-        border-radius: 3px;
-        border: 1px solid #fff;
+        border-radius: 20px;
+        border-width: 3px;
+        border-style: solid;
         margin: 80px auto 0;
-        opacity: .8;
     }
 
 }
