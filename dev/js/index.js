@@ -824,4 +824,33 @@ $(document).ready(function () {
         });
         return cal;
     }
+
+    /**
+    * Random post plugin 
+    ***/
+    const rssUrl = baseurl + '/rss.xml'
+    let posts = []
+    axios.get(rssUrl).then(response => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(response.data, "application/xml");
+        const items = xmlDoc.getElementsByTagName("item")
+        for (let i = 0; i< items.length; i++) {
+            const link = items[i].getElementsByTagName("link")[0].textContent;
+            posts.push(link);
+        }
+    }).catch(error => {
+        console.error("Error fetching RSS feed:", error)
+    })
+
+    $(".random a, #random-toggle a").on("click", function(e){
+        e.preventDefault();
+        if (posts.length > 0) {
+            const randomIndex = Math.floor(Math.random()*posts.length);
+            const randomPostUrl = posts[randomIndex];
+            window.location.href = randomPostUrl;
+        } else {
+            console.log("No available post!!! Please add at least one post firstly.")
+        }
+
+    })
 });

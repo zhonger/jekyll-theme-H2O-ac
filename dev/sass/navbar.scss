@@ -39,6 +39,16 @@
         right: 160px;
         display: none;
     }
+
+    #random-toggle {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 48px;
+        right: 140px;
+        display: none;
+    }
+
     #travelling-toggle {
         width: 40px;
         height: 40px;
@@ -133,6 +143,11 @@
                     // opacity: 1;
                     opacity: .7;
                 }
+            }
+
+            &.random {
+                width: 40px;
+                margin-right: 0px;
             }
 
             &.travelling {

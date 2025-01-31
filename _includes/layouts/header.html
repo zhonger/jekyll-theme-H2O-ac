@@ -7,6 +7,9 @@
         <div id="search-toggle"></div>
     {% endif %}
     {% if site.badges.travelling %}
+    <div id="random-toggle">
+        <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+    </div>
     <div id="travelling-toggle">
         <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
             <svg class="icon" aria-hidden="true">
@@ -50,6 +53,9 @@
                 </li>
                 {% endif %}
             {% endfor %}
+            <li class="random">
+                <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+            </li>
             {% if site.badges.travelling %}
             <li class="travelling">
                 <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
