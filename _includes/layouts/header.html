@@ -2,33 +2,34 @@
     <div class="g-logo">
       <a href="{{ "/" | relative_url }}" aria-label="logo"></a>
     </div>
-    <!-- <i id="menu-toggle" class="iconfont icon-menu"></i> -->
-    {% if site.search and site.search_type == "docsearch" %}
-        <div id="search-toggle"></div>
-    {% endif %}
-    {% if site.badges.travelling %}
-    <div id="random-toggle">
-        <a href="#" aria-label="Random Article" target="_blank">🎲</a>
-    </div>
-    <div id="travelling-toggle">
-        <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-train-subway"></use>
+    <div class="menu-tools">
+        {% if site.search and site.search_type == "docsearch" %}
+            <div id="search-toggle"></div>
+        {% endif %}
+        <div id="random-toggle">
+            <a href="#" aria-label="Random Article" target="_blank">🎲</a>
+        </div>
+        {% if site.badges.travelling %}
+        <div id="travelling-toggle">
+            <a href="https://www.travellings.cn/go.html" aria-label="Travelings" target="_blank">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-train-subway"></use>
+                </svg>
+            </a>
+        </div>
+        {% endif %}
+        <div id="mode-toggle">
+            <svg class="icon icon-day" aria-hidden="true">
+                <use xlink:href="#icon-day"></use>
             </svg>
-        </a>
-    </div>
-    {% endif %}
-    <div id="mode-toggle">
-        <svg class="icon icon-day" aria-hidden="true">
-            <use xlink:href="#icon-day"></use>
-        </svg>
-        <svg class="icon icon-night" aria-hidden="true">
-            <use xlink:href="#icon-night"></use>
+            <svg class="icon icon-night" aria-hidden="true">
+                <use xlink:href="#icon-night"></use>
+            </svg>
+        </div>
+        <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
         </svg>
     </div>
-    <svg id="menu-toggle" class="icon-menu" aria-hidden="true">
-        <use xlink:href="#icon-menu"></use>
-    </svg>
     <nav class="g-nav">
         <ul>
             {% for i in site.nav %}
