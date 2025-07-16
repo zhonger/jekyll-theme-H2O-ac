@@ -10,8 +10,7 @@ Gem::Specification.new do |spec|
     spec.homepage      = "https://github.com/zhonger/jekyll-theme-H2O-ac"
     spec.license       = "MIT"
 
-    spec.required_ruby_version     = ">= 2.7.0"
-    spec.required_rubygems_version = ">= 3.0.0"
+    spec.required_ruby_version     = ">= 3.2.8"
 
     spec.metadata = {
       "bug_tracker_uri"   => "https://github.com/zhonger/jekyll-theme-H2O-ac/issues",
@@ -30,6 +29,6 @@ Gem::Specification.new do |spec|
     spec.add_runtime_dependency "webrick", "~> 1.8.0"
     spec.add_runtime_dependency "premonition", "~> 4.0.2"
     spec.add_runtime_dependency "h2o-ac-jekyll-extlinks", "~> 0.0"
-    spec.add_dependency "bundler", "~> 2.3"
+    spec.add_dependency "bundler", "~> 2.5"
   end
   
