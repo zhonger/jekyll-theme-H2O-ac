@@ -15,7 +15,7 @@ jobs:
     - name: Set up ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.1.0'
+        ruby-version: '3.4.4'
         bundler-cache: false
     - run: bundle install
     - name: Build the gem
