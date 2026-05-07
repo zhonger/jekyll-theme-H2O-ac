@@ -1,5 +1,5 @@
 {% assign pin_posts = site.posts | where: "pin", "true" | sort: "date" | reverse %}
-{% assign unpin_posts = site.posts | where: "pin", nil | sort: "date" | reverse %}
+{% assign unpin_posts = site.posts | where_exp: "item", "item.pin != true" | sort: "date" | reverse %}
 {% assign pin_posts_num = pin_posts | size %}
 {% assign unpin_posts_num = unpin_posts | size %}
 {% assign page_num = paginator.page %}
