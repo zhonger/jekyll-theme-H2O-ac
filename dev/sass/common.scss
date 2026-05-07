@@ -1,11 +1,12 @@
 /*** Main style ***/
 
-@import 'navbar';
-@import 'markdown';
-@import 'post';
-@import 'tools';
-@import 'theme';
-@import 'night';
+@use 'helper' as *;
+@use 'navbar';
+@use 'markdown';
+@use 'post';
+@use 'tools';
+@use 'theme';
+@use 'night';
 
 .g-container {
     width: $g-container-w;

@@ -1,4 +1,7 @@
 // 夜间模式
+
+@use 'helper' as *;
+
 .night-mode {
     background-color: $color-dark-primary;
 

@@ -2,8 +2,8 @@
  * Jekyll Theme Style
  * - author: liaokeyu (liaokeyu.com)
  */
-@import 'helper';
-@import 'base';
-@import 'common';
-@import 'premonition';
-@import 'layouts';
+@use 'helper' as *;
+@use 'base';
+@use 'common';
+@use 'premonition';
+@use 'layouts';

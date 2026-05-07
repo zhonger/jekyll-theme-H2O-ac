@@ -1,3 +1,7 @@
+/*** Layout ***/
+
+@use 'helper' as *;
+
 @media screen and (min-width: 1920px) {
     .home-banner {
         height: 600px;

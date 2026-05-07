@@ -1,4 +1,7 @@
 // Post style
+
+@use 'helper' as *;
+
 .markdown-body {
     font-family: $fonts;
     width: 100%;
