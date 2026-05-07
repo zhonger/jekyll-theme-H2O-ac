@@ -140,6 +140,7 @@ supports:
 
 # Beian 备案号
 beian: '沪ICP备xxxxxxxx号'
+police_beian: "沪公网安备xxxxxxxxxxxxxx号"
 # moe_beian: '20240463'
 
 # Badges

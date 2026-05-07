@@ -424,11 +424,17 @@ li#search {
         line-height: 18px;
         color: #4E4E4E;
 
+        &.beian {
+            a {
+                display: inline-block;
+            }
+        }
+
         a {
             color: #4E4E4E;
 
             &.others {
-                margin-left: 10px;
+                margin-right: 10px;
             }
 
             &:hover {

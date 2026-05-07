@@ -14,12 +14,23 @@
       <section class="links">{{ site.title }} ©
         <input type="hidden" id="footer-since" value="{{ site.footer.since }}">
         <span id="footer-year"></span>
+      </section>
+      <section class="links beian">
         {% if site.beian and site.beian != "" %}
         <a href="https://beian.miit.gov.cn/" target="_blank" class="extlinks">{{ site.beian }}</a>
+        {% endif %}
+        {% if site.police_beian and site.police_beian != "" %}
+          {% assign police_beian_code = site.police_beian | split: "备" | last | remove: "号" | strip %}
+        <img src="{{ "/assets/icons/police_beian.png" | prepend: site.baseurl }}" style="height: 18px; vertical-align: top;" alt="police_beian">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code={{ police_beian_code }}" rel="noreferrer" target="_blank" class="extlinks">
+          {{ site.police_beian }}
+        </a>
         {% endif %}
         {% if site.moe_beian and site.moe_beian != "" %}
         <a href="https://icp.gov.moe/?keyword={{ site.moe_beian }}" target="_blank" class="extlinks">萌ICP备{{ site.moe_beian }}号</a>
         {% endif %}
+      </section>
+      <section class="links">
         <a href="/rss.xml" target="_blank" aria-label="Terms of Service" class="others">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-rss"></use>
@@ -30,6 +41,13 @@
             <use xlink:href="#icon-tos"></use>
           </svg> {{footer.tos.name}}
         </a>
+        {% if site.alivetime %}
+        {{ footer.running.info }}
+        <span class="alivetime_days"></span> {{ footer.running.day }}
+        <span class="alivetime_hours"></span> {{ footer.running.hour }}
+        <span class="alivetime_minutes"></span> {{ footer.running.minute }}
+        <span class="alivetime_seconds"></span> {{ footer.running.second }}
+        {% endif %}
       </section>
       {% if site.busuanzi %}
       <section class="links">
@@ -57,15 +75,6 @@
         </span>
       </section>
       {% endif %}
-      <section>
-        {% if site.alivetime %}
-        {{ footer.running.info }}
-        <span class="alivetime_days"></span> {{ footer.running.day }}
-        <span class="alivetime_hours"></span> {{ footer.running.hour }}
-        <span class="alivetime_minutes"></span> {{ footer.running.minute }}
-        <span class="alivetime_seconds"></span> {{ footer.running.second }}
-        {% endif %}
-      </section>
     </div>
     <div class="g-right">
       {% if site.supports.upyun %}
