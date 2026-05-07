@@ -93,6 +93,32 @@
         display: inline-block !important;
         margin: 0 20px 0 0 !important;
     }
+
+    .post.listed {
+        counter-reset: h2-counter;
+        h2 {
+            counter-reset: h3-counter;
+            &::before {
+            counter-increment: h2-counter;
+            content: counter(h2-counter) ". ";
+            }
+        }
+
+        h3 {
+            counter-reset: h4-counter;
+            &::before {
+            counter-increment: h3-counter;
+            content: counter(h2-counter) "." counter(h3-counter) " ";
+            }
+        }
+
+        h4 {
+            &::before {
+            counter-increment: h4-counter;
+            content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) " ";
+            }
+        }
+    }
 }
 
 .post-header,

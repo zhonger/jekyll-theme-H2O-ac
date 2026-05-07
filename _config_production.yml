@@ -205,6 +205,7 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
+# title_listed: true # if you want to display the index of titles automatically
 
 # Prism settings
 # Support all offical and extended themes

@@ -145,6 +145,7 @@ alivestart: "12/23/2021"
 
 # Beian 备案号
 beian: '沪ICP备xxxxxxxx号'
+police_beian: "沪公网安备xxxxxxxxxxxxxx号"
 # moe_beian: 'xxxxxxxx'
 
 # CC License
@@ -220,6 +221,7 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
+# title_listed: true # if you want to display the index of titles automatically
 
 # Prism settings
 # Support all offical and extended themes

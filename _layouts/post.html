@@ -96,7 +96,11 @@ type: post
     <div class="container">
         {% include layouts/submenu.html %}
         <div class="contents">
+            {% if site.title_listed %}
+            <article class="markdown-body post listed">
+            {% else %}
             <article class="markdown-body post">
+            {% endif %}
                 {% include plugins/i18n.html %}
                 {{ page.content | extlinks }}
                 <div class="post-copyright">
