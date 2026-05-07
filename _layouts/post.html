@@ -12,7 +12,7 @@ type: post
         <div class="post-tags">
             {% if page.tags.size > 0 %}
             {% for tag in page.tags %}
-            <a href="{{ " /tags.html#" | append: tag | relative_url }}" class="post-tag">{{ tag }}</a>
+            <a href="{{ "/tags.html#" | append: tag | relative_url }}" class="post-tag">{{ tag }}</a>
             {% endfor %}
             {% endif %}
         </div>
